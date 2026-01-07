@@ -241,6 +241,7 @@ function displayQuestion() {
 
 // Start countdown timer
 function startTimer() {
+    clearInterval(timer);
     timeLeft = TIME_PER_QUESTION;
     updateTimerDisplay();
     
