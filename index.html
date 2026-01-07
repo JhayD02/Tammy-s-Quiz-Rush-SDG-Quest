@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Rush: SDG Quest</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Start Screen -->
+        <div id="start-screen" class="screen active">
+            <div class="logo">
+                <h1>Quiz Rush</h1>
+                <h2>SDG Quest</h2>
+            </div>
+            <p class="tagline">Test your knowledge of the 17 Sustainable Development Goals!</p>
+            <button id="start-btn" class="btn btn-primary">Start Quiz</button>
+            <button id="learn-btn" class="btn btn-secondary">Learn About SDGs</button>
+        </div>
+
+        <!-- Learn Screen -->
+        <div id="learn-screen" class="screen">
+            <h2>The 17 Sustainable Development Goals</h2>
+            <div class="sdg-list">
+                <div class="sdg-item">
+                    <span class="sdg-number">1</span>
+                    <div class="sdg-info">
+                        <h3>No Poverty</h3>
+                        <p>End poverty in all its forms everywhere</p>
+                    </div>
+                </div>
+                <div class="sdg-item">
+                    <span class="sdg-number">2</span>
+                    <div class="sdg-info">
+                        <h3>Zero Hunger</h3>
+                        <p>End hunger, achieve food security and improved nutrition</p>
+                    </div>
+                </div>
+                <div class="sdg-item">
+                    <span class="sdg-number">3</span>
+                    <div class="sdg-info">
+                        <h3>Good Health and Well-being</h3>
+                        <p>Ensure healthy lives and promote well-being for all</p>
+                    </div>
+                </div>
+                <div class="sdg-item">
+                    <span class="sdg-number">4</span>
+                    <div class="sdg-info">
+                        <h3>Quality Education</h3>
+                        <p>Ensure inclusive and equitable quality education</p>
+                    </div>
+                </div>
+                <div class="sdg-item">
+                    <span class="sdg-number">5</span>
+                    <div class="sdg-info">
+                        <h3>Gender Equality</h3>
+                        <p>Achieve gender equality and empower all women and girls</p>
+                    </div>
+                </div>
+                <div class="sdg-item">
+                    <span class="sdg-number">6</span>
+                    <div class="sdg-info">
+                        <h3>Clean Water and Sanitation</h3>
+                        <p>Ensure availability and sustainable management of water</p>
+                    </div>
+                </div>
+                <div class="sdg-item">
+                    <span class="sdg-number">7</span>
+                    <div class="sdg-info">
+                        <h3>Affordable and Clean Energy</h3>
+                        <p>Ensure access to affordable, reliable, sustainable energy</p>
+                    </div>
+                </div>
+                <div class="sdg-item">
+                    <span class="sdg-number">8</span>
+                    <div class="sdg-info">
+                        <h3>Decent Work and Economic Growth</h3>
+                        <p>Promote sustained, inclusive economic growth and employment</p>
+                    </div>
+                </div>
+                <div class="sdg-item">
+                    <span class="sdg-number">9</span>
+                    <div class="sdg-info">
+                        <h3>Industry, Innovation and Infrastructure</h3>
+                        <p>Build resilient infrastructure, promote innovation</p>
+                    </div>
+                </div>
+                <div class="sdg-item">
+                    <span class="sdg-number">10</span>
+                    <div class="sdg-info">
+                        <h3>Reduced Inequalities</h3>
+                        <p>Reduce inequality within and among countries</p>
+                    </div>
+                </div>
+                <div class="sdg-item">
+                    <span class="sdg-number">11</span>
+                    <div class="sdg-info">
+                        <h3>Sustainable Cities and Communities</h3>
+                        <p>Make cities and human settlements inclusive and sustainable</p>
+                    </div>
+                </div>
+                <div class="sdg-item">
+                    <span class="sdg-number">12</span>
+                    <div class="sdg-info">
+                        <h3>Responsible Consumption and Production</h3>
+                        <p>Ensure sustainable consumption and production patterns</p>
+                    </div>
+                </div>
+                <div class="sdg-item">
+                    <span class="sdg-number">13</span>
+                    <div class="sdg-info">
+                        <h3>Climate Action</h3>
+                        <p>Take urgent action to combat climate change</p>
+                    </div>
+                </div>
+                <div class="sdg-item">
+                    <span class="sdg-number">14</span>
+                    <div class="sdg-info">
+                        <h3>Life Below Water</h3>
+                        <p>Conserve and sustainably use the oceans and marine resources</p>
+                    </div>
+                </div>
+                <div class="sdg-item">
+                    <span class="sdg-number">15</span>
+                    <div class="sdg-info">
+                        <h3>Life on Land</h3>
+                        <p>Protect, restore and promote sustainable use of ecosystems</p>
+                    </div>
+                </div>
+                <div class="sdg-item">
+                    <span class="sdg-number">16</span>
+                    <div class="sdg-info">
+                        <h3>Peace, Justice and Strong Institutions</h3>
+                        <p>Promote peaceful and inclusive societies</p>
+                    </div>
+                </div>
+                <div class="sdg-item">
+                    <span class="sdg-number">17</span>
+                    <div class="sdg-info">
+                        <h3>Partnerships for the Goals</h3>
+                        <p>Strengthen global partnerships for sustainable development</p>
+                    </div>
+                </div>
+            </div>
+            <button id="back-btn" class="btn btn-secondary">Back to Start</button>
+        </div>
+
+        <!-- Quiz Screen -->
+        <div id="quiz-screen" class="screen">
+            <div class="quiz-header">
+                <div class="stats">
+                    <div class="stat">
+                        <span class="label">Question</span>
+                        <span id="question-number" class="value">1/20</span>
+                    </div>
+                    <div class="stat">
+                        <span class="label">Score</span>
+                        <span id="score" class="value">0</span>
+                    </div>
+                    <div class="stat timer">
+                        <span class="label">Time</span>
+                        <span id="timer" class="value">15</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="question-container">
+                <h3 id="question-text" class="question-text"></h3>
+                <div id="options-container" class="options-container"></div>
+            </div>
+
+            <div class="progress-bar">
+                <div id="progress" class="progress-fill"></div>
+            </div>
+        </div>
+
+        <!-- Result Screen -->
+        <div id="result-screen" class="screen">
+            <h2>Quiz Complete!</h2>
+            <div class="result-stats">
+                <div class="result-item">
+                    <span class="result-label">Final Score</span>
+                    <span id="final-score" class="result-value">0</span>
+                </div>
+                <div class="result-item">
+                    <span class="result-label">Correct Answers</span>
+                    <span id="correct-answers" class="result-value">0/20</span>
+                </div>
+                <div class="result-item">
+                    <span class="result-label">Accuracy</span>
+                    <span id="accuracy" class="result-value">0%</span>
+                </div>
+            </div>
+            <div id="performance-message" class="performance-message"></div>
+            <div class="result-actions">
+                <button id="restart-btn" class="btn btn-primary">Play Again</button>
+                <button id="learn-more-btn" class="btn btn-secondary">Learn More About SDGs</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
