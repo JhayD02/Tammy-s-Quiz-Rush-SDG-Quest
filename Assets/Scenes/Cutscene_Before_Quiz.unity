@@ -506,8 +506,10 @@ MonoBehaviour:
   videoVolume: 1
   skipButton: {fileID: 1398667682}
   skipDelay: 2.5
-  quizSceneAsset: {fileID: 102900000, guid: 25621536b8e4d774ebb20a747d62e9a6, type: 3}
-  quizSceneName: Quiz Scene Proper
+  quizSceneAsset: {fileID: 102900000, guid: 2452189aa09309140b7c8abbb4dec789, type: 3}
+  quizSceneName: MainMenu
+  transition: {fileID: 11400000, guid: 06fa0ad2bc756f44ab258bc74947381d, type: 2}
+  startDelay: 2.5
 --- !u!4 &927114726
 Transform:
   m_ObjectHideFlags: 0
@@ -683,6 +685,51 @@ AudioListener:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1170983595}
   m_Enabled: 1
+--- !u!1 &1285708151
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1285708153}
+  - component: {fileID: 1285708152}
+  m_Layer: 0
+  m_Name: TransitionManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1285708152
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1285708151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61430b0086307cc4da3ccc8d39ae88da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transitionTemplate: {fileID: 5276914992623515724, guid: 616d511151a6c554caddf1c754e4f91d, type: 3}
+--- !u!4 &1285708153
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1285708151}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 600, y: 2392.7935, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1398667680
 GameObject:
   m_ObjectHideFlags: 0
@@ -1101,3 +1148,4 @@ SceneRoots:
   - {fileID: 927114726}
   - {fileID: 460728227}
   - {fileID: 1415554205}
+  - {fileID: 1285708153}
