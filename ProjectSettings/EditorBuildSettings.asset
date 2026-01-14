@@ -6,12 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/MainMenu.unity
+    guid: 2452189aa09309140b7c8abbb4dec789
   - enabled: 1
-    path: Assets/Scenes/Cutscene_Before_Quiz.unity
-    guid: 66bdb9bff9fbfe842b5e272bdb1f04ea
-  - enabled: 1
-    path: Assets/Scenes/Quiz Scene Proper.unity
-    guid: 25621536b8e4d774ebb20a747d62e9a6
+    path: Assets/Scenes/Learn Mode.unity
+    guid: 430a78deebf02c94898a35a50c918531
   m_configObjects: {}
