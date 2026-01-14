@@ -69,7 +69,6 @@ public class CutsceneScript : MonoBehaviour
         if (videoPlayer != null && introVideo != null)
         {
             videoPlayer.clip = introVideo;
-            ConfigureVideoAudio();
             videoPlayer.prepareCompleted += OnVideoPrepared;
             videoPlayer.loopPointReached += OnVideoEnd;
             videoPlayer.Prepare();
@@ -80,7 +79,11 @@ public class CutsceneScript : MonoBehaviour
         }
     }
 
-    private void OnVideoPrepared(VideoPlayer source) => source.Play();
+    private void OnVideoPrepared(VideoPlayer source)
+    {
+        ConfigureVideoAudio();
+        source.Play();
+    }
 
     /// <summary>
     /// Configures video audio output to AudioSource
@@ -89,25 +92,30 @@ public class CutsceneScript : MonoBehaviour
     {
         if (audioSource == null)
         {
-            // Try to get AudioSource from VideoPlayer GameObject
             audioSource = videoPlayer.GetComponent<AudioSource>();
-            
-            // If not found, create one
             if (audioSource == null)
             {
                 audioSource = videoPlayer.gameObject.AddComponent<AudioSource>();
-                Debug.Log("CutsceneScript: AudioSource automatically added to VideoPlayer.");
             }
         }
         
-        videoPlayer.audioOutputMode = VideoAudioOutputMode.AudioSource;
-        videoPlayer.controlledAudioTrackCount = 1;
-        videoPlayer.SetTargetAudioSource(0, audioSource);
-        videoPlayer.EnableAudioTrack(0, true);
-        
-        audioSource.playOnAwake = false;
-        audioSource.mute = false;
-        audioSource.volume = videoVolume;
+        // Check if video has audio tracks
+        if (videoPlayer.audioTrackCount > 0)
+        {
+            videoPlayer.audioOutputMode = VideoAudioOutputMode.AudioSource;
+            videoPlayer.controlledAudioTrackCount = 1;
+            videoPlayer.SetTargetAudioSource(0, audioSource);
+            
+            audioSource.playOnAwake = false;
+            audioSource.mute = false;
+            audioSource.volume = videoVolume;
+            
+            Debug.Log($"Audio configured: {videoPlayer.audioTrackCount} tracks found, volume: {videoVolume}");
+        }
+        else
+        {
+            Debug.LogError("No audio tracks found in video! Re-encode video with H.264 + AAC audio codec.");
+        }
     }
 
     /// <summary>
