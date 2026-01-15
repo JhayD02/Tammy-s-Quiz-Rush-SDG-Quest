@@ -1,0 +1,206 @@
+╔═════════════════════════════════════════════════════════════════════════════╗
+║                    LEADERBOARD SETUP - QUICK REFERENCE CARD                 ║
+║                          Keep This Visible While Working                    ║
+╚═════════════════════════════════════════════════════════════════════════════╝
+
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ PART 1: QUIZ SCENE - RESULTS PANEL (15 minutes)                            │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+CREATE:
+  ☐ Panel (Right-click Canvas → UI → Panel)
+    └─ Rename: ResultsPanel
+    └─ Position: Center of screen
+    
+  ☐ Add CanvasGroup component to panel
+    └─ Set Alpha: 0
+    
+  ☐ TextMeshPro inside panel (2 total)
+    ├─ ResultsMessageText (Size: 48)
+    └─ FinalScoreText (Size: 36)
+    
+SET INACTIVE:
+  ☐ Uncheck ResultsPanel in Hierarchy
+
+ASSIGN IN INSPECTOR (Select GameObject with QuizProper script):
+  ☐ Results Panel: ResultsPanel
+  ☐ Results Panel Canvas Group: CanvasGroup component
+  ☐ Results Message Text: ResultsMessageText
+  ☐ Final Score Text: FinalScoreText
+
+THRESHOLDS (Optional - adjust if needed):
+  ☐ Excellent Threshold: 2500
+  ☐ Good Threshold: 1000
+
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ PART 2: LEADERBOARD SCENE (30 minutes)                                    │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+CREATE NEW SCENE:
+  ☐ File → New Scene
+  ☐ Save as: Leaderboard.unity (in Assets/Scenes/)
+
+CREATE HIERARCHY:
+  ☐ Canvas (Right-click Hierarchy → UI → Canvas)
+  
+  ☐ TitleText (TextMeshPro - Size: 60)
+    └─ Text: "Recent Quiz Sessions"
+    
+  ☐ Create 5 Record Groups (Record1 through Record5):
+    For each Record:
+    ├─ Empty GameObject
+    ├─ Inside: Name text (Size: 24)
+    ├─ Inside: School text (Size: 24)
+    ├─ Inside: Date text (Size: 24)
+    └─ Inside: Score text (Size: 24)
+    
+    Positions:
+    ├─ Record1: Y = -150
+    ├─ Record2: Y = -200
+    ├─ Record3: Y = -250
+    ├─ Record4: Y = -300
+    └─ Record5: Y = -350
+    
+  ☐ EmptyStateText (TextMeshPro - Size: 32)
+    └─ Text: "No quiz sessions yet. Play the quiz to create history!"
+    
+  ☐ BackToMenuButton (Button - Text: "Back to Menu")
+    └─ Position: (-400, 50)
+    
+  ☐ PlayAgainButton (Button - Text: "Play Again")
+    └─ Position: (400, 50)
+    
+  ☐ LeaderboardManager (Empty GameObject)
+
+ATTACH SCRIPT:
+  ☐ Select LeaderboardManager
+  ☐ Add Component → LocalLeaderboardManager
+
+ASSIGN REFERENCES (Most Important Part!):
+
+Name Texts Array (Size: 5):
+  [0] Name1 | [1] Name2 | [2] Name3 | [3] Name4 | [4] Name5
+
+School Texts Array (Size: 5):
+  [0] School1 | [1] School2 | [2] School3 | [3] School4 | [4] School5
+
+Date Texts Array (Size: 5):
+  [0] Date1 | [1] Date2 | [2] Date3 | [3] Date4 | [4] Date5
+
+Score Texts Array (Size: 5):
+  [0] Score1 | [1] Score2 | [2] Score3 | [3] Score4 | [4] Score5
+
+Single Assignments:
+  ☐ Empty State Text: EmptyStateText
+  ☐ Back To Menu Button: BackToMenuButton
+  ☐ Play Again Button: PlayAgainButton
+
+Scene Names:
+  ☐ Main Menu Scene Name: "MainMenu"
+  ☐ Quiz Scene Name: "Quiz Scene Proper"
+
+ADD TO BUILD SETTINGS:
+  ☐ File → Build Settings
+  ☐ Drag Leaderboard.unity into "Scenes In Build"
+
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ PART 3: MAIN MENU (10 minutes)                                              │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+CREATE:
+  ☐ Button in Main Menu Canvas
+    └─ Rename: ViewLeaderboardButton
+    └─ Text: "View Leaderboard"
+
+ADD ONCLICK LISTENER:
+  ☐ Select ViewLeaderboardButton
+  ☐ In Button component → OnClick() → Click "+"
+  ☐ Drag button to object field
+  ☐ Set function to load "Leaderboard" scene
+
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ CRITICAL REMINDERS                                                          │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+✓ Scene names are CASE SENSITIVE:
+  "MainMenu" ✓
+  "Quiz Scene Proper" ✓
+  "Leaderboard" ✓
+
+✓ ResultsPanel MUST BE INACTIVE:
+  Uncheck it in Hierarchy
+
+✓ All 5 arrays MUST have Size: 5
+  Name Texts, School Texts, Date Texts, Score Texts
+
+✓ ALL references must be assigned:
+  Don't leave any field empty
+
+✓ Save frequently:
+  Ctrl+S after each step
+
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ QUICK TEST                                                                   │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+1. ☐ Play Quiz Scene
+2. ☐ Complete quiz
+3. ☐ See Results Panel fade in
+4. ☐ See performance message + score
+5. ☐ Go back to Main Menu
+6. ☐ Click "View Leaderboard"
+7. ☐ See your entry in leaderboard
+8. ☐ Test Back/Play buttons
+
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ TESTING WITHOUT FULL QUIZ                                                  │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+1. Create empty GameObject
+2. Add Component → LeaderboardDebugHelper
+3. Click buttons in Inspector:
+   ☐ "Generate 5 Test Records" (creates test data)
+   ☐ "View Recent 5" (shows in console)
+   ☐ "Clear All Records" (resets for testing)
+
+Much faster than playing full quiz multiple times!
+
+
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ IF SOMETHING DOESN'T WORK                                                   │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+Results panel doesn't show:
+  ☐ Make sure ResultsPanel is INACTIVE
+  ☐ Check CanvasGroup Alpha is 0
+
+Leaderboard shows "No records":
+  ☐ Play quiz at least once
+  ☐ Use LeaderboardDebugHelper to generate test data
+
+Text fields are empty:
+  ☐ Verify ALL references assigned
+  ☐ Check console (Ctrl + `) for errors
+
+Buttons don't work:
+  ☐ Verify exact scene names
+  ☐ Check scene is in Build Settings
+
+Check console frequently:
+  ☐ Window → General → Console
+  ☐ Ctrl + ` to toggle
+
+
+╔═════════════════════════════════════════════════════════════════════════════╗
+║                                                                              ║
+║                        TOTAL TIME: 60-75 minutes                            ║
+║                                                                              ║
+║                            Good luck! 🎉                                    ║
+║                                                                              ║
+╚═════════════════════════════════════════════════════════════════════════════╝

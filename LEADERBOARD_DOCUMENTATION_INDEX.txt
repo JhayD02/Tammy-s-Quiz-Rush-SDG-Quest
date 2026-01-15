@@ -1,0 +1,195 @@
+LEADERBOARD SETUP DOCUMENTATION INDEX
+═════════════════════════════════════════════════════════════════════════════
+
+This file lists all the documentation resources available for setting up
+the local leaderboard system.
+
+AVAILABLE RESOURCES:
+═════════════════════════════════════════════════════════════════════════════
+
+1. README.md (PRIMARY GUIDE)
+   Location: Root of project
+   Format: Markdown
+   Content: Complete step-by-step setup guide for all 3 parts
+   Best for: Following along while setting up in Unity
+   Time: 60 minutes total
+
+2. LEADERBOARD_SETUP_GUIDE.txt (DETAILED REFERENCE)
+   Location: Assets/Scripts/
+   Format: Text file
+   Content: Very detailed, numbered steps with all UI configurations
+   Best for: Detailed reference while building each component
+   Time: Can be used alongside README.md
+
+3. LeaderboardSetupChecklist.cs (QUICK CHECKLIST)
+   Location: Assets/Scripts/
+   Format: C# script (documentation in comments)
+   Content: Condensed checklist version for quick reference
+   Best for: Printing out or keeping visible during setup
+   Time: Quick visual reference (5 minutes to skim)
+
+4. LeaderboardUISetupGuide.cs (VISUAL HIERARCHY)
+   Location: Assets/Scripts/
+   Format: C# script (documentation in comments)
+   Content: Recommended UI hierarchy structure and assignment guide
+   Best for: Understanding the exact structure needed
+   Time: Reference while creating GameObjects
+
+5. LeaderboardDebugHelper.cs (TESTING TOOL)
+   Location: Assets/Scripts/
+   Format: C# script (executable)
+   Content: Testing buttons in Inspector for generating test data
+   Best for: Testing without playing full quiz
+   Time: Speeds up testing process significantly
+
+
+WHICH DOCUMENT SHOULD I USE?
+═════════════════════════════════════════════════════════════════════════════
+
+FIRST TIME SETUP:
+  Start with: README.md
+  Reference: LEADERBOARD_SETUP_GUIDE.txt
+  Keep visible: LeaderboardSetupChecklist.cs
+  
+  Follow the steps in README.md, and when you need more detail about
+  something, check LEADERBOARD_SETUP_GUIDE.txt
+
+NEED QUICK REFERENCE:
+  Use: LeaderboardSetupChecklist.cs
+  
+  This has the quickest format with just checkboxes and key info.
+
+UNSURE ABOUT UI STRUCTURE:
+  Check: LeaderboardUISetupGuide.cs
+  
+  This shows the exact hierarchy you need to create.
+
+TESTING WITHOUT FULL QUIZ:
+  Use: LeaderboardDebugHelper.cs
+  
+  Attach to a GameObject to get testing buttons in the Inspector.
+
+
+SETUP ORDER:
+═════════════════════════════════════════════════════════════════════════════
+
+Part 1: Quiz Results Panel (15 minutes)
+  Reference: README.md → "PART 1: Quiz Results Panel Setup"
+  Detail: LEADERBOARD_SETUP_GUIDE.txt → "Section 2"
+
+Part 2: Leaderboard Scene (30 minutes)
+  Reference: README.md → "PART 2: Leaderboard Scene Setup"
+  Detail: LEADERBOARD_SETUP_GUIDE.txt → "Section 3"
+  Visual: LeaderboardUISetupGuide.cs
+
+Part 3: Main Menu Button (10 minutes)
+  Reference: README.md → "PART 3: Add Leaderboard Button to Main Menu"
+  Detail: LEADERBOARD_SETUP_GUIDE.txt → "Section 4"
+
+Testing: (10 minutes)
+  Checklist: LeaderboardSetupChecklist.cs
+  Testing: LeaderboardDebugHelper.cs
+  Troubleshoot: LEADERBOARD_SETUP_GUIDE.txt → "Section 6"
+
+
+KEY FILES LOCATION:
+═════════════════════════════════════════════════════════════════════════════
+
+Documentation:
+  □ README.md - Project root
+  □ LEADERBOARD_SETUP_GUIDE.txt - Assets/Scripts/
+  □ LeaderboardSetupChecklist.cs - Assets/Scripts/
+  □ LeaderboardUISetupGuide.cs - Assets/Scripts/
+
+Code Files:
+  □ LocalLeaderboardManager.cs - Assets/Scripts/
+  □ LeaderboardDebugHelper.cs - Assets/Scripts/
+  □ PlayerManager.cs - Assets/Scripts/Quiz Proper/
+  □ QuizProper.cs - Assets/Scripts/Quiz Proper/
+
+Scenes (After creation):
+  □ Leaderboard.unity - Assets/Scenes/
+  □ Quiz Scene Proper.unity - Assets/Scenes/
+  □ MainMenu.unity - Assets/Scenes/
+
+
+QUICK TROUBLESHOOTING REFERENCE:
+═════════════════════════════════════════════════════════════════════════════
+
+Problem: Results panel doesn't show
+  Check: LEADERBOARD_SETUP_GUIDE.txt → Troubleshooting → Issue 1
+
+Problem: Leaderboard shows "No records yet"
+  Check: LEADERBOARD_SETUP_GUIDE.txt → Troubleshooting → Issue 2
+
+Problem: Text fields empty on leaderboard
+  Check: LEADERBOARD_SETUP_GUIDE.txt → Troubleshooting → Issue 3
+
+Problem: Button doesn't work
+  Check: LEADERBOARD_SETUP_GUIDE.txt → Troubleshooting → Issue 4
+
+Problem: Scene names don't match
+  Check: LEADERBOARD_SETUP_GUIDE.txt → Troubleshooting → Issue 5
+
+
+TOTAL SETUP TIME ESTIMATE:
+═════════════════════════════════════════════════════════════════════════════
+
+Reading documentation:      5-10 minutes
+Part 1 (Results Panel):     15 minutes
+Part 2 (Leaderboard Scene): 30 minutes
+Part 3 (Main Menu Button):  10 minutes
+Testing:                    10 minutes
+                            ───────────
+TOTAL:                      60-70 minutes
+
+(Times may vary based on experience level)
+
+
+TIPS FOR SUCCESS:
+═════════════════════════════════════════════════════════════════════════════
+
+1. READ THE ENTIRE README.md FIRST
+   Don't just skim - understand the full flow before starting
+
+2. HAVE TWO WINDOWS OPEN
+   Window 1: Documentation (on one monitor)
+   Window 2: Unity (on other monitor)
+   OR split your screen
+
+3. FOLLOW STEP-BY-STEP
+   Don't skip steps. Each one builds on the previous
+
+4. SAVE FREQUENTLY
+   Ctrl+S after each section
+
+5. USE COPY-PASTE
+   Copy scene names, text field names exactly to avoid errors
+
+6. CHECK CONSOLE FOR ERRORS
+   Window → General → Console (Ctrl + `)
+   This shows any problems as they happen
+
+7. USE LeaderboardDebugHelper FOR TESTING
+   Don't play the full quiz repeatedly
+   Generate test data with the helper buttons
+
+8. VERIFY EACH PART BEFORE MOVING TO NEXT
+   Test results panel works before making leaderboard scene
+
+9. DOUBLE-CHECK SCENE NAMES
+   They are CASE SENSITIVE:
+   "MainMenu" not "mainmenu"
+   "Quiz Scene Proper" not "Quiz Scene proper"
+   "Leaderboard" not "leaderboard"
+
+10. WHEN IN DOUBT, CHECK THE SCRIPTS
+    Look at LocalLeaderboardManager.cs to see what it expects
+    Read the [SerializeField] labels in the Inspector
+
+
+═════════════════════════════════════════════════════════════════════════════
+
+Ready to get started? Open README.md and follow along!
+
+═════════════════════════════════════════════════════════════════════════════

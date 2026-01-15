@@ -1,0 +1,311 @@
+VISUAL REFERENCE - EXACT SCENE HIERARCHY
+═════════════════════════════════════════════════════════════════════════════
+
+This document shows exactly what your scenes should look like.
+
+COPY THIS STRUCTURE IN YOUR LEADERBOARD SCENE!
+
+
+LEADERBOARD SCENE HIERARCHY:
+─────────────────────────────────────────────────────────────────────────────
+
+LeaderboardCanvas
+│
+├── TitleText (TextMeshProUGUI)
+│   └─ Text: "Recent Quiz Sessions"
+│   └─ Font Size: 60
+│   └─ Position: Y = -50
+│
+├── Record1 (Empty GameObject)
+│   ├── Name1 (TextMeshProUGUI)
+│   │   └─ Font Size: 24
+│   │   └─ Position: X = -300
+│   │
+│   ├── School1 (TextMeshProUGUI)
+│   │   └─ Font Size: 24
+│   │   └─ Position: X = -100
+│   │
+│   ├── Date1 (TextMeshProUGUI)
+│   │   └─ Font Size: 24
+│   │   └─ Position: X = 100
+│   │
+│   └── Score1 (TextMeshProUGUI)
+│       └─ Font Size: 24
+│       └─ Position: X = 300
+│
+├── Record2 (Empty GameObject) [SAME STRUCTURE AS Record1]
+│   ├── Name2
+│   ├── School2
+│   ├── Date2
+│   └── Score2
+│   └─ Position: Y = -200
+│
+├── Record3 (Empty GameObject) [SAME STRUCTURE AS Record1]
+│   ├── Name3
+│   ├── School3
+│   ├── Date3
+│   └── Score3
+│   └─ Position: Y = -250
+│
+├── Record4 (Empty GameObject) [SAME STRUCTURE AS Record1]
+│   ├── Name4
+│   ├── School4
+│   ├── Date4
+│   └── Score4
+│   └─ Position: Y = -300
+│
+├── Record5 (Empty GameObject) [SAME STRUCTURE AS Record1]
+│   ├── Name5
+│   ├── School5
+│   ├── Date5
+│   └── Score5
+│   └─ Position: Y = -350
+│
+├── EmptyStateText (TextMeshProUGUI)
+│   └─ Text: "No quiz sessions yet. Play the quiz to create history!"
+│   └─ Font Size: 32
+│   └─ Position: Center (0, 0)
+│
+├── CurrentPlayerPanel (Panel) [OPTIONAL]
+│   ├── CurrentPlayerNameText
+│   ├── CurrentPlayerSchoolText
+│   ├── CurrentPlayerDateText
+│   └── CurrentPlayerScoreText
+│   └─ Position: Y = -100
+│
+├── BackToMenuButton (Button)
+│   └─ Text: "Back to Menu"
+│   └─ Position: X = -400, Y = 50
+│
+├── PlayAgainButton (Button)
+│   └─ Text: "Play Again"
+│   └─ Position: X = 400, Y = 50
+│
+└── LeaderboardManager (Empty GameObject)
+    └─ Component: LocalLeaderboardManager script
+
+
+QUIZ SCENE HIERARCHY (RESULTS PANEL SECTION):
+─────────────────────────────────────────────────────────────────────────────
+
+[Your existing Quiz Canvas with all quiz UI...]
+
+└── ResultsPanel (Panel) ← ADD THIS
+    ├── Canvas Group component ← ADD THIS (Alpha: 0)
+    │
+    ├── ResultsMessageText (TextMeshProUGUI)
+    │   └─ Font Size: 48
+    │   └─ Position: Upper part
+    │
+    └── FinalScoreText (TextMeshProUGUI)
+        └─ Font Size: 36
+        └─ Position: Below message
+
+
+EXACT POSITIONS FOR LEADERBOARD ELEMENTS:
+─────────────────────────────────────────────────────────────────────────────
+
+Title: (0, -50)
+─────
+
+Record1:
+  Position Y: -150
+  ├─ Name1: X = -300
+  ├─ School1: X = -100
+  ├─ Date1: X = 100
+  └─ Score1: X = 300
+
+Record2:
+  Position Y: -200
+  ├─ Name2: X = -300
+  ├─ School2: X = -100
+  ├─ Date2: X = 100
+  └─ Score2: X = 300
+
+Record3:
+  Position Y: -250
+  ├─ Name3: X = -300
+  ├─ School3: X = -100
+  ├─ Date3: X = 100
+  └─ Score3: X = 300
+
+Record4:
+  Position Y: -300
+  ├─ Name4: X = -300
+  ├─ School4: X = -100
+  ├─ Date4: X = 100
+  └─ Score4: X = 300
+
+Record5:
+  Position Y: -350
+  ├─ Name5: X = -300
+  ├─ School5: X = -100
+  ├─ Date5: X = 100
+  └─ Score5: X = 300
+
+BackToMenuButton: (-400, 50)
+PlayAgainButton: (400, 50)
+
+
+REFERENCE TABLE:
+─────────────────────────────────────────────────────────────────────────────
+
+CREATE THIS IN INSPECTOR:
+
+Name                          Type                     Where
+─────────────────────────────────────────────────────────────
+Canvas                        Canvas                   Scene root
+LeaderboardCanvas             Canvas                   ✓
+TitleText                     TextMeshProUGUI          ✓ Inside Canvas
+Record1                       Empty GameObject         ✓ Inside Canvas
+  Name1                       TextMeshProUGUI          ✓ Inside Record1
+  School1                     TextMeshProUGUI          ✓ Inside Record1
+  Date1                       TextMeshProUGUI          ✓ Inside Record1
+  Score1                      TextMeshProUGUI          ✓ Inside Record1
+Record2                       Empty GameObject         ✓ Inside Canvas
+  Name2                       TextMeshProUGUI          ✓ Inside Record2
+  School2                     TextMeshProUGUI          ✓ Inside Record2
+  Date2                       TextMeshProUGUI          ✓ Inside Record2
+  Score2                      TextMeshProUGUI          ✓ Inside Record2
+Record3                       Empty GameObject         ✓ Inside Canvas
+  Name3                       TextMeshProUGUI          ✓ Inside Record3
+  School3                     TextMeshProUGUI          ✓ Inside Record3
+  Date3                       TextMeshProUGUI          ✓ Inside Record3
+  Score3                      TextMeshProUGUI          ✓ Inside Record3
+Record4                       Empty GameObject         ✓ Inside Canvas
+  Name4                       TextMeshProUGUI          ✓ Inside Record4
+  School4                     TextMeshProUGUI          ✓ Inside Record4
+  Date4                       TextMeshProUGUI          ✓ Inside Record4
+  Score4                      TextMeshProUGUI          ✓ Inside Record4
+Record5                       Empty GameObject         ✓ Inside Canvas
+  Name5                       TextMeshProUGUI          ✓ Inside Record5
+  School5                     TextMeshProUGUI          ✓ Inside Record5
+  Date5                       TextMeshProUGUI          ✓ Inside Record5
+  Score5                      TextMeshProUGUI          ✓ Inside Record5
+EmptyStateText                TextMeshProUGUI          ✓ Inside Canvas
+CurrentPlayerPanel            Panel                    ✓ Inside Canvas
+  CurrentPlayerNameText       TextMeshProUGUI          ✓ Inside Panel
+  CurrentPlayerSchoolText     TextMeshProUGUI          ✓ Inside Panel
+  CurrentPlayerDateText       TextMeshProUGUI          ✓ Inside Panel
+  CurrentPlayerScoreText      TextMeshProUGUI          ✓ Inside Panel
+BackToMenuButton              Button                   ✓ Inside Canvas
+PlayAgainButton               Button                   ✓ Inside Canvas
+LeaderboardManager            Empty GameObject         ✓ Inside Canvas
+  (with LocalLeaderboardManager.cs script attached)
+
+
+QUICK COPY-PASTE CHECKLIST:
+─────────────────────────────────────────────────────────────────────────────
+
+TextMeshPro Components to Add (Count: 21 total)
+  ☐ TitleText
+  ☐ Name1, Name2, Name3, Name4, Name5 (5 total)
+  ☐ School1, School2, School3, School4, School5 (5 total)
+  ☐ Date1, Date2, Date3, Date4, Date5 (5 total)
+  ☐ Score1, Score2, Score3, Score4, Score5 (5 total)
+  ☐ EmptyStateText
+  ☐ CurrentPlayerNameText, CurrentPlayerSchoolText, 
+    CurrentPlayerDateText, CurrentPlayerScoreText (4 total)
+  Total: 1+5+5+5+5+1+4 = 26 TextMeshPro texts
+
+Button Components to Add (Count: 2 total)
+  ☐ BackToMenuButton
+  ☐ PlayAgainButton
+
+Empty GameObjects to Add (Count: 6 total)
+  ☐ Record1
+  ☐ Record2
+  ☐ Record3
+  ☐ Record4
+  ☐ Record5
+  ☐ LeaderboardManager
+
+Panel Components to Add (Count: 1 total)
+  ☐ CurrentPlayerPanel
+
+
+COMPONENT ASSIGNMENTS IN INSPECTOR:
+─────────────────────────────────────────────────────────────────────────────
+
+SELECT: LeaderboardManager GameObject
+ATTACH: LocalLeaderboardManager.cs script
+
+IN INSPECTOR, ASSIGN:
+
+Name Texts [Array Size: 5]
+  [0] → Name1
+  [1] → Name2
+  [2] → Name3
+  [3] → Name4
+  [4] → Name5
+
+School Texts [Array Size: 5]
+  [0] → School1
+  [1] → School2
+  [2] → School3
+  [3] → School4
+  [4] → School5
+
+Date Texts [Array Size: 5]
+  [0] → Date1
+  [1] → Date2
+  [2] → Date3
+  [3] → Date4
+  [4] → Date5
+
+Score Texts [Array Size: 5]
+  [0] → Score1
+  [1] → Score2
+  [2] → Score3
+  [3] → Score4
+  [4] → Score5
+
+Current Player Panel → CurrentPlayerPanel
+Current Player Name Text → CurrentPlayerNameText
+Current Player School Text → CurrentPlayerSchoolText
+Current Player Date Text → CurrentPlayerDateText
+Current Player Score Text → CurrentPlayerScoreText
+
+Empty State Text → EmptyStateText
+
+Back To Menu Button → BackToMenuButton
+Play Again Button → PlayAgainButton
+
+Main Menu Scene Name → "MainMenu"
+Quiz Scene Name → "Quiz Scene Proper"
+
+
+VISUAL SPACING DIAGRAM:
+─────────────────────────────────────────────────────────────────────────────
+
+┌────────────────────────────────────────────────────────┐
+│                                                        │
+│        Recent Quiz Sessions (TitleText)               │
+│                                                        │
+│  ───────────────────────────────────────────────────  │
+│  Name          | School    | Date       | Score       │  ← Headers
+│  ───────────────────────────────────────────────────  │
+│                                                        │
+│  John Doe      | TECH      | 01/15/2026 | 2450       │  ← Record1
+│  ───────────────────────────────────────────────────  │
+│  Maria Garcia  | DILIMAN   | 01/14/2026 | 2100       │  ← Record2
+│  ───────────────────────────────────────────────────  │
+│  Alex Smith    | ALABANG   | 01/13/2026 | 1850       │  ← Record3
+│  ───────────────────────────────────────────────────  │
+│  Sarah Johnson | TECH      | 01/12/2026 | 1200       │  ← Record4
+│  ───────────────────────────────────────────────────  │
+│  Mike Brown    | UP-CEBU   | 01/11/2026 | 950        │  ← Record5
+│  ───────────────────────────────────────────────────  │
+│                                                        │
+│                                                        │
+│   [Back to Menu]                    [Play Again]      │
+│                                                        │
+└────────────────────────────────────────────────────────┘
+
+
+═════════════════════════════════════════════════════════════════════════════
+
+Use this as a reference while creating your hierarchy!
+Copy the structure exactly as shown above.
+
+═════════════════════════════════════════════════════════════════════════════
