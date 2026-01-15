@@ -132,6 +132,34 @@ public class PlayerManager : MonoBehaviour
         return filtered.Take(count).ToList();
     }
 
+    // Get the 5 most recent records (for local leaderboard)
+    public List<PlayerRecord> GetRecentRecords(int count = 5)
+    {
+        PlayerDatabase database = LoadDatabase();
+        
+        // Get records in reverse order (newest first)
+        // Since we always add new records at the end, we take the last N records
+        int totalRecords = database.allRecords.Count;
+        int startIndex = Mathf.Max(0, totalRecords - count);
+        
+        List<PlayerRecord> recentRecords = new List<PlayerRecord>();
+        for (int i = totalRecords - 1; i >= startIndex; i--)
+        {
+            recentRecords.Add(database.allRecords[i]);
+        }
+        
+        return recentRecords;
+    }
+
+    // Clear all records (for debugging/testing purposes)
+    public void ClearAllRecords()
+    {
+        PlayerDatabase emptyDatabase = new PlayerDatabase();
+        string json = JsonUtility.ToJson(emptyDatabase, true);
+        File.WriteAllText(savePath, json);
+        Debug.Log("All player records cleared.");
+    }
+
     // Get the current player's first name
     public string GetPlayerFirstName() => playerFirstName;
     public string GetPlayerLastName() => playerLastName;

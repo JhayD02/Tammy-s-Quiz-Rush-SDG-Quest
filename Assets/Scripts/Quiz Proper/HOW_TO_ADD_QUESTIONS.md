@@ -44,14 +44,17 @@ Element 29
 ## Step 3: Expand and Fill First Question
 
 1. Click the **▼ arrow** next to **Element 0** to expand it
-2. You should see 4 fields:
+2. You should see these fields:
 
 ```
 Element 0
   ▼ Question Text (empty text box)
     Answers (empty list)
     Correct Answer Index (0)
-    Feedback Explanation (empty text box)
+    === FEEDBACK MESSAGES ===
+    Correct Feedback (empty text box)
+    Wrong Feedback (empty text box)
+    Time Up Feedback (empty text box)
 ```
 
 ---
@@ -119,15 +122,38 @@ Correct Answer Index: 0  (because "Paris" is Element 0)
 
 ---
 
-## Step 8: Add Feedback Explanation
+## Step 8: Add Feedback Messages
 
-1. Click in **Feedback Explanation**
-2. Type why this answer is correct
+Now you need to add THREE different feedback messages for this question:
+
+### 8a. Correct Feedback
+1. Click in the **Correct Feedback** box
+2. Type the message shown when the player answers correctly
 
 **Example:**
 ```
-Paris is the capital and most populated city of France.
+Correct! Paris is the capital and most populated city of France.
 ```
+
+### 8b. Wrong Feedback
+1. Click in the **Wrong Feedback** box
+2. Type the message shown when the player answers incorrectly
+
+**Example:**
+```
+Incorrect. The correct answer is Paris. Paris is the capital of France, not London, Berlin, or Rome.
+```
+
+### 8c. Time Up Feedback
+1. Click in the **Time Up Feedback** box
+2. Type the message shown when time runs out
+
+**Example:**
+```
+Time's up! The correct answer is Paris. Paris has been the capital of France for centuries.
+```
+
+**💡 TIP:** Make each feedback unique and educational! The wrong/time-up feedback can include why other options were incorrect.
 
 ---
 
@@ -144,7 +170,10 @@ Element 0
     Element 2: "Berlin" (useImage: OFF)
     Element 3: "Rome" (useImage: OFF)
   Correct Answer Index: 0
-  Feedback Explanation: "Paris is the capital and most populated city of France."
+  === FEEDBACK MESSAGES ===
+  Correct Feedback: "Correct! Paris is the capital and most populated city of France."
+  Wrong Feedback: "Incorrect. The correct answer is Paris. Paris is the capital of France."
+  Time Up Feedback: "Time's up! The correct answer is Paris."
 ```
 
 ---
@@ -192,7 +221,9 @@ Answers (Size 4):
   [2] "5" (text)
   [3] "6" (text)
 Correct Answer Index: 1
-Feedback: "2 plus 2 equals 4"
+Correct Feedback: "Correct! 2 plus 2 equals 4."
+Wrong Feedback: "Incorrect. The answer is 4, not [your answer]."
+Time Up Feedback: "Time's up! 2 + 2 = 4 is basic addition."
 ```
 
 ### Question 2
@@ -204,7 +235,9 @@ Answers (Size 4):
   [2] "Jupiter" (text) ← CORRECT
   [3] "Saturn" (text)
 Correct Answer Index: 2
-Feedback: "Jupiter is the largest planet in our solar system"
+Correct Feedback: "Correct! Jupiter is the largest planet in our solar system."
+Wrong Feedback: "Incorrect. Jupiter is the largest planet, not [your answer]."
+Time Up Feedback: "Time's up! Jupiter is larger than all other planets combined."
 ```
 
 ### Question 3
@@ -216,7 +249,9 @@ Answers (Size 4):
   [2] "Bird" (image)
   [3] "Snake" (image)
 Correct Answer Index: 1
-Feedback: "Dogs are mammals and care for their young"
+Correct Feedback: "Correct! Dogs are mammals because they have fur and nurse their young."
+Wrong Feedback: "Incorrect. Dogs are mammals, not fish, birds, or reptiles."
+Time Up Feedback: "Time's up! Dogs are mammals with warm blood and fur."
 ```
 
 ---
@@ -238,14 +273,13 @@ Correct Answer Index: 1  ✓ RIGHT
 ### ❌ Mistake 2: Answers Size is 0
 Make sure you set **Answers Size to 4**! If it's 0, there are no answers.
 
-### ❌ Mistake 3: Forgetting the Feedback Explanation
-If this is empty, the feedback will say:
-```
-"Correct! The answer is B.
-Because ."  ← Weird sentence
-```
+### ❌ Mistake 3: Forgetting the Feedback Messages
+If any feedback is empty, players will see blank text. Make sure all three feedbacks are filled:
+- ✓ Correct Feedback
+- ✓ Wrong Feedback  
+- ✓ Time Up Feedback
 
-Always fill in the explanation!
+**Each feedback should be different and informative!**
 
 ### ❌ Mistake 4: Mixing Text and Image
 If you check "Use Image" but don't drag an image, nothing will show.
@@ -261,7 +295,9 @@ If you check "Use Image" but type in "Answer Text", the text will be hidden.
 - [ ] Answers Size is 4
 - [ ] All 4 answers are filled (either text or image)
 - [ ] Correct Answer Index is 0-3 (not 4 or higher!)
-- [ ] Feedback Explanation is filled in
+- [ ] Correct Feedback is filled in
+- [ ] Wrong Feedback is filled in
+- [ ] Time Up Feedback is filled in
 - [ ] If using images, all image fields are populated
 
 ---
@@ -304,7 +340,7 @@ If feedback shows your explanation, everything is wired correctly! ✓
    - Fill Question Text
    - Add 4 Answers (text or image)
    - Set Correct Answer Index (0-3)
-   - Fill Feedback Explanation
+   - Fill all 3 Feedback Messages (Correct, Wrong, Time Up)
 3. Test in Play mode
 
 **That's it!** Your quiz is now full of questions.
@@ -313,9 +349,12 @@ If feedback shows your explanation, everything is wired correctly! ✓
 
 ## Pro Tips
 
+- **Vary your feedback:** Don't just copy-paste the same feedback for all questions. Make each one unique and educational!
+- **Be specific:** In wrong/timeout feedback, explain why the correct answer is right
+- **Keep it concise:** Feedback should be 1-2 sentences max so players can read it quickly
 - **Copy-Paste questions:** You can duplicate Elements in Unity by right-clicking and selecting "Copy Component", then "Paste Component As New"
 - **Keyboard shortcut:** Tab moves to next field, Shift+Tab goes back
-- **Bulk edit:** If you have 30 questions, start typing them all at once. It takes maybe 30-45 minutes depending on question length
+- **Bulk edit:** If you have 30 questions, start typing them all at once. It takes maybe 45-60 minutes depending on question length
 - **Organize:** Keep your questions in logical order (maybe all math first, then science, etc.) so it's easier to debug
 
 Have fun adding questions! 🎓

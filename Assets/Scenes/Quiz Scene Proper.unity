@@ -1721,7 +1721,9 @@ MonoBehaviour:
   - questionText: 
     answers: []
     correctAnswerIndex: 0
-    feedbackExplanation: 
+    correctFeedback: Correct!
+    wrongFeedback: Incorrect.
+    timeUpFeedback: Time's up!
   totalQuestionsInGame: 30
   timePerQuestion: 20
   questionLabel: {fileID: 887570750}
@@ -1759,9 +1761,17 @@ MonoBehaviour:
   pointsMediumAnswer: 110
   pointsSlowAnswer: 100
   lifelineBonus: 150
-  correctAnswerTemplate: Correct! The answer is [ANSWER]. It is because [REASON]
-  wrongAnswerTemplate: Incorrect. The correct answer is [ANSWER]. It is because [REASON]
-  timeUpTemplate: TIME'S UP! The correct answer is [ANSWER]. It is because [REASON]
+  resultsPanel: {fileID: 0}
+  resultsPanelCanvasGroup: {fileID: 0}
+  resultsMessageText: {fileID: 0}
+  finalScoreText: {fileID: 0}
+  resultsPanelFadeDelay: 1
+  resultsPanelFadeDuration: 1
+  excellentMessage: Excellent!
+  goodMessage: Good!
+  needsImprovementMessage: Need more improvement
+  excellentThreshold: 2500
+  goodThreshold: 1000
 --- !u!4 &781322271
 Transform:
   m_ObjectHideFlags: 0

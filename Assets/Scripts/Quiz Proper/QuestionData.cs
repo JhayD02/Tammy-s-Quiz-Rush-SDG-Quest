@@ -20,5 +20,17 @@ public class QuizQuestion
     [SerializeField] public string questionText;
     [SerializeField] public List<AnswerChoice> answers = new List<AnswerChoice>(4);
     [SerializeField] public int correctAnswerIndex; // 0, 1, 2, or 3 - which answer is correct
-    [SerializeField] public string feedbackExplanation; // Why this is the correct answer
+    
+    [Header("=== FEEDBACK MESSAGES ===")]
+    [Tooltip("Message shown when player answers correctly")]
+    [TextArea(2, 3)]
+    [SerializeField] public string correctFeedback = "Correct!";
+    
+    [Tooltip("Message shown when player answers incorrectly")]
+    [TextArea(2, 3)]
+    [SerializeField] public string wrongFeedback = "Incorrect.";
+    
+    [Tooltip("Message shown when time runs out")]
+    [TextArea(2, 3)]
+    [SerializeField] public string timeUpFeedback = "Time's up!";
 }

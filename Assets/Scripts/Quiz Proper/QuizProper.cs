@@ -52,13 +52,25 @@ public class QuizProper : MonoBehaviour
     [SerializeField] private int pointsSlowAnswer = 100; // 13+ seconds
     [SerializeField] private int lifelineBonus = 150; // Per unused lifeline at end
 
-    [Header("=== FEEDBACK TEMPLATES (CUSTOMIZE THESE) ===")]
+    [Header("=== RESULTS PANEL ===")]
+    [SerializeField] private GameObject resultsPanel;
+    [SerializeField] private CanvasGroup resultsPanelCanvasGroup;
+    [SerializeField] private TextMeshProUGUI resultsMessageText;
+    [SerializeField] private TextMeshProUGUI finalScoreText;
+    [SerializeField] private float resultsPanelFadeDelay = 1.0f;
+    [SerializeField] private float resultsPanelFadeDuration = 1.0f;
+    
+    [Header("=== PERFORMANCE FEEDBACK MESSAGES ===")]
     [TextArea(2, 3)]
-    [SerializeField] private string correctAnswerTemplate = "Correct! The answer is [ANSWER]. It is because [REASON]";
+    [SerializeField] private string excellentMessage = "Excellent!";
     [TextArea(2, 3)]
-    [SerializeField] private string wrongAnswerTemplate = "Incorrect. The correct answer is [ANSWER]. It is because [REASON]";
+    [SerializeField] private string goodMessage = "Good!";
     [TextArea(2, 3)]
-    [SerializeField] private string timeUpTemplate = "TIME'S UP! The correct answer is [ANSWER]. It is because [REASON]";
+    [SerializeField] private string needsImprovementMessage = "Need more improvement";
+    
+    [Header("=== SCORE THRESHOLDS ===")]
+    [SerializeField] private int excellentThreshold = 2500;
+    [SerializeField] private int goodThreshold = 1000;
 
     // Private variables - these change during the game
     private List<QuizQuestion> shuffledQuestions = new List<QuizQuestion>();
@@ -357,29 +369,23 @@ public class QuizProper : MonoBehaviour
 
     private void ShowFeedback(QuizQuestion question, string feedbackType, int correctAnswerIndex)
     {
-        string correctAnswerText = question.answers[correctAnswerIndex].answerText;
-        string template = "";
+        string feedbackMessage = "";
 
-        // Choose the correct template based on feedback type
+        // Choose the appropriate feedback from the question
         if (feedbackType == "CORRECT")
         {
-            template = correctAnswerTemplate;
+            feedbackMessage = question.correctFeedback;
         }
         else if (feedbackType == "WRONG")
         {
-            template = wrongAnswerTemplate;
+            feedbackMessage = question.wrongFeedback;
         }
         else if (feedbackType == "TIMEOUT")
         {
-            template = timeUpTemplate;
+            feedbackMessage = question.timeUpFeedback;
         }
-
-        // Replace placeholders with actual values
-        string fullFeedback = template
-            .Replace("[ANSWER]", correctAnswerText)
-            .Replace("[REASON]", question.feedbackExplanation);
         
-        questionLabel.text = fullFeedback;
+        questionLabel.text = feedbackMessage;
 
         // Show the next button after a delay
         if (fadeInNextButtonCoroutine != null)
@@ -568,5 +574,63 @@ public class QuizProper : MonoBehaviour
 
         // Show finish panel or do something
         Debug.Log("Quiz finished! Final score: " + currentScore);
+
+        // Show results panel with fade in effect
+        StartCoroutine(ShowResultsPanel());
+    }
+
+    // Coroutine to fade in the results panel
+    private IEnumerator ShowResultsPanel()
+    {
+        // Wait a moment before showing results
+        yield return new WaitForSeconds(resultsPanelFadeDelay);
+
+        // Make sure results panel exists
+        if (resultsPanel == null)
+        {
+            Debug.LogWarning("Results panel not assigned! Please assign it in the Inspector.");
+            yield break;
+        }
+
+        // Determine performance message based on score
+        string performanceMessage;
+        if (currentScore >= excellentThreshold)
+        {
+            performanceMessage = excellentMessage;
+        }
+        else if (currentScore >= goodThreshold)
+        {
+            performanceMessage = goodMessage;
+        }
+        else
+        {
+            performanceMessage = needsImprovementMessage;
+        }
+
+        // Set the text
+        if (resultsMessageText != null)
+            resultsMessageText.text = performanceMessage;
+        
+        if (finalScoreText != null)
+            finalScoreText.text = $"Final Score: {currentScore}";
+
+        // Show the panel
+        resultsPanel.SetActive(true);
+
+        // Fade in effect
+        if (resultsPanelCanvasGroup != null)
+        {
+            resultsPanelCanvasGroup.alpha = 0f;
+            float elapsed = 0f;
+
+            while (elapsed < resultsPanelFadeDuration)
+            {
+                elapsed += Time.deltaTime;
+                resultsPanelCanvasGroup.alpha = Mathf.Lerp(0f, 1f, elapsed / resultsPanelFadeDuration);
+                yield return null;
+            }
+
+            resultsPanelCanvasGroup.alpha = 1f;
+        }
     }
 }

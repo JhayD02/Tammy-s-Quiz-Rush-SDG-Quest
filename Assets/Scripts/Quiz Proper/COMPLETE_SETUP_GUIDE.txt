@@ -1,0 +1,925 @@
+COMPLETE QUIZ RESULTS & LEADERBOARD SETUP GUIDE
+═════════════════════════════════════════════════════════════════════════════
+
+This document provides step-by-step instructions for setting up:
+1. The Results Panel (shows after quiz completion in Quiz Scene)
+2. The Leaderboard Scene (separate scene showing all past quiz sessions)
+3. Main Menu integration for accessing leaderboards
+
+TABLE OF CONTENTS:
+1. System Overview & Flow
+2. Part 1: Results Panel Setup (Quiz Scene)
+3. Part 2: Leaderboard Scene Setup
+4. Part 3: Main Menu Integration
+5. Testing & Validation
+6. Troubleshooting
+7. File Locations & Data Storage
+
+
+═════════════════════════════════════════════════════════════════════════════
+1. SYSTEM OVERVIEW & FLOW
+═════════════════════════════════════════════════════════════════════════════
+
+WHAT THE SYSTEM DOES:
+• Collects player data at quiz start (First Name, Last Name, School)
+• Records final score when quiz ends
+• Shows Results Panel immediately after quiz with performance feedback
+• Saves player record to local JSON file (persists between sessions)
+• Displays the 5 most recent quiz sessions in Leaderboard Scene
+• Allows navigation to leaderboard from Main Menu
+
+COMPLETE FLOW DIAGRAM:
+
+┌─────────────────┐
+│   MAIN MENU     │
+└────────┬────────┘
+         │
+         │ (Player clicks "Play")
+         ▼
+┌─────────────────────────┐
+│  ONBOARDING PANEL       │
+│  - Enter First Name     │
+│  - Enter Last Name      │
+│  - Select School        │
+└────────┬────────────────┘
+         │ (Click "Start Quiz")
+         ▼
+┌─────────────────────────┐
+│    QUIZ IN PROGRESS     │
+│  - 30 Questions         │
+│  - Timer Running        │
+│  - Score Accumulating   │
+└────────┬────────────────┘
+         │ (All questions answered)
+         ▼
+┌─────────────────────────┐
+│   RESULTS PANEL         │◄── YOU'RE SETTING THIS UP IN PART 1
+│  Shows in Quiz Scene:   │
+│  - Performance Message  │
+│    ("Excellent!" /      │
+│     "Good!" /           │
+│     "Need improvement") │
+│  - Final Score          │
+│  - Player data saved    │
+└─────────────────────────┘
+         │
+         │ (No automatic navigation)
+         │ (Quiz scene stays active)
+         │
+         │ Player manually goes to Main Menu
+         ▼
+┌─────────────────┐
+│   MAIN MENU     │
+└────────┬────────┘
+         │
+         │ (Player clicks "View Leaderboard")
+         ▼
+┌─────────────────────────┐
+│  LEADERBOARD SCENE      │◄── YOU'RE SETTING THIS UP IN PART 2
+│  Shows 5 most recent:   │
+│  - Full Name            │
+│  - School               │
+│  - Date (MM/DD/YYYY)    │
+│  - Final Score          │
+│                         │
+│  [Back to Menu]         │
+│  [Play Again]           │
+└─────────────────────────┘
+
+KEY POINTS:
+✓ Results Panel = Immediate feedback after quiz (same scene)
+✓ Leaderboard Scene = Separate scene for viewing history
+✓ Data is saved automatically when quiz ends
+✓ No automatic transition to leaderboard
+✓ Leaderboard accessed from Main Menu only
+
+SCRIPTS INVOLVED:
+• QuestionData.cs - Now includes 3 feedback messages per question
+• PlayerManager.cs - Saves/loads player records to JSON
+• QuizProper.cs - Shows results panel after quiz
+• LocalLeaderboardManager.cs - Displays leaderboard data
+• LeaderboardDebugHelper.cs - Testing and debugging
+
+
+═════════════════════════════════════════════════════════════════════════════
+2. PART 1: RESULTS PANEL SETUP (15-20 MINUTES)
+═════════════════════════════════════════════════════════════════════════════
+
+The Results Panel appears IMMEDIATELY after the quiz ends, showing the player's
+performance and final score. It stays in the Quiz Scene.
+
+────────────────────────────────────────────────────────────────────────────
+STEP 1.1: Open Quiz Scene
+────────────────────────────────────────────────────────────────────────────
+1. In Unity Project window, navigate to: Assets/Scenes/
+2. Double-click "Quiz Scene Proper.unity" to open it
+3. You should see your Quiz Canvas in the Hierarchy
+
+────────────────────────────────────────────────────────────────────────────
+STEP 1.2: Create the Results Panel GameObject
+────────────────────────────────────────────────────────────────────────────
+1. In Hierarchy, find and RIGHT-CLICK on "Canvas" (or your main quiz canvas)
+2. Select: UI → Panel
+3. A new panel appears - rename it to "ResultsPanel"
+4. Configure the panel:
+   - In Inspector, find RectTransform
+   - Set Anchors to "stretch" (all sides)
+   - Set Left, Right, Top, Bottom all to 0
+   - OR manually position: Center of screen, Size (800 x 500)
+5. Change background color (optional):
+   - In Inspector, find "Image" component
+   - Click the color picker
+   - Choose a semi-transparent dark color (e.g., RGBA: 0, 0, 0, 200)
+
+────────────────────────────────────────────────────────────────────────────
+STEP 1.3: Add CanvasGroup for Fade Animation
+────────────────────────────────────────────────────────────────────────────
+1. Select "ResultsPanel" in Hierarchy
+2. In Inspector, click "Add Component"
+3. Type "CanvasGroup" and select it
+4. In the CanvasGroup component:
+   - Set Alpha to 0 (this makes it invisible at start)
+   - Leave "Interactable" and "Block Raycasts" checked
+
+WHY? The QuizProper script will fade this panel in automatically when the
+quiz ends, creating a smooth visual transition.
+
+────────────────────────────────────────────────────────────────────────────
+STEP 1.4: Create Performance Message Text
+────────────────────────────────────────────────────────────────────────────
+This text shows "Excellent!", "Good!", or "Need more improvement".
+
+1. RIGHT-CLICK on "ResultsPanel" in Hierarchy
+2. Select: UI → Text - TextMeshPro
+   (If prompted to import TMP Essentials, click "Import")
+3. Rename the new text to "ResultsMessageText"
+4. Configure the text:
+   • In RectTransform:
+     - Width: 600
+     - Height: 100
+     - Pos X: 0
+     - Pos Y: 100 (upper part of panel)
+   
+   • In TextMeshPro component:
+     - Font Size: 48
+     - Color: Yellow (or your choice)
+     - Alignment: Center (horizontal and vertical)
+     - Text: "Your Performance" (placeholder - will be replaced)
+     - Wrapping: Enabled
+     - Overflow: Ellipsis
+
+────────────────────────────────────────────────────────────────────────────
+STEP 1.5: Create Final Score Text
+────────────────────────────────────────────────────────────────────────────
+This text shows the player's final score.
+
+1. RIGHT-CLICK on "ResultsPanel" in Hierarchy
+2. Select: UI → Text - TextMeshPro
+3. Rename to "FinalScoreText"
+4. Configure:
+   • In RectTransform:
+     - Width: 600
+     - Height: 80
+     - Pos X: 0
+     - Pos Y: -50 (below the message text)
+   
+   • In TextMeshPro component:
+     - Font Size: 36
+     - Color: White
+     - Alignment: Center
+     - Text: "Final Score: 0" (placeholder)
+     - Wrapping: Enabled
+
+────────────────────────────────────────────────────────────────────────────
+STEP 1.6: Hide the Results Panel Initially
+────────────────────────────────────────────────────────────────────────────
+1. Select "ResultsPanel" in Hierarchy
+2. Look at the top of the Inspector window
+3. Find the checkbox next to "ResultsPanel" (next to the name)
+4. UNCHECK that checkbox
+5. The panel should now appear GRAYED OUT in the Hierarchy
+
+WHY? This ensures the panel is hidden when the quiz starts. QuizProper will
+show it automatically when the quiz ends.
+
+────────────────────────────────────────────────────────────────────────────
+STEP 1.7: Connect Results Panel to QuizProper Script
+────────────────────────────────────────────────────────────────────────────
+1. In Hierarchy, find the GameObject with the "QuizProper" script
+   (Usually named "QuizManager" or "GameManager")
+2. Select that GameObject
+3. In Inspector, scroll down to find "Quiz Proper (Script)" component
+4. Look for the section: === RESULTS PANEL ===
+5. Assign the following by dragging from Hierarchy:
+   
+   • Results Panel → Drag "ResultsPanel" GameObject
+   • Results Panel Canvas Group → Drag "ResultsPanel" GameObject
+     (It will auto-detect the CanvasGroup component)
+   • Results Message Text → Drag "ResultsMessageText"
+   • Final Score Text → Drag "FinalScoreText"
+
+6. Configure fade settings (optional):
+   • Results Panel Fade Delay: 1.0 (seconds before fade starts)
+   • Results Panel Fade Duration: 1.0 (fade animation length)
+
+────────────────────────────────────────────────────────────────────────────
+STEP 1.8: Configure Performance Feedback Messages
+────────────────────────────────────────────────────────────────────────────
+Still in the QuizProper Inspector:
+
+1. Find section: === PERFORMANCE FEEDBACK MESSAGES ===
+2. Set your custom messages:
+   
+   • Excellent Message: 
+     "🎉 Excellent! You're a Quiz Master!"
+   
+   • Good Message:
+     "👍 Good Job! Keep practicing!"
+   
+   • Needs Improvement Message:
+     "📚 Keep Learning! You can do better!"
+
+3. Find section: === SCORE THRESHOLDS ===
+4. Set when each message appears:
+   
+   • Excellent Threshold: 2500
+     (Score ≥ 2500 shows "Excellent")
+   
+   • Good Threshold: 1000
+     (Score ≥ 1000 but < 2500 shows "Good")
+     (Score < 1000 shows "Needs Improvement")
+
+────────────────────────────────────────────────────────────────────────────
+STEP 1.9: Test the Results Panel
+────────────────────────────────────────────────────────────────────────────
+1. Press Play in Unity
+2. Fill in player information (name, school)
+3. Click "Start Quiz"
+4. Answer all 30 questions (or use a test mode to skip)
+5. After the last question:
+   ✓ Results Panel should fade in
+   ✓ You should see your performance message
+   ✓ You should see your final score
+   ✓ Player data should be saved (check Console for "Player record saved")
+
+6. Press Stop
+
+✅ RESULTS PANEL SETUP COMPLETE!
+
+
+═════════════════════════════════════════════════════════════════════════════
+3. PART 2: LEADERBOARD SCENE SETUP (30-40 MINUTES)
+═════════════════════════════════════════════════════════════════════════════
+
+The Leaderboard Scene is a SEPARATE scene that displays the 5 most recent
+quiz sessions. Players access it from the Main Menu.
+
+────────────────────────────────────────────────────────────────────────────
+STEP 2.1: Create New Scene
+────────────────────────────────────────────────────────────────────────────
+1. In Unity menu: File → New Scene
+2. Choose "Basic (Built-in)" template (or your preferred template)
+3. File → Save Scene As
+4. Save location: Assets/Scenes/
+5. Scene name: "Leaderboard"
+6. Click Save
+
+────────────────────────────────────────────────────────────────────────────
+STEP 2.2: Create Canvas
+────────────────────────────────────────────────────────────────────────────
+1. In the empty scene, RIGHT-CLICK in Hierarchy
+2. Select: UI → Canvas
+3. Rename to "LeaderboardCanvas"
+4. Configure Canvas (optional):
+   - Set Canvas Scaler to "Scale With Screen Size"
+   - Reference Resolution: 1920 x 1080
+
+────────────────────────────────────────────────────────────────────────────
+STEP 2.3: Create Title Text
+────────────────────────────────────────────────────────────────────────────
+1. RIGHT-CLICK LeaderboardCanvas
+2. Select: UI → Text - TextMeshPro
+3. Rename to "TitleText"
+4. Configure:
+   • RectTransform:
+     - Width: 800, Height: 100
+     - Pos X: 0, Pos Y: 400 (top of screen)
+   
+   • TextMeshPro:
+     - Text: "🏆 LEADERBOARD"
+     - Font Size: 60
+     - Color: Gold/Yellow
+     - Alignment: Center
+     - Style: Bold
+
+────────────────────────────────────────────────────────────────────────────
+STEP 2.4: Create Header Row (Optional but Recommended)
+────────────────────────────────────────────────────────────────────────────
+This shows column labels: Name | School | Date | Score
+
+1. RIGHT-CLICK LeaderboardCanvas
+2. Select: Create Empty
+3. Rename to "HeaderRow"
+4. Set position: Pos Y: 300
+
+5. Create 4 text children under HeaderRow:
+   a) Name Header:
+      - Type: Text - TextMeshPro
+      - Text: "NAME"
+      - Pos X: -400, Width: 300
+      - Alignment: Left
+   
+   b) School Header:
+      - Text: "SCHOOL"
+      - Pos X: -100, Width: 200
+      - Alignment: Center
+   
+   c) Date Header:
+      - Text: "DATE"
+      - Pos X: 150, Width: 200
+      - Alignment: Center
+   
+   d) Score Header:
+      - Text: "SCORE"
+      - Pos X: 400, Width: 150
+      - Alignment: Right
+
+────────────────────────────────────────────────────────────────────────────
+STEP 2.5: Create Record Rows (Repeat 5 Times for Records 1-5)
+────────────────────────────────────────────────────────────────────────────
+
+FOR RECORD 1:
+
+2.5a: Create Container
+  1. RIGHT-CLICK LeaderboardCanvas
+  2. Select: Create Empty
+  3. Rename to "Record1"
+  4. Set RectTransform:
+     - Width: 1600, Height: 80
+     - Pos X: 0
+     - Pos Y: 200 (below header)
+
+2.5b: Create Name Text
+  1. RIGHT-CLICK Record1
+  2. Select: UI → Text - TextMeshPro
+  3. Rename to "NameText"
+  4. Configure:
+     - RectTransform: Pos X: -400, Width: 300, Height: 60
+     - Text: "John Doe" (placeholder)
+     - Font Size: 24
+     - Color: White
+     - Alignment: Left
+
+2.5c: Create School Text
+  1. RIGHT-CLICK Record1
+  2. Select: UI → Text - TextMeshPro
+  3. Rename to "SchoolText"
+  4. Configure:
+     - RectTransform: Pos X: -100, Width: 200, Height: 60
+     - Text: "TECH" (placeholder)
+     - Font Size: 24
+     - Alignment: Center
+
+2.5d: Create Date Text
+  1. RIGHT-CLICK Record1
+  2. Select: UI → Text - TextMeshPro
+  3. Rename to "DateText"
+  4. Configure:
+     - RectTransform: Pos X: 150, Width: 200, Height: 60
+     - Text: "01/15/2026" (placeholder)
+     - Font Size: 24
+     - Alignment: Center
+
+2.5e: Create Score Text
+  1. RIGHT-CLICK Record1
+  2. Select: UI → Text - TextMeshPro
+  3. Rename to "ScoreText"
+  4. Configure:
+     - RectTransform: Pos X: 400, Width: 150, Height: 60
+     - Text: "2500" (placeholder)
+     - Font Size: 28
+     - Color: Gold
+     - Style: Bold
+     - Alignment: Right
+
+FOR RECORDS 2-5:
+  1. Select Record1 in Hierarchy
+  2. CTRL+D to duplicate (or Right-Click → Duplicate)
+  3. Rename to Record2
+  4. Change Pos Y to: 100
+  
+  5. Repeat for Record3 (Pos Y: 0)
+  6. Repeat for Record4 (Pos Y: -100)
+  7. Repeat for Record5 (Pos Y: -200)
+
+────────────────────────────────────────────────────────────────────────────
+STEP 2.6: Create Empty State Text
+────────────────────────────────────────────────────────────────────────────
+This shows when no records exist yet.
+
+1. RIGHT-CLICK LeaderboardCanvas
+2. Select: UI → Text - TextMeshPro
+3. Rename to "EmptyStateText"
+4. Configure:
+   • RectTransform:
+     - Width: 800, Height: 200
+     - Pos X: 0, Pos Y: 0 (center)
+   
+   • TextMeshPro:
+     - Text: "No quiz sessions yet. Play to create history!"
+     - Font Size: 32
+     - Color: Light Gray
+     - Alignment: Center
+     - Wrapping: Enabled
+
+5. Make it INACTIVE by default:
+   - Uncheck the checkbox at top of Inspector
+
+────────────────────────────────────────────────────────────────────────────
+STEP 2.7: Create Navigation Buttons
+────────────────────────────────────────────────────────────────────────────
+
+BACK TO MENU BUTTON:
+  1. RIGHT-CLICK LeaderboardCanvas
+  2. Select: UI → Button - TextMeshPro
+  3. Rename to "BackToMenuButton"
+  4. Configure:
+     - RectTransform: Width: 250, Height: 60
+     - Pos X: -150, Pos Y: -400 (bottom left)
+  5. Select the child "Text (TMP)"
+     - Change text to: "← Back to Menu"
+     - Font Size: 24
+
+PLAY AGAIN BUTTON:
+  1. RIGHT-CLICK LeaderboardCanvas
+  2. Select: UI → Button - TextMeshPro
+  3. Rename to "PlayAgainButton"
+  4. Configure:
+     - RectTransform: Width: 250, Height: 60
+     - Pos X: 150, Pos Y: -400 (bottom right)
+  5. Select the child "Text (TMP)"
+     - Change text to: "Play Again →"
+     - Font Size: 24
+
+────────────────────────────────────────────────────────────────────────────
+STEP 2.8: (Optional) Create Current Player Highlight Panel
+────────────────────────────────────────────────────────────────────────────
+This panel highlights the player who just completed the quiz.
+
+1. RIGHT-CLICK LeaderboardCanvas
+2. Select: UI → Panel
+3. Rename to "CurrentPlayerPanel"
+4. Configure:
+   - RectTransform: Width: 1600, Height: 120
+   - Pos X: 0, Pos Y: 320 (above records)
+   - Background color: Slightly different (e.g., dark blue)
+
+5. Create a title text:
+   - RIGHT-CLICK CurrentPlayerPanel
+   - UI → Text - TextMeshPro
+   - Text: "Your Most Recent Session:"
+   - Pos Y: 30
+
+6. Create 4 texts inside (Name, School, Date, Score) using same
+   positions as record rows, but positioned at Pos Y: -15
+
+────────────────────────────────────────────────────────────────────────────
+STEP 2.9: Create LeaderboardManager GameObject
+────────────────────────────────────────────────────────────────────────────
+1. RIGHT-CLICK LeaderboardCanvas
+2. Select: Create Empty
+3. Rename to "LeaderboardManager"
+
+────────────────────────────────────────────────────────────────────────────
+STEP 2.10: Attach LocalLeaderboardManager Script
+────────────────────────────────────────────────────────────────────────────
+1. Select LeaderboardManager in Hierarchy
+2. In Inspector, click "Add Component"
+3. Type "LocalLeaderboardManager" and select it
+4. The script component appears
+
+────────────────────────────────────────────────────────────────────────────
+STEP 2.11: Assign All References to LocalLeaderboardManager
+────────────────────────────────────────────────────────────────────────────
+This is THE MOST IMPORTANT STEP. You need to assign 20 text fields!
+
+1. Select LeaderboardManager in Hierarchy
+2. In Inspector, find "Local Leaderboard Manager (Script)"
+
+3. Assign LEADERBOARD DISPLAY arrays (drag from Hierarchy):
+   
+   === Name Texts ===
+   • Size: 5
+   • Element 0: Record1 → NameText
+   • Element 1: Record2 → NameText
+   • Element 2: Record3 → NameText
+   • Element 3: Record4 → NameText
+   • Element 4: Record5 → NameText
+   
+   === School Texts ===
+   • Size: 5
+   • Element 0: Record1 → SchoolText
+   • Element 1: Record2 → SchoolText
+   • Element 2: Record3 → SchoolText
+   • Element 3: Record4 → SchoolText
+   • Element 4: Record5 → SchoolText
+   
+   === Date Texts ===
+   • Size: 5
+   • Element 0: Record1 → DateText
+   • Element 1: Record2 → DateText
+   • Element 2: Record3 → DateText
+   • Element 3: Record4 → DateText
+   • Element 4: Record5 → DateText
+   
+   === Score Texts ===
+   • Size: 5
+   • Element 0: Record1 → ScoreText
+   • Element 1: Record2 → ScoreText
+   • Element 2: Record3 → ScoreText
+   • Element 3: Record4 → ScoreText
+   • Element 4: Record5 → ScoreText
+
+4. Assign OPTIONAL: CURRENT PLAYER HIGHLIGHT (if you created it):
+   • Current Player Panel: Drag "CurrentPlayerPanel"
+   • Current Player Name Text: Drag text from CurrentPlayerPanel
+   • Current Player School Text: Drag text
+   • Current Player Date Text: Drag text
+   • Current Player Score Text: Drag text
+
+5. Assign EMPTY STATE TEXT:
+   • Empty State Text: Drag "EmptyStateText"
+   • Empty Message: "No quiz sessions yet. Play to create history!"
+
+6. Assign NAVIGATION BUTTONS:
+   • Back To Menu Button: Drag "BackToMenuButton"
+   • Play Again Button: Drag "PlayAgainButton"
+
+7. Set SCENE NAMES:
+   • Main Menu Scene Name: "MainMenu"
+   • Quiz Scene Name: "Quiz Scene Proper"
+   
+   (Make sure these match your actual scene names!)
+
+────────────────────────────────────────────────────────────────────────────
+STEP 2.12: Add Leaderboard Scene to Build Settings
+────────────────────────────────────────────────────────────────────────────
+CRITICAL STEP - Scene won't load without this!
+
+1. In Unity menu: File → Build Settings
+2. Make sure "Leaderboard" scene is in the "Scenes In Build" list
+3. If not:
+   - Click "Add Open Scenes" (while Leaderboard scene is open)
+   - OR drag "Leaderboard.unity" from Project window into the list
+4. Close Build Settings
+
+────────────────────────────────────────────────────────────────────────────
+STEP 2.13: Test the Leaderboard Scene
+────────────────────────────────────────────────────────────────────────────
+1. Make sure you have some test data:
+   - Create a GameObject in the scene
+   - Add "LeaderboardDebugHelper" script to it
+   - In Inspector, click "Generate 5 Test Records"
+
+2. Press Play
+3. You should see:
+   ✓ 5 records displayed
+   ✓ Each showing Name, School, Date, Score
+   ✓ Most recent at top
+   ✓ Buttons work (Back to Menu, Play Again)
+
+4. If no records, you should see:
+   ✓ Empty state message
+   ✓ All record rows hidden
+
+✅ LEADERBOARD SCENE SETUP COMPLETE!
+
+
+═════════════════════════════════════════════════════════════════════════════
+4. PART 3: MAIN MENU INTEGRATION (10 MINUTES)
+═════════════════════════════════════════════════════════════════════════════
+
+Add a button to your Main Menu that loads the Leaderboard Scene.
+
+────────────────────────────────────────────────────────────────────────────
+STEP 3.1: Open Main Menu Scene
+────────────────────────────────────────────────────────────────────────────
+1. In Project window: Assets/Scenes/
+2. Double-click "MainMenu.unity" (or your main menu scene name)
+
+────────────────────────────────────────────────────────────────────────────
+STEP 3.2: Create Leaderboard Button
+────────────────────────────────────────────────────────────────────────────
+1. In Hierarchy, find your main menu Canvas
+2. RIGHT-CLICK on Canvas
+3. Select: UI → Button - TextMeshPro
+4. Rename to "LeaderboardButton"
+5. Position it next to your other menu buttons
+6. Configure the button text:
+   - Select child "Text (TMP)"
+   - Change text to: "🏆 View Leaderboard"
+   - Font Size: 32 (match other buttons)
+
+────────────────────────────────────────────────────────────────────────────
+STEP 3.3: Add Button Click Event
+────────────────────────────────────────────────────────────────────────────
+Option A: Using Scene Manager (Simple Method)
+  1. Select LeaderboardButton
+  2. In Inspector, find "Button" component
+  3. Scroll to "On Click ()" section
+  4. Click "+" to add a new event
+  5. Drag any GameObject into the object field
+  6. Click function dropdown: UnityEngine.SceneManagement.SceneManager
+  7. Select: LoadScene (string)
+  8. In the text field below, type: "Leaderboard"
+
+Option B: Using a Menu Manager Script (Advanced)
+  1. Create/find your MenuManager script
+  2. Add this method:
+     
+     public void LoadLeaderboard()
+     {
+         UnityEngine.SceneManagement.SceneManager.LoadScene("Leaderboard");
+     }
+  
+  3. Attach script to a GameObject in scene
+  4. In Button's On Click ():
+     - Drag the GameObject with MenuManager
+     - Select: MenuManager → LoadLeaderboard ()
+
+────────────────────────────────────────────────────────────────────────────
+STEP 3.4: Test Main Menu Navigation
+────────────────────────────────────────────────────────────────────────────
+1. Press Play while in Main Menu scene
+2. Click "View Leaderboard" button
+3. Should load Leaderboard scene
+4. In Leaderboard, click "Back to Menu"
+5. Should return to Main Menu
+
+✅ MAIN MENU INTEGRATION COMPLETE!
+
+
+═════════════════════════════════════════════════════════════════════════════
+5. COMPLETE END-TO-END TESTING
+═════════════════════════════════════════════════════════════════════════════
+
+Test the entire flow from start to finish:
+
+────────────────────────────────────────────────────────────────────────────
+TEST 1: First Quiz Session
+────────────────────────────────────────────────────────────────────────────
+1. Open Main Menu scene
+2. Press Play
+3. Click "Play" (or your quiz start button)
+4. Fill in onboarding:
+   - First Name: "Alice"
+   - Last Name: "Johnson"
+   - School: "TECH"
+5. Click "Start Quiz"
+6. Answer all 30 questions
+7. VERIFY Results Panel:
+   ✓ Panel fades in smoothly
+   ✓ Shows performance message based on score
+   ✓ Shows final score
+   ✓ Console shows "Player record saved"
+8. Stop Play mode
+
+────────────────────────────────────────────────────────────────────────────
+TEST 2: View Leaderboard
+────────────────────────────────────────────────────────────────────────────
+1. Press Play in Main Menu
+2. Click "View Leaderboard"
+3. VERIFY Leaderboard:
+   ✓ Shows Alice Johnson in the list
+   ✓ Shows TECH school
+   ✓ Shows today's date (MM/DD/YYYY)
+   ✓ Shows her score
+4. Click "Play Again"
+5. Should load Quiz Scene
+
+────────────────────────────────────────────────────────────────────────────
+TEST 3: Multiple Sessions
+────────────────────────────────────────────────────────────────────────────
+1. Play 4 more quiz sessions with different names/schools
+2. After each quiz, go to Main Menu → Leaderboard
+3. VERIFY:
+   ✓ All 5 sessions appear
+   ✓ Most recent is at top
+   ✓ Each has correct data
+   ✓ Dates are accurate
+
+────────────────────────────────────────────────────────────────────────────
+TEST 4: More Than 5 Sessions
+────────────────────────────────────────────────────────────────────────────
+1. Play a 6th quiz session
+2. View leaderboard
+3. VERIFY:
+   ✓ Only 5 most recent are shown
+   ✓ Oldest session is hidden
+   ✓ New session appears at top
+
+────────────────────────────────────────────────────────────────────────────
+TEST 5: Empty State
+────────────────────────────────────────────────────────────────────────────
+1. Use LeaderboardDebugHelper to clear all records
+2. View leaderboard
+3. VERIFY:
+   ✓ Empty state message appears
+   ✓ No records are shown
+   ✓ Buttons still work
+
+✅ ALL TESTS PASSED = SYSTEM WORKING PERFECTLY!
+
+
+═════════════════════════════════════════════════════════════════════════════
+6. TROUBLESHOOTING
+═════════════════════════════════════════════════════════════════════════════
+
+────────────────────────────────────────────────────────────────────────────
+PROBLEM: Results Panel doesn't appear after quiz
+────────────────────────────────────────────────────────────────────────────
+SOLUTIONS:
+1. Check if ResultsPanel is assigned in QuizProper Inspector
+2. Make sure ResultsPanel has CanvasGroup component
+3. Verify ResultsPanel starts inactive (grayed out in Hierarchy)
+4. Check Console for errors during quiz end
+5. Make sure all text fields are assigned
+
+────────────────────────────────────────────────────────────────────────────
+PROBLEM: Leaderboard shows "No quiz sessions yet" even after playing
+────────────────────────────────────────────────────────────────────────────
+SOLUTIONS:
+1. Check Console for "Player record saved" message after quiz
+2. Verify PlayerManager exists in Quiz Scene (should persist)
+3. Check save file location:
+   - Open LeaderboardDebugHelper → "Open Save File Location"
+   - Look for "player_scores.json"
+   - Open it in Notepad to see if data is there
+4. Make sure you completed the full quiz (not stopped early)
+
+────────────────────────────────────────────────────────────────────────────
+PROBLEM: Leaderboard button doesn't load scene
+────────────────────────────────────────────────────────────────────────────
+SOLUTIONS:
+1. Check File → Build Settings
+2. Make sure "Leaderboard" scene is in the list
+3. Verify scene name matches exactly (case-sensitive)
+4. Check Console for scene loading errors
+
+────────────────────────────────────────────────────────────────────────────
+PROBLEM: Leaderboard shows blank/empty records
+────────────────────────────────────────────────────────────────────────────
+SOLUTIONS:
+1. Select LeaderboardManager in Leaderboard scene
+2. In Inspector, verify ALL 20 text references are assigned:
+   - 5 Name Texts
+   - 5 School Texts
+   - 5 Date Texts
+   - 5 Score Texts
+3. Make sure you dragged the correct text objects (not parent containers)
+
+────────────────────────────────────────────────────────────────────────────
+PROBLEM: Wrong feedback showing for questions
+────────────────────────────────────────────────────────────────────────────
+SOLUTIONS:
+1. Open QuizProper GameObject Inspector
+2. Expand Question Bank
+3. For each question, verify you filled:
+   - Correct Feedback
+   - Wrong Feedback
+   - Time Up Feedback
+4. Make sure feedbacks are different for each outcome
+
+────────────────────────────────────────────────────────────────────────────
+PROBLEM: Score thresholds not working (wrong performance message)
+────────────────────────────────────────────────────────────────────────────
+SOLUTIONS:
+1. Select QuizProper GameObject
+2. Check "SCORE THRESHOLDS" section
+3. Verify:
+   - Excellent Threshold > Good Threshold
+   - Good Threshold > 0
+4. Check your actual score vs. thresholds
+
+
+═════════════════════════════════════════════════════════════════════════════
+7. FILE LOCATIONS & DATA STORAGE
+═════════════════════════════════════════════════════════════════════════════
+
+────────────────────────────────────────────────────────────────────────────
+WHERE IS DATA SAVED?
+────────────────────────────────────────────────────────────────────────────
+File: player_scores.json
+Location: Application.persistentDataPath
+
+To find it:
+1. In Unity, create a GameObject
+2. Add LeaderboardDebugHelper script
+3. In Inspector, click "Open Save File Location"
+4. A folder will open showing "player_scores.json"
+
+Common locations:
+• Windows: C:\Users\[YourName]\AppData\LocalLow\[CompanyName]\[GameName]\
+• Mac: ~/Library/Application Support/[CompanyName]/[GameName]/
+• Android: /storage/emulated/0/Android/data/[package]/files/
+
+────────────────────────────────────────────────────────────────────────────
+WHAT'S IN THE FILE?
+────────────────────────────────────────────────────────────────────────────
+{
+    "allRecords": [
+        {
+            "firstName": "Alice",
+            "lastName": "Johnson",
+            "school": "TECH",
+            "finalScore": 2800,
+            "timestamp": "01/15/2026"
+        },
+        {
+            "firstName": "Bob",
+            "lastName": "Smith",
+            "school": "ALABANG",
+            "finalScore": 1500,
+            "timestamp": "01/15/2026"
+        }
+    ]
+}
+
+────────────────────────────────────────────────────────────────────────────
+DEBUGGING TOOLS
+────────────────────────────────────────────────────────────────────────────
+Use LeaderboardDebugHelper to:
+• Generate test records
+• View all saved records in Console
+• View 5 most recent records
+• Clear all records (for testing)
+• Refresh leaderboard display
+• Open save file location
+
+To use:
+1. In any scene, create empty GameObject
+2. Add "LeaderboardDebugHelper" script
+3. Use buttons in Inspector
+
+
+═════════════════════════════════════════════════════════════════════════════
+8. SUMMARY CHECKLIST
+═════════════════════════════════════════════════════════════════════════════
+
+PART 1: RESULTS PANEL
+- [ ] Created ResultsPanel in Quiz Scene
+- [ ] Added CanvasGroup component (Alpha = 0)
+- [ ] Created ResultsMessageText (performance)
+- [ ] Created FinalScoreText
+- [ ] Set panel to inactive initially
+- [ ] Assigned all references to QuizProper
+- [ ] Configured performance messages
+- [ ] Set score thresholds
+- [ ] Tested - panel appears after quiz
+
+PART 2: LEADERBOARD SCENE
+- [ ] Created new Leaderboard scene
+- [ ] Created LeaderboardCanvas
+- [ ] Created TitleText
+- [ ] Created 5 record rows (each with 4 texts)
+- [ ] Created EmptyStateText
+- [ ] Created BackToMenuButton
+- [ ] Created PlayAgainButton
+- [ ] Created LeaderboardManager GameObject
+- [ ] Added LocalLeaderboardManager script
+- [ ] Assigned all 20 text references
+- [ ] Assigned buttons and scene names
+- [ ] Added scene to Build Settings
+- [ ] Tested - leaderboard displays data
+
+PART 3: MAIN MENU
+- [ ] Created LeaderboardButton in Main Menu
+- [ ] Added button click event (load "Leaderboard")
+- [ ] Tested - button loads leaderboard scene
+
+TESTING
+- [ ] Completed full quiz → Results Panel appears
+- [ ] Data saved (check Console)
+- [ ] Main Menu → Leaderboard shows records
+- [ ] Play multiple sessions → All appear in order
+- [ ] More than 5 sessions → Only 5 shown
+- [ ] Clear data → Empty state appears
+
+
+═════════════════════════════════════════════════════════════════════════════
+CONGRATULATIONS! 🎉
+═════════════════════════════════════════════════════════════════════════════
+
+Your quiz now has:
+✓ Immediate feedback after each quiz (Results Panel)
+✓ Complete quiz history tracking (Leaderboard Scene)
+✓ Persistent data storage (survives app restart)
+✓ Easy navigation between menu, quiz, and leaderboard
+
+Players can:
+✓ See their performance immediately after quiz
+✓ View their quiz history from Main Menu
+✓ See the 5 most recent quiz sessions
+✓ Compete with themselves over time
+
+Your game is now COMPLETE and POLISHED! 🚀
