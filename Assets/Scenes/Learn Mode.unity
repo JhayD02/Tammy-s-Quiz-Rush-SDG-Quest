@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 122015181}
   - component: {fileID: 122015183}
   m_Layer: 5
-  m_Name: SGD 10
+  m_Name: SDG 10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -158,8 +158,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -201, y: -71}
-  m_SizeDelta: {x: 350, y: 350}
+  m_AnchoredPosition: {x: -221.2, y: -238.09998}
+  m_SizeDelta: {x: 338.7, y: 289.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &122015181
 MonoBehaviour:
@@ -280,7 +280,7 @@ GameObject:
   - component: {fileID: 136726984}
   - component: {fileID: 136726986}
   m_Layer: 5
-  m_Name: SGD 2
+  m_Name: SDG 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -303,8 +303,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -201, y: 878}
-  m_SizeDelta: {x: 350, y: 350}
+  m_AnchoredPosition: {x: -221.2, y: 548}
+  m_SizeDelta: {x: 338.7, y: 289.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &136726984
 MonoBehaviour:
@@ -773,7 +773,7 @@ GameObject:
   - component: {fileID: 219788017}
   - component: {fileID: 219788019}
   m_Layer: 5
-  m_Name: SGD 17
+  m_Name: SDG 17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -796,8 +796,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -652, y: -1025}
-  m_SizeDelta: {x: 350, y: 350}
+  m_AnchoredPosition: {x: -657.6, y: -1028.2}
+  m_SizeDelta: {x: 338.7, y: 289.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &219788017
 MonoBehaviour:
@@ -918,7 +918,7 @@ GameObject:
   - component: {fileID: 221892394}
   - component: {fileID: 221892396}
   m_Layer: 5
-  m_Name: SGD 6
+  m_Name: SDG 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -941,8 +941,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -201, y: 386}
-  m_SizeDelta: {x: 350, y: 350}
+  m_AnchoredPosition: {x: -221.2, y: 140.40002}
+  m_SizeDelta: {x: 338.7, y: 289.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &221892394
 MonoBehaviour:
@@ -1120,23 +1120,23 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   topicTitles:
-  - SGD 1
-  - SGD 2
-  - SGD 3
-  - SGD 3
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - SDG 1
+  - SDG 2
+  - SDG 3
+  - SDG 3
+  - SDG 4
+  - SDG 5
+  - SDG 6
+  - SDG 7
+  - SDG 8
+  - SDG 9
+  - SDG 10
+  - SDG 11
+  - SDG 12
+  - SDG 13
+  - SDG 14
+  - SDG 15
+  - SDG 16
 --- !u!4 &224923217
 Transform:
   m_ObjectHideFlags: 0
@@ -1165,7 +1165,7 @@ GameObject:
   - component: {fileID: 285351125}
   - component: {fileID: 285351127}
   m_Layer: 5
-  m_Name: SGD 9
+  m_Name: SDG 9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1188,8 +1188,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -652, y: -71}
-  m_SizeDelta: {x: 350, y: 350}
+  m_AnchoredPosition: {x: -657.6, y: -238.09998}
+  m_SizeDelta: {x: 338.7, y: 289.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &285351125
 MonoBehaviour:
@@ -1534,7 +1534,7 @@ GameObject:
   - component: {fileID: 471562452}
   - component: {fileID: 471562454}
   m_Layer: 5
-  m_Name: SGD 13
+  m_Name: SDG 13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1557,8 +1557,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -652, y: -545}
-  m_SizeDelta: {x: 350, y: 350}
+  m_AnchoredPosition: {x: -657.6, y: -630.69995}
+  m_SizeDelta: {x: 338.7, y: 289.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &471562452
 MonoBehaviour:
@@ -2382,7 +2382,7 @@ GameObject:
   - component: {fileID: 629115823}
   - component: {fileID: 629115825}
   m_Layer: 5
-  m_Name: SGD 11
+  m_Name: SDG 11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2405,8 +2405,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 238, y: -71}
-  m_SizeDelta: {x: 350, y: 350}
+  m_AnchoredPosition: {x: 203.6, y: -238.09998}
+  m_SizeDelta: {x: 338.7, y: 289.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &629115823
 MonoBehaviour:
@@ -2527,7 +2527,7 @@ GameObject:
   - component: {fileID: 658819072}
   - component: {fileID: 658819074}
   m_Layer: 5
-  m_Name: SGD 5
+  m_Name: SDG 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2550,8 +2550,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -652, y: 386}
-  m_SizeDelta: {x: 350, y: 350}
+  m_AnchoredPosition: {x: -657.6, y: 140.40002}
+  m_SizeDelta: {x: 338.7, y: 289.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &658819072
 MonoBehaviour:
@@ -2806,7 +2806,7 @@ GameObject:
   - component: {fileID: 728449057}
   - component: {fileID: 728449059}
   m_Layer: 5
-  m_Name: SGD 12
+  m_Name: SDG 12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2829,8 +2829,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 671, y: -71}
-  m_SizeDelta: {x: 350, y: 350}
+  m_AnchoredPosition: {x: 622.7, y: -238.09998}
+  m_SizeDelta: {x: 338.7, y: 289.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &728449057
 MonoBehaviour:
@@ -2951,7 +2951,7 @@ GameObject:
   - component: {fileID: 787443870}
   - component: {fileID: 787443872}
   m_Layer: 5
-  m_Name: SGD 14
+  m_Name: SDG 14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2974,8 +2974,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -201, y: -545}
-  m_SizeDelta: {x: 350, y: 350}
+  m_AnchoredPosition: {x: -221.2, y: -630.69995}
+  m_SizeDelta: {x: 338.7, y: 289.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &787443870
 MonoBehaviour:
@@ -3408,7 +3408,7 @@ GameObject:
   - component: {fileID: 829040660}
   - component: {fileID: 829040662}
   m_Layer: 5
-  m_Name: SGD 7
+  m_Name: SDG 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3431,8 +3431,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 238, y: 386}
-  m_SizeDelta: {x: 350, y: 350}
+  m_AnchoredPosition: {x: 203.6, y: 140.40002}
+  m_SizeDelta: {x: 338.7, y: 289.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &829040660
 MonoBehaviour:
@@ -3687,7 +3687,7 @@ GameObject:
   - component: {fileID: 919912922}
   - component: {fileID: 919912924}
   m_Layer: 5
-  m_Name: SGD 8
+  m_Name: SDG 8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3710,8 +3710,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 671, y: 386}
-  m_SizeDelta: {x: 350, y: 350}
+  m_AnchoredPosition: {x: 622.7, y: 140.40002}
+  m_SizeDelta: {x: 338.7, y: 289.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &919912922
 MonoBehaviour:
@@ -3952,6 +3952,142 @@ CanvasRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1078906741}
+  m_CullTransparentMesh: 1
+--- !u!1 &1187576236
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1187576237}
+  - component: {fileID: 1187576239}
+  - component: {fileID: 1187576238}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1187576237
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187576236}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1365680301}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 203.6, y: -1087.3}
+  m_SizeDelta: {x: 1016.9, y: 408.05}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1187576238
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187576236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: 'TIP
+
+    This can help you learn before taking the quiz'
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 3d2ca6a3fb78f284ebd25ff649db95a3, type: 2}
+  m_sharedMaterial: {fileID: -8113886504297554214, guid: 3d2ca6a3fb78f284ebd25ff649db95a3, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 120
+  m_fontSizeBase: 120
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1187576239
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1187576236}
   m_CullTransparentMesh: 1
 --- !u!1 &1192123829
 GameObject:
@@ -4268,6 +4404,7 @@ RectTransform:
   - {fileID: 1769268312}
   - {fileID: 1948301617}
   - {fileID: 219788016}
+  - {fileID: 1187576237}
   m_Father: {fileID: 323070826}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -4556,7 +4693,7 @@ GameObject:
   - component: {fileID: 1437033077}
   - component: {fileID: 1437033079}
   m_Layer: 5
-  m_Name: SGD 3
+  m_Name: SDG 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4579,8 +4716,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 238, y: 878}
-  m_SizeDelta: {x: 350, y: 350}
+  m_AnchoredPosition: {x: 203.6, y: 548}
+  m_SizeDelta: {x: 338.7, y: 289.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1437033077
 MonoBehaviour:
@@ -4980,7 +5117,7 @@ GameObject:
   - component: {fileID: 1530740988}
   - component: {fileID: 1530740990}
   m_Layer: 5
-  m_Name: SGD 1
+  m_Name: SDG  1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5003,8 +5140,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -652, y: 878}
-  m_SizeDelta: {x: 350, y: 350}
+  m_AnchoredPosition: {x: -657.6, y: 548}
+  m_SizeDelta: {x: 338.7, y: 289.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1530740988
 MonoBehaviour:
@@ -5334,7 +5471,7 @@ GameObject:
   - component: {fileID: 1628126786}
   - component: {fileID: 1628126788}
   m_Layer: 5
-  m_Name: SGD 4
+  m_Name: SDG 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5357,8 +5494,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 671, y: 878}
-  m_SizeDelta: {x: 350, y: 350}
+  m_AnchoredPosition: {x: 622.7, y: 548}
+  m_SizeDelta: {x: 338.7, y: 289.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1628126786
 MonoBehaviour:
@@ -5466,6 +5603,51 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &1647563675
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1647563677}
+  - component: {fileID: 1647563676}
+  m_Layer: 0
+  m_Name: TransitionManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1647563676
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1647563675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61430b0086307cc4da3ccc8d39ae88da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  transitionTemplate: {fileID: 5276914992623515724, guid: 616d511151a6c554caddf1c754e4f91d, type: 3}
+--- !u!4 &1647563677
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1647563675}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 600, y: 1320, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1650827995
 GameObject:
   m_ObjectHideFlags: 0
@@ -5613,7 +5795,7 @@ GameObject:
   - component: {fileID: 1769268313}
   - component: {fileID: 1769268315}
   m_Layer: 5
-  m_Name: SGD 15
+  m_Name: SDG 15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5636,8 +5818,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 238, y: -545}
-  m_SizeDelta: {x: 350, y: 350}
+  m_AnchoredPosition: {x: 203.6, y: -630.69995}
+  m_SizeDelta: {x: 338.7, y: 289.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1769268313
 MonoBehaviour:
@@ -5849,7 +6031,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -676, y: 1594}
+  m_AnchoredPosition: {x: -652, y: 1038}
   m_SizeDelta: {x: 350, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1841388126
@@ -6095,7 +6277,7 @@ GameObject:
   - component: {fileID: 1948301618}
   - component: {fileID: 1948301620}
   m_Layer: 5
-  m_Name: SGD 16
+  m_Name: SDG 16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6118,8 +6300,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 671, y: -545}
-  m_SizeDelta: {x: 350, y: 350}
+  m_AnchoredPosition: {x: 622.7, y: -630.69995}
+  m_SizeDelta: {x: 338.7, y: 289.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1948301618
 MonoBehaviour:
@@ -6759,3 +6941,4 @@ SceneRoots:
   - {fileID: 1838483391}
   - {fileID: 224923217}
   - {fileID: 803541542}
+  - {fileID: 1647563677}
