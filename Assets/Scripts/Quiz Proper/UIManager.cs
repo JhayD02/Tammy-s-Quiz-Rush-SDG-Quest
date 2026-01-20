@@ -33,6 +33,7 @@ public class UIManager : MonoBehaviour
 
     [Header("=== REFERENCES ===")]
     [SerializeField] private QuizProper quizProper;
+    [SerializeField] private GameObject quizPanel; // The panel containing the quiz UI
 
     // Private tracking variables
     private int selectedSchoolIndex = -1; // -1 means no school selected
@@ -142,6 +143,16 @@ public class UIManager : MonoBehaviour
         // Hide the UI panels
         instructionPanel.SetActive(false);
         userInfoPanel.SetActive(false);
+
+        // Show the quiz panel
+        if (quizPanel != null)
+        {
+            quizPanel.SetActive(true);
+        }
+        else
+        {
+            Debug.LogError("ERROR: quizPanel is not assigned in the UIManager Inspector!");
+        }
 
         // Start the quiz!
         quizProper.StartQuiz();
