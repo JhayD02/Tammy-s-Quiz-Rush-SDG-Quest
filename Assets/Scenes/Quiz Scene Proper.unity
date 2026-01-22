@@ -2519,111 +2519,6 @@ MonoBehaviour:
       benefits everyone, especially the most vulnerable."
     timeUpFeedback: "Time's up! \u201CLeave no one behind\u201D ensures that progress
       benefits everyone, especially the most vulnerable."
-  - questionText: Which principle is central to the SDGs?
-    answers:
-    - answerText: Leave no one behind
-      answerImage: {fileID: 0}
-      useImage: 0
-    - answerText: National interest only
-      answerImage: {fileID: 0}
-      useImage: 0
-    - answerText: Economic Profit First
-      answerImage: {fileID: 0}
-      useImage: 0
-    - answerText: Technology over people
-      answerImage: {fileID: 0}
-      useImage: 0
-    correctAnswerIndex: 0
-    correctFeedback: "Correct! \u201CLeave no one behind\u201D ensures that progress
-      benefits everyone, especially the most vulnerable."
-    wrongFeedback: "Incorrect. \u201CLeave no one behind\u201D ensures that progress
-      benefits everyone, especially the most vulnerable."
-    timeUpFeedback: "Time's up! \u201CLeave no one behind\u201D ensures that progress
-      benefits everyone, especially the most vulnerable."
-  - questionText: Which principle is central to the SDGs?
-    answers:
-    - answerText: Leave no one behind
-      answerImage: {fileID: 0}
-      useImage: 0
-    - answerText: National interest only
-      answerImage: {fileID: 0}
-      useImage: 0
-    - answerText: Economic Profit First
-      answerImage: {fileID: 0}
-      useImage: 0
-    - answerText: Technology over people
-      answerImage: {fileID: 0}
-      useImage: 0
-    correctAnswerIndex: 0
-    correctFeedback: "Correct! \u201CLeave no one behind\u201D ensures that progress
-      benefits everyone, especially the most vulnerable."
-    wrongFeedback: "Incorrect. \u201CLeave no one behind\u201D ensures that progress
-      benefits everyone, especially the most vulnerable."
-    timeUpFeedback: "Time's up! \u201CLeave no one behind\u201D ensures that progress
-      benefits everyone, especially the most vulnerable."
-  - questionText: Which principle is central to the SDGs?
-    answers:
-    - answerText: Leave no one behind
-      answerImage: {fileID: 0}
-      useImage: 0
-    - answerText: National interest only
-      answerImage: {fileID: 0}
-      useImage: 0
-    - answerText: Economic Profit First
-      answerImage: {fileID: 0}
-      useImage: 0
-    - answerText: Technology over people
-      answerImage: {fileID: 0}
-      useImage: 0
-    correctAnswerIndex: 0
-    correctFeedback: "Correct! \u201CLeave no one behind\u201D ensures that progress
-      benefits everyone, especially the most vulnerable."
-    wrongFeedback: "Incorrect. \u201CLeave no one behind\u201D ensures that progress
-      benefits everyone, especially the most vulnerable."
-    timeUpFeedback: "Time's up! \u201CLeave no one behind\u201D ensures that progress
-      benefits everyone, especially the most vulnerable."
-  - questionText: Which principle is central to the SDGs?
-    answers:
-    - answerText: Leave no one behind
-      answerImage: {fileID: 0}
-      useImage: 0
-    - answerText: National interest only
-      answerImage: {fileID: 0}
-      useImage: 0
-    - answerText: Economic Profit First
-      answerImage: {fileID: 0}
-      useImage: 0
-    - answerText: Technology over people
-      answerImage: {fileID: 0}
-      useImage: 0
-    correctAnswerIndex: 0
-    correctFeedback: "Correct! \u201CLeave no one behind\u201D ensures that progress
-      benefits everyone, especially the most vulnerable."
-    wrongFeedback: "Incorrect. \u201CLeave no one behind\u201D ensures that progress
-      benefits everyone, especially the most vulnerable."
-    timeUpFeedback: "Time's up! \u201CLeave no one behind\u201D ensures that progress
-      benefits everyone, especially the most vulnerable."
-  - questionText: Which principle is central to the SDGs?
-    answers:
-    - answerText: Leave no one behind
-      answerImage: {fileID: 0}
-      useImage: 0
-    - answerText: National interest only
-      answerImage: {fileID: 0}
-      useImage: 0
-    - answerText: Economic Profit First
-      answerImage: {fileID: 0}
-      useImage: 0
-    - answerText: Technology over people
-      answerImage: {fileID: 0}
-      useImage: 0
-    correctAnswerIndex: 0
-    correctFeedback: "Correct! \u201CLeave no one behind\u201D ensures that progress
-      benefits everyone, especially the most vulnerable."
-    wrongFeedback: "Incorrect. \u201CLeave no one behind\u201D ensures that progress
-      benefits everyone, especially the most vulnerable."
-    timeUpFeedback: "Time's up! \u201CLeave no one behind\u201D ensures that progress
-      benefits everyone, especially the most vulnerable."
   totalQuestionsInGame: 5
   timePerQuestion: 20
   questionLabel: {fileID: 887570750}
@@ -5309,7 +5204,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1236363267
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5464,7 +5359,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -1301}
+  m_AnchoredPosition: {x: 0, y: -913}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1271351688
@@ -6156,9 +6051,9 @@ RectTransform:
   - {fileID: 2016909221}
   - {fileID: 1424494667}
   - {fileID: 1196502698}
-  - {fileID: 1187202015}
-  - {fileID: 1080332385}
   - {fileID: 1236363267}
+  - {fileID: 1080332385}
+  - {fileID: 1187202015}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -6183,7 +6078,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1424494667
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8162,7 +8057,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 589}
+  m_AnchoredPosition: {x: 0, y: 955}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1783081903
@@ -8250,7 +8145,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: -206.03378}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

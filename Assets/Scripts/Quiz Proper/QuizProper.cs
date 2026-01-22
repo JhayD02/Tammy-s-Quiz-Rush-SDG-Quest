@@ -137,7 +137,6 @@ public class QuizProper : MonoBehaviour
 
     private void Update()
     {
-        // ANDROID MOBILE: Handle back button (Android back button = Escape key)
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             // If pause panel is open, resume instead
@@ -156,7 +155,7 @@ public class QuizProper : MonoBehaviour
     // This is called from UIManager when the player presses "START QUIZ"
     public void StartQuiz()
     {
-        // Validate that questionBank has questions
+        // Validation for questionBank content
         if (questionBank == null || questionBank.Count == 0)
         {
             Debug.LogError("ERROR: questionBank is empty or not assigned! Please add questions in the Inspector.");
