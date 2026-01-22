@@ -6,16 +6,16 @@ public class LearnModeController : MonoBehaviour
 {
     [Header("UI References")]
     public Button[] selectionButtons;   // 17 buttons
-    public Image displayImage;          // Main image to show in Learn Mode
-    public Image iconImage;             // Icon image for each topic
     public Button nextButton;           // Next button
     public Button prevButton;           // Previous button
     public TMP_Text titleText;          // Title text at the top
+    public TMP_Text contentText;        // Text content for each topic
+    public Image iconImage;             // Icon image for each topic
 
     [Header("Content")]
-    public Sprite[] learnSprites;       // Array of 17 main sprites
-    public Sprite[] topicIcons;         // Array of 17 icon sprites
     public string[] topicTitles;        // Array of 17 topic titles
+    public string[] topicContents;      // Array of 17 topic descriptions/content
+    public Sprite[] topicIcons;         // Array of 17 topic icons
 
     private int currentIndex = 0;
 
@@ -32,10 +32,10 @@ public class LearnModeController : MonoBehaviour
         nextButton.onClick.AddListener(OnNext);
         prevButton.onClick.AddListener(OnPrev);
 
-        // Hide image, icon, and title at start
-        displayImage.gameObject.SetActive(false);
-        iconImage.gameObject.SetActive(false);
+        // Hide title, content, and icon at start
         titleText.gameObject.SetActive(false);
+        contentText.gameObject.SetActive(false);
+        iconImage.gameObject.SetActive(false);
     }
 
     void OnSelect(int index)
@@ -47,7 +47,7 @@ public class LearnModeController : MonoBehaviour
     void OnNext()
     {
         currentIndex++;
-        if (currentIndex >= learnSprites.Length)
+        if (currentIndex >= topicTitles.Length)
             currentIndex = 0; // wrap around
         ShowContent();
     }
@@ -56,27 +56,26 @@ public class LearnModeController : MonoBehaviour
     {
         currentIndex--;
         if (currentIndex < 0)
-            currentIndex = learnSprites.Length - 1; // wrap around
+            currentIndex = topicTitles.Length - 1; // wrap around
         ShowContent();
     }
 
     void ShowContent()
     {
-        displayImage.gameObject.SetActive(true);
-        iconImage.gameObject.SetActive(true);
         titleText.gameObject.SetActive(true);
+        contentText.gameObject.SetActive(true);
+        iconImage.gameObject.SetActive(true);
 
-        // Show main image
-        displayImage.sprite = learnSprites[currentIndex];
+        // Show title
+        if (currentIndex < topicTitles.Length)
+            titleText.text = topicTitles[currentIndex];
+
+        // Show content/description
+        if (currentIndex < topicContents.Length)
+            contentText.text = topicContents[currentIndex];
 
         // Show icon
         if (topicIcons != null && currentIndex < topicIcons.Length)
-        {
             iconImage.sprite = topicIcons[currentIndex];
-        }
-
-        // Show title
-        titleText.text = topicTitles[currentIndex];
     }
 }
-    
