@@ -553,21 +553,296 @@ If you see this file, **everything is working!** ✓
 - [ ] **Phase 8**: 30+ questions added
 - [ ] **Phase 9**: Tested and working
 - [ ] **Phase 10**: Verified save file created
+- [ ] **Phase 11**: Leaderboard scene created and wired
+- [ ] **Phase 11**: Quiz connected to leaderboard
+- [ ] **Phase 11**: Tested full flow (quiz → leaderboard)
+
+---
+
+## PHASE 11: CREATE LEADERBOARD SCENE (45 minutes)
+
+Now let's create a leaderboard to display the 5 most recent quiz sessions!
+
+### Step 11.1: Create Leaderboard Scene
+1. Right-click in Project folder
+2. Create > Scene
+3. Name it **"Leaderboard"**
+4. Save it in **Assets/Scenes/**
+5. Double-click to open it
+
+### Step 11.2: Create the Canvas
+1. Right-click in Hierarchy
+2. UI > Canvas
+3. Set **Canvas Scaler** to "Scale With Screen Size"
+4. Reference Resolution: 1080 x 1920 (portrait mode for mobile)
+5. **ANDROID MOBILE**: Add **SafeAreaLayoutGroup** component (prevents UI cutoff on notched phones)
+
+### Step 11.3: Create Background Panel
+1. Right-click on Canvas
+2. UI > Panel
+3. Name: **BackgroundPanel**
+4. Set Anchors to "Stretch" (full screen)
+5. Customize color/image as desired
+
+### Step 11.4: Create Title
+1. Right-click on Canvas
+2. UI > Text - TextMeshPro
+3. Name: **TitleText**
+4. Text: "LEADERBOARD"
+5. Font Size: 80
+6. Position at top center
+7. Make it bold and stylish!
+
+### Step 11.5: Create Current Player Panel (Optional but Recommended)
+1. Right-click on Canvas
+2. UI > Panel
+3. Name: **CurrentPlayerPanel**
+4. Position near top (below title)
+5. Make it stand out (different color, border, etc.)
+
+Inside CurrentPlayerPanel, create 4 text fields:
+
+**Current Player Name:**
+1. Right-click CurrentPlayerPanel
+2. UI > Text - TextMeshPro
+3. Name: **CurrentPlayerNameText**
+4. Text: "Player Name"
+5. Position: Top-left of panel
+
+**Current Player School:**
+1. UI > Text - TextMeshPro
+2. Name: **CurrentPlayerSchoolText**
+3. Text: "SCHOOL"
+4. Position: Top-right of panel
+
+**Current Player Date:**
+1. UI > Text - TextMeshPro
+2. Name: **CurrentPlayerDateText**
+3. Text: "01/15/2026"
+4. Position: Bottom-left of panel
+
+**Current Player Score:**
+1. UI > Text - TextMeshPro
+2. Name: **CurrentPlayerScoreText**
+3. Text: "0"
+4. Position: Bottom-right of panel
+5. Make it LARGE and highlighted (this is the player's achievement!)
+
+### Step 11.6: Create Leaderboard Entries Container
+1. Right-click on Canvas
+2. Create Empty
+3. Name: **LeaderboardEntriesContainer**
+4. Position in the middle area
+5. Add **Vertical Layout Group** component:
+   - Spacing: 20
+   - Child Alignment: Upper Center
+
+### Step 11.7: Create 5 Leaderboard Entry Rows
+
+You'll create 5 identical rows. Each row shows: Name | School | Date | Score
+
+**For EACH of the 5 entries (Entry 1 through Entry 5):**
+
+1. Right-click LeaderboardEntriesContainer
+2. UI > Panel
+3. Name: **LeaderboardEntry1** (then Entry2, Entry3, Entry4, Entry5)
+4. Height: 150 units
+5. Add **Horizontal Layout Group** component:
+   - Spacing: 20
+   - Child Force Expand: Width ✓, Height ✓
+
+**Inside each Entry panel, create 4 text fields:**
+
+**Name Text:**
+1. UI > Text - TextMeshPro
+2. Name: **NameText1** (NameText2, NameText3, etc.)
+3. Text: "Player Name"
+4. Alignment: Middle Left
+5. Font Size: 40
+
+**School Text:**
+1. UI > Text - TextMeshPro
+2. Name: **SchoolText1** (SchoolText2, etc.)
+3. Text: "SCHOOL"
+4. Alignment: Middle Center
+5. Font Size: 35
+
+**Date Text:**
+1. UI > Text - TextMeshPro
+2. Name: **DateText1** (DateText2, etc.)
+3. Text: "01/15/2026"
+4. Alignment: Middle Center
+5. Font Size: 30
+
+**Score Text:**
+1. UI > Text - TextMeshPro
+2. Name: **ScoreText1** (ScoreText2, etc.)
+3. Text: "0"
+4. Alignment: Middle Right
+5. Font Size: 50
+6. Color: Gold or bright color
+
+**Repeat this for all 5 entries!** It's tedious but worth it. You can also duplicate the first entry and rename.
+
+### Step 11.8: Create Empty State Text
+1. Right-click on Canvas
+2. UI > Text - TextMeshPro
+3. Name: **EmptyStateText**
+4. Text: "No quiz sessions yet. Play to create history!"
+5. Font Size: 50
+6. Alignment: Center
+7. Position in the middle
+8. **UNCHECK "Active"** (only shows when no records exist)
+
+### Step 11.9: Create Navigation Buttons
+
+**Back to Menu Button:**
+1. Right-click on Canvas
+2. UI > Button - TextMeshPro
+3. Name: **BackToMenuButton**
+4. Text: "MAIN MENU"
+5. Position: Bottom-left corner
+6. Size: 300 x 100
+
+**Play Again Button:**
+1. Right-click on Canvas
+2. UI > Button - TextMeshPro
+3. Name: **PlayAgainButton**
+4. Text: "PLAY AGAIN"
+5. Position: Bottom-right corner
+6. Size: 300 x 100
+
+### Step 11.10: Add LocalLeaderboardManager Script
+
+**Important:** The script already exists in your project!
+
+1. Right-click in Hierarchy (not on Canvas)
+2. Create Empty
+3. Name: **LocalLeaderboardManager**
+4. Add Component > **LocalLeaderboardManager** (the script)
+
+### Step 11.11: Wire Up LocalLeaderboardManager Inspector
+
+Select the **LocalLeaderboardManager** GameObject:
+
+**Leaderboard Display Section:**
+- **Name Texts** - Set Size to 5:
+  - Element 0 → Drag **NameText1**
+  - Element 1 → Drag **NameText2**
+  - Element 2 → Drag **NameText3**
+  - Element 3 → Drag **NameText4**
+  - Element 4 → Drag **NameText5**
+
+- **School Texts** - Set Size to 5:
+  - Element 0 → Drag **SchoolText1**
+  - Element 1 → Drag **SchoolText2**
+  - Element 2 → Drag **SchoolText3**
+  - Element 3 → Drag **SchoolText4**
+  - Element 4 → Drag **SchoolText5**
+
+- **Date Texts** - Set Size to 5:
+  - Element 0 → Drag **DateText1**
+  - Element 1 → Drag **DateText2**
+  - Element 2 → Drag **DateText3**
+  - Element 3 → Drag **DateText4**
+  - Element 4 → Drag **DateText5**
+
+- **Score Texts** - Set Size to 5:
+  - Element 0 → Drag **ScoreText1**
+  - Element 1 → Drag **ScoreText2**
+  - Element 2 → Drag **ScoreText3**
+  - Element 3 → Drag **ScoreText4**
+  - Element 4 → Drag **ScoreText5**
+
+**Optional: Current Player Highlight Section:**
+- Current Player Panel → Drag **CurrentPlayerPanel**
+- Current Player Name Text → Drag **CurrentPlayerNameText**
+- Current Player School Text → Drag **CurrentPlayerSchoolText**
+- Current Player Date Text → Drag **CurrentPlayerDateText**
+- Current Player Score Text → Drag **CurrentPlayerScoreText**
+
+**Empty State Text:**
+- Empty State Text → Drag **EmptyStateText**
+- Empty Message → Leave as default: "No quiz sessions yet. Play to create history!"
+
+**Navigation Buttons:**
+- Back To Menu Button → Drag **BackToMenuButton**
+- Play Again Button → Drag **PlayAgainButton**
+
+**Scene Names:**
+- Main Menu Scene Name → Type: "MainMenu"
+- Quiz Scene Name → Type: "Quiz Scene Proper"
+
+### Step 11.12: Add Leaderboard Scene to Build Settings
+
+**CRITICAL STEP** - Without this, scene transitions won't work!
+
+1. Click **File > Build Settings**
+2. Click **Add Open Scenes** (with Leaderboard scene open)
+3. Make sure these scenes are in order:
+   - Scene 0: MainMenu
+   - Scene 1: Quiz Scene Proper
+   - Scene 2: Leaderboard
+4. Click **Close**
+
+### Step 11.13: Connect Quiz Scene to Leaderboard
+
+Now we need to make the quiz go to the leaderboard when finished.
+
+1. Open **Quiz Scene Proper** scene
+2. Select **QuizProper** GameObject
+3. In Inspector, find **"Scene To Load After Quiz"** field
+4. Type: **"Leaderboard"**
+
+### Step 11.14: Test Leaderboard with Debug Helper (Optional but Recommended)
+
+Want to test without playing the full quiz? Use the debug helper!
+
+1. In Leaderboard scene, right-click in Hierarchy
+2. Create Empty
+3. Name: **LeaderboardDebugHelper**
+4. Add Component > **LeaderboardDebugHelper** (the script)
+
+Now in the Inspector, you'll see helpful buttons:
+- **Generate Test Record** - Creates 1 fake player
+- **Generate Five Test Records** - Creates 5 fake players
+- **Clear All Records** - Deletes everything
+- **Refresh Leaderboard Display** - Updates the display
+
+Click "Generate Five Test Records" to populate your leaderboard instantly!
+
+### Step 11.15: Test Full Flow
+
+1. **Play** from **MainMenu** scene
+2. Complete the onboarding (name + school)
+3. Start quiz
+4. Answer questions (use lifelines, test features)
+5. After 30 questions → Should automatically go to **Leaderboard**
+6. You should see:
+   - Your current session highlighted at top (if CurrentPlayerPanel exists)
+   - Up to 5 most recent sessions below
+   - Your score displayed
+7. Click **PLAY AGAIN** → Goes back to quiz
+8. Click **MAIN MENU** → Goes back to main menu
 
 ---
 
 ## What Happens Next?
 
-After all this:
-1. Players can onboard, answer 30 questions, and get scores
-2. Scores are saved locally
-3. Next, you can:
-   - Create a **Leaderboard UI** to display scores
-   - Connect to **LootLocker** for online leaderboards
-   - Add **achievements** or **badges**
-   - Add **sound effects**
+After completing Phase 11, you now have:
+1. ✅ Full quiz system with onboarding
+2. ✅ 30 questions with lifelines and scoring
+3. ✅ Local score saving
+4. ✅ **Leaderboard showing 5 most recent sessions**
 
-But that's for next time! For now, you have a complete local quiz system. 🎉
+Next steps you can take:
+- Connect to **LootLocker** for online leaderboards (global rankings!)
+- Add **achievements** or **badges** for milestones
+- Add **sound effects** and music
+- Add **animations** for smoother transitions
+- Create a **results screen** before the leaderboard (detailed breakdown)
+
+But for now, you have a complete local quiz system with leaderboard! 🎉
 
 ---
 

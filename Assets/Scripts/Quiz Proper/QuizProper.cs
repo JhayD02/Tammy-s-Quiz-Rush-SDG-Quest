@@ -156,6 +156,13 @@ public class QuizProper : MonoBehaviour
     // This is called from UIManager when the player presses "START QUIZ"
     public void StartQuiz()
     {
+        // Validate that questionBank has questions
+        if (questionBank == null || questionBank.Count == 0)
+        {
+            Debug.LogError("ERROR: questionBank is empty or not assigned! Please add questions in the Inspector.");
+            return;
+        }
+
         quizStarted = true;
 
         // Shuffle all questions and pick the first 30
@@ -183,26 +190,78 @@ public class QuizProper : MonoBehaviour
 
         QuizQuestion currentQuestion = shuffledQuestions[index];
 
+        // Validate the question
+        if (currentQuestion == null)
+        {
+            Debug.LogError($"ERROR: Question at index {index} is null!");
+            return;
+        }
+
+        if (currentQuestion.answers == null || currentQuestion.answers.Count < 4)
+        {
+            Debug.LogError($"ERROR: Question {index} has invalid answers array!");
+            return;
+        }
+
+        if (questionLabel == null)
+        {
+            Debug.LogError("ERROR: questionLabel is not assigned in the Inspector!");
+            return;
+        }
+
         // Display the question
         questionLabel.text = currentQuestion.questionText;
 
         // Display all 4 answer choices (content stays in same button)
         for (int i = 0; i < 4; i++)
         {
+            // Validate UI elements exist
+            if (answerTexts[i] == null)
+            {
+                Debug.LogError($"ERROR: answerTexts[{i}] is not assigned in the Inspector!");
+                return;
+            }
+            if (answerButtons[i] == null)
+            {
+                Debug.LogError($"ERROR: answerButtons[{i}] is not assigned in the Inspector!");
+                return;
+            }
+
             AnswerChoice answer = currentQuestion.answers[i];
+
+            // DEBUG: Log what we're about to display
+            Debug.Log($"Question {index}, Answer {i}: useImage={answer.useImage}, text='{answer.answerText}'");
 
             // Show either text or image based on the answer choice
             if (answer.useImage)
             {
+                // Only validate answerImages if we're actually using it
+                if (answerImages[i] == null)
+                {
+                    Debug.LogError($"ERROR: answerImages[{i}] is not assigned but useImage is true!");
+                    return;
+                }
+
+                Debug.Log($"  -> Showing IMAGE for answer {i}");
                 answerTexts[i].gameObject.SetActive(false);
                 answerImages[i].gameObject.SetActive(true);
                 answerImages[i].sprite = answer.answerImage;
             }
             else
             {
+                Debug.Log($"  -> Showing TEXT for answer {i}: '{answer.answerText}'");
                 answerTexts[i].gameObject.SetActive(true);
-                answerImages[i].gameObject.SetActive(false);
+                
+                // Deactivate image if it exists
+                if (answerImages[i] != null)
+                {
+                    answerImages[i].gameObject.SetActive(false);
+                }
+                
                 answerTexts[i].text = answer.answerText;
+                
+                // DEBUG: Make sure the text actually updated
+                Debug.Log($"  -> answerTexts[{i}].text is now: '{answerTexts[i].text}'");
             }
 
             // Make button clickable
