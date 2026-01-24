@@ -2546,6 +2546,7 @@ MonoBehaviour:
   resumeButton: {fileID: 1694621602}
   restartButton: {fileID: 47610089}
   homeButton: {fileID: 1278425576}
+  homeSceneName: MainMenu
   stopTimeButton: {fileID: 1980547683}
   doublePointsButton: {fileID: 721784420}
   reduceChoicesButton: {fileID: 368460628}
