@@ -35,6 +35,7 @@ public class QuizProper : MonoBehaviour
     [SerializeField] private Button resumeButton;
     [SerializeField] private Button restartButton;
     [SerializeField] private Button homeButton;
+    [SerializeField] private string homeSceneName = "Home";
 
     [Header("=== LIFELINE BUTTONS ===")]
     [SerializeField] private Button stopTimeButton;
@@ -611,7 +612,7 @@ public class QuizProper : MonoBehaviour
     private void GoHome()
     {
         Time.timeScale = 1f;
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Home"); // Change "Home" to your home scene name
+        UnityEngine.SceneManagement.SceneManager.LoadScene(homeSceneName);
     }
 
     // === FINISH QUIZ ===
