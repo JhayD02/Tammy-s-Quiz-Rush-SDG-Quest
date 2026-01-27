@@ -25,6 +25,7 @@ public class QuizProper : MonoBehaviour
     [SerializeField] private TextMeshProUGUI questionLabel;
     [SerializeField] private TextMeshProUGUI timerLabel;
     [SerializeField] private TextMeshProUGUI scoreLabel;
+    [SerializeField] private TextMeshProUGUI questionCounterLabel;
     [SerializeField] private Button[] answerButtons = new Button[4]; // Position 1,2,3,4
     [SerializeField] private TextMeshProUGUI[] answerTexts = new TextMeshProUGUI[4]; // Text on each button
     [SerializeField] private Image[] answerImages = new Image[4]; // Images on each button
@@ -41,6 +42,18 @@ public class QuizProper : MonoBehaviour
     [SerializeField] private Button stopTimeButton;
     [SerializeField] private Button doublePointsButton;
     [SerializeField] private Button reduceChoicesButton;
+    [SerializeField] private float lifelineDisabledOpacity = 0.4f;
+
+    [Header("=== LIFELINE GAINED PANEL ===")]
+    [SerializeField] private GameObject lifelineGainedPanel;
+    [SerializeField] private TextMeshProUGUI lifelineGainedText;
+    [SerializeField] private Image lifelineGainedImage;
+    [SerializeField] private Button lifelineContinueButton;
+    [SerializeField] private float lifelineRouletteDuration = 2f;
+    [SerializeField] private float lifelineRouletteInterval = 0.15f;
+    [SerializeField] private Sprite stopTimeSprite;
+    [SerializeField] private Sprite doublePointsSprite;
+    [SerializeField] private Sprite reduceChoicesSprite;
 
     [Header("=== ANIMATION SETTINGS ===")]
     [SerializeField] private float nextButtonFadeDelay = 1.5f;
@@ -85,6 +98,7 @@ public class QuizProper : MonoBehaviour
     private bool hasStopTime = false;
     private bool hasDoublePoints = false;
     private bool hasReduceChoices = false;
+    private bool pendingDoublePoints = false; // Tracks if next correct answer should be doubled
     private int correctAnswerStreak = 0; // For streak-based lifeline reward
 
     // Button position shuffling - remember initial positions for swapping
@@ -94,6 +108,13 @@ public class QuizProper : MonoBehaviour
     // Coroutines
     private Coroutine timerCoroutine;
     private Coroutine fadeInNextButtonCoroutine;
+    private Coroutine lifelineRouletteCoroutine;
+
+    // Lifeline panel tracking
+    private bool isGuaranteedLifelinePending = false;
+    private bool isStreakLifelinePending = false;
+
+    private enum LifelineType { StopTime, DoublePoints, ReduceChoices }
 
     private void Start()
     {
@@ -113,6 +134,8 @@ public class QuizProper : MonoBehaviour
         stopTimeButton.onClick.AddListener(UseStopTime);
         doublePointsButton.onClick.AddListener(UseDoublePoints);
         reduceChoicesButton.onClick.AddListener(UseReduceChoices);
+        if (lifelineContinueButton != null)
+            lifelineContinueButton.onClick.AddListener(OnLifelineContinueClicked);
 
         // Store initial button positions for shuffling
         InitializeButtonPositions();
@@ -120,6 +143,8 @@ public class QuizProper : MonoBehaviour
         // Hide UI elements at start
         nextQuestionButton.gameObject.SetActive(false);
         pausePanel.SetActive(false);
+        if (lifelineGainedPanel != null)
+            lifelineGainedPanel.SetActive(false);
         UpdateLifelineButtons();
     }
 
@@ -212,6 +237,9 @@ public class QuizProper : MonoBehaviour
         // Display the question
         questionLabel.text = currentQuestion.questionText;
 
+        // Display the question counter
+        UpdateQuestionCounter();
+
         // Display all 4 answer choices (content stays in same button)
         for (int i = 0; i < 4; i++)
         {
@@ -276,13 +304,26 @@ public class QuizProper : MonoBehaviour
         nextButtonCanvasGroup.alpha = 0f;
 
         // Start the timer
-        isAnswering = true;
-        timeRemaining = timePerQuestion;
-        UpdateTimerLabel();
+        if (isGuaranteedLifelinePending || isStreakLifelinePending)
+        {
+            // Don't start answering yet, show lifeline panel first
+            if (lifelineRouletteCoroutine != null)
+                StopCoroutine(lifelineRouletteCoroutine);
+            lifelineRouletteCoroutine = StartCoroutine(ShowLifelineGainedPanelThenContinueQuiz());
+        }
+        else
+        {
+            isAnswering = true;
+            timeRemaining = timePerQuestion;
+            UpdateTimerLabel();
 
-        if (timerCoroutine != null)
-            StopCoroutine(timerCoroutine);
-        timerCoroutine = StartCoroutine(TimerCountDown());
+            // Update lifeline button states for the new question
+            UpdateLifelineButtons();
+
+            if (timerCoroutine != null)
+                StopCoroutine(timerCoroutine);
+            timerCoroutine = StartCoroutine(TimerCountDown());
+        }
     }
 
     // === ANSWER BUTTON POSITION SHUFFLING ===
@@ -398,35 +439,67 @@ public class QuizProper : MonoBehaviour
         else
             points = pointsSlowAnswer;
 
-        // Apply double points if active
-        if (hasDoublePoints)
+        // Apply double points if pending (for this question only)
+        if (pendingDoublePoints)
+        {
             points *= 2;
+            pendingDoublePoints = false; // Consume the pending double
+        }
 
         AddScore(points);
 
-        // Check for streak-based lifeline
-        if (correctAnswerStreak == 5)
-        {
-            GiveRandomLifeline();
-            correctAnswerStreak = 0; // Reset streak
-        }
+        // Check for streak lifeline at ANY question
+        bool isStreakLifeline = ShouldTriggerStreakLifeline();
+        // Check for guaranteed lifeline at questions 15 and 25
+        bool isGuaranteedLifeline = IsGuaranteedLifelineQuestion();
+        // Check if can award any lifeline
+        bool canAwardLifeline = !AllLifelinesOwned();
+        // Check if there's a next question to show lifeline on
+        bool hasNextQuestion = currentQuestionIndex + 1 < totalQuestionsInGame;
 
-        // Check for guaranteed lifeline at question 15 and 25
-        if (currentQuestionIndex == 14 || currentQuestionIndex == 24)
+        if ((isStreakLifeline || isGuaranteedLifeline) && canAwardLifeline && hasNextQuestion)
         {
-            GiveRandomLifeline();
+            // For streak lifeline, defer to next question
+            if (isStreakLifeline)
+            {
+                isStreakLifelinePending = true;
+                correctAnswerStreak = 0; // Reset streak because reward will be granted
+                ShowFeedback(question, "CORRECT", question.correctAnswerIndex, true); // Show next button
+            }
+            // For guaranteed lifeline (already handled in HandleWrongAnswer)
+            // This case handles correct answer on Q15/Q25
+            else if (isGuaranteedLifeline)
+            {
+                isGuaranteedLifelinePending = true;
+                ShowFeedback(question, "CORRECT", question.correctAnswerIndex, true); // Show next button
+            }
         }
-
-        ShowFeedback(question, "CORRECT", question.correctAnswerIndex);
+        else
+        {
+            ShowFeedback(question, "CORRECT", question.correctAnswerIndex);
+        }
     }
 
     private void HandleWrongAnswer(QuizQuestion question)
     {
         correctAnswerStreak = 0; // Lose streak
-        ShowFeedback(question, "WRONG", question.correctAnswerIndex);
+
+        // Check if this is a guaranteed lifeline question (15 or 25)
+        bool isGuaranteedLifeline = IsGuaranteedLifelineQuestion();
+        bool canAwardLifeline = !AllLifelinesOwned();
+
+        if (isGuaranteedLifeline && canAwardLifeline)
+        {
+            isGuaranteedLifelinePending = true;
+            ShowFeedback(question, "WRONG", question.correctAnswerIndex, true);
+        }
+        else
+        {
+            ShowFeedback(question, "WRONG", question.correctAnswerIndex);
+        }
     }
 
-    private void ShowFeedback(QuizQuestion question, string feedbackType, int correctAnswerIndex)
+    private void ShowFeedback(QuizQuestion question, string feedbackType, int correctAnswerIndex, bool autoShowNextButton = true)
     {
         string feedbackMessage = "";
 
@@ -446,10 +519,13 @@ public class QuizProper : MonoBehaviour
         
         questionLabel.text = feedbackMessage;
 
-        // Show the next button after a delay
-        if (fadeInNextButtonCoroutine != null)
-            StopCoroutine(fadeInNextButtonCoroutine);
-        fadeInNextButtonCoroutine = StartCoroutine(FadeInNextButton());
+        // Show the next button after a delay (unless a lifeline panel is showing)
+        if (autoShowNextButton)
+        {
+            if (fadeInNextButtonCoroutine != null)
+                StopCoroutine(fadeInNextButtonCoroutine);
+            fadeInNextButtonCoroutine = StartCoroutine(FadeInNextButton());
+        }
     }
 
     private IEnumerator FadeInNextButton()
@@ -492,6 +568,15 @@ public class QuizProper : MonoBehaviour
         scoreLabel.text = currentScore.ToString();
     }
 
+    private void UpdateQuestionCounter()
+    {
+        if (questionCounterLabel != null)
+        {
+            int questionNumber = currentQuestionIndex + 1; // Convert 0-based to 1-based
+            questionCounterLabel.text = $"Question {questionNumber}/{totalQuestionsInGame}";
+        }
+    }
+
     // === LIFELINES ===
     private void GiveRandomLifeline()
     {
@@ -531,7 +616,8 @@ public class QuizProper : MonoBehaviour
         if (!hasDoublePoints || !isAnswering)
             return;
 
-        hasDoublePoints = false;
+        hasDoublePoints = false; // Consume the lifeline
+        pendingDoublePoints = true; // Mark that next correct answer should be doubled
         // This will be applied when the answer is submitted
         UpdateLifelineButtons();
     }
@@ -545,7 +631,7 @@ public class QuizProper : MonoBehaviour
 
         QuizQuestion currentQuestion = shuffledQuestions[currentQuestionIndex];
         
-        // Find wrong answers and disable one
+        // Find wrong answers and disable two (50/50 choice)
         List<int> wrongAnswers = new List<int>();
         for (int i = 0; i < 4; i++)
         {
@@ -555,10 +641,21 @@ public class QuizProper : MonoBehaviour
             }
         }
 
-        if (wrongAnswers.Count > 0)
+        // Disable 2 random wrong answers
+        if (wrongAnswers.Count >= 2)
         {
-            int buttonToDisable = wrongAnswers[Random.Range(0, wrongAnswers.Count)];
-            answerButtons[buttonToDisable].interactable = false;
+            // Shuffle the wrong answers
+            for (int i = wrongAnswers.Count - 1; i > 0; i--)
+            {
+                int randomIndex = Random.Range(0, i + 1);
+                int temp = wrongAnswers[i];
+                wrongAnswers[i] = wrongAnswers[randomIndex];
+                wrongAnswers[randomIndex] = temp;
+            }
+
+            // Disable the first 2 wrong answers
+            answerButtons[wrongAnswers[0]].interactable = false;
+            answerButtons[wrongAnswers[1]].interactable = false;
         }
 
         UpdateLifelineButtons();
@@ -566,9 +663,189 @@ public class QuizProper : MonoBehaviour
 
     private void UpdateLifelineButtons()
     {
-        stopTimeButton.interactable = hasStopTime && isAnswering;
-        doublePointsButton.interactable = hasDoublePoints && isAnswering;
-        reduceChoicesButton.interactable = hasReduceChoices && isAnswering;
+        SetLifelineButtonState(stopTimeButton, hasStopTime && isAnswering);
+        SetLifelineButtonState(doublePointsButton, hasDoublePoints && isAnswering);
+        SetLifelineButtonState(reduceChoicesButton, hasReduceChoices && isAnswering);
+    }
+
+    private void SetLifelineButtonState(Button button, bool enabled)
+    {
+        if (button == null) return;
+
+        button.interactable = enabled;
+        CanvasGroup cg = button.GetComponent<CanvasGroup>();
+        if (cg == null)
+        {
+            cg = button.gameObject.AddComponent<CanvasGroup>();
+        }
+
+        cg.alpha = enabled ? 1f : lifelineDisabledOpacity;
+    }
+
+    private bool ShouldTriggerLifelinePanel()
+    {
+        int questionNumber = currentQuestionIndex + 1; // convert 0-based to human friendly
+        bool isMilestone = questionNumber == 5 || questionNumber == 15 || questionNumber == 25;
+        bool hasStreak = correctAnswerStreak == 5;
+        bool allOwned = hasStopTime && hasDoublePoints && hasReduceChoices;
+
+        return isMilestone && hasStreak && !allOwned;
+    }
+
+    private bool ShouldTriggerStreakLifeline()
+    {
+        // Trigger lifeline panel anytime player gets 5-correct streak, at ANY question
+        return correctAnswerStreak == 5;
+    }
+
+    private bool IsGuaranteedLifelineQuestion()
+    {
+        int questionNumber = currentQuestionIndex + 1;
+        return questionNumber == 15 || questionNumber == 25;
+    }
+
+    private bool AllLifelinesOwned()
+    {
+        return hasStopTime && hasDoublePoints && hasReduceChoices;
+    }
+
+    private List<LifelineType> GetAvailableLifelines()
+    {
+        List<LifelineType> available = new List<LifelineType>();
+        if (!hasStopTime) available.Add(LifelineType.StopTime);
+        if (!hasDoublePoints) available.Add(LifelineType.DoublePoints);
+        if (!hasReduceChoices) available.Add(LifelineType.ReduceChoices);
+        return available;
+    }
+
+    private void AwardLifeline(LifelineType type)
+    {
+        if (type == LifelineType.StopTime) hasStopTime = true;
+        if (type == LifelineType.DoublePoints) hasDoublePoints = true;
+        if (type == LifelineType.ReduceChoices) hasReduceChoices = true;
+        UpdateLifelineButtons();
+    }
+
+    private string GetLifelineDisplayName(LifelineType type)
+    {
+        if (type == LifelineType.StopTime) return "Stop Time";
+        if (type == LifelineType.DoublePoints) return "Double Points";
+        return "Guided Questions"; // Reduce choices
+    }
+
+    private Sprite GetLifelineSprite(LifelineType type)
+    {
+        if (type == LifelineType.StopTime) return stopTimeSprite;
+        if (type == LifelineType.DoublePoints) return doublePointsSprite;
+        return reduceChoicesSprite;
+    }
+
+    private IEnumerator ShowLifelineGainedPanel()
+    {
+        if (lifelineGainedPanel == null)
+            yield break;
+
+        List<LifelineType> available = GetAvailableLifelines();
+        if (available.Count == 0)
+            yield break;
+
+        lifelineGainedPanel.SetActive(true);
+        if (lifelineContinueButton != null)
+            lifelineContinueButton.gameObject.SetActive(false);
+
+        float elapsed = 0f;
+        LifelineType currentShown = available[0];
+
+        // Fast roulette animation cycling through available lifelines
+        while (elapsed < lifelineRouletteDuration)
+        {
+            currentShown = available[Random.Range(0, available.Count)];
+            UpdateLifelinePanelVisuals(currentShown, true);
+            yield return new WaitForSeconds(lifelineRouletteInterval);
+            elapsed += lifelineRouletteInterval;
+        }
+
+        // Final award selection
+        LifelineType awarded = available.Count == 1 ? available[0] : available[Random.Range(0, available.Count)];
+        AwardLifeline(awarded);
+        UpdateLifelinePanelVisuals(awarded, false);
+
+        if (lifelineContinueButton != null)
+            lifelineContinueButton.gameObject.SetActive(true);
+    }
+
+    private IEnumerator ShowLifelineGainedPanelThenContinueQuiz()
+    {
+        if (lifelineGainedPanel == null)
+            yield break;
+
+        List<LifelineType> available = GetAvailableLifelines();
+        if (available.Count == 0)
+            yield break;
+
+        // Reset both pending flags at start (they'll stay reset through the animation)
+        isGuaranteedLifelinePending = false;
+        isStreakLifelinePending = false;
+
+        // Hide the next button so it doesn't interfere
+        if (nextQuestionButton != null)
+            nextQuestionButton.gameObject.SetActive(false);
+
+        lifelineGainedPanel.SetActive(true);
+        if (lifelineContinueButton != null)
+            lifelineContinueButton.gameObject.SetActive(false);
+
+        float elapsed = 0f;
+        LifelineType currentShown = available[0];
+
+        // Fast roulette animation cycling through available lifelines
+        while (elapsed < lifelineRouletteDuration)
+        {
+            currentShown = available[Random.Range(0, available.Count)];
+            UpdateLifelinePanelVisuals(currentShown, true);
+            yield return new WaitForSeconds(lifelineRouletteInterval);
+            elapsed += lifelineRouletteInterval;
+        }
+
+        // Final award selection
+        LifelineType awarded = available.Count == 1 ? available[0] : available[Random.Range(0, available.Count)];
+        AwardLifeline(awarded);
+        UpdateLifelinePanelVisuals(awarded, false);
+
+        if (lifelineContinueButton != null)
+            lifelineContinueButton.gameObject.SetActive(true);
+    }
+
+    private void UpdateLifelinePanelVisuals(LifelineType type, bool showRolling)
+    {
+        if (lifelineGainedText != null)
+        {
+            string name = GetLifelineDisplayName(type);
+            lifelineGainedText.text = showRolling ? "Congratulations! You gained ..." : $"Congratulations! You gained {name}";
+        }
+
+        if (lifelineGainedImage != null)
+        {
+            lifelineGainedImage.sprite = GetLifelineSprite(type);
+            lifelineGainedImage.enabled = lifelineGainedImage.sprite != null;
+        }
+    }
+
+    private void OnLifelineContinueClicked()
+    {
+        if (lifelineGainedPanel != null)
+            lifelineGainedPanel.SetActive(false);
+
+        // Lifeline panel was shown before timer started, so always start the quiz now
+        // Flags are already reset in ShowLifelineGainedPanelThenContinueQuiz
+        isAnswering = true;
+        timeRemaining = timePerQuestion;
+        UpdateTimerLabel();
+        UpdateLifelineButtons();
+
+        if (timerCoroutine != null)
+            StopCoroutine(timerCoroutine);
+        timerCoroutine = StartCoroutine(TimerCountDown());
     }
 
     // === NEXT QUESTION ===
