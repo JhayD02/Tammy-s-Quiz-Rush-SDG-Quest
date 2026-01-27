@@ -122,6 +122,127 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &16546364
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 16546365}
+  - component: {fileID: 16546368}
+  - component: {fileID: 16546367}
+  - component: {fileID: 16546366}
+  m_Layer: 5
+  m_Name: Continue
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &16546365
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 16546364}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 9.580343, y: 9.580343, z: 9.580343}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 208996610}
+  m_Father: {fileID: 1622785228}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -1537}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &16546366
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 16546364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 16546367}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &16546367
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 16546364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &16546368
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 16546364}
+  m_CullTransparentMesh: 1
 --- !u!1 &47610087
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,6 +416,140 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Padding: {x: -8, y: -5, z: -8, w: -5}
   m_Softness: {x: 0, y: 0}
+--- !u!1 &208996609
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 208996610}
+  - component: {fileID: 208996612}
+  - component: {fileID: 208996611}
+  m_Layer: 5
+  m_Name: Text (TMP)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &208996610
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 208996609}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 16546365}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &208996611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 208996609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Continue
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4281479730
+  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 24
+  m_fontSizeBase: 24
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &208996612
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 208996609}
+  m_CullTransparentMesh: 1
 --- !u!1 &212018549
 GameObject:
   m_ObjectHideFlags: 0
@@ -519,6 +774,7 @@ GameObject:
   - component: {fileID: 368460630}
   - component: {fileID: 368460629}
   - component: {fileID: 368460628}
+  - component: {fileID: 368460631}
   m_Layer: 5
   m_Name: Reduce Lifeline
   m_TagString: Untagged
@@ -628,6 +884,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 368460626}
   m_CullTransparentMesh: 1
+--- !u!225 &368460631
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 368460626}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &379061497
 GameObject:
   m_ObjectHideFlags: 0
@@ -1998,6 +2266,140 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 647313884}
   m_CullTransparentMesh: 1
+--- !u!1 &719794703
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 719794704}
+  - component: {fileID: 719794706}
+  - component: {fileID: 719794705}
+  m_Layer: 5
+  m_Name: LifeLineText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &719794704
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719794703}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 9.187648, y: 9.187648, z: 9.187648}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1622785228}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -234}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &719794705
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719794703}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Congratulations! You gained ...
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 22.52
+  m_fontSizeBase: 22.52
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: 0, w: -60.512806}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &719794706
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 719794703}
+  m_CullTransparentMesh: 1
 --- !u!1 &721784418
 GameObject:
   m_ObjectHideFlags: 0
@@ -2010,6 +2412,7 @@ GameObject:
   - component: {fileID: 721784422}
   - component: {fileID: 721784421}
   - component: {fileID: 721784420}
+  - component: {fileID: 721784423}
   m_Layer: 5
   m_Name: 2XPoints Lifeline
   m_TagString: Untagged
@@ -2119,6 +2522,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 721784418}
   m_CullTransparentMesh: 1
+--- !u!225 &721784423
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 721784418}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &722614680
 GameObject:
   m_ObjectHideFlags: 0
@@ -2498,137 +2913,596 @@ MonoBehaviour:
       for Sustainable Development.
     timeUpFeedback: Time's up! The SDGs were adopted in 2015 as part of the 2030
       Agenda for Sustainable Development.
-  - questionText: Which principle is central to the SDGs?
+  - questionText: Which SDG aims to end poverty?
     answers:
-    - answerText: Leave no one behind
+    - answerText: No Poverty
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: National interest only
+    - answerText: Zero Hunger
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Economic Profit First
+    - answerText: Good Health
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Clean Water
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: Correct! No Poverty is the SDG focused on ending poverty in
+      all forms worldwide.
+    wrongFeedback: Incorrect. No Poverty is the SDG focused on ending poverty in
+      all forms worldwide.
+    timeUpFeedback: Time's up! No Poverty is the SDG focused on ending poverty in
+      all forms worldwide.
+  - questionText: Which goal focuses on food for all?
+    answers:
+    - answerText: Zero Hunger
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: No Poverty
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Climate Action
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Life on Land
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: Correct! Zero Hunger aims to end hunger and provide food security
+      for everyone.
+    wrongFeedback: Incorrect. Zero Hunger aims to end hunger and provide food security
+      for everyone.
+    timeUpFeedback: Time's up! Zero Hunger aims to end hunger and provide food security
+      for everyone.
+  - questionText: Which SDG is about health?
+    answers:
+    - answerText: Good Health
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Quality Education
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Gender Equality
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Clean Energy
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: Correct! Good Health focuses on improving health and well-being
+      for all people.
+    wrongFeedback: Incorrect. Good Health focuses on improving health and well-being
+      for all people.
+    timeUpFeedback: Time's up! Good Health focuses on improving health and well-being
+      for all people.
+  - questionText: Which goal supports education?
+    answers:
+    - answerText: Quality Education
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Decent Work
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Industry Growth
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Clean Water
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: Correct! Quality Education ensures inclusive and equal learning
+      opportunities.
+    wrongFeedback: Incorrect. Quality Education ensures inclusive and equal learning
+      opportunities.
+    timeUpFeedback: Time's up! Quality Education ensures inclusive and equal learning
+      opportunities.
+  - questionText: Which SDG promotes equality?
+    answers:
+    - answerText: Gender Equality
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: No Poverty
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Life on Land
       answerImage: {fileID: 0}
       useImage: 0
     - answerText: Technology over people
       answerImage: {fileID: 0}
       useImage: 0
     correctAnswerIndex: 0
-    correctFeedback: "Correct! \u201CLeave no one behind\u201D ensures that progress
-      benefits everyone, especially the most vulnerable."
-    wrongFeedback: "Incorrect. \u201CLeave no one behind\u201D ensures that progress
-      benefits everyone, especially the most vulnerable."
-    timeUpFeedback: "Time's up! \u201CLeave no one behind\u201D ensures that progress
-      benefits everyone, especially the most vulnerable."
-  - questionText: Which principle is central to the SDGs?
+    correctFeedback: Correct! Gender Equality promotes equal rights and opportunities
+      for all genders.
+    wrongFeedback: Incorrect. Gender Equality promotes equal rights and opportunities
+      for all genders.
+    timeUpFeedback: Time's up! Gender Equality promotes equal rights and opportunities
+      for all genders.
+  - questionText: What action best helps families escape poverty?
     answers:
-    - answerText: Leave no one behind
+    - answerText: Job opportunities
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: National interest only
+    - answerText: Free luxury items
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Economic Profit First
+    - answerText: More advertisements
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Technology over people
+    - answerText: Higher prices
       answerImage: {fileID: 0}
       useImage: 0
     correctAnswerIndex: 0
-    correctFeedback: "Correct! \u201CLeave no one behind\u201D ensures that progress
-      benefits everyone, especially the most vulnerable."
-    wrongFeedback: "Incorrect. \u201CLeave no one behind\u201D ensures that progress
-      benefits everyone, especially the most vulnerable."
-    timeUpFeedback: "Time's up! \u201CLeave no one behind\u201D ensures that progress
-      benefits everyone, especially the most vulnerable."
-  - questionText: Which principle is central to the SDGs?
+    correctFeedback: Correct! Job opportunities help people earn income and meet
+      basic needs.
+    wrongFeedback: Incorrect. Job opportunities help people earn income and meet
+      basic needs.
+    timeUpFeedback: Time's up! Job opportunities help people earn income and meet
+      basic needs.
+  - questionText: Which action helps reduce hunger in communities?
     answers:
-    - answerText: Leave no one behind
+    - answerText: Food programs
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: National interest only
+    - answerText: Food waste
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Economic Profit First
+    - answerText: Junk food ads
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Technology over people
+    - answerText: Price increases
       answerImage: {fileID: 0}
       useImage: 0
     correctAnswerIndex: 0
-    correctFeedback: "Correct! \u201CLeave no one behind\u201D ensures that progress
-      benefits everyone, especially the most vulnerable."
-    wrongFeedback: "Incorrect. \u201CLeave no one behind\u201D ensures that progress
-      benefits everyone, especially the most vulnerable."
-    timeUpFeedback: "Time's up! \u201CLeave no one behind\u201D ensures that progress
-      benefits everyone, especially the most vulnerable."
-  - questionText: Which principle is central to the SDGs?
+    correctFeedback: Correct! Food programs ensure people have access to nutritious
+      meals.
+    wrongFeedback: Incorrect. Food programs ensure people have access to nutritious
+      meals.
+    timeUpFeedback: Time's up! Food programs ensure people have access to nutritious
+      meals.
+  - questionText: What helps keep people healthy every day?
     answers:
-    - answerText: Leave no one behind
+    - answerText: Medical access
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: National interest only
+    - answerText: Unsafe medicine
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Economic Profit First
+    - answerText: Pollution
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Technology over people
+    - answerText: Ignoring illness
       answerImage: {fileID: 0}
       useImage: 0
     correctAnswerIndex: 0
-    correctFeedback: "Correct! \u201CLeave no one behind\u201D ensures that progress
-      benefits everyone, especially the most vulnerable."
-    wrongFeedback: "Incorrect. \u201CLeave no one behind\u201D ensures that progress
-      benefits everyone, especially the most vulnerable."
-    timeUpFeedback: "Time's up! \u201CLeave no one behind\u201D ensures that progress
-      benefits everyone, especially the most vulnerable."
-  - questionText: Which principle is central to the SDGs?
+    correctFeedback: Correct! Medical access allows prevention and treatment of diseases.
+    wrongFeedback: Incorrect. Medical access allows prevention and treatment of diseases.
+    timeUpFeedback: Time's up! Medical access allows prevention and treatment of
+      diseases.
+  - questionText: What helps students learn better?
     answers:
-    - answerText: Leave no one behind
+    - answerText: Guided schooling
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: National interest only
+    - answerText: Child labor
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Economic Profit First
+    - answerText: No teachers
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Technology over people
+    - answerText: Closed schools
       answerImage: {fileID: 0}
       useImage: 0
     correctAnswerIndex: 0
-    correctFeedback: "Correct! \u201CLeave no one behind\u201D ensures that progress
-      benefits everyone, especially the most vulnerable."
-    wrongFeedback: "Incorrect. \u201CLeave no one behind\u201D ensures that progress
-      benefits everyone, especially the most vulnerable."
-    timeUpFeedback: "Time's up! \u201CLeave no one behind\u201D ensures that progress
-      benefits everyone, especially the most vulnerable."
-  - questionText: Which principle is central to the SDGs?
+    correctFeedback: Correct! Free schooling gives equal learning opportunities to
+      all.
+    wrongFeedback: Incorrect. Free schooling gives equal learning opportunities to
+      all.
+    timeUpFeedback: Time's up! Free schooling gives equal learning opportunities
+      to all.
+  - questionText: What promotes equality in the workplace?
     answers:
-    - answerText: Leave no one behind
+    - answerText: Equal pay
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: National interest only
+    - answerText: Unequal rules
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Economic Profit First
+    - answerText: Fewer rights
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Technology over people
+    - answerText: Limited jobs
       answerImage: {fileID: 0}
       useImage: 0
     correctAnswerIndex: 0
-    correctFeedback: "Correct! \u201CLeave no one behind\u201D ensures that progress
-      benefits everyone, especially the most vulnerable."
-    wrongFeedback: "Incorrect. \u201CLeave no one behind\u201D ensures that progress
-      benefits everyone, especially the most vulnerable."
+    correctFeedback: Correct! Equal pay ensures fairness regardless of gender.
+    wrongFeedback: Incorrect. Equal pay ensures fairness regardless of gender.
+    timeUpFeedback: Time's up! Equal pay ensures fairness regardless of gender.
+  - questionText: How can families conserve water at home?
+    answers:
+    - answerText: Fix leaks
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Waste water
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Open taps
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Longer showers
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: Correct! Fixing leaks prevents clean water from being wasted.
+    wrongFeedback: Incorrect. Fixing leaks prevents clean water from being wasted.
+    timeUpFeedback: Time's up! Fixing leaks prevents clean water from being wasted.
+  - questionText: Which action supports clean energy use?
+    answers:
+    - answerText: Solar panels
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Coal burning
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Oil spills
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Power waste
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: Correct! Solar panels provide clean and renewable energy.
+    wrongFeedback: Incorrect. Solar panels provide clean and renewable energy.
+    timeUpFeedback: Time's up! Solar panels provide clean and renewable energy.
+  - questionText: What makes a job fair and safe?
+    answers:
+    - answerText: Worker rights
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Child labor
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Unsafe sites
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: No salary
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: Correct! Worker rights protect safety and fair treatment.
+    wrongFeedback: Incorrect. Worker rights protect safety and fair treatment.
+    timeUpFeedback: "Time's up! \u201CWorker rights protect safety and fair treatment."
+  - questionText: What helps a country grow sustainably?
+    answers:
+    - answerText: New technology
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Old systems
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Broken roads
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: No internet
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: Correct! New technology improves infrastructure and innovation.
+    wrongFeedback: Incorrect. New technology improves infrastructure and innovation.
+    timeUpFeedback: Time's up! New technology improves infrastructure and innovation.
+  - questionText: What helps reduce inequality in society?
+    answers:
+    - answerText: Equal access
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Discrimination
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Fewer rights
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: High barriers
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: Correct! Equal access allows everyone fair opportunities.
+    wrongFeedback: Incorrect. Equal access allows everyone fair opportunities.
+    timeUpFeedback: Time's up! Equal access allows everyone fair opportunities.
+  - questionText: What makes a city more livable?
+    answers:
+    - answerText: Public transport
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Heavy traffic
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: More pollution
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Unsafe housing
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: Correct! Public transport reduces pollution and improves mobility.
+    wrongFeedback: Incorrect. Public transport reduces pollution and improves mobility.
+    timeUpFeedback: Time's up! Public transport reduces pollution and improves mobility.
+  - questionText: How can people reduce waste daily?
+    answers:
+    - answerText: Recycle items
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Single use
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Overbuy goods
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Throw plastics
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: Correct! Recycling helps reduce waste and save resources.
+    wrongFeedback: Incorrect. Recycling helps reduce waste and save resources.
+    timeUpFeedback: Time's up! Recycling helps reduce waste and save resources.
+  - questionText: What helps slow climate change?
+    answers:
+    - answerText: Reduce emissions
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: More pollution
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Tree cutting
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Fuel waste
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: Correct! Reducing emissions lowers greenhouse gases.
+    wrongFeedback: Incorrect. Reducing emissions lowers greenhouse gases.
+    timeUpFeedback: Time's up! Reducing emissions lowers greenhouse gases.
+  - questionText: How can oceans be protected?
+    answers:
+    - answerText: Reduce plastics
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Ocean dumping
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Overfishing
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Oil spills
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: Correct! Reducing plastics prevents harm to marine life.
+    wrongFeedback: Incorrect. Reducing plastics prevents harm to marine life.
+    timeUpFeedback: Time's up! Reducing plastics prevents harm to marine life.
+  - questionText: What helps protect wildlife habitats?
+    answers:
+    - answerText: Forest protection
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Illegal logging
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Land pollution
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Overhunting
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: Correct! Forest protection preserves ecosystems and animals.
+    wrongFeedback: Incorrect. Forest protection preserves ecosystems and animals.
+    timeUpFeedback: Time's up! Forest protection preserves ecosystems and animals.
+  - questionText: What helps build peaceful communities?
+    answers:
+    - answerText: Fair laws
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Corruption
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Violence
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Weak courts
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: Correct! Fair laws promote justice and trust in society.
+    wrongFeedback: Incorrect. Fair laws promote justice and trust in society.
+    timeUpFeedback: Time's up! Fair laws promote justice and trust in society.
+  - questionText: How can countries achieve SDGs faster?
+    answers:
+    - answerText: Work together
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Act alone
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Share nothing
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Ignore goals
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: Correct! Working together strengthens global progress.
+    wrongFeedback: Incorrect. Working together strengthens global progress.
+    timeUpFeedback: Time's up! Working together strengthens global progress.
+  - questionText: What helps people earn a stable income that leads to no poverty?
+    answers:
+    - answerText: Skills training
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: More debt
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Fewer jobs
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: High prices
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: Correct! Skills training helps people get better jobs and income.
+    wrongFeedback: Incorrect. Skills training helps people get better jobs and income.
+    timeUpFeedback: Time's up! Skills training helps people get better jobs and income.
+  - questionText: Which action helps prevent food shortages?
+    answers:
+    - answerText: Support farmers
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Food waste
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Import bans
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Poor storage
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: Correct! Supporting farmers improves food supply and access.
+    wrongFeedback: Incorrect. Supporting farmers improves food supply and access.
+    timeUpFeedback: Time's up! Supporting farmers improves food supply and access.
+  - questionText: What helps prevent the spread of disease?
+    answers:
+    - answerText: Vaccination
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: No treatment
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Unsafe water
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Overcrowding
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: Correct! Vaccination protects people from diseases.
+    wrongFeedback: Incorrect. Vaccination protects people from diseases.
+    timeUpFeedback: Time's up! Vaccination protects people from diseases.
+  - questionText: What helps children stay in school?
+    answers:
+    - answerText: School supplies
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Child labor
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Long workdays
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: High fees
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: Correct! School supplies support learning and attendance.
+    wrongFeedback: Incorrect. School supplies support learning and attendance.
+    timeUpFeedback: Time's up! School supplies support learning and attendance.
+  - questionText: What supports equal leadership opportunities?
+    answers:
+    - answerText: Equal rights
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Bias rules
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Limited roles
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: No voice
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: Correct! Equal rights allow everyone to lead fairly.
+    wrongFeedback: Incorrect. Equal rights allow everyone to lead fairly.
     timeUpFeedback: "Time's up! \u201CLeave no one behind\u201D ensures that progress
       benefits everyone, especially the most vulnerable."
-  totalQuestionsInGame: 5
+  - questionText: What helps keep drinking water clean?
+    answers:
+    - answerText: Water treatment
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: River dumping
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Open sewage
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Plastic waste
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: Correct! Water treatment removes harmful pollutants.
+    wrongFeedback: Incorrect. Water treatment removes harmful pollutants.
+    timeUpFeedback: Time's up! Water treatment removes harmful pollutants.
+  - questionText: What reduces energy waste at home?
+    answers:
+    - answerText: LED lights
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Old bulbs
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Power leaks
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Always on
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: Correct! LED lights use less energy and last longer.
+    wrongFeedback: Incorrect. LED lights use less energy and last longer.
+    timeUpFeedback: Time's up! LED lights use less energy and last longer.
+  - questionText: What ensures safe workplaces?
+    answers:
+    - answerText: Safety laws
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: No rules
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Child labor
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Unsafe tools
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: Correct! Safety laws protect workers from harm.
+    wrongFeedback: Incorrect. Safety laws protect workers from harm.
+    timeUpFeedback: Time's up! Safety laws protect workers from harm.
+  - questionText: What everyday action lowers carbon output?
+    answers:
+    - answerText: Use public transport
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Drive alone
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Burn trash
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Waste fuel
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: Correct! Public transport reduces emissions per person.
+    wrongFeedback: Incorrect. Public transport reduces emissions per person.
+    timeUpFeedback: Time's up! Public transport reduces emissions per person.
+  totalQuestionsInGame: 30
   timePerQuestion: 20
   questionLabel: {fileID: 887570750}
   timerLabel: {fileID: 1622293748}
   scoreLabel: {fileID: 995408582}
+  questionCounterLabel: {fileID: 1379129483}
   answerButtons:
   - {fileID: 1606341270}
   - {fileID: 379061499}
@@ -2651,9 +3525,20 @@ MonoBehaviour:
   resumeButton: {fileID: 1694621602}
   restartButton: {fileID: 47610089}
   homeButton: {fileID: 1278425576}
+  homeSceneName: MainMenu
   stopTimeButton: {fileID: 1980547683}
   doublePointsButton: {fileID: 721784420}
   reduceChoicesButton: {fileID: 368460628}
+  lifelineDisabledOpacity: 0.4
+  lifelineGainedPanel: {fileID: 1622785227}
+  lifelineGainedText: {fileID: 719794705}
+  lifelineGainedImage: {fileID: 1142986833}
+  lifelineContinueButton: {fileID: 16546366}
+  lifelineRouletteDuration: 2
+  lifelineRouletteInterval: 0.15
+  stopTimeSprite: {fileID: 21300000, guid: 55a523b7d2a9a024fa7a0d80703f2893, type: 3}
+  doublePointsSprite: {fileID: 21300000, guid: acb1fe05000ecf149bc8713aac505a5c, type: 3}
+  reduceChoicesSprite: {fileID: 21300000, guid: 9c236f2e0ca8cff4a89c34ac9be0d57d, type: 3}
   nextButtonFadeDelay: 1.5
   nextButtonFadeDuration: 0.4
   scoreIncrementSpeed: 0.02
@@ -4746,6 +5631,81 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1119942197}
   m_CullTransparentMesh: 1
+--- !u!1 &1142986831
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1142986832}
+  - component: {fileID: 1142986834}
+  - component: {fileID: 1142986833}
+  m_Layer: 5
+  m_Name: LifeLineImageDisplay
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1142986832
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142986831}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 10.932023, y: 10.932023, z: 10.932023}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1622785228}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 702}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1142986833
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142986831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1142986834
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1142986831}
+  m_CullTransparentMesh: 1
 --- !u!1 &1187202014
 GameObject:
   m_ObjectHideFlags: 0
@@ -5309,7 +6269,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1236363267
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5329,6 +6289,7 @@ RectTransform:
   - {fileID: 325939129}
   - {fileID: 558665324}
   - {fileID: 306400258}
+  - {fileID: 1379129482}
   m_Father: {fileID: 1374956660}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -5464,7 +6425,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -1301}
+  m_AnchoredPosition: {x: 0, y: -913}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1271351688
@@ -6156,9 +7117,10 @@ RectTransform:
   - {fileID: 2016909221}
   - {fileID: 1424494667}
   - {fileID: 1196502698}
-  - {fileID: 1187202015}
-  - {fileID: 1080332385}
   - {fileID: 1236363267}
+  - {fileID: 1080332385}
+  - {fileID: 1187202015}
+  - {fileID: 1622785228}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -6166,6 +7128,140 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &1379129481
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1379129482}
+  - component: {fileID: 1379129484}
+  - component: {fileID: 1379129483}
+  m_Layer: 5
+  m_Name: QuestionCounter
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1379129482
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379129481}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 4.014663, y: 4.014663, z: 4.014663}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1236363267}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 217, y: 1916}
+  m_SizeDelta: {x: 200, y: 50}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1379129483
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379129481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_text: Question 1/30
+  m_isRightToLeft: 0
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontSharedMaterials: []
+  m_fontMaterial: {fileID: 0}
+  m_fontMaterials: []
+  m_fontColor32:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_enableVertexGradient: 0
+  m_colorMode: 3
+  m_fontColorGradient:
+    topLeft: {r: 1, g: 1, b: 1, a: 1}
+    topRight: {r: 1, g: 1, b: 1, a: 1}
+    bottomLeft: {r: 1, g: 1, b: 1, a: 1}
+    bottomRight: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColorGradientPreset: {fileID: 0}
+  m_spriteAsset: {fileID: 0}
+  m_tintAllSprites: 0
+  m_StyleSheet: {fileID: 0}
+  m_TextStyleHashCode: -1183493901
+  m_overrideHtmlColors: 0
+  m_faceColor:
+    serializedVersion: 2
+    rgba: 4294967295
+  m_fontSize: 36
+  m_fontSizeBase: 36
+  m_fontWeight: 400
+  m_enableAutoSizing: 0
+  m_fontSizeMin: 18
+  m_fontSizeMax: 72
+  m_fontStyle: 0
+  m_HorizontalAlignment: 1
+  m_VerticalAlignment: 256
+  m_textAlignment: 65535
+  m_characterSpacing: 0
+  m_wordSpacing: 0
+  m_lineSpacing: 0
+  m_lineSpacingMax: 0
+  m_paragraphSpacing: 0
+  m_charWidthMaxAdj: 0
+  m_enableWordWrapping: 1
+  m_wordWrappingRatios: 0.4
+  m_overflowMode: 0
+  m_linkedTextComponent: {fileID: 0}
+  parentLinkedComponent: {fileID: 0}
+  m_enableKerning: 1
+  m_enableExtraPadding: 0
+  checkPaddingRequired: 0
+  m_isRichText: 1
+  m_parseCtrlCharacters: 1
+  m_isOrthographic: 1
+  m_isCullingEnabled: 0
+  m_horizontalMapping: 0
+  m_verticalMapping: 0
+  m_uvLineOffset: 0
+  m_geometrySortingOrder: 0
+  m_IsTextObjectScaleStatic: 0
+  m_VertexBufferAutoSizeReduction: 0
+  m_useMaxVisibleDescender: 1
+  m_pageToDisplay: 1
+  m_margin: {x: 0, y: 0, z: -51.287014, w: 0}
+  m_isUsingLegacyAnimationComponent: 0
+  m_isVolumetricText: 0
+  m_hasFontAssetChanged: 0
+  m_baseMaterial: {fileID: 0}
+  m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
+--- !u!222 &1379129484
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379129481}
+  m_CullTransparentMesh: 1
 --- !u!1 &1424494666
 GameObject:
   m_ObjectHideFlags: 0
@@ -6183,7 +7279,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1424494667
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7220,6 +8316,97 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1622293746}
   m_CullTransparentMesh: 1
+--- !u!1 &1622785227
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1622785228}
+  - component: {fileID: 1622785231}
+  - component: {fileID: 1622785230}
+  - component: {fileID: 1622785229}
+  m_Layer: 5
+  m_Name: LifeLineGained
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1622785228
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622785227}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.73486, y: 0.73486, z: 0.73486}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1142986832}
+  - {fileID: 719794704}
+  - {fileID: 16546365}
+  m_Father: {fileID: 1374956660}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!225 &1622785229
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622785227}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!114 &1622785230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622785227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1622785231
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1622785227}
+  m_CullTransparentMesh: 1
 --- !u!1 &1639963365
 GameObject:
   m_ObjectHideFlags: 0
@@ -8162,7 +9349,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 589}
+  m_AnchoredPosition: {x: 0, y: 955}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1783081903
@@ -8250,7 +9437,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: 0, w: -206.03378}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -8838,6 +10025,7 @@ GameObject:
   - component: {fileID: 1980547685}
   - component: {fileID: 1980547684}
   - component: {fileID: 1980547683}
+  - component: {fileID: 1980547686}
   m_Layer: 5
   m_Name: Freeze Lifeline
   m_TagString: Untagged
@@ -8947,6 +10135,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1980547681}
   m_CullTransparentMesh: 1
+--- !u!225 &1980547686
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1980547681}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &2016909220
 GameObject:
   m_ObjectHideFlags: 0
