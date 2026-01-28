@@ -505,11 +505,11 @@ MonoBehaviour:
   audioSource: {fileID: 0}
   videoVolume: 1
   skipButton: {fileID: 1398667682}
-  skipDelay: 2.5
-  quizSceneAsset: {fileID: 102900000, guid: 2452189aa09309140b7c8abbb4dec789, type: 3}
-  quizSceneName: MainMenu
-  transition: {fileID: 11400000, guid: 06fa0ad2bc756f44ab258bc74947381d, type: 2}
-  startDelay: 2.5
+  skipDelay: 1
+  quizSceneAsset: {fileID: 102900000, guid: d8a6b23b890a45648a2635900ebc3f47, type: 3}
+  quizSceneName: Loading1
+  transition: {fileID: 11400000, guid: b577ec7af0d48c34a9d31ce17f830a8d, type: 2}
+  startDelay: 1
 --- !u!4 &927114726
 Transform:
   m_ObjectHideFlags: 0
