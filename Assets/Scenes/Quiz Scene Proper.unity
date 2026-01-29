@@ -11530,13 +11530,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71d0e5b4bcc5ce64493ad00d8d15dc36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  instructionPanel: {fileID: 0}
-  instructionLabel: {fileID: 0}
-  instructionText: 'Welcome to the Quiz!
-
-
-    Answer 30 questions to test your knowledge.'
-  nextFromInstructionButton: {fileID: 0}
   userInfoPanel: {fileID: 1196502697}
   firstNameInput: {fileID: 1090147076}
   lastNameInput: {fileID: 1097928429}

@@ -222,6 +222,9 @@ public class QuizProper : MonoBehaviour
             return;
         }
 
+        // Show the main quiz UI
+        ShowMainQuizUI();
+
         quizStarted = true;
 
         // Shuffle all questions and pick the first 30

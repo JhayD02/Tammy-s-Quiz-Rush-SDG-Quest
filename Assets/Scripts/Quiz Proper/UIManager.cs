@@ -11,13 +11,6 @@ using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
-    [Header("=== INSTRUCTION PANEL ===")]
-    [SerializeField] private GameObject instructionPanel;
-    [SerializeField] private TextMeshProUGUI instructionLabel;
-    [TextArea(3, 5)]
-    [SerializeField] private string instructionText = "Welcome to the Quiz!\n\nAnswer 30 questions to test your knowledge.";
-    [SerializeField] private Button nextFromInstructionButton;
-
     [Header("=== USER INFO PANEL ===")]
     [SerializeField] private GameObject userInfoPanel;
     [SerializeField] private TMP_InputField firstNameInput;
@@ -41,11 +34,6 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
-        // DISABLED: QuizProper now handles instruction panels
-        // Set up instruction panel
-        // instructionLabel.text = instructionText;
-        // nextFromInstructionButton.onClick.AddListener(ShowUserInfoPanel);
-
         // Set up name inputs
         firstNameInput.onValueChanged.AddListener(_ => ValidateForm());
         lastNameInput.onValueChanged.AddListener(_ => ValidateForm());
@@ -61,9 +49,7 @@ public class UIManager : MonoBehaviour
         // Set up start quiz button
         startQuizButton.onClick.AddListener(OnStartQuizPressed);
 
-        // Hide panels at start
-        // DISABLED: instructionPanel is now managed by QuizProper
-        // userInfoPanel.SetActive(false);
+        // Hide panels at start (QuizProper handles instruction panels now)
         othersAbbreviationContainer.SetActive(false);
         startQuizButton.gameObject.SetActive(false); // Hide until all fields valid
 
@@ -71,13 +57,8 @@ public class UIManager : MonoBehaviour
     }
 
     // === USER INFO PANEL ===
-    // This method is now called from QuizProper's OnInstructionPanel2NextClicked
     public void ShowUserInfoPanel()
     {
-        // Hide old instruction panel if it exists
-        if (instructionPanel != null)
-            instructionPanel.SetActive(false);
-        
         userInfoPanel.SetActive(true);
         ValidateForm();
     }
@@ -146,21 +127,22 @@ public class UIManager : MonoBehaviour
         // Save player info to PlayerManager (which will save it when quiz ends)
         PlayerManager.Instance.SetPlayerInfo(firstName, lastName, school);
 
-        // Hide the UI panels
-        instructionPanel.SetActive(false);
+        // Hide the user info panel
         userInfoPanel.SetActive(false);
 
         // Show the quiz panel
         if (quizPanel != null)
         {
             quizPanel.SetActive(true);
+            Debug.Log("Quiz panel is now active");
         }
         else
         {
             Debug.LogError("ERROR: quizPanel is not assigned in the UIManager Inspector!");
+            return;
         }
 
-        // Start the quiz!
+        // Start the quiz! (This will show quiz UI and load first question)
         quizProper.StartQuiz();
     }
 }
