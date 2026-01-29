@@ -41,9 +41,10 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
+        // DISABLED: QuizProper now handles instruction panels
         // Set up instruction panel
-        instructionLabel.text = instructionText;
-        nextFromInstructionButton.onClick.AddListener(ShowUserInfoPanel);
+        // instructionLabel.text = instructionText;
+        // nextFromInstructionButton.onClick.AddListener(ShowUserInfoPanel);
 
         // Set up name inputs
         firstNameInput.onValueChanged.AddListener(_ => ValidateForm());
@@ -61,17 +62,22 @@ public class UIManager : MonoBehaviour
         startQuizButton.onClick.AddListener(OnStartQuizPressed);
 
         // Hide panels at start
-        userInfoPanel.SetActive(false);
+        // DISABLED: instructionPanel is now managed by QuizProper
+        // userInfoPanel.SetActive(false);
         othersAbbreviationContainer.SetActive(false);
         startQuizButton.gameObject.SetActive(false); // Hide until all fields valid
 
         ValidateForm(); // Run once to update button state
     }
 
-    // === INSTRUCTION PANEL ===
-    private void ShowUserInfoPanel()
+    // === USER INFO PANEL ===
+    // This method is now called from QuizProper's OnInstructionPanel2NextClicked
+    public void ShowUserInfoPanel()
     {
-        instructionPanel.SetActive(false);
+        // Hide old instruction panel if it exists
+        if (instructionPanel != null)
+            instructionPanel.SetActive(false);
+        
         userInfoPanel.SetActive(true);
         ValidateForm();
     }
