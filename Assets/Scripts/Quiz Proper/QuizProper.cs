@@ -74,6 +74,13 @@ public class QuizProper : MonoBehaviour
     [SerializeField] private float resultsPanelFadeDelay = 1.0f;
     [SerializeField] private float resultsPanelFadeDuration = 1.0f;
     
+    [Header("=== INSTRUCTION PANELS ===")]
+    [SerializeField] private GameObject instructionPanel1;
+    [SerializeField] private Button instructionPanel1NextButton;
+    [SerializeField] private GameObject instructionPanel2;
+    [SerializeField] private Button instructionPanel2NextButton;
+    [SerializeField] private UIManager uiManager; // Reference to UIManager for user info panel
+    
     [Header("=== PERFORMANCE FEEDBACK MESSAGES ===")]
     [TextArea(2, 3)]
     [SerializeField] private string excellentMessage = "Excellent!";
@@ -137,6 +144,29 @@ public class QuizProper : MonoBehaviour
         if (lifelineContinueButton != null)
             lifelineContinueButton.onClick.AddListener(OnLifelineContinueClicked);
 
+        // Set up instruction panel buttons
+        if (instructionPanel1NextButton != null)
+        {
+            instructionPanel1NextButton.onClick.RemoveAllListeners(); // Clear any existing listeners
+            instructionPanel1NextButton.onClick.AddListener(OnInstructionPanel1NextClicked);
+            Debug.Log("Instruction Panel 1 Next Button listener added");
+        }
+        else
+        {
+            Debug.LogWarning("Instruction Panel 1 Next Button is not assigned!");
+        }
+
+        if (instructionPanel2NextButton != null)
+        {
+            instructionPanel2NextButton.onClick.RemoveAllListeners(); // Clear any existing listeners
+            instructionPanel2NextButton.onClick.AddListener(OnInstructionPanel2NextClicked);
+            Debug.Log("Instruction Panel 2 Next Button listener added");
+        }
+        else
+        {
+            Debug.LogWarning("Instruction Panel 2 Next Button is not assigned!");
+        }
+
         // Store initial button positions for shuffling
         InitializeButtonPositions();
 
@@ -145,6 +175,10 @@ public class QuizProper : MonoBehaviour
         pausePanel.SetActive(false);
         if (lifelineGainedPanel != null)
             lifelineGainedPanel.SetActive(false);
+
+        // Show instruction panel 1 on startup
+        ShowInstructionPanel1();
+
         UpdateLifelineButtons();
     }
 
@@ -967,6 +1001,152 @@ public class QuizProper : MonoBehaviour
             }
 
             resultsPanelCanvasGroup.alpha = 1f;
+        }
+    }
+
+    // === INSTRUCTION PANELS ===
+    private void HideMainQuizUI()
+    {
+        // Hide all quiz UI elements
+        questionLabel.gameObject.SetActive(false);
+        timerLabel.gameObject.SetActive(false);
+        scoreLabel.gameObject.SetActive(false);
+        questionCounterLabel.gameObject.SetActive(false);
+        nextQuestionButton.gameObject.SetActive(false);
+        
+        for (int i = 0; i < answerButtons.Length; i++)
+        {
+            answerButtons[i].gameObject.SetActive(false);
+        }
+
+        // Hide lifeline buttons
+        if (stopTimeButton != null)
+            stopTimeButton.gameObject.SetActive(false);
+        if (doublePointsButton != null)
+            doublePointsButton.gameObject.SetActive(false);
+        if (reduceChoicesButton != null)
+            reduceChoicesButton.gameObject.SetActive(false);
+
+        if (pauseButton != null)
+            pauseButton.gameObject.SetActive(false);
+    }
+
+    private void ShowMainQuizUI()
+    {
+        // Show all quiz UI elements
+        questionLabel.gameObject.SetActive(true);
+        timerLabel.gameObject.SetActive(true);
+        scoreLabel.gameObject.SetActive(true);
+        if (questionCounterLabel != null)
+            questionCounterLabel.gameObject.SetActive(true);
+        
+        for (int i = 0; i < answerButtons.Length; i++)
+        {
+            answerButtons[i].gameObject.SetActive(true);
+        }
+
+        // Show lifeline buttons
+        if (stopTimeButton != null)
+            stopTimeButton.gameObject.SetActive(true);
+        if (doublePointsButton != null)
+            doublePointsButton.gameObject.SetActive(true);
+        if (reduceChoicesButton != null)
+            reduceChoicesButton.gameObject.SetActive(true);
+
+        if (pauseButton != null)
+            pauseButton.gameObject.SetActive(true);
+    }
+
+    private void ShowInstructionPanel1()
+    {
+        // Hide quiz UI
+        HideMainQuizUI();
+
+        // Hide all other panels
+        if (instructionPanel2 != null)
+            instructionPanel2.SetActive(false);
+        pausePanel.SetActive(false);
+        if (lifelineGainedPanel != null)
+            lifelineGainedPanel.SetActive(false);
+        resultsPanel.SetActive(false);
+
+        // Show instruction panel 1
+        if (instructionPanel1 != null)
+        {
+            instructionPanel1.SetActive(true);
+            Debug.Log("Instruction Panel 1 is now active");
+        }
+        else
+        {
+            Debug.LogWarning("Instruction Panel 1 is not assigned in the Inspector!");
+        }
+    }
+
+    private void OnInstructionPanel1NextClicked()
+    {
+        Debug.Log("=== Instruction Panel 1 Next Button clicked! ===");
+        
+        // Hide instruction panel 1
+        if (instructionPanel1 != null)
+        {
+            instructionPanel1.SetActive(false);
+            Debug.Log("Instruction Panel 1 hidden");
+        }
+
+        // IMPORTANT: Do NOT start quiz yet
+        // Show instruction panel 2 ONLY
+        ShowInstructionPanel2();
+        
+        Debug.Log("OnInstructionPanel1NextClicked completed");
+    }
+
+    private void ShowInstructionPanel2()
+    {
+        Debug.Log("Showing Instruction Panel 2");
+        
+        // Hide quiz UI
+        HideMainQuizUI();
+
+        // Hide all other panels
+        if (instructionPanel1 != null)
+            instructionPanel1.SetActive(false);
+        pausePanel.SetActive(false);
+        if (lifelineGainedPanel != null)
+            lifelineGainedPanel.SetActive(false);
+        resultsPanel.SetActive(false);
+
+        // Show instruction panel 2
+        if (instructionPanel2 != null)
+        {
+            instructionPanel2.SetActive(true);
+            Debug.Log("Instruction Panel 2 is now active");
+        }
+        else
+        {
+            Debug.LogWarning("Instruction Panel 2 is not assigned in the Inspector!");
+        }
+    }
+
+    private void OnInstructionPanel2NextClicked()
+    {
+        Debug.Log("Instruction Panel 2 Next Button clicked!");
+        
+        // Hide instruction panel 2
+        if (instructionPanel2 != null)
+        {
+            instructionPanel2.SetActive(false);
+            Debug.Log("Instruction Panel 2 hidden");
+        }
+
+        // Show the User Info Panel via UIManager
+        if (uiManager != null)
+        {
+            uiManager.ShowUserInfoPanel();
+            Debug.Log("User Info Panel shown via UIManager");
+        }
+        else
+        {
+            Debug.LogError("UIManager reference is not assigned in QuizProper Inspector!");
         }
     }
 }
