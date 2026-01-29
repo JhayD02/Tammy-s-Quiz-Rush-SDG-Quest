@@ -71,8 +71,14 @@ public class QuizProper : MonoBehaviour
     [SerializeField] private CanvasGroup resultsPanelCanvasGroup;
     [SerializeField] private TextMeshProUGUI resultsMessageText;
     [SerializeField] private TextMeshProUGUI finalScoreText;
+    [SerializeField] private Button resultsNextButton; // Button to go to cutscene
     [SerializeField] private float resultsPanelFadeDelay = 1.0f;
     [SerializeField] private float resultsPanelFadeDuration = 1.0f;
+    
+    [Header("=== CUTSCENE SETTINGS ===")]
+    [SerializeField] private string goodCutsceneSceneName = "GoodCutscene";
+    [SerializeField] private string badCutsceneSceneName = "BadCutscene";
+    [SerializeField] private int cutsceneScoreThreshold = 2400; // Score needed for good ending
     
     [Header("=== INSTRUCTION PANELS ===")]
     [SerializeField] private GameObject instructionPanel1;
@@ -143,6 +149,10 @@ public class QuizProper : MonoBehaviour
         reduceChoicesButton.onClick.AddListener(UseReduceChoices);
         if (lifelineContinueButton != null)
             lifelineContinueButton.onClick.AddListener(OnLifelineContinueClicked);
+
+        // Set up results panel next button
+        if (resultsNextButton != null)
+            resultsNextButton.onClick.AddListener(OnResultsNextClicked);
 
         // Set up instruction panel buttons
         if (instructionPanel1NextButton != null)
@@ -1151,5 +1161,28 @@ public class QuizProper : MonoBehaviour
         {
             Debug.LogError("UIManager reference is not assigned in QuizProper Inspector!");
         }
+    }
+
+    // === RESULTS NEXT BUTTON (CUTSCENE TRANSITION) ===
+    private void OnResultsNextClicked()
+    {
+        Debug.Log("Results Next Button clicked!");
+        
+        // Determine which cutscene to load based on score
+        string sceneToLoad;
+        
+        if (currentScore >= cutsceneScoreThreshold)
+        {
+            sceneToLoad = goodCutsceneSceneName;
+            Debug.Log($"Score {currentScore} >= {cutsceneScoreThreshold}: Loading GOOD cutscene: {sceneToLoad}");
+        }
+        else
+        {
+            sceneToLoad = badCutsceneSceneName;
+            Debug.Log($"Score {currentScore} < {cutsceneScoreThreshold}: Loading BAD cutscene: {sceneToLoad}");
+        }
+
+        // Load the appropriate cutscene
+        UnityEngine.SceneManagement.SceneManager.LoadScene(sceneToLoad);
     }
 }
