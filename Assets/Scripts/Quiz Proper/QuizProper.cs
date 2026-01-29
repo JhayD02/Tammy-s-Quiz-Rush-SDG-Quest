@@ -43,6 +43,7 @@ public class QuizProper : MonoBehaviour
     [SerializeField] private Button doublePointsButton;
     [SerializeField] private Button reduceChoicesButton;
     [SerializeField] private float lifelineDisabledOpacity = 0.4f;
+    [SerializeField] private float reducedChoiceOpacity = 0.3f; // Opacity for greyed out wrong answers
 
     [Header("=== LIFELINE GAINED PANEL ===")]
     [SerializeField] private GameObject lifelineGainedPanel;
@@ -339,8 +340,9 @@ public class QuizProper : MonoBehaviour
                 Debug.Log($"  -> answerTexts[{i}].text is now: '{answerTexts[i].text}'");
             }
 
-            // Make button clickable
+            // Make button clickable and reset opacity
             answerButtons[i].interactable = true;
+            SetAnswerButtonOpacity(i, 1f);
         }
 
         // Shuffle the answer button positions AFTER setting content
@@ -700,12 +702,36 @@ public class QuizProper : MonoBehaviour
                 wrongAnswers[randomIndex] = temp;
             }
 
-            // Disable the first 2 wrong answers
+            // Grey out and disable the first 2 wrong answers
+            SetAnswerButtonOpacity(wrongAnswers[0], reducedChoiceOpacity);
             answerButtons[wrongAnswers[0]].interactable = false;
+            
+            SetAnswerButtonOpacity(wrongAnswers[1], reducedChoiceOpacity);
             answerButtons[wrongAnswers[1]].interactable = false;
         }
 
         UpdateLifelineButtons();
+    }
+
+    // Helper method to set answer button opacity using CanvasGroup
+    private void SetAnswerButtonOpacity(int buttonIndex, float opacity)
+    {
+        if (buttonIndex < 0 || buttonIndex >= answerButtons.Length)
+            return;
+
+        Button button = answerButtons[buttonIndex];
+        if (button == null)
+            return;
+
+        // Get or add CanvasGroup component
+        CanvasGroup cg = button.GetComponent<CanvasGroup>();
+        if (cg == null)
+        {
+            cg = button.gameObject.AddComponent<CanvasGroup>();
+        }
+
+        // Set the opacity
+        cg.alpha = opacity;
     }
 
     private void UpdateLifelineButtons()
