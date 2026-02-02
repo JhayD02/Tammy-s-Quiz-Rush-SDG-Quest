@@ -1505,7 +1505,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &502777944
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1523,7 +1523,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -34.605, y: -1315}
+  m_AnchoredPosition: {x: -34.605, y: -239}
   m_SizeDelta: {x: 373.2095, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &502777945
@@ -2192,7 +2192,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &631049323
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3860,6 +3860,7 @@ MonoBehaviour:
   instructionPanel2: {fileID: 579637422}
   instructionPanel2NextButton: {fileID: 1066345589}
   uiManager: {fileID: 2016909222}
+  globalLeaderboardManager: {fileID: 0}
   excellentMessage: Excellent!
   goodMessage: Good!
   needsImprovementMessage: Need more improvement
@@ -6074,7 +6075,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1080332385
 RectTransform:
   m_ObjectHideFlags: 0
