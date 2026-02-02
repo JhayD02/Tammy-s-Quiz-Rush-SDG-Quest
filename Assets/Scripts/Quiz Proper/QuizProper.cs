@@ -87,9 +87,6 @@ public class QuizProper : MonoBehaviour
     [SerializeField] private GameObject instructionPanel2;
     [SerializeField] private Button instructionPanel2NextButton;
     [SerializeField] private UIManager uiManager; // Reference to UIManager for user info panel
-
-    [Header("=== LOOTLOCKER INTEGRATION ===")]
-    [SerializeField] private GlobalLeaderBoardManager globalLeaderboardManager; // Reference to submit scores to global leaderboard
     
     [Header("=== PERFORMANCE FEEDBACK MESSAGES ===")]
     [TextArea(2, 3)]
@@ -981,19 +978,8 @@ public class QuizProper : MonoBehaviour
 
         AddScore(lifelineBonusPoints);
 
-        // Save the player's result locally
+        // Save the player's result
         PlayerManager.Instance.SetFinalScore(currentScore);
-
-        // Submit score to global leaderboard
-        if (globalLeaderboardManager != null)
-        {
-            Debug.Log("📤 Submitting score to global leaderboard...");
-            StartCoroutine(globalLeaderboardManager.SubmitScoreRoutine(currentScore));
-        }
-        else
-        {
-            Debug.LogWarning("GlobalLeaderboardManager not assigned! Score will only be saved locally.");
-        }
 
         // Show finish panel or do something
         Debug.Log("Quiz finished! Final score: " + currentScore);
