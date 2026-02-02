@@ -87,9 +87,6 @@ public class QuizProper : MonoBehaviour
     [SerializeField] private GameObject instructionPanel2;
     [SerializeField] private Button instructionPanel2NextButton;
     [SerializeField] private UIManager uiManager; // Reference to UIManager for user info panel
-
-    [Header("=== LOOTLOCKER INTEGRATION ===")]
-    [SerializeField] private GlobalLeaderBoardManager globalLeaderboardManager; // Reference to submit scores to global leaderboard
     
     [Header("=== PERFORMANCE FEEDBACK MESSAGES ===")]
     [TextArea(2, 3)]
@@ -118,8 +115,9 @@ public class QuizProper : MonoBehaviour
     private bool pendingDoublePoints = false; // Tracks if next correct answer should be doubled
     private int correctAnswerStreak = 0; // For streak-based lifeline reward
 
-    // Answer shuffling - track where correct answer is after shuffle
-    private int currentCorrectAnswerIndex = 0; // The button index where the correct answer is located after shuffling
+    // Button position shuffling - remember initial positions for swapping
+    private Vector2[] initialButtonPositions = new Vector2[4]; // Store initial anchoredPosition of each button
+    private bool positionsInitialized = false;
 
     // Coroutines
     private Coroutine timerCoroutine;
@@ -180,6 +178,9 @@ public class QuizProper : MonoBehaviour
             Debug.LogWarning("Instruction Panel 2 Next Button is not assigned!");
         }
 
+        // Store initial button positions for shuffling
+        InitializeButtonPositions();
+
         // Hide UI elements at start
         nextQuestionButton.gameObject.SetActive(false);
         pausePanel.SetActive(false);
@@ -190,6 +191,19 @@ public class QuizProper : MonoBehaviour
         ShowInstructionPanel1();
 
         UpdateLifelineButtons();
+    }
+
+    // Store the initial positions of all answer buttons
+    private void InitializeButtonPositions()
+    {
+        if (positionsInitialized) return;
+
+        for (int i = 0; i < answerButtons.Length; i++)
+        {
+            RectTransform rectTransform = answerButtons[i].GetComponent<RectTransform>();
+            initialButtonPositions[i] = rectTransform.anchoredPosition;
+        }
+        positionsInitialized = true;
     }
 
     private void Update()
@@ -274,31 +288,7 @@ public class QuizProper : MonoBehaviour
         // Display the question counter
         UpdateQuestionCounter();
 
-        // Shuffle the answers array for randomization
-        List<AnswerChoice> shuffledAnswers = new List<AnswerChoice>(currentQuestion.answers);
-        int originalCorrectIndex = currentQuestion.correctAnswerIndex;
-        
-        // Fisher-Yates shuffle
-        for (int i = shuffledAnswers.Count - 1; i > 0; i--)
-        {
-            int randomIndex = Random.Range(0, i + 1);
-            AnswerChoice temp = shuffledAnswers[i];
-            shuffledAnswers[i] = shuffledAnswers[randomIndex];
-            shuffledAnswers[randomIndex] = temp;
-            
-            // Track where the correct answer moved to
-            if (i == originalCorrectIndex)
-                originalCorrectIndex = randomIndex;
-            else if (randomIndex == originalCorrectIndex)
-                originalCorrectIndex = i;
-        }
-        
-        // Store the new position of the correct answer
-        currentCorrectAnswerIndex = originalCorrectIndex;
-        
-        Debug.Log($"Original correct index: {currentQuestion.correctAnswerIndex}, Shuffled to button: {currentCorrectAnswerIndex}");
-
-        // Display all 4 answer choices (now shuffled)
+        // Display all 4 answer choices (content stays in same button)
         for (int i = 0; i < 4; i++)
         {
             // Validate UI elements exist
@@ -313,10 +303,10 @@ public class QuizProper : MonoBehaviour
                 return;
             }
 
-            AnswerChoice answer = shuffledAnswers[i];
+            AnswerChoice answer = currentQuestion.answers[i];
 
             // DEBUG: Log what we're about to display
-            Debug.Log($"Question {index}, Button {i}: useImage={answer.useImage}, text='{answer.answerText}'");
+            Debug.Log($"Question {index}, Answer {i}: useImage={answer.useImage}, text='{answer.answerText}'");
 
             // Show either text or image based on the answer choice
             if (answer.useImage)
@@ -355,6 +345,9 @@ public class QuizProper : MonoBehaviour
             SetAnswerButtonOpacity(i, 1f);
         }
 
+        // Shuffle the answer button positions AFTER setting content
+        ShuffleAnswerButtonPositions();
+
         // Hide the next button and reset it
         nextQuestionButton.gameObject.SetActive(false);
         nextButtonCanvasGroup.alpha = 0f;
@@ -379,6 +372,47 @@ public class QuizProper : MonoBehaviour
             if (timerCoroutine != null)
                 StopCoroutine(timerCoroutine);
             timerCoroutine = StartCoroutine(TimerCountDown());
+        }
+    }
+
+    // === ANSWER BUTTON POSITION SHUFFLING ===
+    // Buttons are vertically aligned (Button 1, 2, 3, 4 from top to bottom)
+    // Button 1 and Button 3 can swap their VISUAL POSITIONS
+    // Button 2 and Button 4 can swap their VISUAL POSITIONS
+    // The content stays in each button, only positions change
+    private void ShuffleAnswerButtonPositions()
+    {
+        // First, reset all buttons to their initial positions
+        for (int i = 0; i < 4; i++)
+        {
+            RectTransform rectTransform = answerButtons[i].GetComponent<RectTransform>();
+            rectTransform.anchoredPosition = initialButtonPositions[i];
+        }
+
+        // Randomly decide if Button 1 and Button 3 swap positions
+        bool swapButtons1And3 = Random.value > 0.5f;
+        if (swapButtons1And3)
+        {
+            // Swap the visual positions
+            RectTransform button1 = answerButtons[0].GetComponent<RectTransform>();
+            RectTransform button3 = answerButtons[2].GetComponent<RectTransform>();
+            
+            Vector2 temp = button1.anchoredPosition;
+            button1.anchoredPosition = button3.anchoredPosition;
+            button3.anchoredPosition = temp;
+        }
+
+        // Randomly decide if Button 2 and Button 4 swap positions
+        bool swapButtons2And4 = Random.value > 0.5f;
+        if (swapButtons2And4)
+        {
+            // Swap the visual positions
+            RectTransform button2 = answerButtons[1].GetComponent<RectTransform>();
+            RectTransform button4 = answerButtons[3].GetComponent<RectTransform>();
+            
+            Vector2 temp = button2.anchoredPosition;
+            button2.anchoredPosition = button4.anchoredPosition;
+            button4.anchoredPosition = temp;
         }
     }
 
@@ -417,11 +451,11 @@ public class QuizProper : MonoBehaviour
             StopCoroutine(timerCoroutine);
 
         QuizQuestion currentQuestion = shuffledQuestions[currentQuestionIndex];
-        // buttonIndex corresponds to the button clicked
-        // Check against the shuffled correct answer position
+        // buttonIndex directly corresponds to answer index (Button 0 = Answer 0, etc.)
+        // The visual position may have been shuffled, but content stays with the button
 
         // Check if correct
-        if (buttonIndex == currentCorrectAnswerIndex)
+        if (buttonIndex == currentQuestion.correctAnswerIndex)
         {
             HandleCorrectAnswer(currentQuestion);
         }
@@ -436,7 +470,7 @@ public class QuizProper : MonoBehaviour
         isAnswering = false;
         correctAnswerStreak = 0; // Lose streak
         QuizQuestion currentQuestion = shuffledQuestions[currentQuestionIndex];
-        ShowFeedback(currentQuestion, "TIMEOUT", currentCorrectAnswerIndex);
+        ShowFeedback(currentQuestion, "TIMEOUT", currentQuestion.correctAnswerIndex);
     }
 
     private void HandleCorrectAnswer(QuizQuestion question)
@@ -479,19 +513,19 @@ public class QuizProper : MonoBehaviour
             {
                 isStreakLifelinePending = true;
                 correctAnswerStreak = 0; // Reset streak because reward will be granted
-                ShowFeedback(question, "CORRECT", currentCorrectAnswerIndex, true); // Show next button
+                ShowFeedback(question, "CORRECT", question.correctAnswerIndex, true); // Show next button
             }
             // For guaranteed lifeline (already handled in HandleWrongAnswer)
             // This case handles correct answer on Q15/Q25
             else if (isGuaranteedLifeline)
             {
                 isGuaranteedLifelinePending = true;
-                ShowFeedback(question, "CORRECT", currentCorrectAnswerIndex, true); // Show next button
+                ShowFeedback(question, "CORRECT", question.correctAnswerIndex, true); // Show next button
             }
         }
         else
         {
-            ShowFeedback(question, "CORRECT", currentCorrectAnswerIndex);
+            ShowFeedback(question, "CORRECT", question.correctAnswerIndex);
         }
     }
 
@@ -506,11 +540,11 @@ public class QuizProper : MonoBehaviour
         if (isGuaranteedLifeline && canAwardLifeline)
         {
             isGuaranteedLifelinePending = true;
-            ShowFeedback(question, "WRONG", currentCorrectAnswerIndex, true);
+            ShowFeedback(question, "WRONG", question.correctAnswerIndex, true);
         }
         else
         {
-            ShowFeedback(question, "WRONG", currentCorrectAnswerIndex);
+            ShowFeedback(question, "WRONG", question.correctAnswerIndex);
         }
     }
 
@@ -643,12 +677,14 @@ public class QuizProper : MonoBehaviour
             return;
 
         hasReduceChoices = false;
+
+        QuizQuestion currentQuestion = shuffledQuestions[currentQuestionIndex];
         
         // Find wrong answers and disable two (50/50 choice)
         List<int> wrongAnswers = new List<int>();
         for (int i = 0; i < 4; i++)
         {
-            if (i != currentCorrectAnswerIndex)
+            if (i != currentQuestion.correctAnswerIndex)
             {
                 wrongAnswers.Add(i);
             }
@@ -942,19 +978,8 @@ public class QuizProper : MonoBehaviour
 
         AddScore(lifelineBonusPoints);
 
-        // Save the player's result locally
+        // Save the player's result
         PlayerManager.Instance.SetFinalScore(currentScore);
-
-        // Submit score to global leaderboard
-        if (globalLeaderboardManager != null)
-        {
-            Debug.Log("📤 Submitting score to global leaderboard...");
-            StartCoroutine(globalLeaderboardManager.SubmitScoreRoutine(currentScore));
-        }
-        else
-        {
-            Debug.LogWarning("GlobalLeaderboardManager not assigned! Score will only be saved locally.");
-        }
 
         // Show finish panel or do something
         Debug.Log("Quiz finished! Final score: " + currentScore);

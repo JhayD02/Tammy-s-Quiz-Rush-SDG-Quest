@@ -4,12 +4,10 @@
 // When they finish the quiz, we can access this to show leaderboards later
 
 using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System;
 using System.Linq;
-using LootLocker.Requests;
 
 [System.Serializable]
 public class PlayerRecord
@@ -53,9 +51,6 @@ public class PlayerManager : MonoBehaviour
 
         // Set up the save file path
         savePath = Path.Combine(Application.persistentDataPath, "player_scores.json");
-
-        // Initialize LootLocker session
-        StartCoroutine(LoginRoutine());
     }
 
     // Called by UIManager when the player enters their info
@@ -170,32 +165,4 @@ public class PlayerManager : MonoBehaviour
     public string GetPlayerLastName() => playerLastName;
     public string GetPlayerSchool() => playerSchool;
     public int GetPlayerFinalScore() => playerFinalScore;
-
-    // === LOOTLOCKER INTEGRATION ===
-    /// <summary>
-    /// Initializes LootLocker guest session on game start
-    /// This allows connection to the global leaderboard system
-    /// </summary>
-    private IEnumerator LoginRoutine()
-    {
-        bool done = false;
-
-        LootLockerSDKManager.StartGuestSession((response) =>
-        {
-            if (response.success)
-            {
-                Debug.Log("✅ LootLocker Session Started Successfully!");
-                Debug.Log($"Player ID: {response.player_id}");
-                PlayerPrefs.SetString("PlayerID", response.player_id.ToString());
-                done = true;
-            }
-            else
-            {
-                Debug.LogError("❌ Could not start LootLocker session");
-                done = true;
-            }
-        });
-
-        yield return new WaitWhile(() => done == false);
-    }
 }
