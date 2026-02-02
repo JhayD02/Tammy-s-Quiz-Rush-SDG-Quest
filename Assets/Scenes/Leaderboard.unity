@@ -4817,7 +4817,7 @@ GameObject:
   - component: {fileID: 903777098}
   - component: {fileID: 903777097}
   m_Layer: 0
-  m_Name: LocalLeaderboardManager
+  m_Name: LeaderboardManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
