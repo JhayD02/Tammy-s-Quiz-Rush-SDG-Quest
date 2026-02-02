@@ -54,11 +54,11 @@ public class LocalLeaderboardManager : MonoBehaviour
 
     private void LoadAndDisplayLeaderboard()
     {
-        // Get the 5 most recent records from PlayerManager
-        List<PlayerRecord> recentRecords = PlayerManager.Instance.GetRecentRecords(5);
+        // Get the top 5 highest scores from PlayerManager
+        List<PlayerRecord> topScores = PlayerManager.Instance.GetTopLocalScores(5);
 
         // Check if we have any records
-        if (recentRecords == null || recentRecords.Count == 0)
+        if (topScores == null || topScores.Count == 0)
         {
             ShowEmptyState();
             return;
@@ -74,13 +74,13 @@ public class LocalLeaderboardManager : MonoBehaviour
             DisplayCurrentPlayer();
         }
 
-        // Display the recent records
+        // Display the top scores (sorted from highest to lowest)
         for (int i = 0; i < 5; i++)
         {
-            if (i < recentRecords.Count)
+            if (i < topScores.Count)
             {
                 // We have a record for this slot
-                PlayerRecord record = recentRecords[i];
+                PlayerRecord record = topScores[i];
                 
                 // Display name (First + Last)
                 if (nameTexts[i] != null)
