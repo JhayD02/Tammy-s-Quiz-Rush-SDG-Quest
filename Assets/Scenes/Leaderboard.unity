@@ -4835,7 +4835,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 294c8d1dc69e88844a5e46c4f7bba22b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstNameTexts:
+  nameTexts:
   - {fileID: 1027273476}
   - {fileID: 1728196089}
   - {fileID: 1651213172}
@@ -4847,24 +4847,32 @@ MonoBehaviour:
   - {fileID: 333371564}
   - {fileID: 142150722}
   - {fileID: 598574737}
-  lastNameBaseFontSize: 120
-  lastNameLengthThreshold: 13
-  lastNameFontSizeReduction: 15
   schoolTexts:
   - {fileID: 391000915}
   - {fileID: 1413846029}
   - {fileID: 1526102313}
   - {fileID: 1067738188}
   - {fileID: 1987056602}
+  dateTexts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   scoreTexts:
   - {fileID: 692962154}
   - {fileID: 1779170788}
   - {fileID: 588457471}
   - {fileID: 427746474}
   - {fileID: 1056197806}
+  currentPlayerPanel: {fileID: 0}
+  currentPlayerNameText: {fileID: 0}
+  currentPlayerLastNameText: {fileID: 0}
+  currentPlayerSchoolText: {fileID: 0}
+  currentPlayerDateText: {fileID: 0}
+  currentPlayerScoreText: {fileID: 0}
   emptyStateText: {fileID: 1096532283}
   emptyMessage: No high scores yet. Be the first to play!
-  statusMessage: Here are the top {count} scores, {slots} {slotWord} left!
   backToMenuButton: {fileID: 1476667318}
   playAgainButton: {fileID: 0}
   mainMenuSceneName: Leaderboard
@@ -5571,7 +5579,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1037835566
 RectTransform:
   m_ObjectHideFlags: 0
@@ -8524,8 +8532,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 90.6
-  m_fontSizeBase: 90.6
+  m_fontSize: 120
+  m_fontSizeBase: 120
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18

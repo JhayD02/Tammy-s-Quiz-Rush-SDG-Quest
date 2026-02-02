@@ -13,6 +13,7 @@ public class LocalLeaderboardManager : MonoBehaviour
     [Header("=== LEADERBOARD DISPLAY ===")]
     [Tooltip("These TextMesh Pro fields will display the 5 most recent players")]
     [SerializeField] private TextMeshProUGUI[] nameTexts = new TextMeshProUGUI[5];
+    [SerializeField] private TextMeshProUGUI[] lastNameTexts = new TextMeshProUGUI[5];
     [SerializeField] private TextMeshProUGUI[] schoolTexts = new TextMeshProUGUI[5];
     [SerializeField] private TextMeshProUGUI[] dateTexts = new TextMeshProUGUI[5];
     [SerializeField] private TextMeshProUGUI[] scoreTexts = new TextMeshProUGUI[5];
@@ -21,6 +22,7 @@ public class LocalLeaderboardManager : MonoBehaviour
     [Tooltip("If you want to show the current player's info separately")]
     [SerializeField] private GameObject currentPlayerPanel;
     [SerializeField] private TextMeshProUGUI currentPlayerNameText;
+    [SerializeField] private TextMeshProUGUI currentPlayerLastNameText;
     [SerializeField] private TextMeshProUGUI currentPlayerSchoolText;
     [SerializeField] private TextMeshProUGUI currentPlayerDateText;
     [SerializeField] private TextMeshProUGUI currentPlayerScoreText;
@@ -82,7 +84,11 @@ public class LocalLeaderboardManager : MonoBehaviour
                 
                 // Display name (First + Last)
                 if (nameTexts[i] != null)
-                    nameTexts[i].text = $"{record.firstName} {record.lastName}";
+                    nameTexts[i].text = record.firstName;
+                
+                // Display last name
+                if (lastNameTexts[i] != null)
+                    lastNameTexts[i].text = record.lastName;
                 
                 // Display school
                 if (schoolTexts[i] != null)
@@ -98,6 +104,7 @@ public class LocalLeaderboardManager : MonoBehaviour
 
                 // Make sure all are visible
                 if (nameTexts[i] != null) nameTexts[i].gameObject.SetActive(true);
+                if (lastNameTexts[i] != null) lastNameTexts[i].gameObject.SetActive(true);
                 if (schoolTexts[i] != null) schoolTexts[i].gameObject.SetActive(true);
                 if (dateTexts[i] != null) dateTexts[i].gameObject.SetActive(true);
                 if (scoreTexts[i] != null) scoreTexts[i].gameObject.SetActive(true);
@@ -106,6 +113,7 @@ public class LocalLeaderboardManager : MonoBehaviour
             {
                 // No record for this slot, hide the texts
                 if (nameTexts[i] != null) nameTexts[i].gameObject.SetActive(false);
+                if (lastNameTexts[i] != null) lastNameTexts[i].gameObject.SetActive(false);
                 if (schoolTexts[i] != null) schoolTexts[i].gameObject.SetActive(false);
                 if (dateTexts[i] != null) dateTexts[i].gameObject.SetActive(false);
                 if (scoreTexts[i] != null) scoreTexts[i].gameObject.SetActive(false);
@@ -139,7 +147,10 @@ public class LocalLeaderboardManager : MonoBehaviour
         currentPlayerPanel.SetActive(true);
         
         if (currentPlayerNameText != null)
-            currentPlayerNameText.text = $"{firstName} {lastName}";
+            currentPlayerNameText.text = firstName;
+        
+        if (currentPlayerLastNameText != null)
+            currentPlayerLastNameText.text = lastName;
         
         if (currentPlayerSchoolText != null)
             currentPlayerSchoolText.text = school;
@@ -157,6 +168,7 @@ public class LocalLeaderboardManager : MonoBehaviour
         for (int i = 0; i < 5; i++)
         {
             if (nameTexts[i] != null) nameTexts[i].gameObject.SetActive(false);
+            if (lastNameTexts[i] != null) lastNameTexts[i].gameObject.SetActive(false);
             if (schoolTexts[i] != null) schoolTexts[i].gameObject.SetActive(false);
             if (dateTexts[i] != null) dateTexts[i].gameObject.SetActive(false);
             if (scoreTexts[i] != null) scoreTexts[i].gameObject.SetActive(false);
