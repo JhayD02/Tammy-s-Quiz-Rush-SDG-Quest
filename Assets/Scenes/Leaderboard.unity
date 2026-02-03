@@ -4865,16 +4865,15 @@ MonoBehaviour:
   - {fileID: 588457471}
   - {fileID: 427746474}
   - {fileID: 1056197806}
-  currentPlayerPanel: {fileID: 0}
-  currentPlayerNameText: {fileID: 0}
-  currentPlayerLastNameText: {fileID: 0}
-  currentPlayerSchoolText: {fileID: 0}
-  currentPlayerDateText: {fileID: 0}
-  currentPlayerScoreText: {fileID: 0}
   emptyStateText: {fileID: 1096532283}
-  emptyMessage: No high scores yet. Be the first to play!
+  noScoresMessage: There are no current scores.
+  topScoresMessage: These are the top {0} scores in your device.
+  topScoresWithSlotsMessage: These are the top {0} scores in your device, there are
+    {1} slots left.
   backToMenuButton: {fileID: 1476667318}
   playAgainButton: {fileID: 0}
+  refreshLeaderboardButton: {fileID: 0}
+  clearAllRecordsButton: {fileID: 0}
   mainMenuSceneName: Leaderboard
   quizSceneName: Quiz Scene Proper
 --- !u!4 &903777098

@@ -18,22 +18,19 @@ public class LocalLeaderboardManager : MonoBehaviour
     [SerializeField] private TextMeshProUGUI[] dateTexts = new TextMeshProUGUI[5];
     [SerializeField] private TextMeshProUGUI[] scoreTexts = new TextMeshProUGUI[5];
 
-    [Header("=== OPTIONAL: CURRENT PLAYER HIGHLIGHT ===")]
-    [Tooltip("If you want to show the current player's info separately")]
-    [SerializeField] private GameObject currentPlayerPanel;
-    [SerializeField] private TextMeshProUGUI currentPlayerNameText;
-    [SerializeField] private TextMeshProUGUI currentPlayerLastNameText;
-    [SerializeField] private TextMeshProUGUI currentPlayerSchoolText;
-    [SerializeField] private TextMeshProUGUI currentPlayerDateText;
-    [SerializeField] private TextMeshProUGUI currentPlayerScoreText;
-
-    [Header("=== EMPTY STATE TEXT ===")]
+    [Header("=== STATUS TEXT ===")]
     [SerializeField] private TextMeshProUGUI emptyStateText;
-    [SerializeField] private string emptyMessage = "No quiz sessions yet. Play to create history!";
+    [SerializeField] private string noScoresMessage = "There are no current scores.";
+    [SerializeField] private string topScoresMessage = "These are the top {0} scores.";
+    [SerializeField] private string topScoresWithSlotsMessage = "These are the top {0} scores, there are {1} slots left.";
 
     [Header("=== NAVIGATION BUTTONS ===")]
     [SerializeField] private Button backToMenuButton;
     [SerializeField] private Button playAgainButton;
+
+    [Header("=== DEBUG BUTTONS ===")]
+    [SerializeField] private Button refreshLeaderboardButton;
+    [SerializeField] private Button clearAllRecordsButton;
 
     [Header("=== SCENE NAMES ===")]
     [SerializeField] private string mainMenuSceneName = "MainMenu";
@@ -47,6 +44,12 @@ public class LocalLeaderboardManager : MonoBehaviour
         
         if (playAgainButton != null)
             playAgainButton.onClick.AddListener(PlayAgain);
+
+        if (refreshLeaderboardButton != null)
+            refreshLeaderboardButton.onClick.AddListener(RefreshLeaderboard);
+
+        if (clearAllRecordsButton != null)
+            clearAllRecordsButton.onClick.AddListener(ClearAllRecords);
 
         // Load and display the leaderboard
         LoadAndDisplayLeaderboard();
@@ -64,15 +67,8 @@ public class LocalLeaderboardManager : MonoBehaviour
             return;
         }
 
-        // Hide empty state message
-        if (emptyStateText != null)
-            emptyStateText.gameObject.SetActive(false);
-
-        // Display current player info if panel exists
-        if (currentPlayerPanel != null)
-        {
-            DisplayCurrentPlayer();
-        }
+        // Update status text
+        UpdateStatusText(topScores.Count);
 
         // Display the top scores (sorted from highest to lowest)
         for (int i = 0; i < 5; i++)
@@ -121,47 +117,6 @@ public class LocalLeaderboardManager : MonoBehaviour
         }
     }
 
-    private void DisplayCurrentPlayer()
-    {
-        // Show the most recent player (current player) in a highlighted panel
-        if (PlayerManager.Instance == null)
-        {
-            currentPlayerPanel.SetActive(false);
-            return;
-        }
-
-        string firstName = PlayerManager.Instance.GetPlayerFirstName();
-        string lastName = PlayerManager.Instance.GetPlayerLastName();
-        string school = PlayerManager.Instance.GetPlayerSchool();
-        int score = PlayerManager.Instance.GetPlayerFinalScore();
-        string date = System.DateTime.Now.ToString("MM/dd/yyyy");
-
-        // Check if we have valid player data
-        if (string.IsNullOrEmpty(firstName))
-        {
-            currentPlayerPanel.SetActive(false);
-            return;
-        }
-
-        // Display in the current player panel
-        currentPlayerPanel.SetActive(true);
-        
-        if (currentPlayerNameText != null)
-            currentPlayerNameText.text = firstName;
-        
-        if (currentPlayerLastNameText != null)
-            currentPlayerLastNameText.text = lastName;
-        
-        if (currentPlayerSchoolText != null)
-            currentPlayerSchoolText.text = school;
-        
-        if (currentPlayerDateText != null)
-            currentPlayerDateText.text = date;
-        
-        if (currentPlayerScoreText != null)
-            currentPlayerScoreText.text = score.ToString();
-    }
-
     private void ShowEmptyState()
     {
         // Hide all leaderboard entries
@@ -177,13 +132,32 @@ public class LocalLeaderboardManager : MonoBehaviour
         // Show empty state message
         if (emptyStateText != null)
         {
-            emptyStateText.text = emptyMessage;
+            emptyStateText.text = noScoresMessage;
             emptyStateText.gameObject.SetActive(true);
         }
+    }
 
-        // Hide current player panel if it exists
-        if (currentPlayerPanel != null)
-            currentPlayerPanel.SetActive(false);
+    private void UpdateStatusText(int scoreCount)
+    {
+        if (emptyStateText == null)
+            return;
+
+        int maxSlots = 5;
+        if (scoreCount <= 0)
+        {
+            emptyStateText.text = noScoresMessage;
+        }
+        else if (scoreCount >= maxSlots)
+        {
+            emptyStateText.text = string.Format(topScoresMessage, maxSlots);
+        }
+        else
+        {
+            int slotsLeft = maxSlots - scoreCount;
+            emptyStateText.text = string.Format(topScoresWithSlotsMessage, scoreCount, slotsLeft);
+        }
+
+        emptyStateText.gameObject.SetActive(true);
     }
 
     // === NAVIGATION ===
@@ -200,11 +174,13 @@ public class LocalLeaderboardManager : MonoBehaviour
     }
 
     // === PUBLIC METHODS FOR DEBUGGING ===
+    [ContextMenu("Refresh Leaderboard")]
     public void RefreshLeaderboard()
     {
         LoadAndDisplayLeaderboard();
     }
 
+    [ContextMenu("Clear All Records (JSON)")]
     public void ClearAllRecords()
     {
         if (PlayerManager.Instance != null)
