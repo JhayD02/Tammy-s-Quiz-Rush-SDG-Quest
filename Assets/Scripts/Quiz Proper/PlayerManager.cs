@@ -2,12 +2,15 @@
 // This script stores the player's name, school, and final score
 // It saves this information to a JSON file on the device locally
 // When they finish the quiz, we can access this to show leaderboards later
+// Also handles LootLocker authentication for online leaderboards
 
 using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System;
 using System.Linq;
+using LootLocker.Requests;
 
 [System.Serializable]
 public class PlayerRecord
@@ -35,6 +38,10 @@ public class PlayerManager : MonoBehaviour
     private string playerSchool = "";
     private int playerFinalScore = 0;
 
+    [Header("=== LOOTLOCKER INFO ===")]
+    private string lootLockerPlayerID = "";
+    private bool isLootLockerAuthenticated = false;
+
     private string savePath;
 
     private void Awake()
@@ -52,6 +59,40 @@ public class PlayerManager : MonoBehaviour
         // Set up the save file path
         savePath = Path.Combine(Application.persistentDataPath, "player_scores.json");
     }
+
+    private void Start()
+    {
+        // Authenticate with LootLocker when the game starts
+        StartCoroutine(LoginRoutine());
+    }
+
+    // === LOOTLOCKER AUTHENTICATION ===
+    IEnumerator LoginRoutine()
+    {
+        bool done = false;
+        LootLockerSDKManager.StartGuestSession((response) =>
+        {
+            if(response.success)
+            {
+                Debug.Log("Player was logged in to LootLocker");
+                lootLockerPlayerID = response.player_id.ToString();
+                PlayerPrefs.SetString("PlayerID", lootLockerPlayerID);
+                isLootLockerAuthenticated = true;
+                done = true;
+            }
+            else
+            {
+                Debug.Log("Could not start LootLocker session: " + response.errorData.message);
+                done = true;
+            }
+        });
+
+        yield return new WaitWhile(() => done == false);
+    }
+
+    // Get LootLocker player ID
+    public string GetLootLockerPlayerID() => lootLockerPlayerID;
+    public bool IsLootLockerAuthenticated() => isLootLockerAuthenticated;
 
     // Called by UIManager when the player enters their info
     public void SetPlayerInfo(string firstName, string lastName, string school)
