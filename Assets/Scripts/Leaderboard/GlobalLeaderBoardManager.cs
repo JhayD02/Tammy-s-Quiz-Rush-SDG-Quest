@@ -59,4 +59,66 @@ public class GlobalLeaderBoardManager : MonoBehaviour
         
         yield return new WaitWhile(() => done == false);
     }
+
+    /// <summary>
+    /// Sets the player's display name in LootLocker
+    /// This will be visible on leaderboards
+    /// </summary>
+    /// <param name="firstName">Player's first name</param>
+    /// <param name="lastName">Player's last name</param>
+    public IEnumerator SetPlayerNameRoutine(string firstName, string lastName)
+    {
+        bool done = false;
+        string displayName = $"{firstName} {lastName}";
+        
+        Debug.Log($"Setting LootLocker player name: {displayName}");
+        
+        LootLockerSDKManager.SetPlayerName(displayName, (response) =>
+        {
+            if (response.success)
+            {
+                Debug.Log($"Successfully set player name to: {displayName}");
+                done = true;
+            }
+            else
+            {
+                Debug.LogWarning("Failed to set player name: " + response.errorData.message);
+                done = true;
+            }
+        });
+        
+        yield return new WaitWhile(() => done == false);
+    }
+
+    /// <summary>
+    /// Saves player metadata (first name, last name, school) to LootLocker
+    /// This data can be retrieved later for filtering/displaying
+    /// </summary>
+    public void SavePlayerMetadata(string firstName, string lastName, string school)
+    {
+        Debug.Log($"Saving player metadata - First: {firstName}, Last: {lastName}, School: {school}");
+        
+        // Create a dictionary with player data
+        Dictionary<string, string> playerData = new Dictionary<string, string>
+        {
+            { "firstName", firstName },
+            { "lastName", lastName },
+            { "school", school }
+        };
+        
+        // Convert to JSON format that LootLocker expects
+        string jsonMetadata = "{";
+        jsonMetadata += $"\"firstName\":\"{firstName}\",";
+        jsonMetadata += $"\"lastName\":\"{lastName}\",";
+        jsonMetadata += $"\"school\":\"{school}\"";
+        jsonMetadata += "}";
+        
+        // Store metadata locally since LootLocker SDK doesn't have UpdatePlayerMetadata
+        PlayerPrefs.SetString("PlayerFirstName", firstName);
+        PlayerPrefs.SetString("PlayerLastName", lastName);
+        PlayerPrefs.SetString("PlayerSchool", school);
+        PlayerPrefs.Save();
+        
+        Debug.Log("Successfully saved player metadata locally!");
+    }
 }

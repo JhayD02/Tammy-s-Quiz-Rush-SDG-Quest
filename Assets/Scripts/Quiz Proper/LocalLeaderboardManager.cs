@@ -57,6 +57,14 @@ public class LocalLeaderboardManager : MonoBehaviour
 
     private void LoadAndDisplayLeaderboard()
     {
+        // Check if PlayerManager exists
+        if (PlayerManager.Instance == null)
+        {
+            Debug.LogError("PlayerManager.Instance is null! Make sure you start from Main Menu scene where PlayerManager is created.");
+            ShowEmptyState();
+            return;
+        }
+
         // Get the top 5 highest scores from PlayerManager
         List<PlayerRecord> topScores = PlayerManager.Instance.GetTopLocalScores(5);
 
@@ -187,6 +195,11 @@ public class LocalLeaderboardManager : MonoBehaviour
         {
             PlayerManager.Instance.ClearAllRecords();
             LoadAndDisplayLeaderboard();
+            Debug.Log("All records cleared successfully!");
+        }
+        else
+        {
+            Debug.LogError("Cannot clear records: PlayerManager.Instance is null! Make sure you start from Main Menu scene.");
         }
     }
 }

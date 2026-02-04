@@ -101,6 +101,23 @@ public class PlayerManager : MonoBehaviour
         playerLastName = lastName;
         playerSchool = school;
         Debug.Log($"Player set: {firstName} {lastName} from {school}");
+        
+        // Send player info to LootLocker if authenticated
+        if (isLootLockerAuthenticated && GlobalLeaderBoardManager.Instance != null)
+        {
+            // Set player name on LootLocker (visible on leaderboards)
+            StartCoroutine(GlobalLeaderBoardManager.Instance.SetPlayerNameRoutine(firstName, lastName));
+            
+            // Save additional metadata (firstName, lastName, school)
+            GlobalLeaderBoardManager.Instance.SavePlayerMetadata(firstName, lastName, school);
+        }
+        else
+        {
+            if (!isLootLockerAuthenticated)
+                Debug.LogWarning("Player not authenticated with LootLocker yet. Player info will be saved locally only.");
+            if (GlobalLeaderBoardManager.Instance == null)
+                Debug.LogWarning("GlobalLeaderBoardManager not found. Player info will be saved locally only.");
+        }
     }
 
     // Called by QuizProper when the quiz finishes
