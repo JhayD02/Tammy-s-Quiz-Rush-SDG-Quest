@@ -13,7 +13,6 @@ public class LocalLeaderboardManager : MonoBehaviour
     [Header("=== LEADERBOARD DISPLAY ===")]
     [Tooltip("These TextMesh Pro fields will display the 5 most recent players")]
     [SerializeField] private TextMeshProUGUI[] nameTexts = new TextMeshProUGUI[5];
-    [SerializeField] private TextMeshProUGUI[] lastNameTexts = new TextMeshProUGUI[5];
     [SerializeField] private TextMeshProUGUI[] schoolTexts = new TextMeshProUGUI[5];
     [SerializeField] private TextMeshProUGUI[] dateTexts = new TextMeshProUGUI[5];
     [SerializeField] private TextMeshProUGUI[] scoreTexts = new TextMeshProUGUI[5];
@@ -86,13 +85,37 @@ public class LocalLeaderboardManager : MonoBehaviour
                 // We have a record for this slot
                 PlayerRecord record = topScores[i];
                 
-                // Display name (First + Last)
-                if (nameTexts[i] != null)
-                    nameTexts[i].text = record.firstName;
+                // Format name as "FirstName LastInitial." (e.g., "James D.")
+                string displayName = record.firstName;
+                if (!string.IsNullOrEmpty(record.lastName))
+                {
+                    displayName += " " + record.lastName[0] + ".";
+                }
                 
-                // Display last name
-                if (lastNameTexts[i] != null)
-                    lastNameTexts[i].text = record.lastName;
+                if (nameTexts[i] != null)
+                {
+                    // Adjust font size and formatting based on name length
+                    int nameLength = displayName.Length;
+                    
+                    if (nameLength > 10)
+                    {
+                        // Very long name: font size 105, put last initial on new line
+                        nameTexts[i].fontSize = 105;
+                        displayName = record.firstName + "\n" + record.lastName[0] + ".";
+                    }
+                    else if (nameLength > 9)
+                    {
+                        // Long name: reduce font size to 130
+                        nameTexts[i].fontSize = 130;
+                    }
+                    else
+                    {
+                        // Normal length: default font size 150
+                        nameTexts[i].fontSize = 150;
+                    }
+                    
+                    nameTexts[i].text = displayName;
+                }
                 
                 // Display school
                 if (schoolTexts[i] != null)
@@ -108,7 +131,6 @@ public class LocalLeaderboardManager : MonoBehaviour
 
                 // Make sure all are visible
                 if (nameTexts[i] != null) nameTexts[i].gameObject.SetActive(true);
-                if (lastNameTexts[i] != null) lastNameTexts[i].gameObject.SetActive(true);
                 if (schoolTexts[i] != null) schoolTexts[i].gameObject.SetActive(true);
                 if (dateTexts[i] != null) dateTexts[i].gameObject.SetActive(true);
                 if (scoreTexts[i] != null) scoreTexts[i].gameObject.SetActive(true);
@@ -117,7 +139,6 @@ public class LocalLeaderboardManager : MonoBehaviour
             {
                 // No record for this slot, hide the texts
                 if (nameTexts[i] != null) nameTexts[i].gameObject.SetActive(false);
-                if (lastNameTexts[i] != null) lastNameTexts[i].gameObject.SetActive(false);
                 if (schoolTexts[i] != null) schoolTexts[i].gameObject.SetActive(false);
                 if (dateTexts[i] != null) dateTexts[i].gameObject.SetActive(false);
                 if (scoreTexts[i] != null) scoreTexts[i].gameObject.SetActive(false);
@@ -131,7 +152,6 @@ public class LocalLeaderboardManager : MonoBehaviour
         for (int i = 0; i < 5; i++)
         {
             if (nameTexts[i] != null) nameTexts[i].gameObject.SetActive(false);
-            if (lastNameTexts[i] != null) lastNameTexts[i].gameObject.SetActive(false);
             if (schoolTexts[i] != null) schoolTexts[i].gameObject.SetActive(false);
             if (dateTexts[i] != null) dateTexts[i].gameObject.SetActive(false);
             if (scoreTexts[i] != null) scoreTexts[i].gameObject.SetActive(false);
