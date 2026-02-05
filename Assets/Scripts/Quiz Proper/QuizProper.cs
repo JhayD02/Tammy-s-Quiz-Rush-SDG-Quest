@@ -982,7 +982,7 @@ public class QuizProper : MonoBehaviour
         PlayerManager.Instance.SetFinalScore(currentScore);
 
         // Show finish panel or do something
-        Debug.Log("Quiz finished! Final score: " + currentScore);
+        Debug.Log(currentScore);
 
         // Show results panel with fade in effect
         StartCoroutine(ShowResultsPanel());
@@ -1021,7 +1021,7 @@ public class QuizProper : MonoBehaviour
             resultsMessageText.text = performanceMessage;
         
         if (finalScoreText != null)
-            finalScoreText.text = $"Final Score: {currentScore}";
+            finalScoreText.text = $"{currentScore}";
 
         // Show the panel
         resultsPanel.SetActive(true);
@@ -1040,25 +1040,6 @@ public class QuizProper : MonoBehaviour
             }
 
             resultsPanelCanvasGroup.alpha = 1f;
-        }
-        
-        // Submit score to LootLocker global leaderboard after results are shown
-        if (GlobalLeaderBoardManager.Instance != null && PlayerManager.Instance != null)
-        {
-            if (PlayerManager.Instance.IsLootLockerAuthenticated())
-            {
-                Debug.Log("Submitting score to global leaderboard...");
-                yield return StartCoroutine(GlobalLeaderBoardManager.Instance.SubmitScoreRoutine(currentScore));
-            }
-            else
-            {
-                Debug.LogWarning("Player not authenticated with LootLocker. Skipping global leaderboard submission.");
-            }
-        }
-        else
-        {
-            if (GlobalLeaderBoardManager.Instance == null)
-                Debug.LogWarning("GlobalLeaderBoardManager not found! Make sure it exists in your first scene.");
         }
     }
 
