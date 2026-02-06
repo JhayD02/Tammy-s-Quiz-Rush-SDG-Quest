@@ -1377,7 +1377,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &502777944
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1441,7 +1441,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 502777946}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GlobalScoreManager, Assembly-CSharp
+        m_MethodName: SubmitScore
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &502777946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1630,7 +1642,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 552188541}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GlobalScoreManager, Assembly-CSharp
+        m_MethodName: SelectSchool
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &552188541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2064,7 +2088,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &631049323
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3004,13 +3028,13 @@ MonoBehaviour:
   questionBank:
   - questionText: What does SDG stand for?
     answers:
-    - answerText: Sustainable Development Growth
+    - answerText: Sustainable Development Goals
       answerImage: {fileID: 0}
       useImage: 0
     - answerText: Social Development Goals
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Sustainable Development Goals
+    - answerText: Sustainable Development Growth
       answerImage: {fileID: 0}
       useImage: 0
     - answerText: Strategic Development Goals
@@ -3083,499 +3107,509 @@ MonoBehaviour:
       for Sustainable Development.
     timeUpFeedback: Time's up! The SDGs were adopted in 2015 as part of the 2030
       Agenda for Sustainable Development.
-  - questionText: Which SDG aims to end poverty?
+  - questionText: 'Which principle is central to the SDGs? '
     answers:
-    - answerText: No Poverty
+    - answerText: Leave no one behind
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Zero Hunger
+    - answerText: 'Economic profit first '
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Good Health
-      answerImage: {fileID: 0}
-      useImage: 0
-    - answerText: Clean Water
-      answerImage: {fileID: 0}
-      useImage: 0
-    correctAnswerIndex: 0
-    correctFeedback: Correct! No Poverty is the SDG focused on ending poverty in
-      all forms worldwide.
-    wrongFeedback: Incorrect. No Poverty is the SDG focused on ending poverty in
-      all forms worldwide.
-    timeUpFeedback: Time's up! No Poverty is the SDG focused on ending poverty in
-      all forms worldwide.
-  - questionText: Which goal focuses on food for all?
-    answers:
-    - answerText: Zero Hunger
-      answerImage: {fileID: 0}
-      useImage: 0
-    - answerText: No Poverty
-      answerImage: {fileID: 0}
-      useImage: 0
-    - answerText: Climate Action
-      answerImage: {fileID: 0}
-      useImage: 0
-    - answerText: Life on Land
-      answerImage: {fileID: 0}
-      useImage: 0
-    correctAnswerIndex: 0
-    correctFeedback: Correct! Zero Hunger aims to end hunger and provide food security
-      for everyone.
-    wrongFeedback: Incorrect. Zero Hunger aims to end hunger and provide food security
-      for everyone.
-    timeUpFeedback: Time's up! Zero Hunger aims to end hunger and provide food security
-      for everyone.
-  - questionText: Which SDG is about health?
-    answers:
-    - answerText: Good Health
-      answerImage: {fileID: 0}
-      useImage: 0
-    - answerText: Quality Education
-      answerImage: {fileID: 0}
-      useImage: 0
-    - answerText: Gender Equality
-      answerImage: {fileID: 0}
-      useImage: 0
-    - answerText: Clean Energy
-      answerImage: {fileID: 0}
-      useImage: 0
-    correctAnswerIndex: 0
-    correctFeedback: Correct! Good Health focuses on improving health and well-being
-      for all people.
-    wrongFeedback: Incorrect. Good Health focuses on improving health and well-being
-      for all people.
-    timeUpFeedback: Time's up! Good Health focuses on improving health and well-being
-      for all people.
-  - questionText: Which goal supports education?
-    answers:
-    - answerText: Quality Education
-      answerImage: {fileID: 0}
-      useImage: 0
-    - answerText: Decent Work
-      answerImage: {fileID: 0}
-      useImage: 0
-    - answerText: Industry Growth
-      answerImage: {fileID: 0}
-      useImage: 0
-    - answerText: Clean Water
-      answerImage: {fileID: 0}
-      useImage: 0
-    correctAnswerIndex: 0
-    correctFeedback: Correct! Quality Education ensures inclusive and equal learning
-      opportunities.
-    wrongFeedback: Incorrect. Quality Education ensures inclusive and equal learning
-      opportunities.
-    timeUpFeedback: Time's up! Quality Education ensures inclusive and equal learning
-      opportunities.
-  - questionText: Which SDG promotes equality?
-    answers:
-    - answerText: Gender Equality
-      answerImage: {fileID: 0}
-      useImage: 0
-    - answerText: No Poverty
-      answerImage: {fileID: 0}
-      useImage: 0
-    - answerText: Life on Land
+    - answerText: National interest only
       answerImage: {fileID: 0}
       useImage: 0
     - answerText: Technology over people
       answerImage: {fileID: 0}
       useImage: 0
     correctAnswerIndex: 0
-    correctFeedback: Correct! Gender Equality promotes equal rights and opportunities
-      for all genders.
-    wrongFeedback: Incorrect. Gender Equality promotes equal rights and opportunities
-      for all genders.
-    timeUpFeedback: Time's up! Gender Equality promotes equal rights and opportunities
-      for all genders.
-  - questionText: What action best helps families escape poverty?
+    correctFeedback: "Correct! \u201CLeave no one behind\u201D ensures that progress
+      benefits everyone, especially the most vulnerable.\r"
+    wrongFeedback: "Incorrect. \u201CLeave no one behind\u201D ensures that progress
+      benefits everyone, especially the most vulnerable.\r"
+    timeUpFeedback: "Time's up! \u201CLeave no one behind\u201D ensures that progress
+      benefits everyone, especially the most vulnerable.\r"
+  - questionText: Which goal focuses on ending poverty in all its forms?
     answers:
-    - answerText: Job opportunities
+    - answerText: SDG 1
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Free luxury items
+    - answerText: SDG 2
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: More advertisements
+    - answerText: SDG 8
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Higher prices
+    - answerText: SDG 10
       answerImage: {fileID: 0}
       useImage: 0
     correctAnswerIndex: 0
-    correctFeedback: Correct! Job opportunities help people earn income and meet
-      basic needs.
-    wrongFeedback: Incorrect. Job opportunities help people earn income and meet
-      basic needs.
-    timeUpFeedback: Time's up! Job opportunities help people earn income and meet
-      basic needs.
-  - questionText: Which action helps reduce hunger in communities?
+    correctFeedback: "Correct! SDG 1 is No Poverty, aiming to eradicate extreme poverty
+      worldwide.\r"
+    wrongFeedback: "Incorrect. SDG 1 is No Poverty, aiming to eradicate extreme poverty
+      worldwide.\r"
+    timeUpFeedback: "Time's up! SDG 1 is No Poverty, aiming to eradicate extreme
+      poverty worldwide.\r"
+  - questionText: Which SDG addresses hunger and food security?
     answers:
-    - answerText: Food programs
+    - answerText: SDG 2
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Food waste
+    - answerText: SDG 1
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Junk food ads
+    - answerText: SDG 3
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Price increases
+    - answerText: SDG 12
       answerImage: {fileID: 0}
       useImage: 0
     correctAnswerIndex: 0
-    correctFeedback: Correct! Food programs ensure people have access to nutritious
-      meals.
-    wrongFeedback: Incorrect. Food programs ensure people have access to nutritious
-      meals.
-    timeUpFeedback: Time's up! Food programs ensure people have access to nutritious
-      meals.
-  - questionText: What helps keep people healthy every day?
+    correctFeedback: "Correct! SDG 2: Zero Hunger focuses on ending hunger and promoting
+      sustainable agriculture.\r"
+    wrongFeedback: "Incorrect. SDG 2: Zero Hunger focuses on ending hunger and promoting
+      sustainable agriculture.\r"
+    timeUpFeedback: "Time's up! SDG 2: Zero Hunger focuses on ending hunger and promoting
+      sustainable agriculture.\r"
+  - questionText: What is the main focus of SDG 3?
     answers:
-    - answerText: Medical access
+    - answerText: Health and well-being
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Unsafe medicine
+    - answerText: Education access
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Pollution
+    - answerText: 'Clean energy '
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Ignoring illness
+    - answerText: 'Gender equality '
       answerImage: {fileID: 0}
       useImage: 0
     correctAnswerIndex: 0
-    correctFeedback: Correct! Medical access allows prevention and treatment of diseases.
-    wrongFeedback: Incorrect. Medical access allows prevention and treatment of diseases.
-    timeUpFeedback: Time's up! Medical access allows prevention and treatment of
-      diseases.
-  - questionText: What helps students learn better?
+    correctFeedback: Correct! SDG 3 promotes healthy lives and well-being for all
+      ages.
+    wrongFeedback: Incorrect. SDG 3 promotes healthy lives and well-being for all
+      ages.
+    timeUpFeedback: Time's up! SDG 3 promotes healthy lives and well-being for all
+      ages.
+  - questionText: Which SDG aims to ensure inclusive and equitable quality education?
     answers:
-    - answerText: Guided schooling
+    - answerText: SDG 4
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Child labor
+    - answerText: SDG 6
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: No teachers
+    - answerText: SDG 7
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Closed schools
+    - answerText: SDG 9
       answerImage: {fileID: 0}
       useImage: 0
     correctAnswerIndex: 0
-    correctFeedback: Correct! Free schooling gives equal learning opportunities to
-      all.
-    wrongFeedback: Incorrect. Free schooling gives equal learning opportunities to
-      all.
-    timeUpFeedback: Time's up! Free schooling gives equal learning opportunities
-      to all.
-  - questionText: What promotes equality in the workplace?
+    correctFeedback: Correct! SDG 4 focuses on education and lifelong learning opportunities.
+    wrongFeedback: Incorrect. SDG 4 focuses on education and lifelong learning opportunities.
+    timeUpFeedback: Time's up! SDG 4 focuses on education and lifelong learning opportunities.
+  - questionText: Gender equality is the focus of which SDG?
     answers:
-    - answerText: Equal pay
+    - answerText: SDG 5
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Unequal rules
+    - answerText: SDG 4
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Fewer rights
+    - answerText: SDG 10
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Limited jobs
+    - answerText: SDG 16
       answerImage: {fileID: 0}
       useImage: 0
     correctAnswerIndex: 0
-    correctFeedback: Correct! Equal pay ensures fairness regardless of gender.
-    wrongFeedback: Incorrect. Equal pay ensures fairness regardless of gender.
-    timeUpFeedback: Time's up! Equal pay ensures fairness regardless of gender.
-  - questionText: How can families conserve water at home?
+    correctFeedback: Correct! SDG 5 aims to empower women and girls and eliminate
+      discrimination.
+    wrongFeedback: Incorrect. SDG 5 aims to empower women and girls and eliminate
+      discrimination.
+    timeUpFeedback: Time's up! SDG 5 aims to empower women and girls and eliminate
+      discrimination.
+  - questionText: Which SDG focuses on clean water and sanitation?
     answers:
-    - answerText: Fix leaks
+    - answerText: SDG 6
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Waste water
+    - answerText: SDG 7
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Open taps
+    - answerText: SDG 8
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Longer showers
+    - answerText: SDG 13
       answerImage: {fileID: 0}
       useImage: 0
     correctAnswerIndex: 0
-    correctFeedback: Correct! Fixing leaks prevents clean water from being wasted.
-    wrongFeedback: Incorrect. Fixing leaks prevents clean water from being wasted.
-    timeUpFeedback: Time's up! Fixing leaks prevents clean water from being wasted.
-  - questionText: Which action supports clean energy use?
+    correctFeedback: Correct! SDG 6 ensures access to clean water and sanitation
+      for all.
+    wrongFeedback: Incorrect. SDG 6 ensures access to clean water and sanitation
+      for all.
+    timeUpFeedback: Time's up! SDG 6 ensures access to clean water and sanitation
+      for all.
+  - questionText: Affordable and clean energy is addressed by which SDG?
     answers:
-    - answerText: Solar panels
+    - answerText: SDG 7
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Coal burning
+    - answerText: SDG 6
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Oil spills
+    - answerText: SDG 9
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Power waste
+    - answerText: SDG 10
       answerImage: {fileID: 0}
       useImage: 0
     correctAnswerIndex: 0
-    correctFeedback: Correct! Solar panels provide clean and renewable energy.
-    wrongFeedback: Incorrect. Solar panels provide clean and renewable energy.
-    timeUpFeedback: Time's up! Solar panels provide clean and renewable energy.
-  - questionText: What makes a job fair and safe?
+    correctFeedback: Correct! SDG 7 promotes access to sustainable and modern energy.
+    wrongFeedback: Incorrect. SDG 7 promotes access to sustainable and modern energy.
+    timeUpFeedback: Time's up! SDG 7 promotes access to sustainable and modern energy.
+  - questionText: Which SDG promotes decent work and sustainable economic growth?
     answers:
-    - answerText: Worker rights
+    - answerText: SDG 8
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Child labor
+    - answerText: SDG 9
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Unsafe sites
+    - answerText: SDG 10
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: No salary
+    - answerText: SDG 12
       answerImage: {fileID: 0}
       useImage: 0
     correctAnswerIndex: 0
-    correctFeedback: Correct! Worker rights protect safety and fair treatment.
-    wrongFeedback: Incorrect. Worker rights protect safety and fair treatment.
-    timeUpFeedback: "Time's up! \u201CWorker rights protect safety and fair treatment."
-  - questionText: What helps a country grow sustainably?
+    correctFeedback: Correct! SDG 8 focuses on employment, labor rights, and economic
+      growth.
+    wrongFeedback: Incorrect. SDG 8 focuses on employment, labor rights, and economic
+      growth.
+    timeUpFeedback: Time's up! SDG 8 focuses on employment, labor rights, and economic
+      growth.
+  - questionText: Innovation, infrastructure, and industrialization are covered under
+      which SDG?
     answers:
-    - answerText: New technology
+    - answerText: SDG 9
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Old systems
+    - answerText: SDG 7
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Broken roads
+    - answerText: SDG 8
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: No internet
+    - answerText: SDG 11
       answerImage: {fileID: 0}
       useImage: 0
     correctAnswerIndex: 0
-    correctFeedback: Correct! New technology improves infrastructure and innovation.
-    wrongFeedback: Incorrect. New technology improves infrastructure and innovation.
-    timeUpFeedback: Time's up! New technology improves infrastructure and innovation.
-  - questionText: What helps reduce inequality in society?
+    correctFeedback: Correct! SDG 9 emphasizes resilient infrastructure and innovation.
+    wrongFeedback: Incorrect. SDG 9 emphasizes resilient infrastructure and innovation.
+    timeUpFeedback: Time's up! SDG 9 emphasizes resilient infrastructure and innovation.
+  - questionText: Reducing inequality within and among countries is the goal of which
+      SDG?
     answers:
-    - answerText: Equal access
+    - answerText: SDG 10
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Discrimination
+    - answerText: SDG 1
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Fewer rights
+    - answerText: SDG 7
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: High barriers
+    - answerText: SDG 17
       answerImage: {fileID: 0}
       useImage: 0
     correctAnswerIndex: 0
-    correctFeedback: Correct! Equal access allows everyone fair opportunities.
-    wrongFeedback: Incorrect. Equal access allows everyone fair opportunities.
-    timeUpFeedback: Time's up! Equal access allows everyone fair opportunities.
-  - questionText: What makes a city more livable?
+    correctFeedback: Correct! SDG 10 targets social, economic, and political inclusion.
+    wrongFeedback: Incorrect. SDG 10 targets social, economic, and political inclusion.
+    timeUpFeedback: Time's up! SDG 10 targets social, economic, and political inclusion.
+  - questionText: Which SDG focuses on sustainable cities and communities?
     answers:
-    - answerText: Public transport
+    - answerText: SDG 11
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Heavy traffic
+    - answerText: SDG 10
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: More pollution
+    - answerText: SDG 9
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Unsafe housing
+    - answerText: SDG 12
       answerImage: {fileID: 0}
       useImage: 0
     correctAnswerIndex: 0
-    correctFeedback: Correct! Public transport reduces pollution and improves mobility.
-    wrongFeedback: Incorrect. Public transport reduces pollution and improves mobility.
-    timeUpFeedback: Time's up! Public transport reduces pollution and improves mobility.
-  - questionText: How can people reduce waste daily?
+    correctFeedback: Correct! SDG 11 aims to make cities inclusive, safe, and resilient.
+    wrongFeedback: Incorrect. SDG 11 aims to make cities inclusive, safe, and resilient.
+    timeUpFeedback: Time's up! SDG 11 aims to make cities inclusive, safe, and resilient.
+  - questionText: Responsible consumption and production is the focus of which SDG?
     answers:
-    - answerText: Recycle items
+    - answerText: SDG 12
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Single use
+    - answerText: SDG 11
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Overbuy goods
+    - answerText: SDG 13
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Throw plastics
+    - answerText: SDG 14
       answerImage: {fileID: 0}
       useImage: 0
     correctAnswerIndex: 0
-    correctFeedback: Correct! Recycling helps reduce waste and save resources.
-    wrongFeedback: Incorrect. Recycling helps reduce waste and save resources.
-    timeUpFeedback: Time's up! Recycling helps reduce waste and save resources.
-  - questionText: What helps slow climate change?
+    correctFeedback: Correct! SDG 12 promotes reducing waste and using resources
+      efficiently.
+    wrongFeedback: Incorrect. SDG 12 promotes reducing waste and using resources
+      efficiently.
+    timeUpFeedback: Time's up! SDG 12 promotes reducing waste and using resources
+      efficiently.
+  - questionText: Which SDG calls for urgent action to combat climate change?
     answers:
-    - answerText: Reduce emissions
+    - answerText: SDG 13
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: More pollution
+    - answerText: SDG 12
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Tree cutting
+    - answerText: SDG 14
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Fuel waste
+    - answerText: SDG 15
       answerImage: {fileID: 0}
       useImage: 0
     correctAnswerIndex: 0
-    correctFeedback: Correct! Reducing emissions lowers greenhouse gases.
-    wrongFeedback: Incorrect. Reducing emissions lowers greenhouse gases.
-    timeUpFeedback: Time's up! Reducing emissions lowers greenhouse gases.
-  - questionText: How can oceans be protected?
+    correctFeedback: Correct! SDG 13 focuses on climate action and resilience.
+    wrongFeedback: Incorrect. SDG 13 focuses on climate action and resilience.
+    timeUpFeedback: Time's up! SDG 13 focuses on climate action and resilience.
+  - questionText: Life below water is addressed by which SDG?
     answers:
-    - answerText: Reduce plastics
+    - answerText: SDG 14
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Ocean dumping
+    - answerText: SDG 13
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Overfishing
+    - answerText: SDG 15
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Oil spills
+    - answerText: SDG 16
       answerImage: {fileID: 0}
       useImage: 0
     correctAnswerIndex: 0
-    correctFeedback: Correct! Reducing plastics prevents harm to marine life.
-    wrongFeedback: Incorrect. Reducing plastics prevents harm to marine life.
-    timeUpFeedback: Time's up! Reducing plastics prevents harm to marine life.
-  - questionText: What helps protect wildlife habitats?
+    correctFeedback: Correct! SDG 14 aims to protect oceans and marine ecosystems.
+    wrongFeedback: Incorrect. SDG 14 aims to protect oceans and marine ecosystems.
+    timeUpFeedback: Time's up! SDG 14 aims to protect oceans and marine ecosystems.
+  - questionText: Which SDG focuses on protecting terrestrial ecosystems and biodiversity?
     answers:
-    - answerText: Forest protection
+    - answerText: SDG 15
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Illegal logging
+    - answerText: SDG 14
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Land pollution
+    - answerText: SDG 16
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Overhunting
+    - answerText: SDG 17
       answerImage: {fileID: 0}
       useImage: 0
     correctAnswerIndex: 0
-    correctFeedback: Correct! Forest protection preserves ecosystems and animals.
-    wrongFeedback: Incorrect. Forest protection preserves ecosystems and animals.
-    timeUpFeedback: Time's up! Forest protection preserves ecosystems and animals.
-  - questionText: What helps build peaceful communities?
+    correctFeedback: Correct! SDG 15 focuses on life on land, forests, and biodiversity.
+    wrongFeedback: Incorrect. SDG 15 focuses on life on land, forests, and biodiversity.
+    timeUpFeedback: Time's up! SDG 15 focuses on life on land, forests, and biodiversity.
+  - questionText: Peace, justice, and strong institutions are promoted by which SDG?
     answers:
-    - answerText: Fair laws
+    - answerText: SDG 16
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Corruption
+    - answerText: SDG 17
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Violence
+    - answerText: SDG 13
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Weak courts
+    - answerText: SDG 14
       answerImage: {fileID: 0}
       useImage: 0
     correctAnswerIndex: 0
-    correctFeedback: Correct! Fair laws promote justice and trust in society.
-    wrongFeedback: Incorrect. Fair laws promote justice and trust in society.
-    timeUpFeedback: Time's up! Fair laws promote justice and trust in society.
-  - questionText: How can countries achieve SDGs faster?
+    correctFeedback: Correct! SDG 16 supports justice, accountability, and peace.
+    wrongFeedback: Incorrect. SDG 16 supports justice, accountability, and peace.
+    timeUpFeedback: Time's up! SDG 16 supports justice, accountability, and peace.
+  - questionText: Partnerships for achieving all goals are emphasized in which SDG?
     answers:
-    - answerText: Work together
+    - answerText: SDG 17
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Act alone
+    - answerText: SDG 16
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Share nothing
+    - answerText: SDG 15
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Ignore goals
+    - answerText: SDG 14
       answerImage: {fileID: 0}
       useImage: 0
     correctAnswerIndex: 0
-    correctFeedback: Correct! Working together strengthens global progress.
-    wrongFeedback: Incorrect. Working together strengthens global progress.
-    timeUpFeedback: Time's up! Working together strengthens global progress.
-  - questionText: What helps people earn a stable income that leads to no poverty?
+    correctFeedback: Correct! SDG 17 focuses on global cooperation and partnerships.
+    wrongFeedback: Incorrect. SDG 17 focuses on global cooperation and partnerships.
+    timeUpFeedback: Time's up! SDG 17 focuses on global cooperation and partnerships.
+  - questionText: What were the Millennium Development Goals (MDGs)?
     answers:
-    - answerText: Skills training
+    - answerText: A UN framework before the SDGs
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: More debt
+    - answerText: A private sector initiative
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Fewer jobs
+    - answerText: A regional Asian development plan
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: High prices
+    - answerText: A climate-only agreement
       answerImage: {fileID: 0}
       useImage: 0
     correctAnswerIndex: 0
-    correctFeedback: Correct! Skills training helps people get better jobs and income.
-    wrongFeedback: Incorrect. Skills training helps people get better jobs and income.
-    timeUpFeedback: Time's up! Skills training helps people get better jobs and income.
-  - questionText: Which action helps prevent food shortages?
+    correctFeedback: Correct! The MDGs were a UN-led global development framework
+      before the SDGs.
+    wrongFeedback: Incorrect. The MDGs were a UN-led global development framework
+      before the SDGs.
+    timeUpFeedback: Time's up! The MDGs were a UN-led global development framework
+      before the SDGs.
+  - questionText: How many Millennium Development Goals were there?
     answers:
-    - answerText: Support farmers
+    - answerText: 8
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Food waste
+    - answerText: 7
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Import bans
+    - answerText: 6
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Poor storage
+    - answerText: 5
       answerImage: {fileID: 0}
       useImage: 0
     correctAnswerIndex: 0
-    correctFeedback: Correct! Supporting farmers improves food supply and access.
-    wrongFeedback: Incorrect. Supporting farmers improves food supply and access.
-    timeUpFeedback: Time's up! Supporting farmers improves food supply and access.
-  - questionText: What helps prevent the spread of disease?
+    correctFeedback: Correct! The MDGs consisted of 8 goals.
+    wrongFeedback: Incorrect. The MDGs consisted of 8 goals.
+    timeUpFeedback: Time's up! The MDGs consisted of 8 goals.
+  - questionText: In what year were the MDGs introduced?
     answers:
-    - answerText: Vaccination
+    - answerText: 2000
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: No treatment
+    - answerText: 2005
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Unsafe water
+    - answerText: 2010
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Overcrowding
+    - answerText: 1995
       answerImage: {fileID: 0}
       useImage: 0
     correctAnswerIndex: 0
-    correctFeedback: Correct! Vaccination protects people from diseases.
-    wrongFeedback: Incorrect. Vaccination protects people from diseases.
-    timeUpFeedback: Time's up! Vaccination protects people from diseases.
-  - questionText: What helps children stay in school?
+    correctFeedback: Correct! The MDGs were introduced in 2000.
+    wrongFeedback: Incorrect. The MDGs were introduced in 2000.
+    timeUpFeedback: Time's up! The MDGs were introduced in 2000.
+  - questionText: What was the target year for achieving the MDGs?
     answers:
-    - answerText: School supplies
+    - answerText: 2015
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Child labor
+    - answerText: 2010
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: Long workdays
+    - answerText: 2020
       answerImage: {fileID: 0}
       useImage: 0
-    - answerText: High fees
+    - answerText: 2030
       answerImage: {fileID: 0}
       useImage: 0
     correctAnswerIndex: 0
-    correctFeedback: Correct! School supplies support learning and attendance.
-    wrongFeedback: Incorrect. School supplies support learning and attendance.
-    timeUpFeedback: Time's up! School supplies support learning and attendance.
+    correctFeedback: Correct! The MDGs aimed to be achieved by 2015
+    wrongFeedback: Incorrect. The MDGs aimed to be achieved by 2015
+    timeUpFeedback: Time's up! The MDGs aimed to be achieved by 2015
+  - questionText: Which issue was a major focus of the MDGs?
+    answers:
+    - answerText: Extreme poverty and basic needs
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Digital transformation
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Climate innovation
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Artificial intelligence
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: Correct! The MDGs focused heavily on poverty reduction, health,
+      and education.
+    wrongFeedback: Incorrect. The MDGs focused heavily on poverty reduction, health,
+      and education.
+    timeUpFeedback: Time's up! The MDGs focused heavily on poverty reduction, health,
+      and education.
+  - questionText: Which MDG focused on reducing child mortality?
+    answers:
+    - answerText: MDG 4
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: MDG 1
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: MDG 3
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: MDG 2
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: Correct! MDG 4 aimed to reduce child mortality rates.
+    wrongFeedback: Incorrect. MDG 4 aimed to reduce child mortality rates.
+    timeUpFeedback: Time's up! MDG 4 aimed to reduce child mortality rates.
+  - questionText: How do the SDGs differ from the MDGs?
+    answers:
+    - answerText: SDGs are broader and universal
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: SDGs are fewer in number
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: SDGs apply only to developing countries
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: SDGs focus only on the environment
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: Correct! SDGs are more comprehensive and apply to all countries.
+    wrongFeedback: Incorrect. SDGs are more comprehensive and apply to all countries.
+    timeUpFeedback: Time's up! SDGs are more comprehensive and apply to all countries.
+  - questionText: Why were the SDGs created after the MDGs?
+    answers:
+    - answerText: To address unfinished MDG goals and new challenges
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: To replace failed policies
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: To reduce global cooperation
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: To focus only on economic growth
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: "Correct! SDGs build on MDG progress while addressing new global
+      challenges like climate change and inequality.\r"
+    wrongFeedback: "Incorrect. SDGs build on MDG progress while addressing new global
+      challenges like climate change and inequality.\r"
+    timeUpFeedback: "Time's up! SDGs build on MDG progress while addressing new global
+      challenges like climate change and inequality.\r"
   - questionText: What supports equal leadership opportunities?
     answers:
     - answerText: Equal rights
@@ -3909,7 +3943,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 814652004}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GlobalScoreManager, Assembly-CSharp
+        m_MethodName: SelectSchool
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &814652004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5818,7 +5864,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1080332385
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7567,7 +7613,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1288713455}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GlobalScoreManager, Assembly-CSharp
+        m_MethodName: SelectSchool
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 2
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1288713455
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10342,7 +10400,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1819778054}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: GlobalScoreManager, Assembly-CSharp
+        m_MethodName: SelectSchool
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 3
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1819778054
 MonoBehaviour:
   m_ObjectHideFlags: 0

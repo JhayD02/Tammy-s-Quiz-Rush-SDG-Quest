@@ -4,6 +4,7 @@
 // When they finish the quiz, we can access this to show leaderboards later
 
 using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System;
@@ -29,7 +30,6 @@ public class PlayerManager : MonoBehaviour
 {
     public static PlayerManager Instance { get; private set; } // Singleton - one instance everywhere
 
-    [Header("=== PLAYER INFO (SET BY ONBOARDING) ===")]
     private string playerFirstName = "";
     private string playerLastName = "";
     private string playerSchool = "";
