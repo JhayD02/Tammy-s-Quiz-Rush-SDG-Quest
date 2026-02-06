@@ -119,6 +119,9 @@ public class QuizProper : MonoBehaviour
     private Vector2[] initialButtonPositions = new Vector2[4]; // Store initial anchoredPosition of each button
     private bool positionsInitialized = false;
 
+    // Answer mapping - tracks which answer index is displayed at each button position
+    private int[] currentAnswerMapping = new int[4]; // Maps button position to answer index
+
     // Coroutines
     private Coroutine timerCoroutine;
     private Coroutine fadeInNextButtonCoroutine;
@@ -288,7 +291,13 @@ public class QuizProper : MonoBehaviour
         // Display the question counter
         UpdateQuestionCounter();
 
-        // Display all 4 answer choices (content stays in same button)
+        // Initialize answer mapping - will be shuffled next
+        for (int i = 0; i < 4; i++)
+        {
+            currentAnswerMapping[i] = i;
+        }
+
+        // Display all 4 answer choices (content will be shuffled)
         for (int i = 0; i < 4; i++)
         {
             // Validate UI elements exist
@@ -376,43 +385,52 @@ public class QuizProper : MonoBehaviour
     }
 
     // === ANSWER BUTTON POSITION SHUFFLING ===
-    // Buttons are vertically aligned (Button 1, 2, 3, 4 from top to bottom)
-    // Button 1 and Button 3 can swap their VISUAL POSITIONS
-    // Button 2 and Button 4 can swap their VISUAL POSITIONS
-    // The content stays in each button, only positions change
+    // Uses Fisher-Yates shuffle to randomize all answer positions
+    // Each button has an equal 25% chance of containing the correct answer
+    // This ensures no bias based on button design or position
     private void ShuffleAnswerButtonPositions()
     {
-        // First, reset all buttons to their initial positions
-        for (int i = 0; i < 4; i++)
+        QuizQuestion currentQuestion = shuffledQuestions[currentQuestionIndex];
+
+        // Fisher-Yates shuffle of the answer mapping
+        for (int i = 3; i > 0; i--)
         {
-            RectTransform rectTransform = answerButtons[i].GetComponent<RectTransform>();
-            rectTransform.anchoredPosition = initialButtonPositions[i];
+            int randomIndex = Random.Range(0, i + 1);
+            
+            // Swap
+            int temp = currentAnswerMapping[i];
+            currentAnswerMapping[i] = currentAnswerMapping[randomIndex];
+            currentAnswerMapping[randomIndex] = temp;
         }
 
-        // Randomly decide if Button 1 and Button 3 swap positions
-        bool swapButtons1And3 = Random.value > 0.5f;
-        if (swapButtons1And3)
+        // Rearrange button content based on shuffled mapping
+        for (int buttonPos = 0; buttonPos < 4; buttonPos++)
         {
-            // Swap the visual positions
-            RectTransform button1 = answerButtons[0].GetComponent<RectTransform>();
-            RectTransform button3 = answerButtons[2].GetComponent<RectTransform>();
-            
-            Vector2 temp = button1.anchoredPosition;
-            button1.anchoredPosition = button3.anchoredPosition;
-            button3.anchoredPosition = temp;
-        }
+            int answerIndex = currentAnswerMapping[buttonPos];
+            AnswerChoice answer = currentQuestion.answers[answerIndex];
 
-        // Randomly decide if Button 2 and Button 4 swap positions
-        bool swapButtons2And4 = Random.value > 0.5f;
-        if (swapButtons2And4)
-        {
-            // Swap the visual positions
-            RectTransform button2 = answerButtons[1].GetComponent<RectTransform>();
-            RectTransform button4 = answerButtons[3].GetComponent<RectTransform>();
-            
-            Vector2 temp = button2.anchoredPosition;
-            button2.anchoredPosition = button4.anchoredPosition;
-            button4.anchoredPosition = temp;
+            // Set button content based on shuffled mapping
+            if (answer.useImage)
+            {
+                if (answerImages[buttonPos] == null)
+                {
+                    Debug.LogError($"ERROR: answerImages[{buttonPos}] is not assigned but useImage is true!");
+                    return;
+                }
+
+                answerTexts[buttonPos].gameObject.SetActive(false);
+                answerImages[buttonPos].gameObject.SetActive(true);
+                answerImages[buttonPos].sprite = answer.answerImage;
+            }
+            else
+            {
+                answerTexts[buttonPos].gameObject.SetActive(true);
+                if (answerImages[buttonPos] != null)
+                {
+                    answerImages[buttonPos].gameObject.SetActive(false);
+                }
+                answerTexts[buttonPos].text = answer.answerText;
+            }
         }
     }
 
@@ -451,11 +469,11 @@ public class QuizProper : MonoBehaviour
             StopCoroutine(timerCoroutine);
 
         QuizQuestion currentQuestion = shuffledQuestions[currentQuestionIndex];
-        // buttonIndex directly corresponds to answer index (Button 0 = Answer 0, etc.)
-        // The visual position may have been shuffled, but content stays with the button
+        // Use the answer mapping to determine which answer was actually selected
+        int selectedAnswerIndex = currentAnswerMapping[buttonIndex];
 
         // Check if correct
-        if (buttonIndex == currentQuestion.correctAnswerIndex)
+        if (selectedAnswerIndex == currentQuestion.correctAnswerIndex)
         {
             HandleCorrectAnswer(currentQuestion);
         }
@@ -680,34 +698,35 @@ public class QuizProper : MonoBehaviour
 
         QuizQuestion currentQuestion = shuffledQuestions[currentQuestionIndex];
         
-        // Find wrong answers and disable two (50/50 choice)
-        List<int> wrongAnswers = new List<int>();
-        for (int i = 0; i < 4; i++)
+        // Find button positions that contain wrong answers (using the shuffled mapping)
+        List<int> wrongAnswerButtonPositions = new List<int>();
+        for (int buttonPos = 0; buttonPos < 4; buttonPos++)
         {
-            if (i != currentQuestion.correctAnswerIndex)
+            int answerIndex = currentAnswerMapping[buttonPos];
+            if (answerIndex != currentQuestion.correctAnswerIndex)
             {
-                wrongAnswers.Add(i);
+                wrongAnswerButtonPositions.Add(buttonPos);
             }
         }
 
-        // Disable 2 random wrong answers
-        if (wrongAnswers.Count >= 2)
+        // Disable 2 random wrong answer buttons
+        if (wrongAnswerButtonPositions.Count >= 2)
         {
-            // Shuffle the wrong answers
-            for (int i = wrongAnswers.Count - 1; i > 0; i--)
+            // Shuffle the wrong answer button positions
+            for (int i = wrongAnswerButtonPositions.Count - 1; i > 0; i--)
             {
                 int randomIndex = Random.Range(0, i + 1);
-                int temp = wrongAnswers[i];
-                wrongAnswers[i] = wrongAnswers[randomIndex];
-                wrongAnswers[randomIndex] = temp;
+                int temp = wrongAnswerButtonPositions[i];
+                wrongAnswerButtonPositions[i] = wrongAnswerButtonPositions[randomIndex];
+                wrongAnswerButtonPositions[randomIndex] = temp;
             }
 
-            // Grey out and disable the first 2 wrong answers
-            SetAnswerButtonOpacity(wrongAnswers[0], reducedChoiceOpacity);
-            answerButtons[wrongAnswers[0]].interactable = false;
+            // Grey out and disable the first 2 wrong answer buttons
+            SetAnswerButtonOpacity(wrongAnswerButtonPositions[0], reducedChoiceOpacity);
+            answerButtons[wrongAnswerButtonPositions[0]].interactable = false;
             
-            SetAnswerButtonOpacity(wrongAnswers[1], reducedChoiceOpacity);
-            answerButtons[wrongAnswers[1]].interactable = false;
+            SetAnswerButtonOpacity(wrongAnswerButtonPositions[1], reducedChoiceOpacity);
+            answerButtons[wrongAnswerButtonPositions[1]].interactable = false;
         }
 
         UpdateLifelineButtons();
