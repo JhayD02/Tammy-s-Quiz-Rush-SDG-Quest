@@ -563,7 +563,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &205738125
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1179,23 +1179,23 @@ MonoBehaviour:
   contentText: {fileID: 237299237}
   iconImage: {fileID: 212054648}
   topicTitles:
-  - '#1 THE PROVERTY'
-  - SDG 2
-  - SDG 3
-  - SDG 3
-  - SDG 4
-  - SDG 5
-  - SDG 6
-  - SDG 7
-  - SDG 8
-  - SDG 9
-  - SDG 10
-  - SDG 11
-  - SDG 12
-  - SDG 13
-  - SDG 14
-  - SDG 15
-  - SDG 16
+  - '#1 The Poverty'
+  - '#2 Zero Hunger'
+  - '#3  Good Health and Well-Being'
+  - '#4 Quality Education'
+  - '#5 Gender Equality'
+  - '#6 Clean Water and Sanitation'
+  - '#7 Affordable and Clean Energy'
+  - '#8 Decent Work and Economic Growth'
+  - '#9 Industry, Innovation and Infrastructure '
+  - '#10 Reduced Inequalities'
+  - '#11 Sustainable Cities and Communities'
+  - '#12 Responsible Consumption and Production'
+  - '#13 Climate Action'
+  - '#14 Life Below Water'
+  - '#15 Life on Land'
+  - '#16 Peace, Justice and Strong Institutions'
+  - '#17 Partnerships for the Goals'
   topicContents:
   - "Goal: End poverty in all its forms everywhere. This goal aims to eradicate extreme
     poverty and reduce poverty in all its dimensions by 2030. It focuses on ensuring
@@ -1205,40 +1205,122 @@ MonoBehaviour:
     in vulnerable situations and ensuring equal rights to economic resources for
     all. Progress involves inclusive economic growth, employment opportunities, and
     social safety nets that reach those most in need."
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - "Goal: End hunger, achieve food security and improved nutrition, and promote
+    sustainable agriculture. This goal focuses on eliminating hunger and ensuring
+    that everyone \u2014 especially the poor and vulnerable \u2014 has access to
+    nutritious, sufficient food year-round. It also encompasses ending all forms
+    of malnutrition and strengthening food production systems so they are sustainable,
+    inclusive, and resilient to climate and economic shocks. Empowering small-scale
+    farmers and supporting sustainable agricultural practices are vital for long-term
+    food security."
+  - "Goal: Ensure healthy lives and promote well-being for all at all ages. This
+    goal addresses the broad spectrum of health challenges \u2014 including maternal
+    and child health, infectious diseases, non-communicable diseases, mental health,
+    and access to medicines and health services. It aims for universal health coverage,
+    improved health systems, and disease prevention, as well as access to safe water,
+    sanitation, and health-promoting environments that contribute to longer and healthier
+    lives.  "
+  - 'Goal: Ensure inclusive and equitable quality education and promote lifelong
+    learning opportunities for all. Education is a foundation for escaping poverty
+    and improving quality of life. This goal seeks to provide access to free, equitable,
+    and high-quality education at all levels, eliminate disparities, and expand opportunities
+    for lifelong learning. It also emphasizes equitable access for vulnerable groups
+    and skill development that supports employment and personal growth.  '
+  - "Goal: Achieve gender equality and empower all women and girls. Gender equality
+    is both a fundamental human right and a driver of sustainable development. This
+    goal focuses on eliminating discrimination and violence against women and girls,
+    ensuring equal access to education and economic opportunities, and promoting
+    women\u2019s participation and leadership in all areas of society. It aims to
+    dismantle barriers to equality and create environments where everyone can thrive."
+  - 'Goal: Ensure availability and sustainable management of water and sanitation
+    for all. Access to safe and clean water and sanitation is essential for health,
+    dignity, and prosperity. This goal seeks to provide equitable access to water
+    supply, sanitation services, and hygiene for all, while managing water resources
+    sustainably to protect ecosystems and reduce pollution. It also emphasizes water
+    efficiency and resilient infrastructure.  '
+  - 'Goal: Ensure access to affordable, reliable, sustainable, and modern energy
+    for all. Energy is a cornerstone of economic development and wellbeing. This
+    goal aims to expand access to modern energy services (including electricity and
+    clean cooking solutions), increase the share of renewable energy, and double
+    the rate of improvement in energy efficiency by 2030. Clean energy access supports
+    health, education, industry, and climate action simultaneously.  '
+  - 'Goal: Promote sustained, inclusive, and sustainable economic growth, full and
+    productive employment, and decent work for all. This goal focuses on creating
+    economic environments where all people can find meaningful work, free from exploitation,
+    and receive fair wages and safe conditions. It supports policies that encourage
+    entrepreneurship, innovation, and job creation, especially for youth, women,
+    and vulnerable groups, while ensuring economic growth contributes to overall
+    wellbeing without degrading the environment.  '
+  - 'Goal: Build resilient infrastructure, promote inclusive and sustainable industrialization,
+    and foster innovation. Infrastructure and innovation are essential for economic
+    development. This goal promotes investment in quality infrastructure such as
+    transportation, communication, and energy systems, supports sustainable industrialization,
+    and encourages innovation that can solve problems like poverty, environmental
+    degradation, and climate change. Resilient industry and infrastructure help communities
+    respond to future challenges.  '
+  - 'Goal: Reduce inequality within and among countries. This goal aims to reduce
+    disparities in income, opportunity, and access to services, ensuring that marginalized
+    groups are included in economic, social, and political processes. It promotes
+    policies that support fair opportunities, social protection systems, and international
+    cooperation to address systemic inequalities, both within societies and globally.  '
+  - 'Goal: Make cities and human settlements inclusive, safe, resilient, and sustainable.
+    Urbanization presents challenges and opportunities. This goal focuses on improving
+    housing, transportation, public spaces, and essential services so that cities
+    work for everyone, are safe from hazards, and do not compromise environmental
+    integrity. Sustainable cities promote economic growth, health, and equality while
+    minimizing resource use and pollution. '
+  - 'Goal: Ensure sustainable consumption and production patterns. This goal urges
+    societies to use resources more efficiently, reduce waste generation, and shift
+    towards sustainable practices across industries and consumer behavior. It promotes
+    recycling, reuse, sustainable supply chains, and ethical production to reduce
+    environmental impact and preserve natural systems for future generations.'
+  - 'Goal: Take urgent action to combat climate change and its impacts. Climate change
+    is one of the most pressing global challenges. This goal focuses on strengthening
+    resilience and adaptive capacity to climate-related hazards, integrating climate
+    change measures into policy planning, and enhancing knowledge and capacity to
+    act. Reducing greenhouse gas emissions and supporting international climate agreements
+    are central to this goal. '
+  - 'Goal: Conserve and sustainably use the oceans, seas, and marine resources. Healthy
+    oceans are crucial for biodiversity, food security, and climate regulation. This
+    goal promotes reducing marine pollution, protecting marine ecosystems, ending
+    overfishing, and supporting sustainable management of ocean resources to ensure
+    sea life thrives and continues to benefit humanity.  '
+  - 'Goal: Protect, restore, and promote sustainable use of terrestrial ecosystems,
+    manage forests sustainably, combat desertification, halt and reverse land degradation,
+    and halt biodiversity loss. Terrestrial ecosystems support life, provide food,
+    clean air and water, and contribute to climate stability. This goal emphasizes
+    protecting forests, wetlands, and other habitats, restoring degraded land, and
+    protecting species from extinction to maintain ecological balance.  '
+  - 'Goal: Promote peaceful and inclusive societies, provide access to justice for
+    all, and build effective, accountable, and inclusive institutions. Peace, justice,
+    and strong institutions are foundational for sustainable development. This goal
+    seeks to reduce violence, uphold human rights, reduce corruption, strengthen
+    legal systems, and ensure that public institutions serve all people fairly and
+    transparently, fostering stability and trust. '
+  - 'Goal: Strengthen the means of implementation and revitalize global partnerships
+    for sustainable development. Achieving the SDGs requires collaboration among
+    governments, civil society, businesses, and international organizations. This
+    goal focuses on mobilizing financial resources, sharing technology, strengthening
+    policy coherence, enhancing data collection, and building multi-stakeholder partnerships
+    to accelerate progress toward all goals. '
   topicIcons:
   - {fileID: 21300000, guid: 712f4fe55bf3a254eba18f17a8be7cb3, type: 3}
   - {fileID: 21300000, guid: e0aa3fc753703d140925c139d17e9f08, type: 3}
   - {fileID: 21300000, guid: c679019faf46abb419d2cfb9743d04b5, type: 3}
   - {fileID: 21300000, guid: 4e1090eece237324681c5efb2a41a8ff, type: 3}
   - {fileID: 21300000, guid: 2a22a340c30ec0d4e8d85b516f6a7b55, type: 3}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 53e24e075941b5247ac13690c2de3b4b, type: 3}
+  - {fileID: 21300000, guid: 4949b110e89b01d4cb4378251a6cf491, type: 3}
+  - {fileID: 21300000, guid: 9cbb9fa677a527340bc8101a77677f3c, type: 3}
+  - {fileID: 21300000, guid: 80528062e2e6e024ead5fd163d81a9b2, type: 3}
+  - {fileID: 21300000, guid: caeadb38ee56f1b4288bb89a0daa1d50, type: 3}
+  - {fileID: 21300000, guid: be5d02c91f61f48419d44d4f369e02c9, type: 3}
+  - {fileID: 21300000, guid: 0c068ba17883d1443b704ed1044b2d08, type: 3}
+  - {fileID: 21300000, guid: 2e3812cb03ad8e24a83ca555961e64a2, type: 3}
+  - {fileID: 21300000, guid: e63e1c977b6818f41af33dcbb8edfb8d, type: 3}
+  - {fileID: 21300000, guid: 6cece016c8d62414ca4ded4618804269, type: 3}
+  - {fileID: 21300000, guid: c625b3f95f0bacf469f681a375d07ff9, type: 3}
+  - {fileID: 21300000, guid: 23abce7bbf806454098aad99dcb97d96, type: 3}
 --- !u!4 &224923217
 Transform:
   m_ObjectHideFlags: 0
@@ -1288,8 +1370,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4, y: -2.525}
-  m_SizeDelta: {x: 1626, y: 2633.3}
+  m_AnchoredPosition: {x: 7.7, y: 12.3}
+  m_SizeDelta: {x: 1618.6, y: 2603.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &237299237
 MonoBehaviour:
@@ -1338,8 +1420,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 115
-  m_fontSizeBase: 115
+  m_fontSize: 120
+  m_fontSizeBase: 120
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1695,7 +1777,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b3dedf00e7b655e42932c5415e3bc99d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9aeffa93c1150184aaf055579fcbe53e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1732,7 +1814,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -1742,9 +1824,9 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: 6bcf65b5d9555d44bb119be9e4ed5f36, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 6bcf65b5d9555d44bb119be9e4ed5f36, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: 6bcf65b5d9555d44bb119be9e4ed5f36, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -4397,7 +4479,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1365680301
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4885,7 +4967,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 642, y: 1732}
+  m_AnchoredPosition: {x: 612.45, y: 1730}
   m_SizeDelta: {x: 350, y: 350}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1442151422
@@ -4907,7 +4989,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -4917,9 +4999,9 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: 6416d08840a764c41b5d73468545d98a, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 6416d08840a764c41b5d73468545d98a, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: 6416d08840a764c41b5d73468545d98a, type: 3}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
@@ -4976,8 +5058,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: f286294c73f92ca468441e546d060e66, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -6626,7 +6708,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a48c4cf86ba112e4db0ef3b855600183, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 9caddb5111cd1c04a891115f33d05969, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6663,7 +6745,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
