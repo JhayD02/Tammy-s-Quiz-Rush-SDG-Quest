@@ -31,7 +31,7 @@ public class UIManager : MonoBehaviour
 
     // Private tracking variables
     private int selectedSchoolIndex = -1; // -1 means no school selected
-    private string[] schoolNames = { "TECH", "ALABANG", "DILIMAN", "OTHERS" };
+    private string[] schoolNames = { "FEU-TECH", "FEU-ALABANG", "FEU-DILIMAN", "OTHERS" };
 
     private void Start()
     {
