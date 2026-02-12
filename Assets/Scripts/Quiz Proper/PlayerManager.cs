@@ -9,6 +9,10 @@ using System.Collections.Generic;
 using System.IO;
 using System;
 using System.Linq;
+using System.Threading.Tasks;
+using Unity.Services.Authentication;
+using Unity.Services.Core;
+using Unity.Services.Leaderboards;
 
 [System.Serializable]
 public class PlayerRecord
@@ -30,12 +34,22 @@ public class PlayerManager : MonoBehaviour
 {
     public static PlayerManager Instance { get; private set; } // Singleton - one instance everywhere
 
+    [Header("=== UGS LEADERBOARD ===")]
+    [SerializeField] private string leaderboardId = "FTICSDGQuest";
+
     private string playerFirstName = "";
     private string playerLastName = "";
     private string playerSchool = "";
     private int playerFinalScore = 0;
 
     private string savePath;
+    private bool servicesInitialized = false;
+
+    private class LeaderboardMetadata
+    {
+        public string name;
+        public string school;
+    }
 
     private void Awake()
     {
@@ -67,6 +81,89 @@ public class PlayerManager : MonoBehaviour
     {
         playerFinalScore = score;
         SavePlayerRecord();
+        _ = SubmitScoreToLeaderboardAsync(playerFinalScore);
+    }
+
+    public async Task EnsureServicesInitializedAsync()
+    {
+        if (servicesInitialized)
+            return;
+
+        if (UnityServices.State == ServicesInitializationState.Uninitialized)
+        {
+            await UnityServices.InitializeAsync();
+        }
+
+        servicesInitialized = true;
+    }
+
+    public async Task EnsureSignedInAsync()
+    {
+        await EnsureServicesInitializedAsync();
+
+        if (!AuthenticationService.Instance.IsSignedIn)
+        {
+            await AuthenticationService.Instance.SignInAnonymouslyAsync();
+        }
+    }
+
+    public async Task BeginNewPlayerSessionAsync()
+    {
+        await EnsureServicesInitializedAsync();
+
+        if (AuthenticationService.Instance.IsSignedIn)
+        {
+            AuthenticationService.Instance.SignOut();
+        }
+
+        AuthenticationService.Instance.ClearSessionToken();
+        await AuthenticationService.Instance.SignInAnonymouslyAsync();
+    }
+
+    public async Task SubmitScoreToLeaderboardAsync(int score)
+    {
+        if (string.IsNullOrWhiteSpace(leaderboardId))
+            return;
+
+        try
+        {
+            await EnsureSignedInAsync();
+
+            string fullName = playerFirstName;
+            if (!string.IsNullOrEmpty(playerLastName))
+            {
+                fullName += " " + playerLastName;
+            }
+
+            var metadata = new LeaderboardMetadata
+            {
+                name = fullName,
+                school = playerSchool
+            };
+
+            var options = new AddPlayerScoreOptions
+            {
+                Metadata = metadata
+            };
+
+            await LeaderboardsService.Instance.AddPlayerScoreAsync(leaderboardId, score, options);
+        }
+        catch (Exception ex)
+        {
+            Debug.LogWarning($"Leaderboard submit failed: {ex.Message}");
+        }
+    }
+
+    private string BuildDisplayName()
+    {
+        string displayName = playerFirstName;
+
+        if (!string.IsNullOrEmpty(playerLastName))
+        {
+            displayName += " " + playerLastName[0] + ".";
+        }
+
+        return displayName;
     }
 
     // Save the player's record to a JSON file on the device
@@ -165,4 +262,5 @@ public class PlayerManager : MonoBehaviour
     public string GetPlayerLastName() => playerLastName;
     public string GetPlayerSchool() => playerSchool;
     public int GetPlayerFinalScore() => playerFinalScore;
+    public string GetLeaderboardId() => leaderboardId;
 }

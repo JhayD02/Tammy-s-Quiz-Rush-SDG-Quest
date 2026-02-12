@@ -4888,6 +4888,7 @@ GameObject:
   m_Component:
   - component: {fileID: 903777098}
   - component: {fileID: 903777097}
+  - component: {fileID: 903777099}
   m_Layer: 0
   m_Name: LeaderboardManager
   m_TagString: Untagged
@@ -4957,6 +4958,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &903777099
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 903777096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d7ad264c7394ed428c74a47b8f830ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rankTexts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  nameTexts:
+  - {fileID: 1571232598}
+  - {fileID: 1197244543}
+  - {fileID: 1618029279}
+  - {fileID: 1144513967}
+  - {fileID: 1755442683}
+  schoolTexts:
+  - {fileID: 1318157911}
+  - {fileID: 900473981}
+  - {fileID: 677541867}
+  - {fileID: 1538025021}
+  - {fileID: 1257716158}
+  scoreTexts:
+  - {fileID: 1844265108}
+  - {fileID: 1558370259}
+  - {fileID: 1401157063}
+  - {fileID: 1006995092}
+  - {fileID: 946056119}
+  emptyStateText: {fileID: 540888189}
+  noScoresMessage: NO HIGH SCORES YET. BE THE FIRST TO PLAY!
+  topScoresMessage: These are the top {0} scores.
+  topScoresWithSlotsMessage: These are the top {0} scores, there are {1} slots left.
+  backToMenuButton: {fileID: 0}
+  refreshLeaderboardButton: {fileID: 634717625}
+  mainMenuSceneName: MainMenu
+  leaderboardId: FTICSDGQuest
 --- !u!1 &913204488
 GameObject:
   m_ObjectHideFlags: 0
