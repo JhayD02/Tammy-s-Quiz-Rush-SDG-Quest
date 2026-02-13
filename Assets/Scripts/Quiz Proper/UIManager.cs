@@ -8,6 +8,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using System;
 
 public class UIManager : MonoBehaviour
 {
@@ -30,7 +31,7 @@ public class UIManager : MonoBehaviour
 
     // Private tracking variables
     private int selectedSchoolIndex = -1; // -1 means no school selected
-    private string[] schoolNames = { "TECH", "ALABANG", "DILIMAN", "OTHERS" };
+    private string[] schoolNames = { "FEU-TECH", "FEU-ALABANG", "FEU-DILIMAN", "OTHERS" };
 
     private void Start()
     {
@@ -111,8 +112,23 @@ public class UIManager : MonoBehaviour
     }
 
     // === START QUIZ ===
-    private void OnStartQuizPressed()
+    private async void OnStartQuizPressed()
     {
+        if (PlayerManager.Instance == null)
+        {
+            Debug.LogError("PlayerManager.Instance is null! Make sure you start from Main Menu scene where PlayerManager is created.");
+            return;
+        }
+
+        try
+        {
+            await PlayerManager.Instance.BeginNewPlayerSessionAsync();
+        }
+        catch (Exception ex)
+        {
+            Debug.LogWarning($"UGS sign-in failed, continuing locally: {ex.Message}");
+        }
+
         // Get the player's inputs
         string firstName = firstNameInput.text.Trim();
         string lastName = lastNameInput.text.Trim();
