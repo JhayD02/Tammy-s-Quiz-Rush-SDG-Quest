@@ -577,7 +577,7 @@ VideoPlayer:
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
-  m_TargetTexture: {fileID: 8400000, guid: 467c39903acb988469340735bf0b0ff8, type: 2}
+  m_TargetTexture: {fileID: 8600000, guid: 38d956ca9989d1249911c8a3428340c2, type: 2}
   m_TimeReference: 0
   m_TargetMaterialRenderer: {fileID: 0}
   m_TargetMaterialProperty: <noninit>
