@@ -16,9 +16,21 @@ public class AudioToggleManager : MonoBehaviour
     public Button[] buttons;          // Assign all buttons that should play click sounds
     public AudioClip buttonClickClip; // Assign your click sound effect
 
+    private bool sfxEnabled = true;
+
+    private void Awake()
+    {
+        // Load saved preferences when a new manager is created
+        bool musicOn = PlayerPrefs.GetInt("MusicEnabled", 1) == 1;
+        bool sfxOn = PlayerPrefs.GetInt("SfxEnabled", 1) == 1;
+
+        ToggleMusic(musicOn);
+        ToggleSFX(sfxOn);
+    }
+
     private void Start()
     {
-        // Initialize toggles
+        // Initialize toggles if present in this scene
         if (musicToggle != null)
         {
             musicToggle.isOn = !musicSource.mute;
@@ -27,7 +39,7 @@ public class AudioToggleManager : MonoBehaviour
 
         if (sfxToggle != null)
         {
-            sfxToggle.isOn = !AreSfxMuted();
+            sfxToggle.isOn = sfxEnabled;
             sfxToggle.onValueChanged.AddListener(ToggleSFX);
         }
 
@@ -41,38 +53,35 @@ public class AudioToggleManager : MonoBehaviour
         }
     }
 
-    private void ToggleMusic(bool isOn)
+    public void ToggleMusic(bool isOn)
     {
         if (musicSource != null)
             musicSource.mute = !isOn;
+
+        PlayerPrefs.SetInt("MusicEnabled", isOn ? 1 : 0);
+        PlayerPrefs.Save();
     }
 
-    private void ToggleSFX(bool isOn)
+    public void ToggleSFX(bool isOn)
     {
+        sfxEnabled = isOn;
+
         foreach (AudioSource sfx in sfxSources)
         {
             if (sfx != null)
                 sfx.mute = !isOn;
         }
 
-        // Also mute/unmute button click sounds
         if (uiClickSource != null)
             uiClickSource.mute = !isOn;
-    }
 
-    private bool AreSfxMuted()
-    {
-        foreach (AudioSource sfx in sfxSources)
-        {
-            if (sfx != null && !sfx.mute)
-                return false;
-        }
-        return true;
+        PlayerPrefs.SetInt("SfxEnabled", isOn ? 1 : 0);
+        PlayerPrefs.Save();
     }
 
     private void PlayButtonClick()
     {
-        if (uiClickSource != null && buttonClickClip != null && !uiClickSource.mute)
+        if (sfxEnabled && uiClickSource != null && buttonClickClip != null)
         {
             uiClickSource.PlayOneShot(buttonClickClip);
         }
