@@ -24,9 +24,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Quiz Scene Proper.unity
     guid: 25621536b8e4d774ebb20a747d62e9a6
   - enabled: 1
-    path: Assets/Scenes/GoodEnding.unity
+    path: Assets/Scenes/Ending/GoodEnding.unity
     guid: 9cf8cd80f3c47a140b64856fb47f9f69
   - enabled: 1
-    path: Assets/Scenes/BadEnding.unity
+    path: Assets/Scenes/Ending/BadEnding.unity
     guid: 9761aca47d4ec7b41b6ea910b325ee61
   m_configObjects: {}
