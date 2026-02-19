@@ -59,58 +59,7 @@ public class QuizProper : MonoBehaviour
     [Header("=== ANIMATION SETTINGS ===")]
     [SerializeField] private float nextButtonFadeDelay = 1.5f;
     [SerializeField] private float nextButtonFadeDuration = 0.4f;
-    [SerializeField] private float scoreIncrementSpeed = 0.01f;
-
-    [Header("=== BUTTON PRESS ANIMATIONS ===")]
-    [SerializeField] private bool enableButtonPressAnimation = true;
-    [SerializeField] private float correctButtonScaleDuration = 0.3f;
-    [SerializeField] private Vector3 correctButtonScaleAmount = new Vector3(1.2f, 1.2f, 1f);
-    [SerializeField] private Color wrongButtonColor = new Color(1f, 0.3f, 0.3f, 1f); // Red tint
-    [SerializeField] private float wrongButtonColorDuration = 0.3f;
-
-    [Header("=== BUTTON FADE OUT ANIMATIONS ===")]
-    [SerializeField] private float nonClickedButtonFadeDuration = 0.5f;
-    [SerializeField] private float nonClickedButtonFadeDelay = 0.2f;
-    [SerializeField] private float fadedButtonOpacity = 0.4f; // How visible faded buttons remain
-
-    [Header("=== FEEDBACK TEXT ANIMATIONS ===")]
-    [SerializeField] private TextMeshProUGUI feedbackText;
-    [SerializeField] private bool enableFeedbackBlink = true;
-    [SerializeField] private int feedbackBlinkCount = 3;
-    [SerializeField] private float feedbackBlinkSpeed = 0.3f;
-    [SerializeField] private Color correctFeedbackColor = new Color(0f, 1f, 0f, 1f); // Green
-    [SerializeField] private Color wrongFeedbackColor = new Color(1f, 0f, 0f, 1f); // Red
-    [SerializeField] private Color timeoutFeedbackColor = new Color(1f, 0.6f, 0f, 1f); // Orange
-    [SerializeField] private bool correctButtonBlinksContinuously = true; // Blinks until next question
-
-    [Header("=== TIMEOUT ANIMATIONS ===")]
-    [SerializeField] private float correctAnswerHighlightDuration = 0.4f;
-    [SerializeField] private Vector3 correctAnswerHighlightScale = new Vector3(1.15f, 1.15f, 1f);
-    [SerializeField] private Color correctAnswerHighlightColor = new Color(0.5f, 1f, 0.5f, 1f); // Light green
-    
-    [Header("=== WRONG ANSWER ANIMATIONS ===")]
-    [SerializeField] private float showCorrectAfterWrongDelay = 0.5f; // Delay before showing correct answer
-    
-    [Header("=== LIFELINE USE ANIMATIONS ===")]
-    [SerializeField] private float lifelineButtonScaleDuration = 0.3f;
-    [SerializeField] private Vector3 lifelineButtonScaleAmount = new Vector3(1.2f, 1.2f, 1f);
-
-    [Header("=== LIFELINE PANEL SLIDE ANIMATIONS ===")]
-    [SerializeField] private RectTransform lifelinePanelRect;
-    [SerializeField] private CanvasGroup lifelinePanelCanvasGroup;
-    [SerializeField] private float lifelinePanelSlideDuration = 0.5f;
-    [SerializeField] private float lifelinePanelSlideDistance = 300f;
-    [SerializeField] private float lifelinePanelFadeDuration = 0.4f;
-
-    [Header("=== DIM BACKGROUND ===")]
-    [SerializeField] private CanvasGroup dimBackgroundCanvasGroup;
-    [SerializeField] private float dimBackgroundFadeDuration = 0.2f;
-    [SerializeField] private float dimBackgroundTargetAlpha = 0.8f;
-
-    [Header("=== QUESTION COUNTER COLORS ===")]
-    [SerializeField] private Color stopTimeCounterColor = new Color(0.6f, 0.9f, 1f, 1f); // Light blue
-    [SerializeField] private Color doublePointsCounterColor = new Color(1f, 0.2f, 0.2f, 1f); // Bright red
-    [SerializeField] private Color reduceChoicesCounterColor = new Color(1f, 0.92f, 0.2f, 1f); // Yellow
+    [SerializeField] private float scoreIncrementSpeed = 0.02f;
 
     [Header("=== SCORING MULTIPLIERS (CHANGE THESE) ===")]
     [SerializeField] private int pointsFastAnswer = 120; // 5 seconds or less
@@ -143,9 +92,9 @@ public class QuizProper : MonoBehaviour
     [TextArea(2, 3)]
     [SerializeField] private string excellentMessage = "Excellent!";
     [TextArea(2, 3)]
-    [SerializeField] private string goodMessage = "Good Job!";
+    [SerializeField] private string goodMessage = "Good!";
     [TextArea(2, 3)]
-    [SerializeField] private string needsImprovementMessage = "Need more improvement...";
+    [SerializeField] private string needsImprovementMessage = "Need more improvement";
     
     [Header("=== SCORE THRESHOLDS ===")]
     [SerializeField] private int excellentThreshold = 2500;
@@ -177,25 +126,6 @@ public class QuizProper : MonoBehaviour
     private Coroutine timerCoroutine;
     private Coroutine fadeInNextButtonCoroutine;
     private Coroutine lifelineRouletteCoroutine;
-    private Coroutine feedbackBlinkCoroutine;
-    private Coroutine correctButtonBlinkCoroutine;
-    private Coroutine dimBackgroundCoroutine;
-    private int currentBlinkingButtonIndex = -1; // Track which button is blinking
-    private List<Coroutine> buttonAnimationCoroutines = new List<Coroutine>();
-
-    // Feedback text tracking
-    private float originalFeedbackTextFontSize = 0f;
-    private Color32 originalQuestionColor; // Store original question text color
-
-    // Answer text tracking
-    private float originalAnswerTextFontSize = 0f;
-
-    // Question counter color tracking
-    private Color32 originalQuestionCounterColor;
-    private bool hasStoredQuestionCounterColor = false;
-
-    // Lifeline panel text animation tracking
-    private int lifelineRollingDotCount = 0;
 
     // Lifeline panel tracking
     private bool isGuaranteedLifelinePending = false;
@@ -259,11 +189,6 @@ public class QuizProper : MonoBehaviour
         pausePanel.SetActive(false);
         if (lifelineGainedPanel != null)
             lifelineGainedPanel.SetActive(false);
-        if (dimBackgroundCanvasGroup != null)
-        {
-            dimBackgroundCanvasGroup.alpha = 0f;
-            dimBackgroundCanvasGroup.gameObject.SetActive(false);
-        }
 
         // Show instruction panel 1 on startup
         ShowInstructionPanel1();
@@ -366,18 +291,6 @@ public class QuizProper : MonoBehaviour
         // Display the question counter
         UpdateQuestionCounter();
 
-        if (questionCounterLabel != null)
-        {
-            if (!hasStoredQuestionCounterColor)
-            {
-                originalQuestionCounterColor = questionCounterLabel.color;
-                hasStoredQuestionCounterColor = true;
-            }
-
-            // Reset to default color for normal questions
-            questionCounterLabel.color = originalQuestionCounterColor;
-        }
-
         // Initialize answer mapping - will be shuffled next
         for (int i = 0; i < 4; i++)
         {
@@ -430,57 +343,19 @@ public class QuizProper : MonoBehaviour
                     answerImages[i].gameObject.SetActive(false);
                 }
                 
-                SetAnswerTextWithSize(answerTexts[i], answer.answerText);
+                answerTexts[i].text = answer.answerText;
                 
                 // DEBUG: Make sure the text actually updated
                 Debug.Log($"  -> answerTexts[{i}].text is now: '{answerTexts[i].text}'");
             }
 
-            // Make button clickable, reset opacity, and reset color
+            // Make button clickable and reset opacity
             answerButtons[i].interactable = true;
             SetAnswerButtonOpacity(i, 1f);
-            
-            // Reset button image color to white (in case it was changed by animations)
-            Image buttonImage = answerButtons[i].GetComponent<Image>();
-            if (buttonImage != null)
-            {
-                buttonImage.color = Color.white;
-            }
-        }
-
-        // Store original font size and color if not stored yet
-        if (feedbackText != null)
-        {
-            if (originalFeedbackTextFontSize == 0f)
-            {
-                originalFeedbackTextFontSize = feedbackText.fontSize;
-                originalQuestionColor = feedbackText.color; // Store original question color
-            }
-            // Reset font size and color for new question (in case feedbackText = questionLabel)
-            feedbackText.fontSize = originalFeedbackTextFontSize;
-            feedbackText.color = originalQuestionColor;
         }
 
         // Shuffle the answer button positions AFTER setting content
         ShuffleAnswerButtonPositions();
-
-        // DEBUG: Log which button has the correct answer (for testing purposes)
-        int correctButtonPosition = -1;
-        for (int i = 0; i < 4; i++)
-        {
-            if (currentAnswerMapping[i] == currentQuestion.correctAnswerIndex)
-            {
-                correctButtonPosition = i;
-                break;
-            }
-        }
-        
-        // Determine what to display in debug (text or image indicator)
-        string correctAnswerDisplay = currentQuestion.answers[currentQuestion.correctAnswerIndex].useImage 
-            ? "[IMAGE]" 
-            : $"'{currentQuestion.answers[currentQuestion.correctAnswerIndex].answerText}'";
-        
-        Debug.Log($"★★★ [TEST] Question {index + 1}: PRESS BUTTON {correctButtonPosition} (UI Layout order: [1,0,3,2] vertical) | Correct Answer: {correctAnswerDisplay} ★★★");
 
         // Hide the next button and reset it
         nextQuestionButton.gameObject.SetActive(false);
@@ -554,7 +429,7 @@ public class QuizProper : MonoBehaviour
                 {
                     answerImages[buttonPos].gameObject.SetActive(false);
                 }
-                SetAnswerTextWithSize(answerTexts[buttonPos], answer.answerText);
+                answerTexts[buttonPos].text = answer.answerText;
             }
         }
     }
@@ -581,18 +456,6 @@ public class QuizProper : MonoBehaviour
         timerLabel.text = Mathf.Max(0, Mathf.RoundToInt(timeRemaining)).ToString();
     }
 
-    private void SetAnswerTextWithSize(TextMeshProUGUI textComponent, string text)
-    {
-        if (textComponent == null) return;
-        if (originalAnswerTextFontSize == 0f)
-        {
-            originalAnswerTextFontSize = textComponent.fontSize;
-        }
-
-        textComponent.text = text;
-        textComponent.fontSize = text.Length > 42 ? 10.5f : originalAnswerTextFontSize;
-    }
-
     // === ANSWER HANDLING ===
     private void OnAnswerButtonClicked(int buttonIndex)
     {
@@ -612,11 +475,11 @@ public class QuizProper : MonoBehaviour
         // Check if correct
         if (selectedAnswerIndex == currentQuestion.correctAnswerIndex)
         {
-            HandleCorrectAnswer(currentQuestion, buttonIndex);
+            HandleCorrectAnswer(currentQuestion);
         }
         else
         {
-            HandleWrongAnswer(currentQuestion, buttonIndex);
+            HandleWrongAnswer(currentQuestion);
         }
     }
 
@@ -625,22 +488,10 @@ public class QuizProper : MonoBehaviour
         isAnswering = false;
         correctAnswerStreak = 0; // Lose streak
         QuizQuestion currentQuestion = shuffledQuestions[currentQuestionIndex];
-        
-        // Find which button position has the correct answer
-        int correctButtonIndex = -1;
-        for (int i = 0; i < 4; i++)
-        {
-            if (currentAnswerMapping[i] == currentQuestion.correctAnswerIndex)
-            {
-                correctButtonIndex = i;
-                break;
-            }
-        }
-        
-        ShowFeedback(currentQuestion, "TIMEOUT", currentQuestion.correctAnswerIndex, true, correctButtonIndex);
+        ShowFeedback(currentQuestion, "TIMEOUT", currentQuestion.correctAnswerIndex);
     }
 
-    private void HandleCorrectAnswer(QuizQuestion question, int clickedButtonIndex)
+    private void HandleCorrectAnswer(QuizQuestion question)
     {
         correctAnswerStreak++;
         
@@ -680,23 +531,23 @@ public class QuizProper : MonoBehaviour
             {
                 isStreakLifelinePending = true;
                 correctAnswerStreak = 0; // Reset streak because reward will be granted
-                ShowFeedback(question, "CORRECT", question.correctAnswerIndex, true, clickedButtonIndex); // Show next button
+                ShowFeedback(question, "CORRECT", question.correctAnswerIndex, true); // Show next button
             }
             // For guaranteed lifeline (already handled in HandleWrongAnswer)
             // This case handles correct answer on Q15/Q25
             else if (isGuaranteedLifeline)
             {
                 isGuaranteedLifelinePending = true;
-                ShowFeedback(question, "CORRECT", question.correctAnswerIndex, true, clickedButtonIndex); // Show next button
+                ShowFeedback(question, "CORRECT", question.correctAnswerIndex, true); // Show next button
             }
         }
         else
         {
-            ShowFeedback(question, "CORRECT", question.correctAnswerIndex, true, clickedButtonIndex);
+            ShowFeedback(question, "CORRECT", question.correctAnswerIndex);
         }
     }
 
-    private void HandleWrongAnswer(QuizQuestion question, int clickedButtonIndex)
+    private void HandleWrongAnswer(QuizQuestion question)
     {
         correctAnswerStreak = 0; // Lose streak
 
@@ -707,141 +558,33 @@ public class QuizProper : MonoBehaviour
         if (isGuaranteedLifeline && canAwardLifeline)
         {
             isGuaranteedLifelinePending = true;
-            ShowFeedback(question, "WRONG", question.correctAnswerIndex, true, clickedButtonIndex);
+            ShowFeedback(question, "WRONG", question.correctAnswerIndex, true);
         }
         else
         {
-            ShowFeedback(question, "WRONG", question.correctAnswerIndex, true, clickedButtonIndex);
+            ShowFeedback(question, "WRONG", question.correctAnswerIndex);
         }
     }
 
-    private void ShowFeedback(QuizQuestion question, string feedbackType, int correctAnswerIndex, bool autoShowNextButton = true, int clickedButtonIndex = -1)
+    private void ShowFeedback(QuizQuestion question, string feedbackType, int correctAnswerIndex, bool autoShowNextButton = true)
     {
         string feedbackMessage = "";
-        Color feedbackColor = Color.white;
 
         // Choose the appropriate feedback from the question
         if (feedbackType == "CORRECT")
         {
             feedbackMessage = question.correctFeedback;
-            feedbackColor = correctFeedbackColor;
-            
-            // Animate correct button press
-            if (enableButtonPressAnimation && clickedButtonIndex >= 0)
-            {
-                StartCoroutine(AnimateCorrectButtonPress(clickedButtonIndex));
-                
-                // Start continuous blinking if enabled
-                if (correctButtonBlinksContinuously)
-                {
-                    if (correctButtonBlinkCoroutine != null)
-                        StopCoroutine(correctButtonBlinkCoroutine);
-                    currentBlinkingButtonIndex = clickedButtonIndex; // Track which button is blinking
-                    correctButtonBlinkCoroutine = StartCoroutine(BlinkCorrectButtonContinuously(clickedButtonIndex));
-                }
-            }
         }
         else if (feedbackType == "WRONG")
         {
             feedbackMessage = question.wrongFeedback;
-            feedbackColor = wrongFeedbackColor;
-            
-            // Find the correct answer button to keep visible
-            int correctButtonIndex = -1;
-            for (int i = 0; i < 4; i++)
-            {
-                if (currentAnswerMapping[i] == correctAnswerIndex)
-                {
-                    correctButtonIndex = i;
-                    break;
-                }
-            }
-            
-            // Animate wrong button press AND show correct answer
-            if (enableButtonPressAnimation && clickedButtonIndex >= 0)
-            {
-                StartCoroutine(AnimateWrongButtonPress(clickedButtonIndex));
-                
-                if (correctButtonIndex >= 0)
-                {
-                    StartCoroutine(ShowCorrectAnswerAfterWrong(correctButtonIndex));
-                    
-                    // Also start continuous blinking for the correct answer (like correct press)
-                    if (correctButtonBlinksContinuously)
-                    {
-                        if (correctButtonBlinkCoroutine != null)
-                            StopCoroutine(correctButtonBlinkCoroutine);
-                        currentBlinkingButtonIndex = correctButtonIndex; // Track which button is blinking
-                        correctButtonBlinkCoroutine = StartCoroutine(BlinkCorrectButtonContinuously(correctButtonIndex));
-                    }
-                }
-            }
         }
         else if (feedbackType == "TIMEOUT")
         {
             feedbackMessage = question.timeUpFeedback;
-            feedbackColor = timeoutFeedbackColor;
-            
-            // Animate correct answer highlight on timeout
-            if (clickedButtonIndex >= 0)
-            {
-                StartCoroutine(AnimateTimeoutCorrectAnswer(clickedButtonIndex));
-                
-                // Also start continuous blinking for the correct answer
-                if (correctButtonBlinksContinuously)
-                {
-                    if (correctButtonBlinkCoroutine != null)
-                        StopCoroutine(correctButtonBlinkCoroutine);
-                    currentBlinkingButtonIndex = clickedButtonIndex; // Track which button is blinking
-                    correctButtonBlinkCoroutine = StartCoroutine(BlinkCorrectButtonContinuously(clickedButtonIndex));
-                }
-            }
         }
         
         questionLabel.text = feedbackMessage;
-        
-        // Find correct button index for fading logic
-        int correctButtonIndexForFade = -1;
-        if (feedbackType == "WRONG" || feedbackType == "TIMEOUT")
-        {
-            for (int i = 0; i < 4; i++)
-            {
-                if (currentAnswerMapping[i] == correctAnswerIndex)
-                {
-                    correctButtonIndexForFade = i;
-                    break;
-                }
-            }
-        }
-        
-        // Fade out non-clicked buttons (keep correct answer visible for wrong/timeout)
-        StartCoroutine(FadeOutNonClickedButtons(clickedButtonIndex, correctButtonIndexForFade));
-        
-        // Set feedback text color and optionally blink it
-        if (feedbackText != null)
-        {
-            feedbackText.text = feedbackMessage;
-            
-            // Adjust font size based on character count
-            if (feedbackMessage.Length > 101)
-            {
-                feedbackText.fontSize = 11.5f;
-            }
-            else
-            {
-                feedbackText.fontSize = originalFeedbackTextFontSize;
-            }
-            
-            // Set color AFTER adjusting size to ensure it's applied
-            feedbackText.color = feedbackColor; // Set color immediately: Green for correct, Red for wrong, Orange for timeout
-            
-            if (enableFeedbackBlink)
-            {
-                if (feedbackBlinkCoroutine != null)
-                    StopCoroutine(feedbackBlinkCoroutine);
-                feedbackBlinkCoroutine = StartCoroutine(BlinkFeedbackText(feedbackMessage, feedbackColor));
-            }
-        }
 
         // Show the next button after a delay (unless a lifeline panel is showing)
         if (autoShowNextButton)
@@ -868,246 +611,6 @@ public class QuizProper : MonoBehaviour
         }
 
         nextButtonCanvasGroup.alpha = 1f;
-    }
-
-    // === ANIMATION COROUTINES ===
-    
-    // Animate correct button press - scale up
-    private IEnumerator AnimateCorrectButtonPress(int buttonIndex)
-    {
-        if (buttonIndex < 0 || buttonIndex >= answerButtons.Length) yield break;
-        
-        Transform buttonTransform = answerButtons[buttonIndex].transform;
-        Vector3 originalScale = buttonTransform.localScale;
-        
-        float elapsed = 0f;
-        
-        // Scale up
-        while (elapsed < correctButtonScaleDuration / 2f)
-        {
-            elapsed += Time.deltaTime;
-            float t = elapsed / (correctButtonScaleDuration / 2f);
-            buttonTransform.localScale = Vector3.Lerp(originalScale, correctButtonScaleAmount, t);
-            yield return null;
-        }
-        
-        elapsed = 0f;
-        
-        // Scale back down
-        while (elapsed < correctButtonScaleDuration / 2f)
-        {
-            elapsed += Time.deltaTime;
-            float t = elapsed / (correctButtonScaleDuration / 2f);
-            buttonTransform.localScale = Vector3.Lerp(correctButtonScaleAmount, originalScale, t);
-            yield return null;
-        }
-        
-        buttonTransform.localScale = originalScale;
-    }
-    
-    // Animate wrong button press - change color
-    private IEnumerator AnimateWrongButtonPress(int buttonIndex)
-    {
-        if (buttonIndex < 0 || buttonIndex >= answerButtons.Length) yield break;
-        
-        Image buttonImage = answerButtons[buttonIndex].GetComponent<Image>();
-        if (buttonImage == null) yield break;
-        
-        Color originalColor = buttonImage.color;
-        float elapsed = 0f;
-        
-        // Fade to red
-        while (elapsed < wrongButtonColorDuration / 2f)
-        {
-            elapsed += Time.deltaTime;
-            float t = elapsed / (wrongButtonColorDuration / 2f);
-            buttonImage.color = Color.Lerp(originalColor, wrongButtonColor, t);
-            yield return null;
-        }
-        
-        elapsed = 0f;
-        
-        // Fade back to original
-        while (elapsed < wrongButtonColorDuration / 2f)
-        {
-            elapsed += Time.deltaTime;
-            float t = elapsed / (wrongButtonColorDuration / 2f);
-            buttonImage.color = Color.Lerp(wrongButtonColor, originalColor, t);
-            yield return null;
-        }
-        
-        buttonImage.color = originalColor;
-    }
-    
-    // Animate correct answer on timeout - highlight it
-    private IEnumerator AnimateTimeoutCorrectAnswer(int correctButtonIndex)
-    {
-        if (correctButtonIndex < 0 || correctButtonIndex >= answerButtons.Length) yield break;
-        
-        Transform buttonTransform = answerButtons[correctButtonIndex].transform;
-        Image buttonImage = answerButtons[correctButtonIndex].GetComponent<Image>();
-        
-        if (buttonImage == null) yield break;
-        
-        Vector3 originalScale = buttonTransform.localScale;
-        Color originalColor = buttonImage.color;
-        float elapsed = 0f;
-        
-        // Scale up and change color
-        while (elapsed < correctAnswerHighlightDuration / 2f)
-        {
-            elapsed += Time.deltaTime;
-            float t = elapsed / (correctAnswerHighlightDuration / 2f);
-            buttonTransform.localScale = Vector3.Lerp(originalScale, correctAnswerHighlightScale, t);
-            buttonImage.color = Color.Lerp(originalColor, correctAnswerHighlightColor, t);
-            yield return null;
-        }
-        
-        elapsed = 0f;
-        
-        // Scale back and restore color
-        while (elapsed < correctAnswerHighlightDuration / 2f)
-        {
-            elapsed += Time.deltaTime;
-            float t = elapsed / (correctAnswerHighlightDuration / 2f);
-            buttonTransform.localScale = Vector3.Lerp(correctAnswerHighlightScale, originalScale, t);
-            buttonImage.color = Color.Lerp(correctAnswerHighlightColor, originalColor, t);
-            yield return null;
-        }
-        
-        buttonTransform.localScale = originalScale;
-        buttonImage.color = originalColor;
-    }
-    
-    // Fade out non-clicked buttons (optionally keep correct answer visible)
-    private IEnumerator FadeOutNonClickedButtons(int clickedButtonIndex, int keepVisibleButtonIndex = -1)
-    {
-        yield return new WaitForSeconds(nonClickedButtonFadeDelay);
-        
-        float elapsed = 0f;
-        
-        while (elapsed < nonClickedButtonFadeDuration)
-        {
-            elapsed += Time.deltaTime;
-            float t = elapsed / nonClickedButtonFadeDuration;
-            
-            for (int i = 0; i < answerButtons.Length; i++)
-            {
-                if (i != clickedButtonIndex && i != keepVisibleButtonIndex)
-                {
-                    // Fade out other buttons
-                    SetAnswerButtonOpacity(i, Mathf.Lerp(1f, fadedButtonOpacity, t));
-                    answerButtons[i].interactable = false;
-                }
-                else if (i == keepVisibleButtonIndex)
-                {
-                    // Keep correct answer at full opacity for emphasis
-                    SetAnswerButtonOpacity(i, 1f);
-                    answerButtons[i].interactable = false;
-                }
-            }
-            
-            yield return null;
-        }
-        
-        // Ensure final states
-        for (int i = 0; i < answerButtons.Length; i++)
-        {
-            if (i != clickedButtonIndex && i != keepVisibleButtonIndex)
-            {
-                SetAnswerButtonOpacity(i, fadedButtonOpacity);
-                answerButtons[i].interactable = false;
-            }
-            else if (i == keepVisibleButtonIndex)
-            {
-                SetAnswerButtonOpacity(i, 1f);
-                answerButtons[i].interactable = false;
-            }
-        }
-    }
-    
-    // Set feedback text color smoothly without blinking
-    private IEnumerator BlinkFeedbackText(string message, Color blinkColor)
-    {
-        if (feedbackText == null) yield break;
-        
-        // Simply set the color smoothly - no blinking animation
-        feedbackText.color = blinkColor;
-        yield break;
-    }
-    
-    // Simple font size adjustment based on character count
-    // This method is no longer used - logic moved inline to ShowFeedback()
-    // Kept for reference only
-    private void AdjustFeedbackTextSize()
-    {
-        // DEPRECATED: No longer used
-        // Font size adjustment now done inline in ShowFeedback() based on character count
-    }
-    
-    // Blink correct button continuously until next question
-    private IEnumerator BlinkCorrectButtonContinuously(int buttonIndex)
-    {
-        if (buttonIndex < 0 || buttonIndex >= answerButtons.Length) yield break;
-        
-        Image buttonImage = answerButtons[buttonIndex].GetComponent<Image>();
-        if (buttonImage == null) yield break;
-        
-        Color originalColor = buttonImage.color;
-        Color greenColor = new Color(0.5f, 1f, 0.5f, 1f); // Light green
-        
-        while (true) // Loop forever until coroutine is stopped
-        {
-            // Fade to green
-            buttonImage.color = greenColor;
-            yield return new WaitForSeconds(feedbackBlinkSpeed);
-            
-            // Fade back to original
-            buttonImage.color = originalColor;
-            yield return new WaitForSeconds(feedbackBlinkSpeed);
-        }
-    }
-    
-    // Show correct answer after wrong answer is pressed
-    private IEnumerator ShowCorrectAnswerAfterWrong(int correctButtonIndex)
-    {
-        yield return new WaitForSeconds(showCorrectAfterWrongDelay);
-        
-        // Animate the correct button
-        yield return StartCoroutine(AnimateTimeoutCorrectAnswer(correctButtonIndex));
-    }
-    
-    // Animate lifeline button when used
-    private IEnumerator AnimateLifelineButtonUse(Button lifelineButton)
-    {
-        if (lifelineButton == null) yield break;
-        
-        Transform buttonTransform = lifelineButton.transform;
-        Vector3 originalScale = buttonTransform.localScale;
-        
-        float elapsed = 0f;
-        
-        // Scale up
-        while (elapsed < lifelineButtonScaleDuration / 2f)
-        {
-            elapsed += Time.deltaTime;
-            float t = elapsed / (lifelineButtonScaleDuration / 2f);
-            buttonTransform.localScale = Vector3.Lerp(originalScale, lifelineButtonScaleAmount, t);
-            yield return null;
-        }
-        
-        elapsed = 0f;
-        
-        // Scale back down
-        while (elapsed < lifelineButtonScaleDuration / 2f)
-        {
-            elapsed += Time.deltaTime;
-            float t = elapsed / (lifelineButtonScaleDuration / 2f);
-            buttonTransform.localScale = Vector3.Lerp(lifelineButtonScaleAmount, originalScale, t);
-            yield return null;
-        }
-        
-        buttonTransform.localScale = originalScale;
     }
 
     // === SCORE ===
@@ -1141,66 +644,6 @@ public class QuizProper : MonoBehaviour
         }
     }
 
-    private void SetQuestionCounterLifelineColor(LifelineType type)
-    {
-        if (questionCounterLabel == null) return;
-        if (!hasStoredQuestionCounterColor)
-        {
-            originalQuestionCounterColor = questionCounterLabel.color;
-            hasStoredQuestionCounterColor = true;
-        }
-
-        switch (type)
-        {
-            case LifelineType.StopTime:
-                questionCounterLabel.color = stopTimeCounterColor;
-                break;
-            case LifelineType.DoublePoints:
-                questionCounterLabel.color = doublePointsCounterColor;
-                break;
-            case LifelineType.ReduceChoices:
-                questionCounterLabel.color = reduceChoicesCounterColor;
-                break;
-            default:
-                questionCounterLabel.color = originalQuestionCounterColor;
-                break;
-        }
-    }
-
-    private void SetDimBackgroundVisible(bool show)
-    {
-        if (dimBackgroundCanvasGroup == null) return;
-        if (dimBackgroundCoroutine != null)
-            StopCoroutine(dimBackgroundCoroutine);
-        dimBackgroundCoroutine = StartCoroutine(FadeDimBackground(show));
-    }
-
-    private IEnumerator FadeDimBackground(bool show)
-    {
-        if (dimBackgroundCanvasGroup == null) yield break;
-
-        if (show)
-            dimBackgroundCanvasGroup.gameObject.SetActive(true);
-
-        float startAlpha = dimBackgroundCanvasGroup.alpha;
-        float targetAlpha = show ? dimBackgroundTargetAlpha : 0f;
-        float elapsed = 0f;
-        float duration = Mathf.Max(0.01f, dimBackgroundFadeDuration);
-
-        while (elapsed < duration)
-        {
-            elapsed += Time.unscaledDeltaTime;
-            float t = elapsed / duration;
-            dimBackgroundCanvasGroup.alpha = Mathf.Lerp(startAlpha, targetAlpha, t);
-            yield return null;
-        }
-
-        dimBackgroundCanvasGroup.alpha = targetAlpha;
-
-        if (!show)
-            dimBackgroundCanvasGroup.gameObject.SetActive(false);
-    }
-
     // === LIFELINES ===
     private void GiveRandomLifeline()
     {
@@ -1227,7 +670,6 @@ public class QuizProper : MonoBehaviour
             return;
 
         hasStopTime = false;
-        SetQuestionCounterLifelineColor(LifelineType.StopTime);
         
         // Stop the timer from counting down
         if (timerCoroutine != null)
@@ -1243,7 +685,6 @@ public class QuizProper : MonoBehaviour
 
         hasDoublePoints = false; // Consume the lifeline
         pendingDoublePoints = true; // Mark that next correct answer should be doubled
-        SetQuestionCounterLifelineColor(LifelineType.DoublePoints);
         // This will be applied when the answer is submitted
         UpdateLifelineButtons();
     }
@@ -1254,7 +695,6 @@ public class QuizProper : MonoBehaviour
             return;
 
         hasReduceChoices = false;
-        SetQuestionCounterLifelineColor(LifelineType.ReduceChoices);
 
         QuizQuestion currentQuestion = shuffledQuestions[currentQuestionIndex];
         
@@ -1288,9 +728,6 @@ public class QuizProper : MonoBehaviour
             SetAnswerButtonOpacity(wrongAnswerButtonPositions[1], reducedChoiceOpacity);
             answerButtons[wrongAnswerButtonPositions[1]].interactable = false;
         }
-        
-        // Animate the lifeline button
-        StartCoroutine(AnimateLifelineButtonUse(reduceChoicesButton));
 
         UpdateLifelineButtons();
     }
@@ -1404,15 +841,9 @@ public class QuizProper : MonoBehaviour
         if (available.Count == 0)
             yield break;
 
-        // Slide down and fade in animation
-        yield return StartCoroutine(SlideAndFadeInLifelinePanel());
-
+        lifelineGainedPanel.SetActive(true);
         if (lifelineContinueButton != null)
             lifelineContinueButton.gameObject.SetActive(false);
-
-        bool isStreakReward = isStreakLifelinePending;
-        bool isCheckpointReward = isGuaranteedLifelinePending;
-        lifelineRollingDotCount = 0;
 
         float elapsed = 0f;
         LifelineType currentShown = available[0];
@@ -1421,7 +852,7 @@ public class QuizProper : MonoBehaviour
         while (elapsed < lifelineRouletteDuration)
         {
             currentShown = available[Random.Range(0, available.Count)];
-            UpdateLifelinePanelVisuals(currentShown, true, isStreakReward, isCheckpointReward);
+            UpdateLifelinePanelVisuals(currentShown, true);
             yield return new WaitForSeconds(lifelineRouletteInterval);
             elapsed += lifelineRouletteInterval;
         }
@@ -1429,7 +860,7 @@ public class QuizProper : MonoBehaviour
         // Final award selection
         LifelineType awarded = available.Count == 1 ? available[0] : available[Random.Range(0, available.Count)];
         AwardLifeline(awarded);
-        UpdateLifelinePanelVisuals(awarded, false, isStreakReward, isCheckpointReward);
+        UpdateLifelinePanelVisuals(awarded, false);
 
         if (lifelineContinueButton != null)
             lifelineContinueButton.gameObject.SetActive(true);
@@ -1444,9 +875,6 @@ public class QuizProper : MonoBehaviour
         if (available.Count == 0)
             yield break;
 
-        bool isStreakReward = isStreakLifelinePending;
-        bool isCheckpointReward = isGuaranteedLifelinePending;
-
         // Reset both pending flags at start (they'll stay reset through the animation)
         isGuaranteedLifelinePending = false;
         isStreakLifelinePending = false;
@@ -1455,13 +883,9 @@ public class QuizProper : MonoBehaviour
         if (nextQuestionButton != null)
             nextQuestionButton.gameObject.SetActive(false);
 
-        // Slide down and fade in animation
-        yield return StartCoroutine(SlideAndFadeInLifelinePanel());
-
+        lifelineGainedPanel.SetActive(true);
         if (lifelineContinueButton != null)
             lifelineContinueButton.gameObject.SetActive(false);
-
-        lifelineRollingDotCount = 0;
 
         float elapsed = 0f;
         LifelineType currentShown = available[0];
@@ -1470,7 +894,7 @@ public class QuizProper : MonoBehaviour
         while (elapsed < lifelineRouletteDuration)
         {
             currentShown = available[Random.Range(0, available.Count)];
-            UpdateLifelinePanelVisuals(currentShown, true, isStreakReward, isCheckpointReward);
+            UpdateLifelinePanelVisuals(currentShown, true);
             yield return new WaitForSeconds(lifelineRouletteInterval);
             elapsed += lifelineRouletteInterval;
         }
@@ -1478,32 +902,18 @@ public class QuizProper : MonoBehaviour
         // Final award selection
         LifelineType awarded = available.Count == 1 ? available[0] : available[Random.Range(0, available.Count)];
         AwardLifeline(awarded);
-        UpdateLifelinePanelVisuals(awarded, false, isStreakReward, isCheckpointReward);
+        UpdateLifelinePanelVisuals(awarded, false);
 
         if (lifelineContinueButton != null)
             lifelineContinueButton.gameObject.SetActive(true);
     }
 
-    private void UpdateLifelinePanelVisuals(LifelineType type, bool showRolling, bool isStreakReward, bool isCheckpointReward)
+    private void UpdateLifelinePanelVisuals(LifelineType type, bool showRolling)
     {
         if (lifelineGainedText != null)
         {
             string name = GetLifelineDisplayName(type);
-            string prefix = isCheckpointReward
-                ? "Checkpoint Reached! You have gained "
-                : "That's a 5 streak! You have gained ";
-
-            if (showRolling)
-            {
-                lifelineRollingDotCount = (lifelineRollingDotCount % 3) + 1;
-                string dots = new string('.', lifelineRollingDotCount);
-                lifelineGainedText.text = prefix + dots;
-            }
-            else
-            {
-                lifelineRollingDotCount = 0;
-                lifelineGainedText.text = prefix + name;
-            }
+            lifelineGainedText.text = showRolling ? "Congratulations! You gained ..." : $"Congratulations! You gained {name}";
         }
 
         if (lifelineGainedImage != null)
@@ -1515,16 +925,11 @@ public class QuizProper : MonoBehaviour
 
     private void OnLifelineContinueClicked()
     {
-        // Run exit animation first, then start the timer for a smooth transition.
-        StartCoroutine(ResumeQuizAfterLifelinePanel());
-    }
+        if (lifelineGainedPanel != null)
+            lifelineGainedPanel.SetActive(false);
 
-    private IEnumerator ResumeQuizAfterLifelinePanel()
-    {
-        yield return StartCoroutine(SlideAndFadeOutLifelinePanel());
-
-        // Lifeline panel was shown before timer started, so always start the quiz now.
-        // Flags are already reset in ShowLifelineGainedPanelThenContinueQuiz.
+        // Lifeline panel was shown before timer started, so always start the quiz now
+        // Flags are already reset in ShowLifelineGainedPanelThenContinueQuiz
         isAnswering = true;
         timeRemaining = timePerQuestion;
         UpdateTimerLabel();
@@ -1535,146 +940,9 @@ public class QuizProper : MonoBehaviour
         timerCoroutine = StartCoroutine(TimerCountDown());
     }
 
-    // Slide down and fade in lifeline panel
-    private IEnumerator SlideAndFadeInLifelinePanel()
-    {
-        if (lifelineGainedPanel == null) yield break;
-
-        SetDimBackgroundVisible(true);
-        
-        lifelineGainedPanel.SetActive(true);
-        
-        // Setup initial position (above screen)
-        if (lifelinePanelRect != null)
-        {
-            Vector2 startPos = lifelinePanelRect.anchoredPosition;
-            Vector2 targetPos = startPos;
-            startPos.y += lifelinePanelSlideDistance;
-            lifelinePanelRect.anchoredPosition = startPos;
-            
-            // Setup canvas group for fade
-            if (lifelinePanelCanvasGroup != null)
-                lifelinePanelCanvasGroup.alpha = 0f;
-            
-            float elapsed = 0f;
-            float duration = Mathf.Max(lifelinePanelSlideDuration, lifelinePanelFadeDuration);
-            
-            while (elapsed < duration)
-            {
-                elapsed += Time.deltaTime;
-                float t = elapsed / duration;
-                
-                // Slide down
-                if (lifelinePanelRect != null)
-                    lifelinePanelRect.anchoredPosition = Vector2.Lerp(startPos, targetPos, t);
-                
-                // Fade in
-                if (lifelinePanelCanvasGroup != null)
-                    lifelinePanelCanvasGroup.alpha = Mathf.Lerp(0f, 1f, t);
-                
-                yield return null;
-            }
-            
-            // Ensure final values
-            if (lifelinePanelRect != null)
-                lifelinePanelRect.anchoredPosition = targetPos;
-            if (lifelinePanelCanvasGroup != null)
-                lifelinePanelCanvasGroup.alpha = 1f;
-        }
-        else
-        {
-            // Fallback: just fade in if no RectTransform
-            if (lifelinePanelCanvasGroup != null)
-            {
-                float elapsed = 0f;
-                while (elapsed < lifelinePanelFadeDuration)
-                {
-                    elapsed += Time.deltaTime;
-                    lifelinePanelCanvasGroup.alpha = Mathf.Lerp(0f, 1f, elapsed / lifelinePanelFadeDuration);
-                    yield return null;
-                }
-                lifelinePanelCanvasGroup.alpha = 1f;
-            }
-        }
-    }
-
-    // Slide down and fade out lifeline panel
-    private IEnumerator SlideAndFadeOutLifelinePanel()
-    {
-        if (lifelineGainedPanel == null) yield break;
-        
-        if (lifelinePanelRect != null)
-        {
-            Vector2 startPos = lifelinePanelRect.anchoredPosition;
-            Vector2 targetPos = startPos;
-            targetPos.y -= lifelinePanelSlideDistance;
-            
-            float elapsed = 0f;
-            float duration = Mathf.Max(lifelinePanelSlideDuration, lifelinePanelFadeDuration);
-            
-            while (elapsed < duration)
-            {
-                elapsed += Time.deltaTime;
-                float t = elapsed / duration;
-                
-                // Slide down
-                if (lifelinePanelRect != null)
-                    lifelinePanelRect.anchoredPosition = Vector2.Lerp(startPos, targetPos, t);
-                
-                // Fade out
-                if (lifelinePanelCanvasGroup != null)
-                    lifelinePanelCanvasGroup.alpha = Mathf.Lerp(1f, 0f, t);
-                
-                yield return null;
-            }
-            
-            // Ensure final values
-            if (lifelinePanelRect != null)
-                lifelinePanelRect.anchoredPosition = startPos; // Reset position for next time
-            if (lifelinePanelCanvasGroup != null)
-                lifelinePanelCanvasGroup.alpha = 0f;
-        }
-        else
-        {
-            // Fallback: just fade out if no RectTransform
-            if (lifelinePanelCanvasGroup != null)
-            {
-                float elapsed = 0f;
-                while (elapsed < lifelinePanelFadeDuration)
-                {
-                    elapsed += Time.deltaTime;
-                    lifelinePanelCanvasGroup.alpha = Mathf.Lerp(1f, 0f, elapsed / lifelinePanelFadeDuration);
-                    yield return null;
-                }
-                lifelinePanelCanvasGroup.alpha = 0f;
-            }
-        }
-        
-        lifelineGainedPanel.SetActive(false);
-        SetDimBackgroundVisible(false);
-    }
-
     // === NEXT QUESTION ===
     private void OnNextQuestionClicked()
     {
-        // Stop continuous blinking when moving to next question
-        if (correctButtonBlinkCoroutine != null)
-        {
-            StopCoroutine(correctButtonBlinkCoroutine);
-            correctButtonBlinkCoroutine = null;
-            
-            // Reset the blinking button's color back to white
-            if (currentBlinkingButtonIndex >= 0 && currentBlinkingButtonIndex < answerButtons.Length)
-            {
-                Image buttonImage = answerButtons[currentBlinkingButtonIndex].GetComponent<Image>();
-                if (buttonImage != null)
-                {
-                    buttonImage.color = Color.white; // Reset to default white color
-                }
-            }
-            currentBlinkingButtonIndex = -1; // Reset tracker
-        }
-        
         currentQuestionIndex++;
         LoadQuestion(currentQuestionIndex);
     }
@@ -1689,7 +957,6 @@ public class QuizProper : MonoBehaviour
         if (timerCoroutine != null)
             StopCoroutine(timerCoroutine);
 
-        SetDimBackgroundVisible(true);
         pausePanel.SetActive(true);
         Time.timeScale = 0f; // Freeze everything
     }
@@ -1698,8 +965,6 @@ public class QuizProper : MonoBehaviour
     {
         pausePanel.SetActive(false);
         Time.timeScale = 1f; // Unfreeze
-
-        SetDimBackgroundVisible(false);
 
         isAnswering = true;
         if (timerCoroutine != null)
@@ -1776,8 +1041,6 @@ public class QuizProper : MonoBehaviour
         
         if (finalScoreText != null)
             finalScoreText.text = $"{currentScore}";
-
-        SetDimBackgroundVisible(true);
 
         // Show the panel
         resultsPanel.SetActive(true);

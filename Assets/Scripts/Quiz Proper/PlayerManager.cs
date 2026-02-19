@@ -70,9 +70,9 @@ public class PlayerManager : MonoBehaviour
     // Called by UIManager when the player enters their info
     public void SetPlayerInfo(string firstName, string lastName, string school)
     {
-        playerFirstName = (firstName ?? string.Empty).Trim().ToUpperInvariant();
-        playerLastName = (lastName ?? string.Empty).Trim().ToUpperInvariant();
-        playerSchool = (school ?? string.Empty).Trim().ToUpperInvariant();
+        playerFirstName = firstName;
+        playerLastName = lastName;
+        playerSchool = school;
         Debug.Log($"Player set: {firstName} {lastName} from {school}");
     }
 
