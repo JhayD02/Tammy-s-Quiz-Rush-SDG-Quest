@@ -1,0 +1,825 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1926916739194261097
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1637893292273397175}
+  - component: {fileID: 972446917737515601}
+  m_Layer: 0
+  m_Name: QuizProper
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1637893292273397175
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926916739194261097}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 600, y: 1320, z: -0.00014483929}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &972446917737515601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1926916739194261097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1ed1dd36df1bd1478496c2267b81a9d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  questionBank:
+  - questionText: What does SDG stand for?
+    answers:
+    - answerText: Sustainable Development Goals
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Social Development Goals
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Sustainable Development Growth
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Strategic Development Goals
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: Correct! SDG stands for Sustainable Development Goals, a global
+      framework adopted by the UN to address major global challenges by 2030.
+    wrongFeedback: Incorrect. SDG stands for Sustainable Development Goals, a global
+      framework adopted by the UN to address major global challenges by 2030.
+    timeUpFeedback: Time's up! SDG stands for Sustainable Development Goals, a global
+      framework adopted by the UN to address major global challenges by 2030.
+  - questionText: How many Sustainable Development Goals are there?
+    answers:
+    - answerText: 17
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: 10
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: 15
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: 8
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: Correct! The SDGs consist of 17 interconnected goals covering
+      social, economic, and environmental development.
+    wrongFeedback: Incorrect. The SDGs consist of 17 interconnected goals covering
+      social, economic, and environmental development.
+    timeUpFeedback: Time's up! The SDGs consist of 17 interconnected goals covering
+      social, economic, and environmental development.
+  - questionText: What is the target year for achieving the SDGs?
+    answers:
+    - answerText: 2030
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: 2025
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: 2035
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: 2050
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: Correct! All SDGs aim to be achieved by the year 2030.
+    wrongFeedback: Incorrect. All SDGs aim to be achieved by the year 2030.
+    timeUpFeedback: Time's up! All SDGs aim to be achieved by the year 2030.
+  - questionText: In what year were the SDGs officially adopted by the United Nations?
+    answers:
+    - answerText: 2015
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: 2000
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: 2010
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: 2020
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: Correct! The SDGs were adopted in 2015 as part of the 2030 Agenda
+      for Sustainable Development.
+    wrongFeedback: Incorrect. The SDGs were adopted in 2015 as part of the 2030 Agenda
+      for Sustainable Development.
+    timeUpFeedback: Time's up! The SDGs were adopted in 2015 as part of the 2030
+      Agenda for Sustainable Development.
+  - questionText: 'Which principle is central to the SDGs? '
+    answers:
+    - answerText: Leave no one behind
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: 'Economic profit first '
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: National interest only
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Technology over people
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: "Correct! \u201CLeave no one behind\u201D ensures that progress
+      benefits everyone, especially the most vulnerable.\r"
+    wrongFeedback: "Incorrect. \u201CLeave no one behind\u201D ensures that progress
+      benefits everyone, especially the most vulnerable.\r"
+    timeUpFeedback: "Time's up! \u201CLeave no one behind\u201D ensures that progress
+      benefits everyone, especially the most vulnerable.\r"
+  - questionText: Which goal focuses on ending poverty in all its forms?
+    answers:
+    - answerText: SDG 1
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: SDG 2
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: SDG 8
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: SDG 10
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: "Correct! SDG 1 is No Poverty, aiming to eradicate extreme poverty
+      worldwide.\r"
+    wrongFeedback: "Incorrect. SDG 1 is No Poverty, aiming to eradicate extreme poverty
+      worldwide.\r"
+    timeUpFeedback: "Time's up! SDG 1 is No Poverty, aiming to eradicate extreme
+      poverty worldwide.\r"
+  - questionText: Which SDG addresses hunger and food security?
+    answers:
+    - answerText: SDG 2
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: SDG 1
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: SDG 3
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: SDG 12
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: "Correct! SDG 2: Zero Hunger focuses on ending hunger and promoting
+      sustainable agriculture.\r"
+    wrongFeedback: "Incorrect. SDG 2: Zero Hunger focuses on ending hunger and promoting
+      sustainable agriculture.\r"
+    timeUpFeedback: "Time's up! SDG 2: Zero Hunger focuses on ending hunger and promoting
+      sustainable agriculture.\r"
+  - questionText: What is the main focus of SDG 3?
+    answers:
+    - answerText: Health and well-being
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Education access
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: 'Clean energy '
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: 'Gender equality '
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: Correct! SDG 3 promotes healthy lives and well-being for all
+      ages.
+    wrongFeedback: Incorrect. SDG 3 promotes healthy lives and well-being for all
+      ages.
+    timeUpFeedback: Time's up! SDG 3 promotes healthy lives and well-being for all
+      ages.
+  - questionText: Which SDG aims to ensure inclusive and equitable quality education?
+    answers:
+    - answerText: SDG 4
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: SDG 6
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: SDG 7
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: SDG 9
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: Correct! SDG 4 focuses on education and lifelong learning opportunities.
+    wrongFeedback: Incorrect. SDG 4 focuses on education and lifelong learning opportunities.
+    timeUpFeedback: Time's up! SDG 4 focuses on education and lifelong learning opportunities.
+  - questionText: Gender equality is the focus of which SDG?
+    answers:
+    - answerText: SDG 5
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: SDG 4
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: SDG 10
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: SDG 16
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: Correct! SDG 5 aims to empower women and girls and eliminate
+      discrimination.
+    wrongFeedback: Incorrect. SDG 5 aims to empower women and girls and eliminate
+      discrimination.
+    timeUpFeedback: Time's up! SDG 5 aims to empower women and girls and eliminate
+      discrimination.
+  - questionText: Which SDG focuses on clean water and sanitation?
+    answers:
+    - answerText: SDG 6
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: SDG 7
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: SDG 8
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: SDG 13
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: Correct! SDG 6 ensures access to clean water and sanitation
+      for all.
+    wrongFeedback: Incorrect. SDG 6 ensures access to clean water and sanitation
+      for all.
+    timeUpFeedback: Time's up! SDG 6 ensures access to clean water and sanitation
+      for all.
+  - questionText: Affordable and clean energy is addressed by which SDG?
+    answers:
+    - answerText: SDG 7
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: SDG 6
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: SDG 9
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: SDG 10
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: Correct! SDG 7 promotes access to sustainable and modern energy.
+    wrongFeedback: Incorrect. SDG 7 promotes access to sustainable and modern energy.
+    timeUpFeedback: Time's up! SDG 7 promotes access to sustainable and modern energy.
+  - questionText: Which SDG promotes decent work and sustainable economic growth?
+    answers:
+    - answerText: SDG 8
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: SDG 9
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: SDG 10
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: SDG 12
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: Correct! SDG 8 focuses on employment, labor rights, and economic
+      growth.
+    wrongFeedback: Incorrect. SDG 8 focuses on employment, labor rights, and economic
+      growth.
+    timeUpFeedback: Time's up! SDG 8 focuses on employment, labor rights, and economic
+      growth.
+  - questionText: Innovation, infrastructure, and industrialization are covered under
+      which SDG?
+    answers:
+    - answerText: SDG 9
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: SDG 7
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: SDG 8
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: SDG 11
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: Correct! SDG 9 emphasizes resilient infrastructure and innovation.
+    wrongFeedback: Incorrect. SDG 9 emphasizes resilient infrastructure and innovation.
+    timeUpFeedback: Time's up! SDG 9 emphasizes resilient infrastructure and innovation.
+  - questionText: Reducing inequality within and among countries is the goal of which
+      SDG?
+    answers:
+    - answerText: SDG 10
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: SDG 1
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: SDG 7
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: SDG 17
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: Correct! SDG 10 targets social, economic, and political inclusion.
+    wrongFeedback: Incorrect. SDG 10 targets social, economic, and political inclusion.
+    timeUpFeedback: Time's up! SDG 10 targets social, economic, and political inclusion.
+  - questionText: Which SDG focuses on sustainable cities and communities?
+    answers:
+    - answerText: SDG 11
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: SDG 10
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: SDG 9
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: SDG 12
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: Correct! SDG 11 aims to make cities inclusive, safe, and resilient.
+    wrongFeedback: Incorrect. SDG 11 aims to make cities inclusive, safe, and resilient.
+    timeUpFeedback: Time's up! SDG 11 aims to make cities inclusive, safe, and resilient.
+  - questionText: Responsible consumption and production is the focus of which SDG?
+    answers:
+    - answerText: SDG 12
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: SDG 11
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: SDG 13
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: SDG 14
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: Correct! SDG 12 promotes reducing waste and using resources
+      efficiently.
+    wrongFeedback: Incorrect. SDG 12 promotes reducing waste and using resources
+      efficiently.
+    timeUpFeedback: Time's up! SDG 12 promotes reducing waste and using resources
+      efficiently.
+  - questionText: Which SDG calls for urgent action to combat climate change?
+    answers:
+    - answerText: SDG 13
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: SDG 12
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: SDG 14
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: SDG 15
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: Correct! SDG 13 focuses on climate action and resilience.
+    wrongFeedback: Incorrect. SDG 13 focuses on climate action and resilience.
+    timeUpFeedback: Time's up! SDG 13 focuses on climate action and resilience.
+  - questionText: Life below water is addressed by which SDG?
+    answers:
+    - answerText: SDG 14
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: SDG 13
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: SDG 15
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: SDG 16
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: Correct! SDG 14 aims to protect oceans and marine ecosystems.
+    wrongFeedback: Incorrect. SDG 14 aims to protect oceans and marine ecosystems.
+    timeUpFeedback: Time's up! SDG 14 aims to protect oceans and marine ecosystems.
+  - questionText: Which SDG focuses on protecting terrestrial ecosystems and biodiversity?
+    answers:
+    - answerText: SDG 15
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: SDG 14
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: SDG 16
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: SDG 17
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: Correct! SDG 15 focuses on life on land, forests, and biodiversity.
+    wrongFeedback: Incorrect. SDG 15 focuses on life on land, forests, and biodiversity.
+    timeUpFeedback: Time's up! SDG 15 focuses on life on land, forests, and biodiversity.
+  - questionText: Peace, justice, and strong institutions are promoted by which SDG?
+    answers:
+    - answerText: SDG 16
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: SDG 17
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: SDG 13
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: SDG 14
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: Correct! SDG 16 supports justice, accountability, and peace.
+    wrongFeedback: Incorrect. SDG 16 supports justice, accountability, and peace.
+    timeUpFeedback: Time's up! SDG 16 supports justice, accountability, and peace.
+  - questionText: Partnerships for achieving all goals are emphasized in which SDG?
+    answers:
+    - answerText: SDG 17
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: SDG 16
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: SDG 15
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: SDG 14
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: Correct! SDG 17 focuses on global cooperation and partnerships.
+    wrongFeedback: Incorrect. SDG 17 focuses on global cooperation and partnerships.
+    timeUpFeedback: Time's up! SDG 17 focuses on global cooperation and partnerships.
+  - questionText: What were the Millennium Development Goals (MDGs)?
+    answers:
+    - answerText: A UN framework before the SDGs
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: A private sector initiative
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: A regional Asian development plan
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: A climate-only agreement
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: Correct! The MDGs were a UN-led global development framework
+      before the SDGs.
+    wrongFeedback: Incorrect. The MDGs were a UN-led global development framework
+      before the SDGs.
+    timeUpFeedback: Time's up! The MDGs were a UN-led global development framework
+      before the SDGs.
+  - questionText: How many Millennium Development Goals were there?
+    answers:
+    - answerText: 8
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: 7
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: 6
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: 5
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: Correct! The MDGs consisted of 8 goals.
+    wrongFeedback: Incorrect. The MDGs consisted of 8 goals.
+    timeUpFeedback: Time's up! The MDGs consisted of 8 goals.
+  - questionText: In what year were the MDGs introduced?
+    answers:
+    - answerText: 2000
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: 2005
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: 2010
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: 1995
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: Correct! The MDGs were introduced in 2000.
+    wrongFeedback: Incorrect. The MDGs were introduced in 2000.
+    timeUpFeedback: Time's up! The MDGs were introduced in 2000.
+  - questionText: What was the target year for achieving the MDGs?
+    answers:
+    - answerText: 2015
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: 2010
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: 2020
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: 2030
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: Correct! The MDGs aimed to be achieved by 2015
+    wrongFeedback: Incorrect. The MDGs aimed to be achieved by 2015
+    timeUpFeedback: Time's up! The MDGs aimed to be achieved by 2015
+  - questionText: Which issue was a major focus of the MDGs?
+    answers:
+    - answerText: Extreme poverty and basic needs
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Digital transformation
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Climate innovation
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Artificial intelligence
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: Correct! The MDGs focused heavily on poverty reduction, health,
+      and education.
+    wrongFeedback: Incorrect. The MDGs focused heavily on poverty reduction, health,
+      and education.
+    timeUpFeedback: Time's up! The MDGs focused heavily on poverty reduction, health,
+      and education.
+  - questionText: Which MDG focused on reducing child mortality?
+    answers:
+    - answerText: MDG 4
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: MDG 1
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: MDG 3
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: MDG 2
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: Correct! MDG 4 aimed to reduce child mortality rates.
+    wrongFeedback: Incorrect. MDG 4 aimed to reduce child mortality rates.
+    timeUpFeedback: Time's up! MDG 4 aimed to reduce child mortality rates.
+  - questionText: How do the SDGs differ from the MDGs?
+    answers:
+    - answerText: SDGs are broader and universal
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: SDGs are fewer in number
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: SDGs apply only to developing countries
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: SDGs focus only on the environment
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: Correct! SDGs are more comprehensive and apply to all countries.
+    wrongFeedback: Incorrect. SDGs are more comprehensive and apply to all countries.
+    timeUpFeedback: Time's up! SDGs are more comprehensive and apply to all countries.
+  - questionText: Why were the SDGs created after the MDGs?
+    answers:
+    - answerText: To address unfinished MDG goals and new challenges
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: To replace failed policies
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: To reduce global cooperation
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: To focus only on economic growth
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: "Correct! SDGs build on MDG progress while addressing new global
+      challenges like climate change and inequality.\r"
+    wrongFeedback: "Incorrect. SDGs build on MDG progress while addressing new global
+      challenges like climate change and inequality.\r"
+    timeUpFeedback: "Time's up! SDGs build on MDG progress while addressing new global
+      challenges like climate change and inequality.\r"
+  - questionText: What supports equal leadership opportunities?
+    answers:
+    - answerText: Equal rights
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Bias rules
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Limited roles
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: No voice
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: Correct! Equal rights allow everyone to lead fairly.
+    wrongFeedback: Incorrect. Equal rights allow everyone to lead fairly.
+    timeUpFeedback: "Time's up! \u201CLeave no one behind\u201D ensures that progress
+      benefits everyone, especially the most vulnerable."
+  - questionText: What helps keep drinking water clean?
+    answers:
+    - answerText: Water treatment
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: River dumping
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Open sewage
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Plastic waste
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: Correct! Water treatment removes harmful pollutants.
+    wrongFeedback: Incorrect. Water treatment removes harmful pollutants.
+    timeUpFeedback: Time's up! Water treatment removes harmful pollutants.
+  - questionText: What reduces energy waste at home?
+    answers:
+    - answerText: LED lights
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Old bulbs
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Power leaks
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Always on
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: Correct! LED lights use less energy and last longer.
+    wrongFeedback: Incorrect. LED lights use less energy and last longer.
+    timeUpFeedback: Time's up! LED lights use less energy and last longer.
+  - questionText: What ensures safe workplaces?
+    answers:
+    - answerText: Safety laws
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: No rules
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Child labor
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Unsafe tools
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: Correct! Safety laws protect workers from harm.
+    wrongFeedback: Incorrect. Safety laws protect workers from harm.
+    timeUpFeedback: Time's up! Safety laws protect workers from harm.
+  - questionText: What everyday action lowers carbon output?
+    answers:
+    - answerText: Use public transport
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Drive alone
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Burn trash
+      answerImage: {fileID: 0}
+      useImage: 0
+    - answerText: Waste fuel
+      answerImage: {fileID: 0}
+      useImage: 0
+    correctAnswerIndex: 0
+    correctFeedback: Correct! Public transport reduces emissions per person.
+    wrongFeedback: Incorrect. Public transport reduces emissions per person.
+    timeUpFeedback: Time's up! Public transport reduces emissions per person.
+  totalQuestionsInGame: 30
+  timePerQuestion: 20
+  questionLabel: {fileID: 0}
+  timerLabel: {fileID: 0}
+  scoreLabel: {fileID: 0}
+  questionCounterLabel: {fileID: 0}
+  answerButtons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  answerTexts:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  answerImages:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  nextQuestionButton: {fileID: 0}
+  nextButtonCanvasGroup: {fileID: 0}
+  pauseButton: {fileID: 0}
+  pausePanel: {fileID: 0}
+  resumeButton: {fileID: 0}
+  restartButton: {fileID: 0}
+  homeButton: {fileID: 0}
+  homeSceneName: MainMenu
+  stopTimeButton: {fileID: 0}
+  doublePointsButton: {fileID: 0}
+  reduceChoicesButton: {fileID: 0}
+  lifelineDisabledOpacity: 0.4
+  reducedChoiceOpacity: 0.3
+  lifelineGainedPanel: {fileID: 0}
+  lifelineGainedText: {fileID: 0}
+  lifelineGainedImage: {fileID: 0}
+  lifelineContinueButton: {fileID: 0}
+  lifelineRouletteDuration: 3
+  lifelineRouletteInterval: 0.15
+  stopTimeSprite: {fileID: 21300000, guid: 55a523b7d2a9a024fa7a0d80703f2893, type: 3}
+  doublePointsSprite: {fileID: 21300000, guid: acb1fe05000ecf149bc8713aac505a5c, type: 3}
+  reduceChoicesSprite: {fileID: 21300000, guid: 9c236f2e0ca8cff4a89c34ac9be0d57d, type: 3}
+  nextButtonFadeDelay: 1.5
+  nextButtonFadeDuration: 0.4
+  scoreIncrementSpeed: 0.002
+  enableButtonPressAnimation: 1
+  correctButtonScaleDuration: 0.3
+  correctButtonScaleAmount: {x: 1.2, y: 1.2, z: 1}
+  wrongButtonColor: {r: 1, g: 0.3, b: 0.3, a: 1}
+  wrongButtonColorDuration: 0.3
+  nonClickedButtonFadeDuration: 0.5
+  nonClickedButtonFadeDelay: 0.2
+  fadedButtonOpacity: 0.4
+  feedbackText: {fileID: 0}
+  enableFeedbackBlink: 1
+  feedbackBlinkCount: 3
+  feedbackBlinkSpeed: 0.3
+  correctFeedbackColor: {r: 0, g: 1, b: 0, a: 1}
+  wrongFeedbackColor: {r: 1, g: 0, b: 0, a: 1}
+  timeoutFeedbackColor: {r: 1, g: 0.6, b: 0, a: 1}
+  correctButtonBlinksContinuously: 1
+  correctAnswerHighlightDuration: 0.4
+  correctAnswerHighlightScale: {x: 1.15, y: 1.15, z: 1}
+  correctAnswerHighlightColor: {r: 0, g: 0.60167706, b: 0, a: 1}
+  showCorrectAfterWrongDelay: 0.5
+  lifelineButtonScaleDuration: 0.3
+  lifelineButtonScaleAmount: {x: 1.2, y: 1.2, z: 1}
+  lifelinePanelRect: {fileID: 0}
+  lifelinePanelCanvasGroup: {fileID: 0}
+  lifelinePanelSlideDuration: 0.5
+  lifelinePanelSlideDistance: 300
+  lifelinePanelFadeDuration: 0.4
+  dimBackgroundCanvasGroup: {fileID: 0}
+  dimBackgroundFadeDuration: 0.2
+  dimBackgroundTargetAlpha: 0.8
+  stopTimeCounterColor: {r: 0.6, g: 0.9, b: 1, a: 1}
+  doublePointsCounterColor: {r: 1, g: 0.2, b: 0.2, a: 1}
+  reduceChoicesCounterColor: {r: 1, g: 0.92, b: 0.2, a: 1}
+  pointsFastAnswer: 120
+  pointsMediumAnswer: 110
+  pointsSlowAnswer: 100
+  lifelineBonus: 150
+  resultsPanel: {fileID: 0}
+  resultsPanelCanvasGroup: {fileID: 0}
+  resultsMessageText: {fileID: 0}
+  finalScoreText: {fileID: 0}
+  resultsNextButton: {fileID: 0}
+  resultsPanelFadeDelay: 1
+  resultsPanelFadeDuration: 1
+  goodCutsceneSceneName: GoodEnding
+  badCutsceneSceneName: BadEnding
+  cutsceneScoreThreshold: 2400
+  instructionPanel1: {fileID: 0}
+  instructionPanel1NextButton: {fileID: 0}
+  instructionPanel2: {fileID: 0}
+  instructionPanel2NextButton: {fileID: 0}
+  uiManager: {fileID: 0}
+  excellentMessage: Excellent!
+  goodMessage: Good!
+  needsImprovementMessage: Needs more improvement.
+  excellentThreshold: 2500
+  goodThreshold: 1000
