@@ -19,7 +19,6 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Button[] schoolButtons = new Button[4]; // TECH, ALABANG, DILIMAN, OTHERS
     [SerializeField] private GameObject othersAbbreviationContainer;
     [SerializeField] private TMP_InputField abbreviationInput;
-    [SerializeField] private TextMeshProUGUI othersInfoText;
     [SerializeField] private Button startQuizButton;
 
     [Header("=== COLORS ===")]
@@ -53,8 +52,6 @@ public class UIManager : MonoBehaviour
 
         // Hide panels at start (QuizProper handles instruction panels now)
         othersAbbreviationContainer.SetActive(false);
-        if (othersInfoText != null)
-            othersInfoText.gameObject.SetActive(false);
         startQuizButton.gameObject.SetActive(false); // Hide until all fields valid
 
         ValidateForm(); // Run once to update button state
@@ -84,8 +81,6 @@ public class UIManager : MonoBehaviour
         // Show/hide the "OTHERS" abbreviation input
         bool isOthersSelected = (schoolIndex == 3);
         othersAbbreviationContainer.SetActive(isOthersSelected);
-        if (othersInfoText != null)
-            othersInfoText.gameObject.SetActive(isOthersSelected);
 
         if (isOthersSelected)
         {
@@ -135,14 +130,14 @@ public class UIManager : MonoBehaviour
         }
 
         // Get the player's inputs
-        string firstName = firstNameInput.text.Trim().ToUpperInvariant();
-        string lastName = lastNameInput.text.Trim().ToUpperInvariant();
-        string school = schoolNames[selectedSchoolIndex].ToUpperInvariant();
+        string firstName = firstNameInput.text.Trim();
+        string lastName = lastNameInput.text.Trim();
+        string school = schoolNames[selectedSchoolIndex];
 
         // If they selected "OTHERS", use their custom abbreviation
         if (selectedSchoolIndex == 3)
         {
-            school = abbreviationInput.text.Trim().ToUpperInvariant();
+            school = abbreviationInput.text.Trim().ToUpper();
         }
 
         // Save player info to PlayerManager (which will save it when quiz ends)
