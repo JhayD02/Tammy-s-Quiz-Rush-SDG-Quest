@@ -94,26 +94,12 @@ public class LocalLeaderboardManager : MonoBehaviour
                 
                 if (nameTexts[i] != null)
                 {
-                    // Adjust font size and formatting based on name length
                     int nameLength = displayName.Length;
-                    
-                    if (nameLength > 10)
-                    {
-                        // Very long name: font size 105, put last initial on new line
-                        nameTexts[i].fontSize = 105;
-                        displayName = record.firstName + "\n" + record.lastName[0] + ".";
-                    }
-                    else if (nameLength > 9)
-                    {
-                        // Long name: reduce font size to 130
-                        nameTexts[i].fontSize = 130;
-                    }
-                    else
-                    {
-                        // Normal length: default font size 150
-                        nameTexts[i].fontSize = 150;
-                    }
-                    
+                    int baseFontSize = 120;
+                    int minFontSize = 40;
+                    int fontSize = Mathf.Max(minFontSize, baseFontSize - (nameLength - 1) * 2);
+
+                    nameTexts[i].fontSize = fontSize;
                     nameTexts[i].text = displayName;
                 }
                 

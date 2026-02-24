@@ -286,21 +286,11 @@ public class SchoolLeaderboard : MonoBehaviour
                 if (nameTexts[i] != null)
                 {
                     int nameLength = displayName.Length;
+                    int baseFontSize = 120;
+                    int minFontSize = 40;
+                    int fontSize = Mathf.Max(minFontSize, baseFontSize - (nameLength - 1) * 2);
 
-                    if (nameLength > 10)
-                    {
-                        nameTexts[i].fontSize = 105;
-                        displayName = displayName.Replace(" ", "\n");
-                    }
-                    else if (nameLength > 9)
-                    {
-                        nameTexts[i].fontSize = 130;
-                    }
-                    else
-                    {
-                        nameTexts[i].fontSize = 150;
-                    }
-
+                    nameTexts[i].fontSize = fontSize;
                     nameTexts[i].text = displayName;
                 }
 
