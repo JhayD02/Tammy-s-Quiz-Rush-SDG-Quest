@@ -20,8 +20,6 @@ public class LocalLeaderboardManager : MonoBehaviour
     [Header("=== STATUS TEXT ===")]
     [SerializeField] private TextMeshProUGUI emptyStateText;
     [SerializeField] private string noScoresMessage = "There are no current scores.";
-    [SerializeField] private string topScoresMessage = "These are the top {0} scores.";
-    [SerializeField] private string topScoresWithSlotsMessage = "These are the top {0} scores, there are {1} slots left.";
 
     [Header("=== NAVIGATION BUTTONS ===")]
     [SerializeField] private Button backToMenuButton;
@@ -94,26 +92,12 @@ public class LocalLeaderboardManager : MonoBehaviour
                 
                 if (nameTexts[i] != null)
                 {
-                    // Adjust font size and formatting based on name length
                     int nameLength = displayName.Length;
-                    
-                    if (nameLength > 10)
-                    {
-                        // Very long name: font size 105, put last initial on new line
-                        nameTexts[i].fontSize = 105;
-                        displayName = record.firstName + "\n" + record.lastName[0] + ".";
-                    }
-                    else if (nameLength > 9)
-                    {
-                        // Long name: reduce font size to 130
-                        nameTexts[i].fontSize = 130;
-                    }
-                    else
-                    {
-                        // Normal length: default font size 150
-                        nameTexts[i].fontSize = 150;
-                    }
-                    
+                    int baseFontSize = 120;
+                    int minFontSize = 40;
+                    int fontSize = Mathf.Max(minFontSize, baseFontSize - (nameLength - 1) * 2);
+
+                    nameTexts[i].fontSize = fontSize;
                     nameTexts[i].text = displayName;
                 }
                 
@@ -171,20 +155,28 @@ public class LocalLeaderboardManager : MonoBehaviour
             return;
 
         int maxSlots = 5;
+        string statusMessage;
+        
         if (scoreCount <= 0)
         {
-            emptyStateText.text = noScoresMessage;
+            statusMessage = noScoresMessage;
         }
-        else if (scoreCount >= maxSlots)
+        else if (scoreCount == 1)
         {
-            emptyStateText.text = string.Format(topScoresMessage, maxSlots);
+            if (scoreCount >= maxSlots)
+                statusMessage = "This is the top 1 score.";
+            else
+                statusMessage = $"This is the top 1 score, there are {maxSlots - scoreCount} slots left.";
         }
         else
         {
-            int slotsLeft = maxSlots - scoreCount;
-            emptyStateText.text = string.Format(topScoresWithSlotsMessage, scoreCount, slotsLeft);
+            if (scoreCount >= maxSlots)
+                statusMessage = $"These are the top {scoreCount} scores.";
+            else
+                statusMessage = $"These are the top {scoreCount} scores, there are {maxSlots - scoreCount} slots left.";
         }
 
+        emptyStateText.text = statusMessage;
         emptyStateText.gameObject.SetActive(true);
     }
 
