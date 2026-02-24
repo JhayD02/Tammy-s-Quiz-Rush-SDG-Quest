@@ -59,7 +59,7 @@ public class QuizProper : MonoBehaviour
     [Header("=== ANIMATION SETTINGS ===")]
     [SerializeField] private float nextButtonFadeDelay = 1.5f;
     [SerializeField] private float nextButtonFadeDuration = 0.4f;
-    [SerializeField] private float scoreIncrementSpeed = 0.01f;
+    [SerializeField] private float scoreIncrementSpeed = 0.002f;
 
     [Header("=== BUTTON PRESS ANIMATIONS ===")]
     [SerializeField] private bool enableButtonPressAnimation = true;
