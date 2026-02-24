@@ -53,8 +53,6 @@ public class SchoolLeaderboard : MonoBehaviour
 
     [Header("=== STATUS MESSAGES ===")]
     [SerializeField] private string noScoresMessage = "NO SCORES YET. BE THE FIRST TO PLAY!";
-    [SerializeField] private string topScoresMessage = "These are the top {0} scores.";
-    [SerializeField] private string topScoresWithSlotsMessage = "These are the top {0} scores, there are {1} slots left.";
 
     [Header("=== NAVIGATION BUTTONS ===")]
     [SerializeField] private Button backToMenuButton;
@@ -425,20 +423,27 @@ public class SchoolLeaderboard : MonoBehaviour
         if (statusText == null)
             return;
 
+        string statusMessage;
         if (scoreCount <= 0)
         {
-            statusText.text = noScoresMessage;
+            statusMessage = noScoresMessage;
         }
-        else if (scoreCount >= MaxEntries)
+        else if (scoreCount == 1)
         {
-            statusText.text = string.Format(topScoresMessage, MaxEntries);
+            if (scoreCount >= MaxEntries)
+                statusMessage = "This is the top 1 score.";
+            else
+                statusMessage = $"This is the top 1 score, there are {MaxEntries - scoreCount} slots left.";
         }
         else
         {
-            int slotsLeft = MaxEntries - scoreCount;
-            statusText.text = string.Format(topScoresWithSlotsMessage, scoreCount, slotsLeft);
+            if (scoreCount >= MaxEntries)
+                statusMessage = $"These are the top {scoreCount} scores.";
+            else
+                statusMessage = $"These are the top {scoreCount} scores, there are {MaxEntries - scoreCount} slots left.";
         }
 
+        statusText.text = statusMessage;
         statusText.gameObject.SetActive(true);
     }
 

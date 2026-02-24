@@ -20,8 +20,6 @@ public class LocalLeaderboardManager : MonoBehaviour
     [Header("=== STATUS TEXT ===")]
     [SerializeField] private TextMeshProUGUI emptyStateText;
     [SerializeField] private string noScoresMessage = "There are no current scores.";
-    [SerializeField] private string topScoresMessage = "These are the top {0} scores.";
-    [SerializeField] private string topScoresWithSlotsMessage = "These are the top {0} scores, there are {1} slots left.";
 
     [Header("=== NAVIGATION BUTTONS ===")]
     [SerializeField] private Button backToMenuButton;
@@ -157,20 +155,28 @@ public class LocalLeaderboardManager : MonoBehaviour
             return;
 
         int maxSlots = 5;
+        string statusMessage;
+        
         if (scoreCount <= 0)
         {
-            emptyStateText.text = noScoresMessage;
+            statusMessage = noScoresMessage;
         }
-        else if (scoreCount >= maxSlots)
+        else if (scoreCount == 1)
         {
-            emptyStateText.text = string.Format(topScoresMessage, maxSlots);
+            if (scoreCount >= maxSlots)
+                statusMessage = "This is the top 1 score.";
+            else
+                statusMessage = $"This is the top 1 score, there are {maxSlots - scoreCount} slots left.";
         }
         else
         {
-            int slotsLeft = maxSlots - scoreCount;
-            emptyStateText.text = string.Format(topScoresWithSlotsMessage, scoreCount, slotsLeft);
+            if (scoreCount >= maxSlots)
+                statusMessage = $"These are the top {scoreCount} scores.";
+            else
+                statusMessage = $"These are the top {scoreCount} scores, there are {maxSlots - scoreCount} slots left.";
         }
 
+        emptyStateText.text = statusMessage;
         emptyStateText.gameObject.SetActive(true);
     }
 
