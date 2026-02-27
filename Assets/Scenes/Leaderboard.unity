@@ -10249,9 +10249,6 @@ MonoBehaviour:
   - {fileID: 1056197806}
   emptyStateText: {fileID: 1096532283}
   noScoresMessage: There are no current scores.
-  topScoresMessage: These are the top {0} scores in your device.
-  topScoresWithSlotsMessage: These are the top {0} scores in your device, there are
-    {1} slots left.
   backToMenuButton: {fileID: 1476667318}
   playAgainButton: {fileID: 0}
   refreshLeaderboardButton: {fileID: 0}
@@ -10311,8 +10308,6 @@ MonoBehaviour:
   - {fileID: 946056119}
   emptyStateText: {fileID: 540888189}
   noScoresMessage: NO HIGH SCORES YET. BE THE FIRST TO PLAY!
-  topScoresMessage: These are the top {0} scores.
-  topScoresWithSlotsMessage: These are the top {0} scores, there are {1} slots left.
   backToMenuButton: {fileID: 0}
   refreshLeaderboardButton: {fileID: 634717625}
   mainMenuSceneName: MainMenu
@@ -10407,15 +10402,13 @@ MonoBehaviour:
   - {fileID: 1254721687}
   - {fileID: 1926963711}
   othersScoreTexts:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1962707152}
+  - {fileID: 1150376828}
+  - {fileID: 2014391320}
+  - {fileID: 1504566910}
+  - {fileID: 37009827}
   othersStatusText: {fileID: 778197317}
   noScoresMessage: NO SCORES YET. BE THE FIRST TO PLAY!
-  topScoresMessage: These are the top {0} scores.
-  topScoresWithSlotsMessage: These are the top {0} scores, there are {1} slots left.
   backToMenuButton: {fileID: 0}
   refreshLeaderboardButton: {fileID: 0}
   mainMenuSceneName: MainMenu

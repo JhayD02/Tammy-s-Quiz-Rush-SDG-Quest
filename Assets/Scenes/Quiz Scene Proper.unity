@@ -3987,79 +3987,7 @@ MonoBehaviour:
     wrongFeedback: Incorrect. Equal rights allow everyone to lead fairly.
     timeUpFeedback: "Time's up! \u201CLeave no one behind\u201D ensures that progress
       benefits everyone, especially the most vulnerable."
-  - questionText: What helps keep drinking water clean?
-    answers:
-    - answerText: Water treatment
-      answerImage: {fileID: 0}
-      useImage: 0
-    - answerText: River dumping
-      answerImage: {fileID: 0}
-      useImage: 0
-    - answerText: Open sewage
-      answerImage: {fileID: 0}
-      useImage: 0
-    - answerText: Plastic waste
-      answerImage: {fileID: 0}
-      useImage: 0
-    correctAnswerIndex: 0
-    correctFeedback: Correct! Water treatment removes harmful pollutants.
-    wrongFeedback: Incorrect. Water treatment removes harmful pollutants.
-    timeUpFeedback: Time's up! Water treatment removes harmful pollutants.
-  - questionText: What reduces energy waste at home?
-    answers:
-    - answerText: LED lights
-      answerImage: {fileID: 0}
-      useImage: 0
-    - answerText: Old bulbs
-      answerImage: {fileID: 0}
-      useImage: 0
-    - answerText: Power leaks
-      answerImage: {fileID: 0}
-      useImage: 0
-    - answerText: Always on
-      answerImage: {fileID: 0}
-      useImage: 0
-    correctAnswerIndex: 0
-    correctFeedback: Correct! LED lights use less energy and last longer.
-    wrongFeedback: Incorrect. LED lights use less energy and last longer.
-    timeUpFeedback: Time's up! LED lights use less energy and last longer.
-  - questionText: What ensures safe workplaces?
-    answers:
-    - answerText: Safety laws
-      answerImage: {fileID: 0}
-      useImage: 0
-    - answerText: No rules
-      answerImage: {fileID: 0}
-      useImage: 0
-    - answerText: Child labor
-      answerImage: {fileID: 0}
-      useImage: 0
-    - answerText: Unsafe tools
-      answerImage: {fileID: 0}
-      useImage: 0
-    correctAnswerIndex: 0
-    correctFeedback: Correct! Safety laws protect workers from harm.
-    wrongFeedback: Incorrect. Safety laws protect workers from harm.
-    timeUpFeedback: Time's up! Safety laws protect workers from harm.
-  - questionText: What everyday action lowers carbon output?
-    answers:
-    - answerText: Use public transport
-      answerImage: {fileID: 0}
-      useImage: 0
-    - answerText: Drive alone
-      answerImage: {fileID: 0}
-      useImage: 0
-    - answerText: Burn trash
-      answerImage: {fileID: 0}
-      useImage: 0
-    - answerText: Waste fuel
-      answerImage: {fileID: 0}
-      useImage: 0
-    correctAnswerIndex: 0
-    correctFeedback: Correct! Public transport reduces emissions per person.
-    wrongFeedback: Incorrect. Public transport reduces emissions per person.
-    timeUpFeedback: Time's up! Public transport reduces emissions per person.
-  totalQuestionsInGame: 30
+  totalQuestionsInGame: 20
   timePerQuestion: 20
   questionLabel: {fileID: 887570750}
   timerLabel: {fileID: 1622293748}
@@ -4138,10 +4066,10 @@ MonoBehaviour:
   stopTimeCounterColor: {r: 0.6, g: 0.9, b: 1, a: 1}
   doublePointsCounterColor: {r: 1, g: 0.2, b: 0.2, a: 1}
   reduceChoicesCounterColor: {r: 1, g: 0.92, b: 0.2, a: 1}
-  pointsFastAnswer: 120
-  pointsMediumAnswer: 110
-  pointsSlowAnswer: 100
-  lifelineBonus: 150
+  pointsFastAnswer: 100
+  pointsMediumAnswer: 90
+  pointsSlowAnswer: 80
+  lifelineBonus: 120
   resultsPanel: {fileID: 1080332384}
   resultsPanelCanvasGroup: {fileID: 1080332386}
   resultsMessageText: {fileID: 891334453}
@@ -4151,7 +4079,7 @@ MonoBehaviour:
   resultsPanelFadeDuration: 1
   goodCutsceneSceneName: GoodEnding
   badCutsceneSceneName: BadEnding
-  cutsceneScoreThreshold: 2400
+  cutsceneScoreThreshold: 1400
   instructionPanel1: {fileID: 631049322}
   instructionPanel1NextButton: {fileID: 905886262}
   instructionPanel2: {fileID: 579637422}
@@ -4159,7 +4087,7 @@ MonoBehaviour:
   uiManager: {fileID: 2016909222}
   excellentMessage: Excellent!
   goodMessage: Good!
-  needsImprovementMessage: Need more improvement
+  needsImprovementMessage: Needs more improvement.
   excellentThreshold: 2500
   goodThreshold: 1000
 --- !u!4 &781322271
