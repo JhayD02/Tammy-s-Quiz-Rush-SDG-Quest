@@ -18,7 +18,7 @@ public class QuizProper : MonoBehaviour
 {
     [Header("=== INSPECTOR SETTINGS ===")]
     [SerializeField] private List<QuizQuestion> questionBank = new List<QuizQuestion>();
-    [SerializeField] private int totalQuestionsInGame = 30;
+    [SerializeField] private int totalQuestionsInGame = 20;
     [SerializeField] private float timePerQuestion = 20f;
 
     [Header("=== UI ELEMENTS ===")]
@@ -130,7 +130,7 @@ public class QuizProper : MonoBehaviour
     [Header("=== CUTSCENE SETTINGS ===")]
     [SerializeField] private string goodCutsceneSceneName = "GoodCutscene";
     [SerializeField] private string badCutsceneSceneName = "BadCutscene";
-    [SerializeField] private int cutsceneScoreThreshold = 2400; // Score needed for good ending
+    [SerializeField] private int cutsceneScoreThreshold = 1400; // Score needed for good ending (1400+ = good, <1400 = bad)
     
     [Header("=== INSTRUCTION PANELS ===")]
     [SerializeField] private GameObject instructionPanel1;
@@ -148,8 +148,8 @@ public class QuizProper : MonoBehaviour
     [SerializeField] private string needsImprovementMessage = "Need more improvement...";
     
     [Header("=== SCORE THRESHOLDS ===")]
-    [SerializeField] private int excellentThreshold = 2500;
-    [SerializeField] private int goodThreshold = 1000;
+    [SerializeField] private int excellentThreshold = 1667; // Adjusted for 20 questions
+    [SerializeField] private int goodThreshold = 667; // Adjusted for 20 questions
 
     // Private variables - these change during the game
     private List<QuizQuestion> shuffledQuestions = new List<QuizQuestion>();
@@ -1349,14 +1349,14 @@ public class QuizProper : MonoBehaviour
 
     private bool ShouldTriggerStreakLifeline()
     {
-        // Trigger lifeline panel anytime player gets 5-correct streak, at ANY question
-        return correctAnswerStreak == 5;
+        // Trigger lifeline panel anytime player gets 3-correct streak, at ANY question
+        return correctAnswerStreak == 3;
     }
 
     private bool IsGuaranteedLifelineQuestion()
     {
         int questionNumber = currentQuestionIndex + 1;
-        return questionNumber == 15 || questionNumber == 25;
+        return questionNumber == 10; // Only at question 10 for 20-question quiz
     }
 
     private bool AllLifelinesOwned()
@@ -1491,7 +1491,7 @@ public class QuizProper : MonoBehaviour
             string name = GetLifelineDisplayName(type);
             string prefix = isCheckpointReward
                 ? "Checkpoint Reached! You have gained "
-                : "That's a 5 streak! You have gained ";
+                : "That's a 3 streak! You have gained ";
 
             if (showRolling)
             {
