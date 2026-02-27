@@ -6,7 +6,6 @@ public class LearnModeController : MonoBehaviour
 {
     [Header("UI References")]
     public Button[] selectionButtons;   // 17 buttons for Learn Mode
-    public Button[] mdgButtons;         // Buttons for MDG selections
     public Button nextButton;           // Next button
     public Button prevButton;           // Previous button
     public TMP_Text titleText;          // Title text at the top
@@ -18,13 +17,7 @@ public class LearnModeController : MonoBehaviour
     public string[] topicContents;      // Array of Learn Mode descriptions
     public Sprite[] topicIcons;         // Array of Learn Mode icons
 
-    [Header("MDG Content")]
-    public string[] mdgTitles;          // Array of MDG titles
-    public string[] mdgContents;        // Array of MDG descriptions
-    public Sprite[] mdgIcons;           // Array of MDG icons
-
     private int currentIndex = 0;
-    private bool isMDGMode = false;     // Flag to switch between Learn Mode and MDG Mode
 
     void Start()
     {
@@ -32,14 +25,7 @@ public class LearnModeController : MonoBehaviour
         for (int i = 0; i < selectionButtons.Length; i++)
         {
             int index = i;
-            selectionButtons[i].onClick.AddListener(() => OnSelect(index, false));
-        }
-
-        // Assign listeners for MDG buttons
-        for (int i = 0; i < mdgButtons.Length; i++)
-        {
-            int index = i;
-            mdgButtons[i].onClick.AddListener(() => OnSelect(index, true));
+            selectionButtons[i].onClick.AddListener(() => OnSelect(index));
         }
 
         // Assign listeners for navigation
@@ -52,18 +38,16 @@ public class LearnModeController : MonoBehaviour
         iconImage.gameObject.SetActive(false);
     }
 
-    void OnSelect(int index, bool mdgMode)
+    void OnSelect(int index)
     {
         currentIndex = index;
-        isMDGMode = mdgMode;
         ShowContent();
     }
 
     void OnNext()
     {
         currentIndex++;
-        int length = isMDGMode ? mdgTitles.Length : topicTitles.Length;
-        if (currentIndex >= length)
+        if (currentIndex >= topicTitles.Length)
             currentIndex = 0; // wrap around
         ShowContent();
     }
@@ -71,9 +55,8 @@ public class LearnModeController : MonoBehaviour
     void OnPrev()
     {
         currentIndex--;
-        int length = isMDGMode ? mdgTitles.Length : topicTitles.Length;
         if (currentIndex < 0)
-            currentIndex = length - 1; // wrap around
+            currentIndex = topicTitles.Length - 1; // wrap around
         ShowContent();
     }
 
@@ -83,23 +66,11 @@ public class LearnModeController : MonoBehaviour
         contentText.gameObject.SetActive(true);
         iconImage.gameObject.SetActive(true);
 
-        if (isMDGMode)
-        {
-            if (currentIndex < mdgTitles.Length)
-                titleText.text = mdgTitles[currentIndex];
-            if (currentIndex < mdgContents.Length)
-                contentText.text = mdgContents[currentIndex];
-            if (mdgIcons != null && currentIndex < mdgIcons.Length)
-                iconImage.sprite = mdgIcons[currentIndex];
-        }
-        else
-        {
-            if (currentIndex < topicTitles.Length)
-                titleText.text = topicTitles[currentIndex];
-            if (currentIndex < topicContents.Length)
-                contentText.text = topicContents[currentIndex];
-            if (topicIcons != null && currentIndex < topicIcons.Length)
-                iconImage.sprite = topicIcons[currentIndex];
-        }
+        if (currentIndex < topicTitles.Length)
+            titleText.text = topicTitles[currentIndex];
+        if (currentIndex < topicContents.Length)
+            contentText.text = topicContents[currentIndex];
+        if (topicIcons != null && currentIndex < topicIcons.Length)
+            iconImage.sprite = topicIcons[currentIndex];
     }
 }
