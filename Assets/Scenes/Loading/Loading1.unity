@@ -562,7 +562,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   videoPlayer: {fileID: 2044207018}
-  sceneToLoad: MainMenu
+  sceneToLoad: MainMenu 1
   delayAfterVideo: 5
 --- !u!4 &1419635883
 Transform:
