@@ -1010,8 +1010,8 @@ MonoBehaviour:
   videoVolume: 1
   skipButton: {fileID: 2051857651}
   skipDelay: 1.5
-  quizSceneAsset: {fileID: 102900000, guid: 2452189aa09309140b7c8abbb4dec789, type: 3}
-  quizSceneName: MainMenu
+  quizSceneAsset: {fileID: 102900000, guid: 44467a0b5d0da4345b3bedb4afd8fc9f, type: 3}
+  quizSceneName: MainMenu 1
   transition: {fileID: 11400000, guid: d641980330b54c243a644222c797e582, type: 2}
   startDelay: 0
 --- !u!4 &1594837698
