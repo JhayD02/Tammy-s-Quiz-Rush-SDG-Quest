@@ -590,7 +590,18 @@ public class QuizProper : MonoBehaviour
         }
 
         textComponent.text = text;
-        textComponent.fontSize = text.Length > 42 ? 10.5f : originalAnswerTextFontSize;
+        if (text.Length > 75)
+        {
+            textComponent.fontSize = 9.5f;
+        }
+        else if (text.Length > 30)
+        {
+            textComponent.fontSize = 12f;
+        }
+        else
+        {
+            textComponent.fontSize = 14f;
+        }
     }
 
     // === ANSWER HANDLING ===
@@ -823,13 +834,13 @@ public class QuizProper : MonoBehaviour
             feedbackText.text = feedbackMessage;
             
             // Adjust font size based on character count
-            if (feedbackMessage.Length > 101)
+            if (feedbackMessage.Length > 260)
             {
-                feedbackText.fontSize = 11.5f;
+                feedbackText.fontSize = 4f;
             }
             else
             {
-                feedbackText.fontSize = originalFeedbackTextFontSize;
+                feedbackText.fontSize = 5f;
             }
             
             // Set color AFTER adjusting size to ensure it's applied
