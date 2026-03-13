@@ -1,0 +1,1711 @@
+fileFormatVersion: 2
+guid: d36eeb32ec0850b48936f4b10c442f66
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 058a64d0078eb974bab7cb15ed9d5f29
+      internalID: -163890543
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3af3f6ddb9f1a8643afdb9c267e29e1e
+      internalID: 2031479349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a3b3da3c0de0c144a207601f7ef0583
+      internalID: 1622732217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1b4ae0ca7456b04dba6e95c5451a4c6
+      internalID: 1966208919
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a45141c2a756ea4283729dd41ad4139
+      internalID: 1049818657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30fa269db7f592949a05a9f657e81d3a
+      internalID: 1282222388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 435a23ab62364434eae18ea910e8ec69
+      internalID: 1822840741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab2279f32a3ee5241b96ccb7cdee314c
+      internalID: 2059749361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78769350d839f054294d9e4a13a814ca
+      internalID: 908721645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a2e332a8c6280149b1d451639547743
+      internalID: -515638792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9043fe95c0f5e4741b8eada9da232b8c
+      internalID: -755390679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b7b8aeb673cba04da8f6121fe0e8a95
+      internalID: 332917864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57978503afb467f4ca7c9df9c039b0a1
+      internalID: -1858167221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6a23845be299a545843d4ab3c694463
+      internalID: -440848363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdd0d1357ddb00f4d8406e7ce2704272
+      internalID: 935801035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2defde3fb07817345b3808d9421c8777
+      internalID: 922165788
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f956c226e5f1484f85445bc875bef8b
+      internalID: 2144070454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 2432
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2b9143dad9a83b429689ec722b9e5c2
+      internalID: 166311939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd619706e87f85e4caa655c63ce3ebac
+      internalID: 1789274066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c0acec978b33a54aa20c79507f88582
+      internalID: 1549076165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 2816
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6ef87cc186bc5d448089ff8e982a86b
+      internalID: -1650435358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 2944
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c6966a6b2101de469d83410449f188d
+      internalID: -2049672684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79953a5b832344a47bde0b6e0d42c8ff
+      internalID: -1043624944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 241c303b52c85914f93d8ff261852ec3
+      internalID: 199074666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45fdcfc9e9779c1459d3a41a20d79380
+      internalID: -159730855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b404a5b4f2550a34984529d3120a3acf
+      internalID: -747285516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0f97ae4501eb8547986a6c9bf790a4c
+      internalID: 47405991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d871584114c0d647aa9efe7b1446f37
+      internalID: 2128015648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8755f702e13495e42bcc8209c0bc5b52
+      internalID: -1620568896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9fb43674810cd64c8c34e6857daf28f
+      internalID: -543688575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 247008d5824b0c149aa2110159a0e012
+      internalID: 1088692754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 2176
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dd5ca599184b624094a4795c6db2fb2
+      internalID: -1035838643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac085b5f87828c04aa54fbefda83c2ac
+      internalID: -1100683307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_43
+      rect:
+        serializedVersion: 2
+        x: 2432
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d01280849cc53ee479b7e1b48c4a8299
+      internalID: -1695889725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_44
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb6d77ffcb42e7a498021bd524835b2c
+      internalID: 1434886356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_45
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 029e8b1c5a71e85428475e6160f2f72d
+      internalID: -1177380639
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_46
+      rect:
+        serializedVersion: 2
+        x: 2816
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b29cf455a4d0e064196fbcfb18b24857
+      internalID: -1881195407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_47
+      rect:
+        serializedVersion: 2
+        x: 2944
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2e97903f8d939e46b068032d3d93fe6
+      internalID: 2110614606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86913deff6fb16540b7281fdcc2bdc10
+      internalID: 243882499
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_49
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df2a949bc862acd499bbc44e6e5b46ff
+      internalID: -2092801330
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_50
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93461f7832ad08b49a8d9a89a7309e0c
+      internalID: 1415120129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_51
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0a2b1f2fb73c6945b801d15937eafac
+      internalID: 1207023772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_52
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ade7b96f03b9cd49a92de84a1fdc7bc
+      internalID: -526462814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_53
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 572ae3da022fa7b4c982f4e9c1bc4a74
+      internalID: -560198511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_54
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5c399587cde2e44d8245a0b905ad8be
+      internalID: 162361865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_55
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b8d9881d0d353549900a64d1e783e87
+      internalID: 872497277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_56
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 275a57e8ff24b7f48bf4e0190cb48070
+      internalID: -993613387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_58
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92df11d6b2958f04da28dd81340272e4
+      internalID: 1512762956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_59
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7dcfe4c9978bca6418de7de7ae2cd0e5
+      internalID: 840156165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_65
+      rect:
+        serializedVersion: 2
+        x: 2176
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28bfde242f5ec9f40a88137ae79f176e
+      internalID: 1244354742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_66
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc16119ccde0efa4fa0cb3bdcd0b0b4d
+      internalID: -265382950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_67
+      rect:
+        serializedVersion: 2
+        x: 2432
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f1bb36b785410245adceb80f15326fa
+      internalID: -66772084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_68
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3598b0899f343a844a525df044b23cc7
+      internalID: 946101614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_69
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e9e376200e40334baed61992d5eec73
+      internalID: 1226274037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_70
+      rect:
+        serializedVersion: 2
+        x: 2816
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b030c6a0dacec540992d44d853ee33f
+      internalID: -1178719523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_71
+      rect:
+        serializedVersion: 2
+        x: 2944
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ff5b9b004260d74fa42e4ffa13f7ea4
+      internalID: -1665624155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ede64005ab48cb43ad35c5bace576a2
+      internalID: 326687425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 2176
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01a2c1d6bedda2f429393de6f42ddc1a
+      internalID: 67865841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 837c15ea898941f4d950c1c70a61d109
+      internalID: -66943170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bed3f445e8c5fb2478a891c5ea027729
+      internalID: 321648343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ce54410f7bd1af429b977692cdce194
+      internalID: 674554433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bc5a61787164f44ba359e796c8a84f2
+      internalID: -1989417604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bd328b155432f841a4d414642f4571c
+      internalID: 852060164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6752d81c28d9d0f4a8a4e23e009a5947
+      internalID: 278088536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a63830651eb0b9c4f99fa9ae2f11f386
+      internalID: 366959220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 002b8b49f5fec3642b7e6275ac2390cd
+      internalID: -621630348
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_57
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9ac69517e2428b4494a2477dadbff44
+      internalID: 1819112889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_60
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71b2a18102518684192130e0bcb73b7c
+      internalID: -1975136292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_61
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 38841d6cded610c49b883b4e2643c7c6
+      internalID: -1330215967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_62
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ef174098596a3045aab9b3b3b44fe39
+      internalID: -1156677687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_63
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b9eef30a8f83c04bb698f2eba5944e5
+      internalID: -776230806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Eljhaysprite-Sheet_64
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c678254564608784b82f0b479d7eb0b8
+      internalID: -474603349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Eljhaysprite-Sheet_0: -163890543
+      Eljhaysprite-Sheet_1: 2031479349
+      Eljhaysprite-Sheet_10: -755390679
+      Eljhaysprite-Sheet_11: 332917864
+      Eljhaysprite-Sheet_12: 326687425
+      Eljhaysprite-Sheet_13: -1858167221
+      Eljhaysprite-Sheet_14: -440848363
+      Eljhaysprite-Sheet_15: 935801035
+      Eljhaysprite-Sheet_16: 922165788
+      Eljhaysprite-Sheet_17: 67865841
+      Eljhaysprite-Sheet_18: 2144070454
+      Eljhaysprite-Sheet_19: 166311939
+      Eljhaysprite-Sheet_2: 1622732217
+      Eljhaysprite-Sheet_20: 1789274066
+      Eljhaysprite-Sheet_21: 1549076165
+      Eljhaysprite-Sheet_22: -1650435358
+      Eljhaysprite-Sheet_23: -2049672684
+      Eljhaysprite-Sheet_24: -1043624944
+      Eljhaysprite-Sheet_25: 199074666
+      Eljhaysprite-Sheet_26: -66943170
+      Eljhaysprite-Sheet_27: 321648343
+      Eljhaysprite-Sheet_28: 674554433
+      Eljhaysprite-Sheet_29: -1989417604
+      Eljhaysprite-Sheet_3: 1966208919
+      Eljhaysprite-Sheet_30: 852060164
+      Eljhaysprite-Sheet_31: 278088536
+      Eljhaysprite-Sheet_32: 366959220
+      Eljhaysprite-Sheet_33: -159730855
+      Eljhaysprite-Sheet_34: -621630348
+      Eljhaysprite-Sheet_35: -747285516
+      Eljhaysprite-Sheet_36: 47405991
+      Eljhaysprite-Sheet_37: 2128015648
+      Eljhaysprite-Sheet_38: -1620568896
+      Eljhaysprite-Sheet_39: -543688575
+      Eljhaysprite-Sheet_4: 1049818657
+      Eljhaysprite-Sheet_40: 1088692754
+      Eljhaysprite-Sheet_41: -1035838643
+      Eljhaysprite-Sheet_42: -1100683307
+      Eljhaysprite-Sheet_43: -1695889725
+      Eljhaysprite-Sheet_44: 1434886356
+      Eljhaysprite-Sheet_45: -1177380639
+      Eljhaysprite-Sheet_46: -1881195407
+      Eljhaysprite-Sheet_47: 2110614606
+      Eljhaysprite-Sheet_48: 243882499
+      Eljhaysprite-Sheet_49: -2092801330
+      Eljhaysprite-Sheet_5: 1282222388
+      Eljhaysprite-Sheet_50: 1415120129
+      Eljhaysprite-Sheet_51: 1207023772
+      Eljhaysprite-Sheet_52: -526462814
+      Eljhaysprite-Sheet_53: -560198511
+      Eljhaysprite-Sheet_54: 162361865
+      Eljhaysprite-Sheet_55: 872497277
+      Eljhaysprite-Sheet_56: -993613387
+      Eljhaysprite-Sheet_57: 1819112889
+      Eljhaysprite-Sheet_58: 1512762956
+      Eljhaysprite-Sheet_59: 840156165
+      Eljhaysprite-Sheet_6: 1822840741
+      Eljhaysprite-Sheet_60: -1975136292
+      Eljhaysprite-Sheet_61: -1330215967
+      Eljhaysprite-Sheet_62: -1156677687
+      Eljhaysprite-Sheet_63: -776230806
+      Eljhaysprite-Sheet_64: -474603349
+      Eljhaysprite-Sheet_65: 1244354742
+      Eljhaysprite-Sheet_66: -265382950
+      Eljhaysprite-Sheet_67: -66772084
+      Eljhaysprite-Sheet_68: 946101614
+      Eljhaysprite-Sheet_69: 1226274037
+      Eljhaysprite-Sheet_7: 2059749361
+      Eljhaysprite-Sheet_70: -1178719523
+      Eljhaysprite-Sheet_71: -1665624155
+      Eljhaysprite-Sheet_8: 908721645
+      Eljhaysprite-Sheet_9: -515638792
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,1711 @@
+fileFormatVersion: 2
+guid: 866b2f1c0cd90e046a11d8c3cee44b95
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: VicSprite-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8439b0306c7ba7a4782cef8444d19bf5
+      internalID: 110872089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37772230e14406646bf8ac3965353ce2
+      internalID: 617628529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8379c7bc15af1c84eb1808cd01ebd070
+      internalID: -1496147233
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e45ce37b16a8934aa0d39442ada62ee
+      internalID: 429869943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 598e7b5e4b9d94f44bab10e58b7b8e99
+      internalID: 635316585
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8515d782380e61843b3023dc6a626201
+      internalID: 649379002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a160a68637e3bc47a8ad4a5948d015c
+      internalID: -644679659
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce7de91e3ced5204688aa576ea6df80b
+      internalID: 955841439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e82d01f2098adc4b936edfa8ab36464
+      internalID: 1778791792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e00d460bce4da74c821e88b58226d07
+      internalID: -238161110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25db164ee5dbf13488c5246d5016dce5
+      internalID: 13643385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64367dd15574ce94fbf561fcccdc6f8a
+      internalID: 843773036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0c29bf5bcab98c45a4666dd65ee1dee
+      internalID: -1412775035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c05cfadc3fd66c74596cea2f7d0eb0a6
+      internalID: -2032222487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea3e5f33c46d6e04badf580601a5373c
+      internalID: 375764661
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6da8f6c2017d036409eea0405598c6a7
+      internalID: 638082811
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4c7362aff850de47af47080237f7eb8
+      internalID: 1344162328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 2176
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4f20755ebe32074fa1c96bf2cd67537
+      internalID: 125688339
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d4ee16574a738e448b624e284f0f1af
+      internalID: -1492637297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 2432
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2edb5d77f6f29b54980f802cdb28714f
+      internalID: 369684357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d372900c53001c34c846e4f8bd9aac40
+      internalID: 463802539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ba5bd725227b32d458f9249599450f86
+      internalID: 1403195429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 2816
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d40866d505dfa940a307a0b55c030e0
+      internalID: -549904907
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 2944
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91ed267a3782be647afc8912ec71bc00
+      internalID: 354135435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33250d6a7ce4920409a55771b905ded5
+      internalID: -1381549157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f9df2838c0a7e04a9ed9875edb1a881
+      internalID: -266839383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7451353ef2815d64d985901b725cd811
+      internalID: 607210050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e50b3ca15e490a429b16de153b80458
+      internalID: 1165580393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5646fe58493c114a884ec64a1657959
+      internalID: -927904053
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ea43959b016c6c41890c8c7f13c8496
+      internalID: 539935492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2661003e90a8aac488db93fa17dff189
+      internalID: -1028862942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74b1b7a750b039c478b2741d070671ee
+      internalID: -411546371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51aede83de5ab7f4bbc9b3404f42870e
+      internalID: 1106173695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfb5d19ce93a04f47a72bbfb06ac7a86
+      internalID: 1771580012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e48452c992d7704caad01750ead59a7
+      internalID: -1112649776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a16ec0225740ae743a678d09765cf27d
+      internalID: 511466399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c4a5123405edd8459a21f6a4e60aed7
+      internalID: -1682219862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d0b0436084d0c546930fdfe0c152cb3
+      internalID: 1387847098
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 829f268bf3c4d2d418813cd06eecee20
+      internalID: 1870469028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9493e87165037cb408a11a8ebe836d74
+      internalID: 232356656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e677aa3eea1e9484db9e4fdd105cbc63
+      internalID: 1642051232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 2176
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9ddeb3a7fd6e254695782a146d34a67
+      internalID: 192584004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0da8d73796e04f4384c415b9d35ac11
+      internalID: 978220472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_43
+      rect:
+        serializedVersion: 2
+        x: 2432
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9e4387999b52794a98684a6ea7c790a
+      internalID: -947680513
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_44
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8768400d0d48a0f4094bd084912b57c7
+      internalID: 1306982721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_45
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f47e70f78d50b05459b0fea163e851d1
+      internalID: -841590220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_46
+      rect:
+        serializedVersion: 2
+        x: 2816
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 27c7a878fa2531547bdb344f7cbcdf86
+      internalID: 863301337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_47
+      rect:
+        serializedVersion: 2
+        x: 2944
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8861cc44ef549e449b86fac881f6e786
+      internalID: -1100910877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0c59b45d4be9a944981f83f24603721a
+      internalID: 906565485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_49
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe665453282acac4d8cf8f9a7b44bfa8
+      internalID: 624243095
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_50
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 845c8ce1fef32d14786bc66e85d7b66c
+      internalID: -1196756556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_51
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 63b371faaaa9a594dbea13c55a17c113
+      internalID: 2010743360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_52
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e143752452af15f48bcd07e981985970
+      internalID: -554093077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_53
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dd3db82c95a6774e9ed3820aa3f286c
+      internalID: -2076554571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_54
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0aaebe2d3f107f45a66ccc78193d86b
+      internalID: -2070011777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_55
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd670d06b4f95d3468b35f489e33a906
+      internalID: 463821775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_56
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb2a8b8f888c48d44ba7b708086b48f8
+      internalID: -1564378880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_57
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0e1cab17019ef140b85eb70dbbb4e46
+      internalID: 1111675721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_58
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52690b72be1db6c43a27f9f99cb6b116
+      internalID: 1136082020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_59
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e041926bee663554ea9309bd428846a4
+      internalID: 970141178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_60
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26472e8091acfda499d0345f83f71b59
+      internalID: 1384905278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_61
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11e69cf4ea3b48447ab77952d89c84d4
+      internalID: 409798717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_62
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 75e7d044d711afe4f9c8323ad3302d5a
+      internalID: -1843140176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_63
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c91c66f8fba619942b81665ae7cab7ac
+      internalID: 333160383
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_64
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0da7d8ee978602643be0a31edaba19a2
+      internalID: -1849710589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_65
+      rect:
+        serializedVersion: 2
+        x: 2176
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1b71bed38da0244cbf6877172a4d74f
+      internalID: -254705189
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_66
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 273c19047e08f114b9201d13ab3416fc
+      internalID: 1522535056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_67
+      rect:
+        serializedVersion: 2
+        x: 2432
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72ddbf0b4dcfff74c9c499f82d8591ec
+      internalID: 1881172897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_68
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b892c8e3ae160754da636c29d8df7668
+      internalID: 946934801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_69
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2bebafc85ef21a4b896f89c64b38d54
+      internalID: -790619681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_70
+      rect:
+        serializedVersion: 2
+        x: 2816
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44dbeb88d0a7de04d95cbf669953a701
+      internalID: 2065088833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: VicSprite-Sheet_71
+      rect:
+        serializedVersion: 2
+        x: 2944
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2240991e5ddbb0f40a117f95536b1f11
+      internalID: -290033390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      VicSprite-Sheet_0: 110872089
+      VicSprite-Sheet_1: 617628529
+      VicSprite-Sheet_10: 13643385
+      VicSprite-Sheet_11: 843773036
+      VicSprite-Sheet_12: -1412775035
+      VicSprite-Sheet_13: -2032222487
+      VicSprite-Sheet_14: 375764661
+      VicSprite-Sheet_15: 638082811
+      VicSprite-Sheet_16: 1344162328
+      VicSprite-Sheet_17: 125688339
+      VicSprite-Sheet_18: -1492637297
+      VicSprite-Sheet_19: 369684357
+      VicSprite-Sheet_2: -1496147233
+      VicSprite-Sheet_20: 463802539
+      VicSprite-Sheet_21: 1403195429
+      VicSprite-Sheet_22: -549904907
+      VicSprite-Sheet_23: 354135435
+      VicSprite-Sheet_24: -1381549157
+      VicSprite-Sheet_25: -266839383
+      VicSprite-Sheet_26: 607210050
+      VicSprite-Sheet_27: 1165580393
+      VicSprite-Sheet_28: -927904053
+      VicSprite-Sheet_29: 539935492
+      VicSprite-Sheet_3: 429869943
+      VicSprite-Sheet_30: -1028862942
+      VicSprite-Sheet_31: -411546371
+      VicSprite-Sheet_32: 1106173695
+      VicSprite-Sheet_33: 1771580012
+      VicSprite-Sheet_34: -1112649776
+      VicSprite-Sheet_35: 511466399
+      VicSprite-Sheet_36: -1682219862
+      VicSprite-Sheet_37: 1387847098
+      VicSprite-Sheet_38: 1870469028
+      VicSprite-Sheet_39: 232356656
+      VicSprite-Sheet_4: 635316585
+      VicSprite-Sheet_40: 1642051232
+      VicSprite-Sheet_41: 192584004
+      VicSprite-Sheet_42: 978220472
+      VicSprite-Sheet_43: -947680513
+      VicSprite-Sheet_44: 1306982721
+      VicSprite-Sheet_45: -841590220
+      VicSprite-Sheet_46: 863301337
+      VicSprite-Sheet_47: -1100910877
+      VicSprite-Sheet_48: 906565485
+      VicSprite-Sheet_49: 624243095
+      VicSprite-Sheet_5: 649379002
+      VicSprite-Sheet_50: -1196756556
+      VicSprite-Sheet_51: 2010743360
+      VicSprite-Sheet_52: -554093077
+      VicSprite-Sheet_53: -2076554571
+      VicSprite-Sheet_54: -2070011777
+      VicSprite-Sheet_55: 463821775
+      VicSprite-Sheet_56: -1564378880
+      VicSprite-Sheet_57: 1111675721
+      VicSprite-Sheet_58: 1136082020
+      VicSprite-Sheet_59: 970141178
+      VicSprite-Sheet_6: -644679659
+      VicSprite-Sheet_60: 1384905278
+      VicSprite-Sheet_61: 409798717
+      VicSprite-Sheet_62: -1843140176
+      VicSprite-Sheet_63: 333160383
+      VicSprite-Sheet_64: -1849710589
+      VicSprite-Sheet_65: -254705189
+      VicSprite-Sheet_66: 1522535056
+      VicSprite-Sheet_67: 1881172897
+      VicSprite-Sheet_68: 946934801
+      VicSprite-Sheet_69: -790619681
+      VicSprite-Sheet_7: 955841439
+      VicSprite-Sheet_70: 2065088833
+      VicSprite-Sheet_71: -290033390
+      VicSprite-Sheet_8: 1778791792
+      VicSprite-Sheet_9: -238161110
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

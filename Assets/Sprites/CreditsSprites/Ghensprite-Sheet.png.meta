@@ -1,0 +1,1711 @@
+fileFormatVersion: 2
+guid: f0dc9269d4f4b0041bbc759ed599096b
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c398c202190395479645f952ee391e1
+      internalID: 1532072145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4ee3e1490312d54a881ef44a3c5d2c4
+      internalID: 217850939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7090233b8c425d489e1a02db2833a3f
+      internalID: 1120581927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15a5a051781675e4ca2f0ee4457c54d8
+      internalID: -1933598030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5ab4f1c4a49b8040b13f658f408226c
+      internalID: -1061594375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dd1c0bcedf3a434b83e078284d2878b
+      internalID: -1144717108
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be73f6b9fed3bc846bc47318e2cc84a1
+      internalID: -1703883888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6093c541eb6c3d46856a517c86c6190
+      internalID: 360701472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a6bbefde4010414681b5d4fbcc2a89f
+      internalID: 1808598726
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 109cd1c8e76d0c74f864b92faac3b202
+      internalID: -1824312622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 354cc13b4fd14fe469dceaeb3ab0797d
+      internalID: 132147102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c19980b0cb01f64ab33d82845ab7265
+      internalID: -1754480888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a46e885ae7f678f4ebe702decb5ce8b4
+      internalID: 155615286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 74c9f7e192bd8f84fba6c4dd56d2d0e3
+      internalID: -234950828
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6cb50d03b224fa4887424bac4969551
+      internalID: 807024067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa47dd931ad212b4a87f5585c626b9ad
+      internalID: 2100682620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28cad78b2502d8740b8f69f27a38b04f
+      internalID: -810021601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 2176
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e3876657e54c994b867336b5529a7ba
+      internalID: -660050272
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00007d23e8f2e704cac8af356fd47158
+      internalID: -320387036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 2432
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59f41d7ca41f3734f85b04fe04e65909
+      internalID: -32994800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b61e37d3ae8ebb47a2a48092a067b8c
+      internalID: -1569101745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8b9898a4760a3e4a92a1d85edb0045f
+      internalID: -281091777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 2816
+        y: 456
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 693122cc1e326fc45889f7a2b30fc2ad
+      internalID: -1304990011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 2944
+        y: 454
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4a1bf39758455f49b3044db6243170d
+      internalID: -1042392286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ad24f6afd752b34b91a340a33e6882a
+      internalID: 867176118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5976cd1fd133724bb58af9f739f7992
+      internalID: 1356369489
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57fd3f98e4ecd6f44b7b284b5a9bb7a6
+      internalID: -1541325954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37cce7707b3fc614293c925415817d6a
+      internalID: 1330387483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9ef94dd10780e94695341a063394d8d
+      internalID: 258477407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66540fb1cf22667469db7c61b6126e9c
+      internalID: -1268890265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0efd73cd5e83414ebccb74ae4e11f65
+      internalID: -1835300967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c357cd3a35b93174b994c6fac623a54c
+      internalID: -1529164476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b4674988dbc527149b8d8c3dd0db7a91
+      internalID: 1249162458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 454aa433001a60e45bae115e8d6dec8d
+      internalID: -11245675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07c9c99e806d0f344b0985382f799c64
+      internalID: 705251854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e52f05ae7b5e3ab4784f452e2f5c90ef
+      internalID: 622692480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d75e6ee8a80df994291fd9aec9ea29ca
+      internalID: 1876481789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec75a69b8738ea248a16ef98a8ff5118
+      internalID: 1010663948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cae221befbe39644e840909d7b678f9b
+      internalID: -321076446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c3273aa9dc78494e9ab302531260bb8
+      internalID: -1644265623
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0a1d6a66ee47504e8cb659d72f93bec
+      internalID: 384391157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 2176
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffaf4be3b8ab60a4b8856ce14f644cb1
+      internalID: 1080427139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e19347a48abcef45aaf96098c8c7991
+      internalID: 253307695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_43
+      rect:
+        serializedVersion: 2
+        x: 2432
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a10ceb35b90c257429255517d13a933f
+      internalID: 1443620454
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_44
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a704fe0fc930f4489a3bbe3a8aa2eab
+      internalID: 641272198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_45
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62b3c4c44f69b83409b1e8139b1a1ca9
+      internalID: -1862705821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_46
+      rect:
+        serializedVersion: 2
+        x: 2816
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3380c95bd5f8ae246ae4b0084c5a52ae
+      internalID: -722638128
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_47
+      rect:
+        serializedVersion: 2
+        x: 2944
+        y: 228
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fbef46220858c1448b7a90b7a72b8cb
+      internalID: -438047089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_48
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0006ba362e3834428ec451739ad1abc
+      internalID: 1054803107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_49
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efe4cb522d25ac8478414745b2e08b67
+      internalID: -28683924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_50
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 480a4e38fe278aa41bba641bc4189cd3
+      internalID: 164848794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_51
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 522a431947bca994c96814f99493ca55
+      internalID: -240073888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_52
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a77e831f867b5854e832aca6da1938ab
+      internalID: 867591617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_53
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a100de887deecc049857ec6063379134
+      internalID: -1566558178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_54
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a427553bd6a51d9439b43631a1c2b2a8
+      internalID: 549609002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_55
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 992dd3118daa6b841a512d4857888967
+      internalID: -100394099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_56
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cda1739c889b3a14da86a093b4e4e879
+      internalID: 1446064238
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_57
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bce45bd5a5f220d4aa426a69cffc417a
+      internalID: 703899651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_58
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 631ea3b3c1142ec43b3e14ff2a5b76d5
+      internalID: -1135642921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_59
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a6176d880c333449ac5a0cc4c3bb8b1
+      internalID: -952242842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_60
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b6e567b6d0c52b4fb60c5fdf05378af
+      internalID: 270755962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_61
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b96874c61a6d3be4c9e64794a4a10a63
+      internalID: 421456504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_62
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fd23cc49be69104a8a81c39994b5ebf
+      internalID: 1738760802
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_63
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00fe317f738a5f44aba9061e137c00e4
+      internalID: 830774412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_64
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7ad2cad335e811446943e17eedeea039
+      internalID: -911227560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_65
+      rect:
+        serializedVersion: 2
+        x: 2176
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b4bdf91a3b0a714a89c0f3eb78117f2
+      internalID: -156429367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_66
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b761dbea6e1a4ae44b6627fcef754b77
+      internalID: -2143845245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_67
+      rect:
+        serializedVersion: 2
+        x: 2432
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 376e7bd81b45a094d8c243c3343a9850
+      internalID: -547247868
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_68
+      rect:
+        serializedVersion: 2
+        x: 2560
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3471b0e1a251a7429f19ce878635503
+      internalID: 482019608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_69
+      rect:
+        serializedVersion: 2
+        x: 2688
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21c90ae37fb80954297f052ab6d8e65a
+      internalID: -1207872124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_70
+      rect:
+        serializedVersion: 2
+        x: 2816
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f04e4fbb98a3014eb3d96c9a217b9a7
+      internalID: 1197146297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ghensprite-Sheet_71
+      rect:
+        serializedVersion: 2
+        x: 2944
+        y: 0
+        width: 128
+        height: 228
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4e0536131f18d44c973f332c3378a1c
+      internalID: -129117265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Ghensprite-Sheet_0: 1532072145
+      Ghensprite-Sheet_1: 217850939
+      Ghensprite-Sheet_10: 132147102
+      Ghensprite-Sheet_11: -1754480888
+      Ghensprite-Sheet_12: 155615286
+      Ghensprite-Sheet_13: -234950828
+      Ghensprite-Sheet_14: 807024067
+      Ghensprite-Sheet_15: 2100682620
+      Ghensprite-Sheet_16: -810021601
+      Ghensprite-Sheet_17: -660050272
+      Ghensprite-Sheet_18: -320387036
+      Ghensprite-Sheet_19: -32994800
+      Ghensprite-Sheet_2: 1120581927
+      Ghensprite-Sheet_20: -1569101745
+      Ghensprite-Sheet_21: -281091777
+      Ghensprite-Sheet_22: -1304990011
+      Ghensprite-Sheet_23: -1042392286
+      Ghensprite-Sheet_24: 867176118
+      Ghensprite-Sheet_25: 1356369489
+      Ghensprite-Sheet_26: -1541325954
+      Ghensprite-Sheet_27: 1330387483
+      Ghensprite-Sheet_28: 258477407
+      Ghensprite-Sheet_29: -1268890265
+      Ghensprite-Sheet_3: -1933598030
+      Ghensprite-Sheet_30: -1835300967
+      Ghensprite-Sheet_31: -1529164476
+      Ghensprite-Sheet_32: 1249162458
+      Ghensprite-Sheet_33: -11245675
+      Ghensprite-Sheet_34: 705251854
+      Ghensprite-Sheet_35: 622692480
+      Ghensprite-Sheet_36: 1876481789
+      Ghensprite-Sheet_37: 1010663948
+      Ghensprite-Sheet_38: -321076446
+      Ghensprite-Sheet_39: -1644265623
+      Ghensprite-Sheet_4: -1061594375
+      Ghensprite-Sheet_40: 384391157
+      Ghensprite-Sheet_41: 1080427139
+      Ghensprite-Sheet_42: 253307695
+      Ghensprite-Sheet_43: 1443620454
+      Ghensprite-Sheet_44: 641272198
+      Ghensprite-Sheet_45: -1862705821
+      Ghensprite-Sheet_46: -722638128
+      Ghensprite-Sheet_47: -438047089
+      Ghensprite-Sheet_48: 1054803107
+      Ghensprite-Sheet_49: -28683924
+      Ghensprite-Sheet_5: -1144717108
+      Ghensprite-Sheet_50: 164848794
+      Ghensprite-Sheet_51: -240073888
+      Ghensprite-Sheet_52: 867591617
+      Ghensprite-Sheet_53: -1566558178
+      Ghensprite-Sheet_54: 549609002
+      Ghensprite-Sheet_55: -100394099
+      Ghensprite-Sheet_56: 1446064238
+      Ghensprite-Sheet_57: 703899651
+      Ghensprite-Sheet_58: -1135642921
+      Ghensprite-Sheet_59: -952242842
+      Ghensprite-Sheet_6: -1703883888
+      Ghensprite-Sheet_60: 270755962
+      Ghensprite-Sheet_61: 421456504
+      Ghensprite-Sheet_62: 1738760802
+      Ghensprite-Sheet_63: 830774412
+      Ghensprite-Sheet_64: -911227560
+      Ghensprite-Sheet_65: -156429367
+      Ghensprite-Sheet_66: -2143845245
+      Ghensprite-Sheet_67: -547247868
+      Ghensprite-Sheet_68: 482019608
+      Ghensprite-Sheet_69: -1207872124
+      Ghensprite-Sheet_7: 360701472
+      Ghensprite-Sheet_70: 1197146297
+      Ghensprite-Sheet_71: -129117265
+      Ghensprite-Sheet_8: 1808598726
+      Ghensprite-Sheet_9: -1824312622
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
