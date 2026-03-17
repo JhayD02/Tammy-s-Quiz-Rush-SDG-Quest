@@ -1978,4 +1978,19 @@ public class QuizProper : MonoBehaviour
         // Load the appropriate cutscene
         UnityEngine.SceneManagement.SceneManager.LoadScene(sceneToLoad);
     }
+
+    public class AnimatorUnscaledTime : MonoBehaviour
+    {
+        private Animator animator;
+
+        void Awake()
+        {
+            animator = GetComponent<Animator>();
+            if (animator != null)
+            {
+                // Force this animator to ignore Time.timeScale
+                animator.updateMode = AnimatorUpdateMode.UnscaledTime;
+            }
+        }
+    }
 }
